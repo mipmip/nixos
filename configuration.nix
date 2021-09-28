@@ -42,7 +42,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  
+  services.xserver.displayManager.gdm.enable = false;
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -58,10 +58,17 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  users.defaultUserShell = pkgs.zsh;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pim = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "networkmanager" ];
+  };
+
+  users.users.guest = {
+     isNormalUser = true;
+     extraGroups = [ "networkmanager" ]; 
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -76,11 +83,37 @@
      zsh
      curl
      htop 
+     nix-index 
+     gettext
+     gnumake
+     gcc
+     ruby
+     binutils
+     silver-searcher
+     fzf
+
+     xclip
+     weechat
+     pandoc
+     nfs-utils
+     neofetch
+     nextcloud-client
+     neovim
+     gimp
+     gnome.gnome-tweaks
+     ffmpeg
+     docker
+     inkscape
+     blender
+     libreoffice
+     spotify
+     tdesktop
+     xfce.xfce4-clipman-plugin
+     keepassxc
      firefox
      evolution
      alacritty
      cinnamon.nemo
-     keepassxc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
