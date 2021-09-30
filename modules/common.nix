@@ -28,6 +28,7 @@
     gettext
     gcc
     ruby
+    rake
     silver-searcher
     python3
     fzf
@@ -35,5 +36,7 @@
     apg
     bind.dnsutils
     wtf
+    glow
+    crystal
   ];
 }

@@ -8,6 +8,7 @@
       ../modules/vim-large.nix
       ../modules/workstation.nix
       ../modules/virtualbox.nix
+      ../modules/texlive.nix
       ../modules/fonts.nix
       ../modules/nfspiet.nix
     ];
