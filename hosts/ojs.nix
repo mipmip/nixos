@@ -1,17 +1,33 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports =
+    [
+      ../modules/base-minimal.nix
+      ../modules/common.nix
+      ../modules/vim-large.nix
+      ../modules/workstation.nix
+      ../modules/virtualbox.nix
+      ../modules/fonts.nix
+      ../modules/nfspiet.nix
+    ];
+
   networking.hostName = "ojs"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
-  # Set your time zone.
-
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.enp10s0.useDHCP = true;
   networking.interfaces.enp9s0.useDHCP = true;
   networking.interfaces.wlp0s29f7u5.useDHCP = true;
 
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  #KEYCHRON KEYBOARD SWAP FN KEY
+  boot.extraModprobeConfig = ''
+    options hid_apple fnmode=2
+  '';
+
+  system.stateVersion = "21.05"; # Did you read the comment?
 }

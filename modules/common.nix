@@ -2,27 +2,38 @@
 
 {
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  time.timeZone = "Europe/Amsterdam";
+  nixpkgs.config.allowUnfree = true;
+  services.openssh.enable = true;
+
+  users.defaultUserShell = pkgs.zsh;
+  environment.variables = {
+    EDITOR = "vim";
+  };
+
   users.users.pim = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" ];
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
   users.users.guest = {
-     isNormalUser = true;
-     extraGroups = [ "networkmanager" ]; 
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" ];
   };
 
   environment.systemPackages = with pkgs; [
-     binutils
-     htop
-     nix-index
-     gettext
-     gcc
-     ruby
-     silver-searcher
-     fzf
-     vifm
+    binutils
+    htop
+    nix-index
+    gettext
+    gcc
+    ruby
+    silver-searcher
+    python3
+    fzf
+    vifm
+    apg
+    bind.dnsutils
+    wtf
   ];
-
 }

@@ -3,12 +3,8 @@
 {
 
   environment.systemPackages = with pkgs; [
-     vim
-     git
-     tmux
-     zsh
-     curl
-     wget
-     gnumake
+    virtualbox # only on baremetal
   ];
+
 }
+
