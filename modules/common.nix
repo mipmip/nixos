@@ -4,7 +4,9 @@
 
   time.timeZone = "Europe/Amsterdam";
   nixpkgs.config.allowUnfree = true;
+
   services.openssh.enable = true;
+  services.cron.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
   environment.variables = {
@@ -24,7 +26,6 @@
   environment.systemPackages = with pkgs; [
     binutils
     htop
-    nix-index
     gettext
     gcc
     ruby
@@ -38,5 +39,9 @@
     wtf
     glow
     crystal
+    psmisc
+    util-linux
+    file
+    pkg-config
   ];
 }

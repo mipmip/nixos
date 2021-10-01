@@ -54,6 +54,7 @@
      appimage-run
      gnome.gpaste
      vimHugeX
+     gitFull
   ];
 
 }
