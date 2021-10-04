@@ -43,5 +43,6 @@
     util-linux
     file
     pkg-config
+    mipmip_pkg.smug
   ];
 }
