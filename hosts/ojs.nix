@@ -11,6 +11,7 @@
       ../modules/texlive.nix
       ../modules/fonts.nix
       ../modules/nfspiet.nix
+      ../modules/peripherals_hurwenen.nix
       ../modules/nixos-utils.nix
       <nix-ld/modules/nix-ld.nix>
     ];
