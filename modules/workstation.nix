@@ -14,9 +14,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [
-    #pkgs.mipmip_pkg.hl4150cdn
-    #(pkgs.callPackage ../printers/hll2395dw-cups.nix {})
-    (pkgs.callPackage ../printers/hl2360.nix {})
     (pkgs.callPackage ../pkgs/hl4150cdn/default.nix {})
   ];
 
