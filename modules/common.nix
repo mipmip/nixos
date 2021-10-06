@@ -20,6 +20,19 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
+  home-manager.users.pim = {
+
+    imports = [
+      ../home/files
+    ];
+
+    programs.git = {
+      enable = true;
+      userName = "Pim Snel";
+      userEmail = "post@pimsnel.com";
+    };
+  };
+
   home-manager.users.root = {
     programs.zsh = {
       enable = true;
