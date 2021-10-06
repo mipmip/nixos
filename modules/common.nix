@@ -23,26 +23,4 @@
     extraGroups = [ "networkmanager" ];
   };
 
-  environment.systemPackages = with pkgs; [
-    binutils
-    htop
-    gettext
-    gcc
-    ruby
-    rake
-    silver-searcher
-    python3
-    fzf
-    vifm
-    apg
-    bind.dnsutils
-    wtf
-    glow
-    crystal
-    psmisc
-    util-linux
-    file
-    pkg-config
-    mipmip_pkg.smug
-  ];
 }

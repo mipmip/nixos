@@ -38,37 +38,4 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    feh
-    xclip
-    weechat
-    pandoc
-    nfs-utils
-    neofetch
-    nextcloud-client
-    neovim
-    gimp
-    gnome.gnome-tweaks
-    ffmpeg
-    docker
-    inkscape
-    blender
-    libreoffice
-    spotify
-    tdesktop
-    keepassxc
-    firefox
-    evolution
-    alacritty
-    cinnamon.nemo
-    baobab # GrandPerspective
-    go
-    hugo # needed for linny
-    appimage-run
-    gnome.gpaste
-    vimHugeX
-    gitFull
-  ];
-
 }

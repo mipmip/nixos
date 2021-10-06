@@ -1,20 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ../modules/base-minimal.nix
-      ../modules/common.nix
-      ../modules/vim-large.nix
-      ../modules/workstation.nix
-      ../modules/virtualbox.nix
-      ../modules/texlive.nix
-      ../modules/fonts.nix
-      ../modules/nfspiet.nix
-      ../modules/peripherals_hurwenen.nix
-      ../modules/nixos-utils.nix
-      <nix-ld/modules/nix-ld.nix>
-    ];
+  imports = [
+    ../modules/base-minimal.nix
+    ../modules/common.nix
+    ../modules/common-pkg.nix
+    ../modules/vim-large.nix
+    ../modules/workstation.nix
+    ../modules/virtualbox.nix
+    ../modules/texlive.nix
+    ../modules/fonts.nix
+    ../modules/nfspiet.nix
+    ../modules/peripherals_hurwenen.nix
+    ../modules/nixos-utils.nix
+    <nix-ld/modules/nix-ld.nix>
+  ];
 
   networking.hostName = "ojs"; # Define your hostname.
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
