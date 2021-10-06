@@ -7,7 +7,6 @@
     fzf
     apg
     glow
-    crystal
     mipmip_pkg.smug
     ctags
     git-lfs

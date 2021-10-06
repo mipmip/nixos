@@ -5,9 +5,9 @@
   imports = [
     ../modules/base-minimal.nix
     ../modules/common-pkg.nix
+    ../modules/crystal-dev.nix
     ../modules/texlive.nix
     ../modules/vim-large.nix
-    #../modules/virtualbox.nix
     ../modules/workstation-pkg.nix
   ];
 

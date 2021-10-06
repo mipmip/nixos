@@ -5,9 +5,11 @@
     ../modules/base-minimal.nix
     ../modules/common.nix
     ../modules/common-pkg.nix
+    ../modules/crystal-dev.nix
     ../modules/vim-large.nix
     ../modules/workstation.nix
     ../modules/virtualbox.nix
+    ../modules/workstation-pkg.nix
     ../modules/texlive.nix
     ../modules/fonts.nix
     ../modules/nfspiet.nix

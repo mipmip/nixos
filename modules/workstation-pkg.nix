@@ -11,7 +11,10 @@
     ffmpeg
     alacritty
     go
+
     hugo # needed for linny
+    mipmip_pkg.fred # needed for linny
+
     vimHugeX
     gitFull
   ]
