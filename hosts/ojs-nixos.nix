@@ -2,6 +2,7 @@
 
 {
   imports = [
+    <home-manager/nixos>
     ../modules/base-minimal.nix
     ../modules/common.nix
     ../modules/common-pkg.nix
@@ -17,6 +18,7 @@
     ../modules/nixos-utils.nix
     <nix-ld/modules/nix-ld.nix>
   ];
+
 
   networking.hostName = "ojs"; # Define your hostname.
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
