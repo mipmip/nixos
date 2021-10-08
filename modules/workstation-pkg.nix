@@ -34,6 +34,7 @@
     keepassxc
     firefox
 
+    peek
     cinnamon.nemo
     evolution
     feh

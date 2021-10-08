@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
-{
+let
+  myCustomLayout = pkgs.writeText "xkb-layout" ''
+    clear lock
+    ! disable capslock
+    ! remove Lock = Caps_Lock
+  '';
+in
+  {
   imports = [
     <home-manager/nixos>
     ../modules/base-minimal.nix
@@ -19,6 +26,7 @@
     <nix-ld/modules/nix-ld.nix>
   ];
 
+  services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
 
   networking.hostName = "ojs"; # Define your hostname.
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
@@ -36,6 +44,16 @@
   boot.extraModprobeConfig = ''
     options hid_apple fnmode=2
   '';
+  boot.kernelModules = [ "hid-apple"  ];
+
+
+
+
+
+
 
   system.stateVersion = "21.05"; # Did you read the comment?
+
+  
+
 }
