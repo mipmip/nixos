@@ -1,8 +1,4 @@
 
-#export AWS_KEY=AKIAIUEMBWPPJN25R22A
-#export AWS_SECRET=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
-#export AWS_KEYNAME=ec2toegang
-#export AWS_KEYPATH=/Users/pim/.ssh/ec2toegang.pem.txt
 #export COMPOSE_PROJECT_NAME=redash
 #export COMPOSE_FILE=/opt/redash/docker-compose.yml
 case `uname` in
