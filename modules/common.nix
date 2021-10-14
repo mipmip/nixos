@@ -24,12 +24,18 @@
 
     imports = [
       ../home/files
+
+      ## werkt nog niet, zie https://github.com/nix-community/home-manager/issues/2106
+      ../home/dconf
     ];
 
     programs.vim = {
       enable = true;
       plugins = with pkgs.vimPlugins; [ ultisnips ];
-      #settings = { ignorecase = true; };
+      settings = {
+        ignorecase = true;
+      };
+
       extraConfig = ''
 
         if has('python3')

@@ -32,6 +32,7 @@
     util-linux
     file
     pkg-config
+    whois
   ]
   );
 }
