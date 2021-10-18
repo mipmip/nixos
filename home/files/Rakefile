@@ -61,20 +61,18 @@ end
 
 desc "letsencrypttest"
 task "letsencrypttest" do
-  sh 'cd ~/cOperations/monitor-domains-ssl && ./checkssl.rb domains_from_markdown ~/SynologyDrive/roaming/LinnyNotes/wikiContent/letsencrypt_domains.md'
+  sh 'cd ~/cOperations/monitor-domains-ssl && nix-shell --command "./checkssl.rb domains_from_markdown ~/secondbrain/wikiContent/letsencrypt_domains.md"'
 end
 
 desc "letsencryptproblems"
 task "letsencryptproblems" do
-  sh 'cd ~/cOperations/monitor-domains-ssl && ./checkssl.rb domains_from_markdown ~/SynologyDrive/roaming/LinnyNotes/wikiContent/letsencrypt_domains.md|grep -v "😀\|#\|monitor-domains-ssl" |sed "/^$/d"'
+  sh 'cd ~/cOperations/monitor-domains-ssl && nix-shell --command "./checkssl.rb domains_from_markdown ~/secondbrain/wikiContent/letsencrypt_domains.md|grep -v \"😀\|#\|monitor-domains-ssl\" |sed \"/^$/d\""'
 end
 
 desc "letsencryptalmost"
 task "letsencryptalmost" do
-  sh 'cd ~/cOperations/monitor-domains-ssl && ./checkssl.rb domains_from_markdown ~/SynologyDrive/roaming/LinnyNotes/wikiContent/letsencrypt_domains.md|grep days|sort -k 9,9 | head -n 5'
+  sh 'cd ~/cOperations/monitor-domains-ssl && nix-shell --command "./checkssl.rb domains_from_markdown ~/secondbrain/wikiContent/letsencrypt_domains.md|grep days|sort -k 9,9 | head -n 5"'
 end
-
-
 
 desc "macshowhidden"
 task "macshowhidden" do

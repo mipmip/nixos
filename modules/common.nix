@@ -9,9 +9,6 @@
   services.cron.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
-  environment.variables = {
-    EDITOR = "vim";
-  };
 
   home-manager.useGlobalPkgs = true;
 
@@ -67,6 +64,12 @@
       userName = "Pim Snel";
       userEmail = "post@pimsnel.com";
     };
+
+    programs.fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
   };
 
   home-manager.users.root = {

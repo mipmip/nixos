@@ -5,6 +5,7 @@
     htop
     silver-searcher
     fzf
+    bat
     apg
     glow
     mipmip_pkg.smug
@@ -13,6 +14,7 @@
     jq
     imagemagick
     python3
+    openssl
   ]
   ++ (if pkgs.stdenv.isDarwin then
   [

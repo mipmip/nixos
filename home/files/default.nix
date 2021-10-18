@@ -37,24 +37,12 @@
     };
   };
 
-
-#  home.file = {
-    #".vimrc" = {
-      #source = ./.vimrc;
-    #};
-#  };
-
   home.file = {
     ".vim" = {
       source = ./.vim;
       recursive = true;
     };
   };
-#  home.file = {
-    #".vim/vimrc" = {
-      #source = ./.vimrc;
-    #};
-#  };
 
   home.file = {
     ".vimcleanfortesting" = {
@@ -95,18 +83,6 @@
     ".config/wtf" = {
       source = ./wtf;
       recursive = true;
-    };
-  };
-
-  home.file = {
-    "./.fzf.bash" = {
-      source = ./.fzf.bash;
-    };
-  };
-
-  home.file = {
-    "./.fzf.zsh" = {
-      source = ./.fzf.zsh;
     };
   };
 
