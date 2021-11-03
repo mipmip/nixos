@@ -11,6 +11,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   home-manager.useGlobalPkgs = true;
+  services.lorri.enable = true;
 
   users.users.pim = {
     isNormalUser = true;

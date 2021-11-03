@@ -24,6 +24,7 @@ in
     ../modules/nfspiet.nix
     ../modules/peripherals_hurwenen.nix
     ../modules/nixos-utils.nix
+    ../modules/explore-pkg.nix
     <nix-ld/modules/nix-ld.nix>
   ];
 
@@ -47,14 +48,5 @@ in
   '';
   boot.kernelModules = [ "hid-apple"  ];
 
-
-
-
-
-
-
   system.stateVersion = "21.05"; # Did you read the comment?
-
-  
-
 }

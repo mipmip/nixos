@@ -23,6 +23,7 @@
      iterm2
   ]
   else [
+
     docker
     nextcloud-client
     gimp
@@ -44,6 +45,8 @@
     baobab # GrandPerspective
     appimage-run
     gnome.gpaste
+    glib.dev
+    glade
   ]);
 
 }
