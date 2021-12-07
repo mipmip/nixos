@@ -1,4 +1,4 @@
-"let g:scimCommand = '/usr/bin/sc-im'
+let g:scimCommand = 'sc-im'
 
 let g:rooter_silent_chdir = 1
 

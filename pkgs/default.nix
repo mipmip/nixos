@@ -14,6 +14,7 @@ let
     crelease  = pkgs.callPackage ./crelease  { };
     fred      = pkgs.callPackage ./fred      { };
     embgit    = pkgs.callPackage ./embgit    { };
+    dstp      = pkgs.callPackage ./dstp      { };
 
     open3d    = pkgs.python38Packages.callPackage ./open3d    { };
 

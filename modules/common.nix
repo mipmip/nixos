@@ -2,6 +2,10 @@
 
 {
 
+
+
+  #setxkbmap -option caps:none
+
   time.timeZone = "Europe/Amsterdam";
   nixpkgs.config.allowUnfree = true;
 

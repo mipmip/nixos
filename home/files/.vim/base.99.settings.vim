@@ -45,7 +45,7 @@ set wildignore+=*.swp,*~,._*
 "" Backup and swap files
 set backupdir^=~/.vim_temp/_backup//,/tmp    " where to put backup files.
 set directory^=~/.vim_temp/_temp//,/tmp      " where to put swap files.
-
+set viewdir=~/.vim_temp/views
 
 "" Hoofdletter w mag nu ook gebruikt worden om op te slaan
 cnoreabbrev W w

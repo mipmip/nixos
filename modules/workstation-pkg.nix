@@ -2,6 +2,7 @@
 
 {
 
+
   environment.systemPackages = with pkgs; [
     potrace
     weechat
@@ -23,6 +24,7 @@
      iterm2
   ]
   else [
+    zathura
 
     docker
     nextcloud-client
@@ -31,10 +33,11 @@
     blender
     libreoffice
     spotify
-    tdesktop
+    unstable.tdesktop
     keepassxc
     firefox
 
+    gthumb
     peek
     cinnamon.nemo
     evolution
