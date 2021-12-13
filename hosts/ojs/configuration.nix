@@ -10,6 +10,7 @@ in
   {
   imports = [
     ./hardware-configuration.nix
+    ../../shared-configuration.nix
     ../../modules/base-minimal.nix
     ../../modules/common.nix
     ../../modules/common-pkg.nix
