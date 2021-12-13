@@ -2,13 +2,13 @@
 
 {
 
-  home.file = {
-    ".pake" = {
-      source = ./.pake;
-      recursive = true;
-    };
-  };
-
+#  home.file = {
+#    ".pake" = {
+#      source = ./.pake;
+#      recursive = true;
+#    };
+#  };
+#
   home.file = {
     ".pandoc" = {
       source = ./.pandoc;

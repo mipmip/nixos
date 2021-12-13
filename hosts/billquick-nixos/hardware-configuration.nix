@@ -8,24 +8,23 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "wl" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/203ca9ad-733b-434b-bd6a-f9fd833ff591";
-      fsType = "btrfs";
-      options = [ "subvol=nixos" "compress=lzo" "autodefrag" "noatime" ];
+    { device = "/dev/disk/by-uuid/f0490d0b-8ef4-41a8-8bc9-1fa9474b0841";
+      fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/242C-46A0";
+    { device = "/dev/disk/by-uuid/6585-70E1";
       fsType = "vfat";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/2e14da16-1eb5-4a43-9f1b-feffa2e3d9ad"; }
-    ];
+  swapDevices = [ ];
 
+  # high-resolution display
+  hardware.video.hidpi.enable = lib.mkDefault true;
 }
