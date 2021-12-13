@@ -11,22 +11,22 @@ in
     imports =
       [
         ./hardware-configuration.nix
-        ./shared-configuration.nix
-        ./modules/base-minimal.nix
-        ./modules/common.nix
-        ./modules/common-pkg.nix
-        ./modules/home-manager.nix
-        ./modules/crystal-dev.nix
-        ./modules/poppygo-dev.nix
-        ./modules/vim-large.nix
-        ./modules/workstation.nix
-        ./modules/workstation-pkg.nix
-        ./modules/fonts.nix
-        ./modules/nfspiet.nix
-        ./modules/peripherals_hurwenen.nix
-        ./modules/nixos-utils.nix
-    #   ./modules/virtualbox.nix
-    #   ./modules/texlive.nix
+        ../../shared-configuration.nix
+        ../../modules/base-minimal.nix
+        ../../modules/common.nix
+        ../../modules/common-pkg.nix
+        ../../modules/home-manager.nix
+        ../../modules/crystal-dev.nix
+        ../../modules/poppygo-dev.nix
+        ../../modules/vim-large.nix
+        ../../modules/workstation.nix
+        ../../modules/workstation-pkg.nix
+        ../../modules/fonts.nix
+        ../../modules/nfspiet.nix
+        ../../modules/peripherals_hurwenen.nix
+        ../../modules/nixos-utils.nix
+    #   ../../modules/virtualbox.nix
+    #   ../../modules/texlive.nix
     #    <nix-ld/modules/nix-ld.nix>
 
     ];
