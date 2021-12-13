@@ -5,6 +5,6 @@
     [
       ./hardware-configuration.nix
       ./shared-configuration.nix
-      ./hosts/ojs-nixos.nix
+      ./hosts/billquick-nixos.nix
     ];
 }
