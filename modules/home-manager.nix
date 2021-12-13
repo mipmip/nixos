@@ -28,6 +28,8 @@ in
 
         if has('python2')
         endif
+        if has('python3')
+        endif
 
         for f in split(glob('~/.vim/base*.vim'), '\n')
           exe 'source' f
@@ -55,6 +57,12 @@ in
       userName = "Pim Snel";
       userEmail = "post@pimsnel.com";
     };
+
+    programs.fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
   };
 
   home-manager.users.root = {

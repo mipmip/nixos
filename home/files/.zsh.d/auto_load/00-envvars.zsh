@@ -26,7 +26,7 @@ case `uname` in
     ;;
   Linux)
     GTK_THEME=Default
-    EDITOR="/usr/bin/vim"
+    EDITOR="vim"
     ;;
 esac
 
@@ -49,3 +49,4 @@ export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 export NNN_DE_FILE_MANAGER=open
 export GOPATH=~/go
+#export XDG_DATA_DIRS=/home/pim/.local/share/gnome-shell/extensions/hotkeys-popup@pimsnel.com/schemas:$XDG_DATA_DIRS

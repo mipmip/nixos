@@ -1,4 +1,5 @@
 shells/pandocomatic/.nix-gems-pandocomatic
 pkgs/result
-configuration.nix
-hardware-configuration.nix
+#configuration.nix
+#hardware-configuration.nix
+shells/pandocomatic/pandotemp.html

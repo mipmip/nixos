@@ -15,9 +15,14 @@ if filereadable($HOME."/.i-am-second-brain")
   Plug 'mipmip/vim-scimark'
   Plug 'linden-project/linny.vim'
   "Plug 'mipmip/linny-wikitag-github'
-  Plug 'vim-voom/VOoM'
+
+  " writing
   Plug 'junegunn/goyo.vim'
+  Plug 'reedes/vim-pencil'
+  Plug 'vim-voom/VOoM'
+
   Plug 'tyru/open-browser.vim'
+
   " MARKDOWN/YAML/ETC
   Plug 'aserebryakov/vim-todo-lists'
   Plug 'dhruvasagar/vim-table-mode'
@@ -60,6 +65,7 @@ Plug 'thiagoalessio/rainbow_levels.vim'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'scrooloose/nerdcommenter'
 
+
 " SPECIAL PURPOSE TOOLS
 "Plug 'hrj/vim-DrawIt'
 "Plug 'stevearc/vim-arduino'
@@ -98,9 +104,12 @@ Plug 'rhysd/vim-grammarous'
 " COLORS
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/Cleanroom'
-Plug 'sonph/onehalf'
-
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'logico/typewriter-vim'
 Plug 'ap/vim-css-color'
+Plug 'pbrisbin/vim-colors-off', { 'branch': 'main' }
+
+
 call plug#end()
 
 

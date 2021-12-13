@@ -2,6 +2,7 @@
 
 {
 
+
   environment.systemPackages = with pkgs; [
     potrace
     weechat
@@ -23,6 +24,8 @@
      iterm2
   ]
   else [
+    zathura
+
     docker
     nextcloud-client
     gimp
@@ -30,10 +33,11 @@
     blender
     libreoffice
     spotify
-    tdesktop
+    unstable.tdesktop
     keepassxc
     firefox
 
+    gthumb
     peek
     cinnamon.nemo
     evolution
@@ -44,6 +48,8 @@
     baobab # GrandPerspective
     appimage-run
     gnome.gpaste
+    glib.dev
+    glade
   ]);
 
 }

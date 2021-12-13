@@ -24,12 +24,13 @@ in
     ../modules/nfspiet.nix
     ../modules/peripherals_hurwenen.nix
     ../modules/nixos-utils.nix
+    ../modules/explore-pkg.nix
     <nix-ld/modules/nix-ld.nix>
   ];
 
   services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
 
-  networking.hostName = "ojs"; # Define your hostname.
+  networking.hostName = "ojs";
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
   networking.useDHCP = false;
@@ -48,5 +49,4 @@ in
   boot.kernelModules = [ "hid-apple"  ];
 
   system.stateVersion = "21.05"; # Did you read the comment?
-
 }
