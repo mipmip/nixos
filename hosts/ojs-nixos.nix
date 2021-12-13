@@ -30,7 +30,7 @@ in
 
   services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
 
-  networking.hostName = "ojs"; # Define your hostname.
+  networking.hostName = "ojs";
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
   networking.useDHCP = false;

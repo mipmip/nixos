@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     tmux
     wget
-    #vim
     gitFull
   ]
   ++ (if pkgs.stdenv.isDarwin then
