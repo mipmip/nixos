@@ -15,13 +15,14 @@ in
         ../../modules/base-minimal.nix
         ../../modules/common.nix
         ../../modules/common-pkg.nix
-        ../../modules/home-manager.nix
+#        ../../modules/home-manager.nix
         ../../modules/crystal-dev.nix
         ../../modules/poppygo-dev.nix
         ../../modules/vim-large.nix
         ../../modules/workstation.nix
         ../../modules/workstation-pkg.nix
         ../../modules/fonts.nix
+        ../../modules/explore-pkg.nix
         ../../modules/nfspiet.nix
         ../../modules/peripherals_hurwenen.nix
         ../../modules/nixos-utils.nix

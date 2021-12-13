@@ -8,62 +8,6 @@ in
   ];
 
   home-manager.useGlobalPkgs = true;
-  home-manager.users.pim = {
-
-    imports = [
-      ../home/files
-
-      ## werkt nog niet, zie https://github.com/nix-community/home-manager/issues/2105
-      ../home/dconf
-    ];
-
-    programs.vim = {
-      enable = true;
-      plugins = with pkgs.vimPlugins; [ ultisnips ];
-      settings = {
-        ignorecase = true;
-      };
-
-      extraConfig = ''
-
-        if has('python2')
-        endif
-        if has('python3')
-        endif
-
-        for f in split(glob('~/.vim/base*.vim'), '\n')
-          exe 'source' f
-        endfor
-
-        if has('gui_running')
-          for f in split(glob('~/.vim/gui*.vim'), '\n')
-            exe 'source' f
-          endfor
-        else
-          for f in split(glob('~/.vim/cli*.vim'), '\n')
-            exe 'source' f
-          endfor
-        endif
-
-        for f in split(glob('~/.vim/last*.vim'), '\n')
-          exe 'source' f
-        endfor
-
-      '';
-    };
-
-    programs.git = {
-      enable = true;
-      userName = "Pim Snel";
-      userEmail = "post@pimsnel.com";
-    };
-
-    programs.fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
-  };
 
   home-manager.users.root = {
     programs.zsh = {

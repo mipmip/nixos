@@ -51,12 +51,6 @@
     };
   };
 
-  home.file = {
-    ".zsh.d" = {
-      source = ./.zsh.d;
-      recursive = true;
-    };
-  };
 
   home.file = {
     ".config/awesome" = {
@@ -124,26 +118,37 @@
       source = ./.Xresources;
     };
   };
-  home.file = {
-    "./.zlogin" = {
-      source = ./.zlogin;
-    };
-  };
-  home.file = {
-    "./.zprofile" = {
-      source = ./.zprofile;
-    };
-  };
-  home.file = {
-    "./.zshenv" = {
-      source = ./.zshenv;
-    };
-  };
-  home.file = {
-    "./.zshrc" = {
-      source = ./.zshrc;
-    };
-  };
+
+#  home.file = {
+#    "./.zlogin" = {
+#      source = ./.zlogin;
+#    };
+#  };
+#  home.file = {
+#    "./.zprofile" = {
+#      source = ./.zprofile;
+#    };
+#  };
+
+#  home.file = {
+#    "./.zshenv" = {
+#      source = ./.zshenv;
+#    };
+#  };
+#  home.file = {
+#    "./.zshrc" = {
+#      source = ./.zshrc;
+#    };
+#  };
+#
+#  home.file = {
+#    ".zsh.d" = {
+#      source = ./.zsh.d;
+#      recursive = true;
+#    };
+#  };
+
+
   home.file = {
     "./.config/alacritty.yml" = {
       source = ./alacritty.yml;
@@ -165,4 +170,10 @@
       source = ./Rakefile;
     };
   };
+  home.file = {
+    "./.entries.json" = {
+      source = ./.entries.json;
+    };
+  };
+
 }

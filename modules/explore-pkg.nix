@@ -8,6 +8,9 @@
     youtube-dl
     tangram
     vscode
+    kitty
+    git-sync
+    dconf2nix
 
     zettlr
     discord
