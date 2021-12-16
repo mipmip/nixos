@@ -13,6 +13,32 @@
   services.xserver.layout = "us";
   services.xserver.xkbOptions = "caps:none,terminate:ctrl_alt_bks";
 
+  systemd.user.services.keepassxc = {
+    script = ''
+      /run/current-system/sw/bin/keepassxc
+    '';
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
+
+  systemd.user.services.telegram = {
+    script = ''
+      /run/current-system/sw/bin/telegram-desktop
+    '';
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
+
+  systemd.user.services.nextcloud = {
+    script = ''
+      /run/current-system/sw/bin/nextcloud
+    '';
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
+
+
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [

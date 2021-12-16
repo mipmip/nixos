@@ -202,10 +202,6 @@ in
       transparent-popup = true;
     };
 
-    "org/gnome/shell/extensions/improved-workspace-indicator" = {
-      panel-position = "left";
-    };
-
     "extensions/just-perfection" = {
       accessibility-menu = true;
       activities-button = true;
@@ -272,6 +268,8 @@ in
       toggle-application-view = [ "" ];
       toggle-overview = [ "" ];
     };
+
+    
 
   };
 }

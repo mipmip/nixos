@@ -9,7 +9,7 @@ in
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///home/pim/.local/share/backgrounds/2021-09-14-22-31-31-johannes-plenio-CfKPPOgI-uI-unsplash.jpg";
+      picture-uri = "file:///home/pim/Nextcloud/Wallpapers/johannes-plenio-6lDhQ7fCtYc-unsplash.jpg";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -25,25 +25,25 @@ in
       xkb-options = [ "grp:alt_shift_toggle" "lv3:ralt_switch" "compose:ralt" "caps:none" ];
     };
 
-#    "org/gnome/desktop/interface" = {
-#      clock-format = "24h";
-#      clock-show-weekday = false;
-#      cursor-theme = "Adwaita";
-#      enable-animations = true;
-#      enable-hot-corners = false;
-#      font-antialiasing = "grayscale";
-#      font-hinting = "none";
-#      font-name = "Liberation Sans 10";
-#      gtk-enable-primary-paste = false;
-#      gtk-im-module = "gtk-im-context-simple";
-#      gtk-theme = "Adwaita";
-#      icon-theme = "Adwaita";
-#      text-scaling-factor = 1.0;
-#      toolbar-style = "text";
-#    };
+    "org/gnome/desktop/interface" = {
+      clock-format = "24h";
+      clock-show-weekday = false;
+      cursor-theme = "Adwaita";
+      enable-animations = true;
+      enable-hot-corners = false;
+      font-antialiasing = "grayscale";
+      font-hinting = "none";
+      font-name = "Liberation Sans 10";
+      gtk-enable-primary-paste = false;
+      gtk-im-module = "gtk-im-context-simple";
+      gtk-theme = "Adwaita";
+      icon-theme = "Adwaita";
+      text-scaling-factor = 1.0;
+      toolbar-style = "text";
+    };
+
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
-      cycle-windows = [ "<Super>Escape" ];
       cycle-windows-backward = [ "<Shift><Super>Escape" ];
       maximize = [ "<Super>Up" ];
       minimize = [ "<Alt>F4" ];
@@ -60,9 +60,11 @@ in
       switch-to-workspace-4 = [ "" ];
       switch-to-workspace-last = [];
       toggle-fullscreen = [ "<Super>f" ];
+
+      cycle-windows = [ "<Super>Escape" ];
     };
 
-    "wm/preferences" = {
+    "org/gnome/desktop/wm/preferences" = {
       action-double-click-titlebar = "minimize";
       auto-raise = true;
       button-layout = "close:appmenu";
@@ -71,6 +73,60 @@ in
       resize-with-right-button = false;
       theme = "Default";
       workspace-names = [ "1" "2" "3" "4" ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/" ];
+      screensaver = [];
+      search = [ "<Super>space" ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "env st";
+      name = "st";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      binding = "<Shift><Super>exclam";
+      command = "appimage-run /home/pim/cTempo2/timenout2tempo/dist_electron/Timenaut-latest.AppImage";
+      name = "Tempo";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      binding = "<Shift><Super>dollar";
+      command = "gnome-screenshot -i";
+      name = "screenshot";
+    };
+
+    "org/gnome/settings-daemon/plugins/xsettings" = {
+      overrides = "{'Gtk/EnablePrimaryPaste': <0>, 'Gtk/DecorationLayout': <'close,minimize,maximize:menu'>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DialogsUseHeader': <0>}";
+    };
+
+    "org/gnome/GPaste" = {
+      history-name = "history";
+      images-support = true;
+      show-history = "<Primary>space";
+      synchronize-clipboards = true;
+      track-changes = true;
+      trim-items = true;
+    };
+
+    "org/gnome/mutter" = {
+      center-new-windows = true;
+      dynamic-workspaces = false;
+      overlay-key = "Super_R";
+      workspaces-only-on-primary = true;
+    };
+
+#    "org/gnome/mutter/keybindings" = {
+#      toggle-tiled-left = [ "" ];
+#      toggle-tiled-right = [ "" ];
+#    };
+
+    # FIX OVERLAP WITH SUPER ESCAPE CYCLE WINDOWS
+    "org/gnome/mutter/wayland/keybindings" = {
+      restore-shortcuts=[""];
     };
 
   };
