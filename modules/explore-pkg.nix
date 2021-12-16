@@ -12,6 +12,11 @@
     git-sync
     dconf2nix
 
+    # HARDWARE UTILS
+    dmidecode
+    pciutils
+    xlibs.xvinfo
+
     zettlr
     discord
   ];

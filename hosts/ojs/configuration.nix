@@ -26,7 +26,7 @@ in
     ../../modules/peripherals_hurwenen.nix
     ../../modules/nixos-utils.nix
     ../../modules/explore-pkg.nix
-    <home-manager/nixos>
+    #<home-manager/nixos>
     <nix-ld/modules/nix-ld.nix>
   ];
 
