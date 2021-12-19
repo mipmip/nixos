@@ -33,6 +33,12 @@
     autocd = true;
     enableAutosuggestions = false;
 
+    shellAliases = {
+      open = "xdg-open";
+      t = "tmux a";
+      # pake="noglob rake -f ~/Rakefile"
+    };
+
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
