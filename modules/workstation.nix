@@ -5,7 +5,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.enable = false; # IF TRUE WAYLAND WILL BE USED
+  services.xserver.displayManager.gdm.enable = true; # IF TRUE WAYLAND WILL BE USED
 
   services.flatpak.enable = true;
 
