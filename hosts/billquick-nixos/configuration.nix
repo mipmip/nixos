@@ -27,7 +27,7 @@ in
         ../../modules/nfspiet.nix
         ../../modules/peripherals_hurwenen.nix
         ../../modules/nixos-utils.nix
-    #   ../../modules/virtualbox.nix
+       ../../modules/virtualbox.nix
        ../../modules/texlive.nix
     #    <nix-ld/modules/nix-ld.nix>
 

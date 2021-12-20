@@ -9,6 +9,7 @@ in
     "org/gnome/shell" = {
       disable-user-extensions = false;
 
+      /*
       disabled-extensions = [
         "advanced-alt-tab@G-dH.github.com"
         "clipboard-indicator@tudmotu.com"
@@ -34,7 +35,9 @@ in
         "logomenu@aryan_k"
         "customize-ibus@hollowman.ml"
         "just-perfection-desktop@just-perfection" ];
+        */
 
+        /*
         enabled-extensions = [
           "favorites@cvine.org"
           "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
@@ -53,7 +56,8 @@ in
 #          "material-shell@papyelgringo"
           #"titlebar-screenshot@jmaargh.github.com"
           #"transparent-top-bar@ftpix.com"
-        ];
+          ];
+          */
 
       favorite-apps = [
         "nemo.desktop"
