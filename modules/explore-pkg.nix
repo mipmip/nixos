@@ -10,12 +10,21 @@
     vscode
     kitty
     git-sync
+
+    #NIX/GNOME/HOMEMANAGER
     dconf2nix
 
     # HARDWARE UTILS
     dmidecode
     pciutils
     xlibs.xvinfo
+
+    #PHOTO ORGANIZER
+    shotwell
+
+    #TRANSLATION TOOLS
+    poedit
+    intltool
 
     zettlr
     discord

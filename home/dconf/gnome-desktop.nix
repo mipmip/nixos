@@ -119,10 +119,10 @@ in
       workspaces-only-on-primary = true;
     };
 
-#    "org/gnome/mutter/keybindings" = {
-#      toggle-tiled-left = [ "" ];
-#      toggle-tiled-right = [ "" ];
-#    };
+    "org/gnome/mutter/keybindings" = {
+      toggle-tiled-left = [ "<Primary><Shift>Left" ];
+      toggle-tiled-right = [ "<Primary><Shift>Right" ];
+    };
 
     # FIX OVERLAP WITH SUPER ESCAPE CYCLE WINDOWS
     "org/gnome/mutter/wayland/keybindings" = {

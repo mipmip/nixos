@@ -15,7 +15,6 @@ in
         ../../modules/base-minimal.nix
         ../../modules/common.nix
         ../../modules/common-pkg.nix
-#        ../../modules/home-manager.nix
         ../../modules/crystal-dev.nix
         ../../modules/poppygo-dev.nix
         ../../modules/vim-large.nix
