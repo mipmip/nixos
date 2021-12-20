@@ -1,0 +1,9 @@
+session: nixos
+root: "/home/pim/nixos"
+before_start: []
+stop: []
+windows:
+- name: nixos
+  commands:
+  - echo "NIXOS"
+
