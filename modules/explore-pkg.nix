@@ -22,6 +22,9 @@
     #PHOTO ORGANIZER
     shotwell
 
+    #DSTP
+    unstable.dstp
+
     #TRANSLATION TOOLS
     poedit
     intltool
