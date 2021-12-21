@@ -19,6 +19,8 @@
     (pkgs.callPackage ../pkgs/hl4150cdn/default.nix {})
   ];
 
+  users.users.pim.initialPassword = "hallo"
+
   # Enable automatic discovery of the printer from other Linux systems with avahi running.
   # services.avahi.enable = true;
   # services.avahi.publish.enable = true;
