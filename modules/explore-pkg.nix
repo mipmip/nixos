@@ -19,6 +19,9 @@
     pciutils
     xlibs.xvinfo
 
+    kooha
+    zoom-us
+
     #PHOTO ORGANIZER
     shotwell
 
