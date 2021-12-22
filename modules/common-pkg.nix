@@ -35,7 +35,6 @@
     rake
     bind.dnsutils
     psmisc
-    util-linux
     file
     pkg-config
     whois

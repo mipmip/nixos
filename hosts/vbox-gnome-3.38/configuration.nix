@@ -10,6 +10,7 @@
       ../../modules/common-pkg.nix
       ../../modules/st.nix
       ../../modules/nixos-utils.nix
+      ../../modules/workstation.nix
     ];
 
     services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
