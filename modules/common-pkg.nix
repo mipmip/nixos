@@ -19,6 +19,7 @@
     openssl
     direnv
     zip
+    unzip
   ]
   ++ (if pkgs.stdenv.isDarwin then
   [
