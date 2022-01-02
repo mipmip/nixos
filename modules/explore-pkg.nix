@@ -21,6 +21,7 @@
 
     kooha
     zoom-us
+    teams
 
     #PHOTO ORGANIZER
     shotwell
