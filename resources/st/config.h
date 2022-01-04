@@ -13,7 +13,7 @@ static char *fonts[] = {
 };
 static int fonts_current = 0;
 
-static int borderpx = 12;
+static int borderpx = 15;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -102,11 +102,20 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 used in escape sequence) */
 static const char *palettes[][16] = {
+  /* F1 DEFAULT TERMINAL COLORS */
   {"black", "red3", "green3", "yellow3", "blue2", "magenta3", "cyan3", "gray90", "gray50", "red", "green", "yellow", "#5c5cff", "magenta", "cyan", "white"},
-  {"#223", "#900", "#080", "#fe7", "#35e", "#fc5", "#18e", "#aaa", "#666", "#f25", "#0b0", "#ff6", "#46f", "#d6a", "#6bf", "#ddd"},
+
+  /* F2 DEFAULT LIGHT SOLARIZED COLORS */
+  {"#fdf6e3", "#b7141f", "#457b24", "#fc7b08", "#134eb2", "#560088", "#0e717c", "#777777", "#424242", "#e83b3f", "#7aba3a", "#fd8e09", "#54a4f3", "#aa4dbc", "#26bbd1", "#aaaaaa"},
+
+  /* F3 DEFAULT DARK WHITE COLORS */
+  {"#002b36", "#b04b57", "#87b379", "#e5c179", "#7d8fa4", "#a47996", "#85a7a5", "#b3b8c3", "#000000", "#b04b57", "#87b379", "#e5c179", "#7d8fa4", "#a47996", "#85a7a5", "#ffffff"},
+
+  /* F4 DEFAULT PURE WHITE COLORS */
   {"#ffffff", "#b7141f", "#457b24", "#fc7b08", "#134eb2", "#560088", "#0e717c", "#777777", "#424242", "#e83b3f", "#7aba3a", "#fd8e09", "#54a4f3", "#aa4dbc", "#26bbd1", "#aaaaaa"},
-  {"#eaeaea", "#b7141f", "#457b24", "#fc7b08", "#134eb2", "#560088", "#0e717c", "#777777", "#424242", "#e83b3f", "#7aba3a", "#fd8e09", "#54a4f3", "#aa4dbc", "#26bbd1", "#aaaaaa"},
-  {"#20242d", "#b04b57", "#87b379", "#e5c179", "#7d8fa4", "#a47996", "#85a7a5", "#b3b8c3", "#000000", "#b04b57", "#87b379", "#e5c179", "#7d8fa4", "#a47996", "#85a7a5", "#ffffff"},
+
+  //{"#223", "#900", "#080", "#fe7", "#35e", "#fc5", "#18e", "#aaa", "#666", "#f25", "#0b0", "#ff6", "#46f", "#d6a", "#6bf", "#ddd"},
+  //{"#eaeaea", "#b7141f", "#457b24", "#fc7b08", "#134eb2", "#560088", "#0e717c", "#777777", "#424242", "#e83b3f", "#7aba3a", "#fd8e09", "#54a4f3", "#aa4dbc", "#26bbd1", "#aaaaaa"},
  };
 
 static const char **colorname;
@@ -200,11 +209,11 @@ static Shortcut shortcuts[] = {
   { TERMMOD,              XK_F2,          setpalette,     {.i =  1} },
   { TERMMOD,              XK_F3,          setpalette,     {.i =  2} },
   { TERMMOD,              XK_F4,          setpalette,     {.i =  3} },
-  { TERMMOD,              XK_F5,          setpalette,     {.i =  4} },
-  { TERMMOD,              XK_F6,          setpalette,     {.i =  5} },
-  { TERMMOD,              XK_F7,          setpalette,     {.i =  6} },
-  { TERMMOD,              XK_F8,          setpalette,     {.i =  7} },
-  { TERMMOD,              XK_F9,          setpalette,     {.i =  8} },
+  /*{ TERMMOD,              XK_F5,          setpalette,     {.i =  4} },*/
+  /*{ TERMMOD,              XK_F6,          setpalette,     {.i =  5} },*/
+  /*{ TERMMOD,              XK_F7,          setpalette,     {.i =  6} },*/
+  /*{ TERMMOD,              XK_F8,          setpalette,     {.i =  7} },*/
+  /*{ TERMMOD,              XK_F9,          setpalette,     {.i =  8} },*/
 };
 
 /*
