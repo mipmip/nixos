@@ -103,6 +103,8 @@ Plug 'rhysd/vim-grammarous'
 
 " COLORS
 Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
+
 Plug 'vim-scripts/Cleanroom'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'logico/typewriter-vim'

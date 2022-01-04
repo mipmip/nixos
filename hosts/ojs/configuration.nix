@@ -51,5 +51,10 @@ in
   '';
   boot.kernelModules = [ "hid-apple"  ];
 
+  #NIEUWE POGING
+  boot.kernelParams = [
+    "hid_apple.fnmode=2"
+  ];
+
   system.stateVersion = "21.05"; # Did you read the comment?
 }
