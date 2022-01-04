@@ -15,6 +15,7 @@ let
     fred      = pkgs.callPackage ./fred      { };
     embgit    = pkgs.callPackage ./embgit    { };
     dstp      = pkgs.callPackage ./dstp      { };
+    cryptobox = pkgs.callPackage ./cryptobox { };
 
     open3d    = pkgs.python38Packages.callPackage ./open3d    { };
 

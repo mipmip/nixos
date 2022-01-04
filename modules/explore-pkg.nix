@@ -11,6 +11,8 @@
     kitty
     git-sync
 
+    mipmip_pkg.cryptobox
+
     #NIX/GNOME/HOMEMANAGER
     dconf2nix
 
