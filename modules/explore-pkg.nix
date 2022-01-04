@@ -12,6 +12,7 @@
     git-sync
 
     mipmip_pkg.cryptobox
+    cryptsetup
 
     #NIX/GNOME/HOMEMANAGER
     dconf2nix
