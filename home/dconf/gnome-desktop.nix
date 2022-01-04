@@ -46,6 +46,7 @@ in
       close = [ "<Super>q" ];
       cycle-windows-backward = [ "<Shift><Super>Escape" ];
       maximize = [ "<Super>Up" ];
+      toggle-maximized = [ "<Super>t" ];
       minimize = [ "<Alt>F4" ];
       move-to-workspace-1 = [ "<Primary><Super>1" ];
       move-to-workspace-2 = [ "<Primary><Super>2" ];

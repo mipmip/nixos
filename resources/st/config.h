@@ -100,44 +100,25 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+/* Terminal colors (16 used in escape sequence) */
+static const char *palettes[][16] = {
+  {"black", "red3", "green3", "yellow3", "blue2", "magenta3", "cyan3", "gray90", "gray50", "red", "green", "yellow", "#5c5cff", "magenta", "cyan", "white"},
+  {"#223", "#900", "#080", "#fe7", "#35e", "#fc5", "#18e", "#aaa", "#666", "#f25", "#0b0", "#ff6", "#46f", "#d6a", "#6bf", "#ddd"},
+  {"#ffffff", "#b7141f", "#457b24", "#fc7b08", "#134eb2", "#560088", "#0e717c", "#777777", "#424242", "#e83b3f", "#7aba3a", "#fd8e09", "#54a4f3", "#aa4dbc", "#26bbd1", "#aaaaaa"},
+  {"#eaeaea", "#b7141f", "#457b24", "#fc7b08", "#134eb2", "#560088", "#0e717c", "#777777", "#424242", "#e83b3f", "#7aba3a", "#fd8e09", "#54a4f3", "#aa4dbc", "#26bbd1", "#aaaaaa"},
+  {"#20242d", "#b04b57", "#87b379", "#e5c179", "#7d8fa4", "#a47996", "#85a7a5", "#b3b8c3", "#000000", "#b04b57", "#87b379", "#e5c179", "#7d8fa4", "#a47996", "#85a7a5", "#ffffff"},
+ };
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-};
-
+static const char **colorname;
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
+unsigned int defaultfg = 8;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+static unsigned int defaultcs = 8;
+static unsigned int defaultrcs = 8;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
@@ -152,7 +133,7 @@ static unsigned int defaultrcs = 257;
  * 7: blinking st cursor
  * 8: steady st cursor
  */
-//static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 6;
 static unsigned int cursorstyle = 0;
 static Rune stcursor = 0x2603; /* snowman ("â˜ƒ") */
 
@@ -201,20 +182,29 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD (ControlMask|ShiftMask)
 
 static Shortcut shortcuts[] = {
-	/* mask                 keysym          function        argument */
-	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
-	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
-	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
-	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
-	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
-	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_S,           cyclefonts,     {}        },
+  /* mask                 keysym          function        argument */
+  { XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
+  { ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
+  { ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
+  { XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
+  { TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
+  { TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+  { TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+  { TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
+  { TERMMOD,              XK_V,           clippaste,      {.i =  0} },
+  { TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
+  { ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+  { TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+  { TERMMOD,              XK_S,           cyclefonts,     {}        },
+  { TERMMOD,              XK_F1,          setpalette,     {.i =  0} },
+  { TERMMOD,              XK_F2,          setpalette,     {.i =  1} },
+  { TERMMOD,              XK_F3,          setpalette,     {.i =  2} },
+  { TERMMOD,              XK_F4,          setpalette,     {.i =  3} },
+  { TERMMOD,              XK_F5,          setpalette,     {.i =  4} },
+  { TERMMOD,              XK_F6,          setpalette,     {.i =  5} },
+  { TERMMOD,              XK_F7,          setpalette,     {.i =  6} },
+  { TERMMOD,              XK_F8,          setpalette,     {.i =  7} },
+  { TERMMOD,              XK_F9,          setpalette,     {.i =  8} },
 };
 
 /*

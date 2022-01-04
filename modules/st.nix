@@ -10,6 +10,8 @@
 #          sha256 = "1mz7dlyc5zykmvk8q33v2090d3immxzrd06x1snyv28z4q0szds8";
 #        })
 #
+        ../resources/st/st-color_schemes-0.8.4.diff
+        ../resources/st/st-cyclefonts-0.8.4.diff
 #        (fetchpatch {
 #          url = "https://st.suckless.org/patches/cyclefonts/st-cyclefonts-0.8.4.diff";
 #          sha256 = "1bba57yn3ch6qnvq1w5lz45y0670hjdh7mv72qrand7yhpl2jsyw";
@@ -26,10 +28,10 @@
 #          sha256 = "1k32nynyc8fvw2jb0sh2bll68c63xaj2lksgs9wnqlw30xn7ymw6";
 #        })
 
-        (fetchpatch {
-          url = "https://st.suckless.org/patches/palettes/st-color_schemes-0.8.1.diff";
-          sha256 = "1d7mymzyhs87mswzn732449k66zzzyhgig30bv90dk9qia7w0w7k";
-        })
+#        (fetchpatch {
+#          url = "https://st.suckless.org/patches/palettes/st-color_schemes-0.8.1.diff";
+#          sha256 = "1d7mymzyhs87mswzn732449k66zzzyhgig30bv90dk9qia7w0w7k";
+#        })
 
       ];
 
