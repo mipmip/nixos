@@ -16,7 +16,7 @@
 
   users.users.pim = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "disk"];
   };
 
   users.users.guest = {
