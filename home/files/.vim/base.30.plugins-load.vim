@@ -108,6 +108,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'vim-scripts/Cleanroom'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'logico/typewriter-vim'
+Plug 'mipmip/vim-whitewriter', { 'branch': 'main' }
 Plug 'ap/vim-css-color'
 Plug 'pbrisbin/vim-colors-off', { 'branch': 'main' }
 
