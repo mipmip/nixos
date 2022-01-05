@@ -11,6 +11,8 @@
     kitty
     git-sync
 
+    nodePackages.livedown
+
     mipmip_pkg.cryptobox
     cryptsetup
 

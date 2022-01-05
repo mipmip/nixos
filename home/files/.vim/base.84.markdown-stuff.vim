@@ -29,6 +29,7 @@ endfunction
 autocmd FileType markdown nnoremap <silent> _ :call CheckNew()<CR>
 autocmd FileType markdown nnoremap <silent> - :call Check()<CR>
 autocmd FileType markdown vnoremap <silent> - :call Check()<CR>
+autocmd FileType markdown setlocal conceallevel=2
 
 nnoremap <silent> <leader>xz :s/^\s*\(-<space>\\|\*<space>\)\?\zs\(\[[^\]]*\]<space>\)\?\ze./[<space>]<space>/<CR>0t]:noh<CR>
 nnoremap <silent> <leader>xx :s/^\s*\(-<space>\\|\*<space>\)\?\zs\(\[[^\]]*\]<space>\)\?\ze./[x]<space>/<CR>0t]:noh<CR>
