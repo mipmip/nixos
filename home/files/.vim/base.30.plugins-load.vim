@@ -1,15 +1,15 @@
 call plug#begin('~/.vim/plugged')
 
 " MY PLUGINS
-Plug 'mipmip/vim-fluid'
-Plug 'mipmip/vim-petra'
+"Plug 'mipmip/vim-fluid'
+"Plug 'mipmip/vim-petra'
 Plug 'mipmip/vim-hotpop'
 Plug 'mipmip/panelmanager.vim'
 
-if filereadable($HOME."/.i-am-desktop-machine")
-  Plug 'mipmip/vim-run-in-blender'
-  Plug 'mipmip/vim-show-in-filemanager', { 'branch': 'main' }
-endif
+"if filereadable($HOME."/.i-am-desktop-machine")
+"  Plug 'mipmip/vim-run-in-blender'
+"  Plug 'mipmip/vim-show-in-filemanager', { 'branch': 'main' }
+"endif
 
 if filereadable($HOME."/.i-am-second-brain")
   Plug 'mipmip/vim-scimark'
@@ -26,7 +26,7 @@ if filereadable($HOME."/.i-am-second-brain")
   " MARKDOWN/YAML/ETC
   Plug 'aserebryakov/vim-todo-lists'
   Plug 'dhruvasagar/vim-table-mode'
-  Plug 'pedrohdz/vim-yaml-folds'
+"  Plug 'pedrohdz/vim-yaml-folds'
 
   " SNIPPETS
   if v:version >= 800 && (has('python') || has('python3'))
@@ -38,30 +38,30 @@ if filereadable($HOME."/.i-am-second-brain")
 endif
 
 " VIM IDE & TWEAKS
-Plug 'vifm/vifm.vim'
+"Plug 'vifm/vifm.vim'
 Plug 'airblade/vim-rooter'
 Plug 'vim-scripts/delview'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'severin-lemaignan/vim-minimap'
+"Plug 'severin-lemaignan/vim-minimap'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'majutsushi/tagbar'
-Plug 'simnalamburt/vim-mundo'
-Plug 'junkblocker/git-time-lapse'
+"Plug 'majutsushi/tagbar'
+"Plug 'simnalamburt/vim-mundo'
+"Plug 'junkblocker/git-time-lapse'
 "Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
-Plug 'jpalardy/vim-slime', { 'branch': 'main' }
+"Plug 'jpalardy/vim-slime', { 'branch': 'main' }
 
 " VIM TEXT TOOLS
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-surround'
-Plug 'thiagoalessio/rainbow_levels.vim'
+"Plug 'thiagoalessio/rainbow_levels.vim'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'scrooloose/nerdcommenter'
 
@@ -89,7 +89,10 @@ Plug 'leafgarland/typescript-vim'
 Plug 'groenewege/vim-less'
 Plug 'chr4/nginx.vim'
 Plug 'ledger/vim-ledger'
-Plug 'morhetz/gruvbox'
+
+Plug 'ap/vim-css-color'
+
+"Plug 'morhetz/gruvbox'
 "
 "Plug 'gko/vim-coloresque'
 "Plug 'elzr/vim-json'
@@ -102,15 +105,15 @@ Plug 'morhetz/gruvbox'
 Plug 'rhysd/vim-grammarous'
 
 " COLORS
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 
-Plug 'vim-scripts/Cleanroom'
-Plug 'sonph/onehalf', { 'rtp': 'vim' }
+"Plug 'vim-scripts/Cleanroom'
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'logico/typewriter-vim'
 Plug 'mipmip/vim-whitewriter', { 'branch': 'main' }
-Plug 'ap/vim-css-color'
-Plug 'pbrisbin/vim-colors-off', { 'branch': 'main' }
+
+"Plug 'pbrisbin/vim-colors-off', { 'branch': 'main' }
 
 
 call plug#end()
