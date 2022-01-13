@@ -28,6 +28,8 @@
     /home/pim/nixos/home/dconf
   ];
 
+  home.sessionVariables.EDITOR = "vim";
+
   programs.zsh = {
     enable = true;
     autocd = true;
