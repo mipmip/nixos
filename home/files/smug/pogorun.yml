@@ -10,8 +10,10 @@ windows:
   - name: pogorun
     layout: main-horizontal
     commands:
+      - nix-shell
       - npm run _electron-dev
     panes:
       - type: horizontal
         commands:
+          - nix-shell
           - npm run _react-dev

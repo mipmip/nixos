@@ -1,14 +1,5 @@
-# manage files in ~
-
 {
 
-#  home.file = {
-#    ".pake" = {
-#      source = ./.pake;
-#      recursive = true;
-#    };
-#  };
-#
   home.file = {
     ".pandoc" = {
       source = ./.pandoc;
@@ -93,16 +84,6 @@
   };
 
   home.file = {
-    "./.pit-add-files" = {
-      source = ./.pit-add-files;
-    };
-  };
-  home.file = {
-    "./.pitstart.sh" = {
-      source = ./.pitstart.sh;
-    };
-  };
-  home.file = {
     "./.tmux.conf" = {
       source = ./.tmux.conf;
     };
@@ -118,36 +99,6 @@
       source = ./.Xresources;
     };
   };
-
-#  home.file = {
-#    "./.zlogin" = {
-#      source = ./.zlogin;
-#    };
-#  };
-#  home.file = {
-#    "./.zprofile" = {
-#      source = ./.zprofile;
-#    };
-#  };
-
-#  home.file = {
-#    "./.zshenv" = {
-#      source = ./.zshenv;
-#    };
-#  };
-#  home.file = {
-#    "./.zshrc" = {
-#      source = ./.zshrc;
-#    };
-#  };
-#
-#  home.file = {
-#    ".zsh.d" = {
-#      source = ./.zsh.d;
-#      recursive = true;
-#    };
-#  };
-
 
   home.file = {
     "./.config/alacritty.yml" = {
