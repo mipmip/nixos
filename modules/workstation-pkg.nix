@@ -27,6 +27,7 @@
     zathura
 
     docker
+    docker-compose
     nextcloud-client
     gimp
     inkscape

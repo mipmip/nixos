@@ -24,6 +24,8 @@
     pciutils
     xlibs.xvinfo
 
+    newsflash
+
     kooha
     zoom-us
     teams
