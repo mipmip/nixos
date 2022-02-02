@@ -1,4 +1,4 @@
-session: prpim
+session: lobby
 root: ""
 before_start: []
 stop: []

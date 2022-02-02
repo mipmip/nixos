@@ -1,9 +1,13 @@
 session: nixos
 root: "/home/pim/nixos"
-before_start: []
-stop: []
+
 windows:
-- name: nixos
-  commands:
-  - echo "NIXOS"
+  - name: nixos
+    commands:
+    - echo "NIXOS"
+
+  - name: sync
+    layout: main-horizontal
+    commands:
+      - watch -n 10 git-sync -n
 
