@@ -1,7 +1,4 @@
-session: prpim
-root: ""
-before_start: []
-stop: []
+session: lobby
 windows:
 - name: zsh
   root: /home/pim
