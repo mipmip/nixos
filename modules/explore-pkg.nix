@@ -13,7 +13,7 @@
 
     nodePackages.livedown
 
-    node2nix
+    nodePackages.node2nix
 
     mipmip_pkg.cryptobox
     cryptsetup
