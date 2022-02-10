@@ -42,6 +42,8 @@
     poedit
     intltool
 
+    remmina
+
     zettlr
     discord
   ];
