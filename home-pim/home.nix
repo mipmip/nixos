@@ -23,8 +23,8 @@
   # changes in each release.
   home.stateVersion = "21.05";
   home.sessionVariables.EDITOR = "vim";
-  home.sessionVariables.BROWSER = "firefox";
   programs.zsh.sessionVariables.EDITOR = "vim";
+  programs.zsh.sessionVariables.BROWSER = "firefox";
 
   imports = [
     /home/pim/nixos/home-pim/files
