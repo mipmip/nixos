@@ -28,6 +28,9 @@
 
     newsflash
 
+    # tmux
+    urlview
+
     kooha
     zoom-us
     teams

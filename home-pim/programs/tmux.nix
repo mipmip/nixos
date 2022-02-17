@@ -1,13 +1,18 @@
+{ config, pkgs, ... }:
+
 {
   programs.tmux = {
     enable = true;
+    sensibleOnTop = true;
+    newSession = true;
+    shortcut = "a";
+    plugins = [
+      pkgs.tmuxPlugins.urlview
+    ];
 
-#    extraConfig = ''
-#      source-file ~/.tmux/10-main.conf
-#      source-file ~/.tmux/20-bind_keys.conf
-#      if '[ -f ~/.i-am-desktop-machine ]' 'source ~/.tmux/30-desktop.conf'
-#      if '[ -f ~/.tmux/gpakosz.cf ]' 'source ~/.tmux/gpakosz.cf'
-#      run 'cat ~/.tmux/gpakosz.sh | sh -s _apply_configuration'
-#    ''
+    extraConfig = ''
+      if '[ -f ~/.tmux/gpakosz.cf ]' 'source ~/.tmux/gpakosz.cf'
+      run 'cat ~/.tmux/gpakosz.sh | sh -s _apply_configuration'
+    '';
   };
 }

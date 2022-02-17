@@ -28,7 +28,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins=["git" "tmux" "docker" "docker-compose"];
+      plugins=["git" "docker" "docker-compose"];
     };
 
     initExtra = ''
