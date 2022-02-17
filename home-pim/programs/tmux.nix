@@ -1,6 +1,5 @@
 {
-  programs.fzf = {
+  programs.tmux = {
     enable = true;
-    enableZshIntegration = true;
   };
 }
