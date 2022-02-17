@@ -6,6 +6,9 @@
     autocd = true;
     enableAutosuggestions = false;
 
+    sessionVariables.EDITOR = "vim";
+    sessionVariables.BROWSER = "firefox";
+
     shellAliases = {
       open = "xdg-open";
       t = "tmux a";
