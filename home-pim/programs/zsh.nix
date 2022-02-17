@@ -6,13 +6,14 @@
     autocd = true;
     enableAutosuggestions = false;
 
-    sessionVariables.EDITOR = "vim";
-    sessionVariables.BROWSER = "firefox";
+    sessionVariables = {
+      EDITOR = "vim";
+      BROWSER = "firefox";
+    };
 
     shellAliases = {
       open = "xdg-open";
       t = "tmux a";
-      # pake="noglob rake -f ~/Rakefile"
     };
 
     plugins = [
