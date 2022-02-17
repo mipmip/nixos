@@ -22,7 +22,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "21.05";
-  home.sessionVariables.EDITOR = "vim";
+
   programs.zsh.sessionVariables.EDITOR = "vim";
   programs.zsh.sessionVariables.BROWSER = "firefox";
 
