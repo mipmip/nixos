@@ -1,6 +1,8 @@
 {
   programs.tmux = {
     enable = true;
-    programs.tmux.extraConfig = ""
+    programs.tmux.extraConfig = ''
+
+      ''
   };
 }
