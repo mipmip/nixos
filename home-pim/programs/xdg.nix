@@ -1,3 +1,5 @@
+{ config, pkgs, ... }:
+{
   xdg.desktopEntries = {
     st = {
 
@@ -18,4 +20,4 @@
       };
     };
   };
-
+}
