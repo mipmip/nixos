@@ -26,7 +26,6 @@
 
   imports = [
     /home/pim/nixos/home-pim/files
-    /home/pim/nixos/home-pim/dconf
     /home/pim/nixos/home-pim/programs
   ];
 
