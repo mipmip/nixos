@@ -7,6 +7,7 @@
     ./zsh.nix
     ./git.nix
     ./fzf.nix
+    ./xdg.nix
   ];
 }
 
