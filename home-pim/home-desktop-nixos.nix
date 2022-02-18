@@ -23,7 +23,6 @@
   # changes in each release.
   home.stateVersion = "21.05";
 
-
   imports = [
     /home/pim/nixos/home-pim/files
     /home/pim/nixos/home-pim/dconf
