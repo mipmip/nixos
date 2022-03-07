@@ -1,6 +1,6 @@
-session: poppygo
+session: quiqr
 
-root: ~/cPoppyGo/poppygo-electron-app
+root: ~/cQuiqr/quiqr-desktop
 
 before_start:
 
