@@ -7,7 +7,7 @@ before_start:
 stop:
 
 windows:
-  - name: poppygo
+  - name: quiqr
     layout: main-horizontal
     commands:
       - vim ./
