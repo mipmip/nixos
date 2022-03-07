@@ -16,7 +16,7 @@ in
         ../../modules/common.nix
         ../../modules/common-pkg.nix
         ../../modules/crystal-dev.nix
-        ../../modules/poppygo-dev.nix
+        ../../modules/ansible.nix
         ../../modules/vim-large.nix
         ../../modules/workstation.nix
         ../../modules/workstation-pkg.nix
