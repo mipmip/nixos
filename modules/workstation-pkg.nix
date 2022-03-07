@@ -12,6 +12,8 @@
     ffmpeg
     alacritty
     go
+    gox
+    goreleaser
 
     hugo # needed for linny
     mipmip_pkg.fred # needed for linny
@@ -30,7 +32,7 @@
     docker-compose
     nextcloud-client
     gimp
-    inkscape
+    inkscape-with-extensions
     blender
     libreoffice
     spotify
