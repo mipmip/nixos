@@ -5,6 +5,7 @@
     mipmip_pkg.embgit
     ansible
     terraform
+    aws
   ]
   ++ (if pkgs.stdenv.isDarwin then
   [
