@@ -1,9 +1,9 @@
-session: sshpoppygo
+session: ssh-killerberg
 
 windows:
-  - name: maanzaad
+  - name: cheetah
     commands:
-      - ssh pim@maanzaad.node.poppygo.io
+      - ssh pim@cheetah.node.quiqr.org
   - name: opium
     commands:
       - ssh pim@opium.node.poppygo.io
