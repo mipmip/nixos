@@ -42,7 +42,6 @@
       bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
       #unbind l
-
       unbind C-a
       bind Tab last-window        # move to last active window
 
