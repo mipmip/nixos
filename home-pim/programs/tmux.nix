@@ -37,6 +37,15 @@
 
       set-option -g default-shell "env zsh"
 
+      set-window-option -g mode-keys vi
+      bind-key -T copy-mode-vi v send -X begin-selection
+      bind-key -T copy-mode-vi V send -X select-line
+      bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
+      #unbind l
+      bind Tab last-window        # move to last active window
+
+      bind s choose-tree -sZ -O name
 
 
 
