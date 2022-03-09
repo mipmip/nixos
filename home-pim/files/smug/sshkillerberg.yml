@@ -1,10 +1,10 @@
 session: ssh-killerberg
 
 windows:
-  - name: cheetah
-    commands:
-      - ssh pim@cheetah.node.quiqr.org
   - name: amy
     commands:
       - ssh pim@amy.node.snel.city
+  - name: cheetah
+    commands:
+      - ssh pim@cheetah.node.quiqr.org
 
