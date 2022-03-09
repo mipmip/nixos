@@ -1,4 +1,4 @@
-session: infra-killerberg
+session: ssh-killerberg
 
 windows:
   - name: amy
