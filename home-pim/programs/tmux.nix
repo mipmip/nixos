@@ -35,8 +35,6 @@
       set -g monitor-activity off
       set -g visual-activity off
 
-# move status line to top
-#set -g status-position top
       set-option -g default-shell "env zsh"
 
 
