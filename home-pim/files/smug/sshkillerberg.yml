@@ -10,5 +10,6 @@ windows:
   - name: sailfish
     commands:
       - ssh pim@sailfish.node.quiqr.org
-
-
+  - name: slechtvalk
+    commands:
+      - ssh pim@slechtvalk.node.quiqr.org
