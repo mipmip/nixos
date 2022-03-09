@@ -6,7 +6,7 @@
     sensibleOnTop = true;
     newSession = true;
     shortcut = "a";
-    historyLimit = 5000
+    historyLimit = 5000;
     plugins = [
       pkgs.tmuxPlugins.urlview
     ];
