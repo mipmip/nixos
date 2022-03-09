@@ -35,8 +35,6 @@
       set -g monitor-activity off
       set -g visual-activity off
 
-      set-option -g default-shell "env zsh"
-
       #COPYPASTE
       set-window-option -g mode-keys vi
       bind-key -T copy-mode-vi v send -X begin-selection
