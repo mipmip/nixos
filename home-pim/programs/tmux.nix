@@ -12,6 +12,10 @@
     ];
 
     extraConfig = ''
+      set -s escape-time 10                     # faster command sequences
+      set -sg repeat-time 600                   # increase repeat timeout
+
+
       if '[ -f ~/.tmux/gpakosz.cf ]' 'source ~/.tmux/gpakosz.cf'
       run 'cat ~/.tmux/gpakosz.sh | sh -s _apply_configuration'
     '';
