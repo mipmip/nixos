@@ -47,6 +47,8 @@
       bind Tab last-window        # move to last active window
 
       bind s choose-tree -sZ -O name
+# start with mouse mode enabled
+set -g mouse on
 
 
 
