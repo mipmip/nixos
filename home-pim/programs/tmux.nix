@@ -4,7 +4,7 @@
   programs.tmux = {
     enable = true;
     sensibleOnTop = true;
-    newSession = true;
+    newSession = false;
     shortcut = "a";
     historyLimit = 5000;
     plugins = [
