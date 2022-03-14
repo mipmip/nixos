@@ -10,7 +10,6 @@ wtf:
   refreshInterval: 1
   mods:
 
-
     hardware:
       title: "Hardware"
       args: []
@@ -23,7 +22,6 @@ wtf:
         width: 2
       refreshInterval: 30
       type: cmdrunner
-
 
     timeshift:
       title: "Backup Status"
