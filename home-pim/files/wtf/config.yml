@@ -14,7 +14,7 @@ wtf:
       title: "Hardware"
       args: []
       cmd: "/home/pim/.config/wtf/timeshift-last.sh"
-      enabled: false
+      enabled: true
       position:
         top: 0
         left: 0
