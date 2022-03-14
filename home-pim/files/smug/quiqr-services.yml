@@ -24,7 +24,7 @@ windows:
           - ./sentry
 
   - name: pay
-    root: ~/cQuiqr/pogopay
+    root: ~/cQuiqr/quiqr-pay
     layout: main-vertical
     commands:
      - echo "hi"
