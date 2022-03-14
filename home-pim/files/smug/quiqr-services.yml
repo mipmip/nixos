@@ -8,7 +8,7 @@ stop:
 
 windows:
   - name: board
-    root: ~/cQuiqr/
+    root: ~/cQuiqr/quiqr-board
     layout: main-vertical
     commands:
       - echo "hi"
