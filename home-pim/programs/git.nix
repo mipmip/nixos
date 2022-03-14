@@ -3,7 +3,8 @@
     enable = true;
     userName = "Pim Snel";
     userEmail = "post@pimsnel.com";
-    extraConfig = """
-    """
+    extraConfig = ''
+
+      ''
   };
 }
