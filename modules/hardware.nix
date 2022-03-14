@@ -1,0 +1,3 @@
+glxinfo
+ls_sensors
+
