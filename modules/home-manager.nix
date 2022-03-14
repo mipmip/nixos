@@ -13,7 +13,7 @@ in
     programs.zsh = {
       enable = true;
       autocd = true;
-      enableAutosuggestions = true;
+      enableAutosuggestions = false;
 
       oh-my-zsh = {
         enable = true;
