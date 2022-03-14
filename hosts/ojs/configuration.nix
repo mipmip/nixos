@@ -20,6 +20,7 @@ in
       ../../modules/workstation.nix
       ../../modules/virtualbox.nix
       ../../modules/workstation-pkg.nix
+      ../../modules/home-manager-global.nix
       ../../modules/texlive.nix
       ../../modules/fonts.nix
       ../../modules/st.nix
