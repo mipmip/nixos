@@ -1,5 +1,6 @@
 #!/bin/sh
 printf "ATI Temp"
+
 ls -1t /home/pim/Sys/Mayan/DatabaseBackups|head -n1 | cut -c12- | rev| cut -c9- | rev | tr _ ' '|sed 's/-/:/3'
 printf "Latest Mayan App-backup:     "
 ls -1t /home/pim/Sys/Mayan/AppBackups|head -n1 | cut -c11- | rev| cut -c12- | rev | tr _ ' '|sed 's/-/:/3'
