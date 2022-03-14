@@ -5,8 +5,7 @@
     userEmail = "post@pimsnel.com";
     extraConfig = ''
 [init]
-    defaultBranch = main
-
+defaultBranch = main
       ''
   };
 }
