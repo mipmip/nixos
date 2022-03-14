@@ -1,5 +1,6 @@
 #!/bin/sh
-printf "ATI Temp"
+sensors radeon-pci-0500 | grep temp1 | tr -s " " | sed 's/temp1/radion/g'
+
 
 ls -1t /home/pim/Sys/Mayan/DatabaseBackups|head -n1 | cut -c12- | rev| cut -c9- | rev | tr _ ' '|sed 's/-/:/3'
 printf "Latest Mayan App-backup:     "
