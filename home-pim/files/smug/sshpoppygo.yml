@@ -7,9 +7,6 @@ windows:
   - name: opium
     commands:
       - ssh pim@opium.node.poppygo.io
-  - name: amy
-    commands:
-      - ssh pim@amy.node.snel.city
   - name: pogosite.com
     commands:
       - ssh -i ~/.ssh/terraform ubuntu@pogosite.com

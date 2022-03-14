@@ -1,4 +1,0 @@
-session: prpim
-windows:
-- name: zsh
-  root: /home/pim
