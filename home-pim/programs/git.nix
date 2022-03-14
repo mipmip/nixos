@@ -6,6 +6,6 @@
     extraConfig = ''
 [init]
 defaultBranch = main
-      ''
+      '';
   };
 }
