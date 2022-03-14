@@ -24,12 +24,12 @@
   home.stateVersion = "21.05";
 
   imports = [
-    /home/pim/nixos/home-pim/programs/vim.nix
     /home/pim/nixos/home-pim/programs/git.nix
     /home/pim/nixos/home-pim/programs/tmux.nix
     /home/pim/nixos/home-pim/programs/fzf.nix
-    /home/pim/nixos/home-pim/programs/zsh.nix
+    /home/pim/nixos/home-pim/programs/vim.nix
     /home/pim/nixos/home-pim/programs/xdg.nix
+    /home/pim/nixos/home-pim/programs/zsh.nix
 
     /home/pim/nixos/home-pim/files
     /home/pim/nixos/home-pim/dconf
