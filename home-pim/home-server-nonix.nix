@@ -23,30 +23,4 @@
   # changes in each release.
   home.stateVersion = "21.05";
 
-  imports = [
-    /home/pim/nixos/home-pim/files
-    /home/pim/nixos/home-pim/programs
-  ];
-
-  xdg.desktopEntries = {
-    st = {
-
-      name           = "st";
-      comment        = "st suckless terminal";
-      genericName    = "st terminal";
-      exec           = "st";
-      categories     = [
-        "TerminalEmulator"
-      ];
-      terminal       = false;
-      startupNotify  = true;
-      type           = "Application";
-      icon           = "org.gnome.Terminal";
-      settings       = {
-        Keywords = "shell;prompt;command;commandline;cmd;";
-        StartupWMClass = "st-256color";
-      };
-    };
-  };
-
 }
