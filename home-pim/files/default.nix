@@ -83,7 +83,6 @@
     };
   };
 
-
   home.file = {
     "./.Xmodmap" = {
       source = ./.Xmodmap;
