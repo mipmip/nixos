@@ -13,7 +13,7 @@ wtf:
       title: "Backup Status"
       args: []
       cmd: "/home/pim/.config/wtf/timeshift-last.sh"
-      enabled: true
+      enabled: false
       position:
         top: 0
         left: 0
@@ -37,7 +37,7 @@ wtf:
       title: "Diverse systemen"
       args: []
       cmd: "/home/pim/.config/wtf/ssh-monitoring.sh"
-      enabled: true
+      enabled: false
       position:
         top: 1
         left: 0
