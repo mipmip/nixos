@@ -9,6 +9,22 @@ wtf:
     rows: [11, 4, 10, 10, 3, 10,10]
   refreshInterval: 1
   mods:
+
+
+        timeshift:
+      title: "Backup Status"
+      args: []
+      cmd: "/home/pim/.config/wtf/timeshift-last.sh"
+      enabled: false
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 30
+      type: cmdrunner
+
+
     timeshift:
       title: "Backup Status"
       args: []
