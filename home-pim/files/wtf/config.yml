@@ -12,7 +12,7 @@ wtf:
 
 
     hardware:
-      title: "Backup Status"
+      title: "Hardware"
       args: []
       cmd: "/home/pim/.config/wtf/timeshift-last.sh"
       enabled: false
