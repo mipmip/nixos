@@ -6,6 +6,10 @@ windows:
     commands:
     - echo "NIXOS"
 
+  - name: nixos
+    commands:
+    - echo "NIXOS"
+
   - name: sync
     layout: main-horizontal
     commands:
