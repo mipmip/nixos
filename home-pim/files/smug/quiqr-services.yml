@@ -37,7 +37,7 @@ windows:
           - stripe listen --forward-to localhost:4242/webhook
 
   - name: reddis
-    root: ~/cPoppyGo/redis-server
+    root: ~/cQuiqr/redis-server
     layout: main-vertical
     commands:
      - echo "hi"
