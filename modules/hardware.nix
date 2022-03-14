@@ -1,3 +1,4 @@
+
 glxinfo
-ls_sensors
+lm_sensors
 
