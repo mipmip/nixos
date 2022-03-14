@@ -1,6 +1,6 @@
 session: pogoboard
 
-root: ~/cPoppyGo/pogoboard
+root: ~/cQuiqr
 
 before_start:
 
