@@ -121,7 +121,7 @@ wtf:
     cryptolive:
       enabled: true
       position:
-        top: 6
+        top: 0
         left: 0
         height: 1
         width: 1
