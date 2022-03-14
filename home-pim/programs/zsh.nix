@@ -15,7 +15,7 @@
 
     shellAliases = {
       open = "xdg-open";
-      t = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos &&";
+      t = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos && smug start tekst";
     };
 
     plugins = [
