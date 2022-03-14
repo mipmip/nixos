@@ -6,7 +6,7 @@ windows:
     commands:
     - echo "NIXOS"
 
-  - name: nixos
+  - name: switch
     commands:
     - echo "NIXOS"
 
