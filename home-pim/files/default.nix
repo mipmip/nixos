@@ -74,11 +74,10 @@
 
 
   home.file = {
-    "./.lindex.yml" = {
-      source = ./.lindex.yml;
+    "./.ansible.cfg" = {
+      source = ./.ansible.cfg;
     };
   };
-
 
   home.file = {
     "./.lindex.yml" = {
