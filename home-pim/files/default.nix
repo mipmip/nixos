@@ -72,6 +72,14 @@
     };
   };
 
+
+  home.file = {
+    "./.lindex.yml" = {
+      source = ./.lindex.yml;
+    };
+  };
+
+
   home.file = {
     "./.lindex.yml" = {
       source = ./.lindex.yml;
