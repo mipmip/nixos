@@ -4,7 +4,6 @@ Date: Sun, 31 May 2020 22:48:25 -0400
 Subject: [PATCH] Allow blinking cursor
 
 ---
- config.def.h | 19 +++++++++++++------
  x.c          | 42 ++++++++++++++++++++++++++++++++----------
  2 files changed, 45 insertions(+), 16 deletions(-)
 
