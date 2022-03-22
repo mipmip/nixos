@@ -13,7 +13,7 @@
         ../resources/st/st-color_schemes-0.8.4.diff
         ../resources/st/st-cyclefonts-lineheight-0.8.4.diff
         ../resources/st/st-vertcenter-20180320-6ac8c8a.diff
-  st-blinking_cursor-0.8.4-custom.diff
+        ../resources/st/t-blinking_cursor-0.8.4-custom.diff
 
 #        (fetchpatch {
 #          url = "https://st.suckless.org/patches/cyclefonts/st-cyclefonts-0.8.4.diff";
