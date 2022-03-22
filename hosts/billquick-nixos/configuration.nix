@@ -30,7 +30,7 @@ in
         ../../modules/virtualbox.nix
         ../../modules/since-nixos-21-05.nix
         ../../modules/texlive.nix
-
+        ../../modules/quiqr-dev.nix
     ];
 
     services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
