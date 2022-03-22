@@ -13,6 +13,8 @@
         ../resources/st/st-color_schemes-0.8.4.diff
         ../resources/st/st-cyclefonts-lineheight-0.8.4.diff
         ../resources/st/st-vertcenter-20180320-6ac8c8a.diff
+  st-blinking_cursor-0.8.4-custom.diff
+
 #        (fetchpatch {
 #          url = "https://st.suckless.org/patches/cyclefonts/st-cyclefonts-0.8.4.diff";
 #          sha256 = "1bba57yn3ch6qnvq1w5lz45y0670hjdh7mv72qrand7yhpl2jsyw";
