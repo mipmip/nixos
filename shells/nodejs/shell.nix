@@ -2,7 +2,7 @@ with (import <nixpkgs> {});
 
 mkShell {
   buildInputs = [
-    ruby_2_7
+    nodejs
   ];
   shellHook = ''
     mkdir -p .nix-gems
