@@ -52,7 +52,7 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'majutsushi/tagbar'
 "Plug 'simnalamburt/vim-mundo'
 "Plug 'junkblocker/git-time-lapse'
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 "Plug 'jpalardy/vim-slime', { 'branch': 'main' }
 

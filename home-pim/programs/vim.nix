@@ -3,7 +3,9 @@
 {
   programs.vim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ ultisnips ];
+    plugins = with pkgs.vimPlugins; [
+      ultisnips
+    ];
     settings = {
       ignorecase = true;
     };
