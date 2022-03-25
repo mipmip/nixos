@@ -15,7 +15,7 @@ endfunction
 
 function! PandocMakePDF()
 " exe ":AsyncRun /usr/local/bin/fred process_frontmatter_specials -d % | sed 's/\\\[\\\[.*\\\]\\\]//g' > /tmp/pandotemp.md && ~/.rbenv/shims/pandocomatic -b -i /tmp/pandotemp.md"
- exe ":AsyncRun /home/pim/cVim/fred/bin/fred process_frontmatter_specials -d % | sed 's/\\\[\\\[.*\\\]\\\]//g' > /tmp/pandotemp.md && cd ~/nixos/shells/pandocomatic && nix-shell --run 'bundle exec pandocomatic -b -i /tmp/pandotemp.md'"
+ exe ":AsyncRun fred process_frontmatter_specials -d % | sed 's/\\\[\\\[.*\\\]\\\]//g' > /tmp/pandotemp.md && cd ~/nixos/shells/pandocomatic && nix-shell --run 'bundle exec pandocomatic -b -i /tmp/pandotemp.md'"
 endfunction
 
 function! OpenPandocPDF()
