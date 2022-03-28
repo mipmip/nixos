@@ -24,8 +24,8 @@
     firefox = {
 
       name           = "firefox";
-      comment        = "st suckless terminal";
-      genericName    = "st terminal";
+      comment        = "Firefox Browser";
+      genericName    = "firefox";
       exec           = "st";
       categories     = [
         "TerminalEmulator"
