@@ -38,7 +38,6 @@
     spotify
     unstable.tdesktop
     keepassxc
-    firefox
 
     gthumb
     peek
