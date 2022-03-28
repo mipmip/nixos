@@ -19,27 +19,5 @@
         StartupWMClass = "st-256color";
       };
     };
-
-
-    firefox = {
-
-      name           = "firefox";
-      comment        = "Firefox Browser";
-      genericName    = "firefox";
-      exec           = "firefox-default";
-      categories     = [
-        "TerminalEmulator"
-      ];
-      terminal       = false;
-      startupNotify  = true;
-      type           = "Application";
-      icon           = "org.gnome.Terminal";
-      settings       = {
-        Keywords = "shell;prompt;command;commandline;cmd;";
-        StartupWMClass = "st-256color";
-      };
-    };
-  };
-
   };
 }
