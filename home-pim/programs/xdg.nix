@@ -26,7 +26,7 @@
       name           = "firefox";
       comment        = "Firefox Browser";
       genericName    = "firefox";
-      exec           = "st";
+      exec           = "firefox-default";
       categories     = [
         "TerminalEmulator"
       ];
