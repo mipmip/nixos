@@ -3,6 +3,7 @@
 {
 
   environment.systemPackages = with pkgs; [
+    unstable.firefox
     texlive.combined.scheme-full
   ];
 }
@@ -14,7 +15,6 @@
 
 {
 
-    firefox
   environment.sessionVariables = {
       MOZ_ENABLE_WAYLAND = "1";
     };
