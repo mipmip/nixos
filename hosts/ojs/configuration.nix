@@ -24,7 +24,8 @@ in
       ../../modules/texlive.nix
       ../../modules/fonts.nix
       ../../modules/st.nix
-      ../../modules/firefox.nix
+      ../../modules/browser-firefox.nix
+      ../../modules/browser-chrome.nix
       ../../modules/nfspiet.nix
       ../../modules/peripherals_hurwenen.nix
       ../../modules/nixos-utils.nix
