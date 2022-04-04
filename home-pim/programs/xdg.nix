@@ -26,7 +26,7 @@
 
       name           = "Quiqr Desktop";
       comment        = "Quiqr Desktop";
-      genericName    = "st terminal";
+      genericName    = "quiqr desktop";
       exec           = "st";
       categories     = [ "TerminalEmulator" ];
       terminal       = false;
