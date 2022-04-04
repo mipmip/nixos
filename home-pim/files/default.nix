@@ -28,6 +28,13 @@
       recursive = true;
     };
   };
+  home.file = {
+    ".tmux" = {
+      source = ./.tmux;
+      recursive = true;
+    };
+  };
+
 
   home.file = {
     ".vim" = {
