@@ -50,7 +50,10 @@ in
   networking.useDHCP = false;
   networking.interfaces.wlp0s20u2.useDHCP = true;
 
-
+{
+  "127.0.0.1" = [ "foo.bar.baz" ];
+  "192.168.0.2" = [ "fileserver.local" "nameserver.local" ];
+};
 
   #KEYCHRON KEYBOARD SWAP FN KEY
   boot.extraModprobeConfig = ''
