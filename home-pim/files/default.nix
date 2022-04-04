@@ -30,7 +30,7 @@
   };
 
   home.file = {
-    ".tmux" = {
+    ".local/share/icons" = {
       source = ./.tmux;
       recursive = true;
     };
