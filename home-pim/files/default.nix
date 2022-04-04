@@ -28,6 +28,7 @@
       recursive = true;
     };
   };
+
   home.file = {
     ".tmux" = {
       source = ./.tmux;
