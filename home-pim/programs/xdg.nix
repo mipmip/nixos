@@ -22,7 +22,7 @@
     };
 
 
-    st = {
+    quiqr-desktop = {
 
       name           = "st";
       comment        = "st suckless terminal";
