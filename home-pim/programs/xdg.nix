@@ -14,7 +14,7 @@
       terminal       = false;
       startupNotify  = true;
       type           = "Application";
-      icon           = "org.gnome.Terminal";
+      icon           = "org.quiqr.quiqr-desktop";
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
         StartupWMClass = "st-256color";
