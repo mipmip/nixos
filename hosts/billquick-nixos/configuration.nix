@@ -50,10 +50,10 @@ in
   networking.useDHCP = false;
   networking.interfaces.wlp0s20u2.useDHCP = true;
 
-  networking.hosts = {
-      "127.0.0.1" = [ "billquick" "localhost" ];
-      "161.97.169.230" = [ "status.pimsnel.com" "pdns-admin.pimsnel.com" "nextcloud.pimsnel.com" ];
-    };
+#  networking.hosts = {
+#      "127.0.0.1" = [ "billquick" "localhost" ];
+#      "161.97.169.230" = [ "status.pimsnel.com" "pdns-admin.pimsnel.com" "nextcloud.pimsnel.com" ];
+#    };
 
   #KEYCHRON KEYBOARD SWAP FN KEY
   boot.extraModprobeConfig = ''
