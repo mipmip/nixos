@@ -51,8 +51,8 @@ in
   networking.interfaces.wlp0s20u2.useDHCP = true;
 
   networking.hosts = {
-      "127.0.0.1" = [ "billquick", "localhost" ];
-      "161.97.169.230" = [ "fileserver.local" "nameserver.local" ];
+      "127.0.0.1" = [ "billquick" "localhost" ];
+      "161.97.169.230" = [ "status.pimsnel.com" "nameserver.local" ];
     };
 
   #KEYCHRON KEYBOARD SWAP FN KEY
