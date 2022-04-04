@@ -24,8 +24,8 @@
 
     quiqr-desktop = {
 
-      name           = "st";
-      comment        = "st suckless terminal";
+      name           = "Quiqr Desktop";
+      comment        = "Quiqr Desktop";
       genericName    = "st terminal";
       exec           = "st";
       categories     = [
