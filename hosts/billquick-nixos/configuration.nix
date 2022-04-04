@@ -52,7 +52,7 @@ in
 
   networking.hosts = {
       "127.0.0.1" = [ "billquick" "localhost" ];
-      "161.97.169.230" = [ "status.pimsnel.com" "" ];
+      "161.97.169.230" = [ "status.pimsnel.com" "pdns-admin.pimsnel.com" ];
     };
 
   #KEYCHRON KEYBOARD SWAP FN KEY
