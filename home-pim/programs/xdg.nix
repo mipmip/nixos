@@ -14,7 +14,7 @@
       terminal       = false;
       startupNotify  = true;
       type           = "Application";
-      icon           = "org.quiqr.quiqr-desktop";
+      icon           = "org.gnome.Terminal";
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
         StartupWMClass = "st-256color";
@@ -28,13 +28,11 @@
       comment        = "Quiqr Desktop";
       genericName    = "st terminal";
       exec           = "st";
-      categories     = [
-        "TerminalEmulator"
-      ];
+      categories     = [ "TerminalEmulator" ];
       terminal       = false;
       startupNotify  = true;
       type           = "Application";
-      icon           = "org.gnome.Terminal";
+      icon           = "org.quiqr.quiqr-desktop";
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
         StartupWMClass = "quiqr";
