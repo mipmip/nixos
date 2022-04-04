@@ -31,11 +31,11 @@ in
         ../../modules/since-nixos-21-05.nix
         ../../modules/texlive.nix
         ../../modules/quiqr-dev.nix
-    ];
+      ];
 
-    services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
+      services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
 
-    networking.hostName = "billquick";
+      networking.hostName = "billquick";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -49,6 +49,8 @@ in
   networking.networkmanager.enable = true;
   networking.useDHCP = false;
   networking.interfaces.wlp0s20u2.useDHCP = true;
+
+
 
   #KEYCHRON KEYBOARD SWAP FN KEY
   boot.extraModprobeConfig = ''
@@ -68,7 +70,7 @@ in
 #  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.legacy_390;
 #  boot.kernelPackages = pkgs.linuxPackages_5_4;
 
-  system.stateVersion = "21.05"; # Did you read the comment?
+system.stateVersion = "21.05"; # Did you read the comment?
 
 
 
