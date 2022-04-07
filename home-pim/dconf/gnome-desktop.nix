@@ -99,6 +99,11 @@ in
       command = "gnome-screenshot -i";
       name = "screenshot";
     };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+      binding = "<Primary><Super>4";
+      command = "gnome-screenshot -i";
+      name = "screenshot";
+    };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {
       overrides = "{'Gtk/EnablePrimaryPaste': <0>, 'Gtk/DecorationLayout': <'close,minimize,maximize:menu'>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DialogsUseHeader': <0>}";
