@@ -79,10 +79,10 @@ in
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
       ];
       screensaver = [];
       search = [ "<Super>space" ];
@@ -92,6 +92,12 @@ in
       binding = "<Super>Return";
       command = "env st";
       name = "st";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Shift><Super>F";
+      command = "nautilus";
+      name = "screenshot";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
@@ -112,11 +118,6 @@ in
       name = "screenshot";
     };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
-      binding = "<Shift><Super>F";
-      command = "nautilus";
-      name = "screenshot";
-    };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {
       overrides = "{'Gtk/EnablePrimaryPaste': <0>, 'Gtk/DecorationLayout': <'close,minimize,maximize:menu'>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DialogsUseHeader': <0>}";
