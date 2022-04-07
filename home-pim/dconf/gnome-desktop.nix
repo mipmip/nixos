@@ -101,13 +101,13 @@ in
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-      binding = "<Shift><Super>b";
+      binding = "<Shift><Super>B";
       command = "firefox";
       name = "screenshot";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
-      binding = "<Shift><Super>f";
+      binding = "<Shift><Super>F";
       command = "nautilus";
       name = "screenshot";
     };
