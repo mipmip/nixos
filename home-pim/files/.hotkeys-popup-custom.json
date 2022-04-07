@@ -54,6 +54,23 @@
         ]
     },
     {
+        "name": "Tmux",
+        "shortcuts": [
+            {
+                "key": "u",
+                "description": "Select rectangle"
+            },
+            {
+                "key": "U",
+                "description": "Magic selection"
+            },
+            {
+                "key": "Shift + C",
+                "description": "Crop tool"
+            }
+        ]
+    },
+    {
         "name": "Gimp Shortcuts",
         "shortcuts": [
             {
