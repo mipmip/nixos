@@ -27,10 +27,6 @@
             {
                 "key": "R",
                 "description": "Select rectangle"
-            },
-            {
-                "key": "N",
-                "description": "Select nodes in object tool"
             }
         ]
     }
