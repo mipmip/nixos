@@ -136,5 +136,10 @@
       source = ./.entries.json;
     };
   };
+  home.file = {
+    "./..hotkeys-popup-custom.json" = {
+      source = ./.entries.json;
+    };
+  };
 
 }
