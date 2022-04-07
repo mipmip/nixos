@@ -20,5 +20,18 @@
                 "description": "Select nodes in object tool"
             }
         ]
+    },
+    {
+        "name": "Gimp Shortcuts",
+        "shortcuts": [
+            {
+                "key": "S",
+                "description": "Select object tool"
+            },
+            {
+                "key": "N",
+                "description": "Select nodes in object tool"
+            }
+        ]
     }
 ]
