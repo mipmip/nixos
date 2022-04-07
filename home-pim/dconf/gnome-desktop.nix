@@ -107,7 +107,7 @@ in
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-      binding = "<Shift><Super>$";
+      binding = "<Primary><Super>$";
       command = "gnome-screenshot -i";
       name = "screenshot";
     };
