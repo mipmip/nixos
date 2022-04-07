@@ -16,6 +16,7 @@
     shellAliases = {
       open = "xdg-open";
       t = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos && smug start tekst";
+      tn = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos && smug start tekst";
       smugs = "smug start doen && smug start sudo && smug start nixos && smug start tekst && smug start sshkillerberg";
     };
 
