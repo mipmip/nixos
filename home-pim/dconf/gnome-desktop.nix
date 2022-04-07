@@ -100,8 +100,8 @@ in
       name = "screenshot";
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-      binding = "<Primary><Super>4";
-      command = "gnome-screenshot -i";
+      binding = "<Shift><Super>B";
+      command = "firefox";
       name = "screenshot";
     };
 
