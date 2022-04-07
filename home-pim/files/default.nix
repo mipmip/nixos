@@ -137,8 +137,8 @@
     };
   };
   home.file = {
-    "./..hotkeys-popup-custom.json" = {
-      source = ./.entries.json;
+    "./.hotkeys-popup-custom.json" = {
+      source = ./.hotkeys-popup-custom.json;
     };
   };
 
