@@ -29,5 +29,36 @@
                 "description": "Select rectangle"
             }
         ]
+    },
+    {
+        "name": "Launchers",
+        "shortcuts": [
+            {
+                "key": "Super + Enter",
+                "description": "Open Terminal"
+            }
+        ]
+    },
+    {
+        "name": "Inkscape Shortcuts",
+        "shortcuts": [
+            {
+                "key": "S",
+                "description": "Select object"
+            },
+            {
+                "key": "N",
+                "description": "Select nodes"
+            }
+        ]
+    },
+    {
+        "name": "Gimp Shortcuts",
+        "shortcuts": [
+            {
+                "key": "R",
+                "description": "Select rectangle"
+            }
+        ]
     }
 ]
