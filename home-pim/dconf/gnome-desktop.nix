@@ -99,6 +99,14 @@ in
       command = "gnome-screenshot -i";
       name = "screenshot";
     };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
+      binding = "<Shift><Super>b";
+      command = "firefox";
+      name = "screenshot";
+    };
+
+
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
       binding = "<Shift><Super>b";
       command = "firefox";
