@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Launchers",
+        "shortcuts": [
+            {
+                "key": "Super + Enter",
+                "description": "Open Terminal"
+            }
+        ]
+    },
+    {
+        "name": "Inkscape Shortcuts",
+        "shortcuts": [
+            {
+                "key": "S",
+                "description": "Select object tool"
+            }
+        ]
+    }
+]
