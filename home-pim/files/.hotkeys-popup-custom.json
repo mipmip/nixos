@@ -57,7 +57,7 @@
         "name": "Tmux",
         "shortcuts": [
             {
-                "key": "Prefix + u",
+                "key": "R",
                 "description": "Select rectangle"
             },
             {
