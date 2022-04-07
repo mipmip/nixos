@@ -5,6 +5,22 @@
             {
                 "key": "Super + Enter",
                 "description": "Open Terminal"
+            },
+            {
+                "key": "Shift + Super + B",
+                "description": "Open Firefox"
+            },
+            {
+                "key": "Shift + Super + F",
+                "description": "Open Files"
+            },
+            {
+                "key": "CTRL + Super + 4",
+                "description": "Open Files"
+            },
+            {
+                "key": "Shift + Super + 1",
+                "description": "Open Tempo"
             }
         ]
     },
@@ -18,6 +34,22 @@
             {
                 "key": "N",
                 "description": "Select nodes"
+            },
+            {
+                "key": "Shift + CTRL + D",
+                "description": "Select nodes"
+            },
+            {
+                "key": "Shift + CTRL + E",
+                "description": "Export to PNG"
+            },
+            {
+                "key": "Shift + CTRL + N",
+                "description": "New layer"
+            },
+            {
+                "key": "CTRL + M",
+                "description": "Move selection to layer"
             }
         ]
     },
@@ -27,6 +59,14 @@
             {
                 "key": "R",
                 "description": "Select rectangle"
+            },
+            {
+                "key": "U",
+                "description": "Magic selection"
+            },
+            {
+                "key": "Shift + C",
+                "description": "Crop tool"
             }
         ]
     }
