@@ -13,11 +13,11 @@
         "shortcuts": [
             {
                 "key": "S",
-                "description": "Select object tool"
+                "description": "Select object"
             },
             {
                 "key": "N",
-                "description": "Select nodes in object tool"
+                "description": "Select nodes"
             }
         ]
     },
