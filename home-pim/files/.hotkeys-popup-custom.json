@@ -59,14 +59,6 @@
             {
                 "key": "Prefix u",
                 "description": "Urlview"
-            },
-            {
-                "key": "U",
-                "description": "Magic selection"
-            },
-            {
-                "key": "Shift + C",
-                "description": "Crop tool"
             }
         ]
     },
