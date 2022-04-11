@@ -52,7 +52,6 @@
       if '[ -f ~/.tmux/gpakosz.cf ]' 'source ~/.tmux/gpakosz.cf'
       run 'cat ~/.tmux/gpakosz.sh | sh -s _apply_configuration'
 
-      setenv EDITOR "vim"
     '';
   };
 }
