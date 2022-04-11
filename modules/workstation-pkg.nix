@@ -27,6 +27,7 @@
   ]
   else [
     zathura
+    x264
 
     docker
     docker-compose
