@@ -39,6 +39,9 @@ windows:
       - type: horizontal
         commands:
           - stripe listen --forward-to localhost:4242/webhook
+      - type: horizontal
+        commands:
+          - stripe listen --forward-to localhost:4242/webhook
 
   - name: reddis
     root: ~/cQuiqr/quiqr-pay
