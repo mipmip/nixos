@@ -42,17 +42,5 @@ windows:
           - stripe listen --forward-to localhost:4242/webhook
       - type: horizontal
         commands:
-          - nix-shell
-      
-
-  - name: reddis
-    root: ~/cQuiqr/quiqr-pay
-    layout: main-vertical
-    commands:
-     - echo "hi"
-    panes:
-      - type: horizontal
-        commands:
-          - nix-shell
-          - ./rerun.sh
+          - docker-compose -f docker-compose-dev.yml up redis
 
