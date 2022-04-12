@@ -37,8 +37,7 @@ in
 
 
   environment.systemPackages = with pkgs; [
-    htop
-    silver-searcher
+    unity3d
   ];
 
 
