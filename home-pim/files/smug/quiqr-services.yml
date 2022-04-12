@@ -38,10 +38,12 @@ windows:
           - ./rerun.sh
       - type: horizontal
         commands:
+          - nix-shell
           - stripe listen --forward-to localhost:4242/webhook
       - type: horizontal
         commands:
-          - stripe listen --forward-to localhost:4242/webhook
+          - nix-shell
+      
 
   - name: reddis
     root: ~/cQuiqr/quiqr-pay
