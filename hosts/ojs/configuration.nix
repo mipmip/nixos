@@ -35,6 +35,9 @@ in
       <nix-ld/modules/nix-ld.nix>
   ];
 
+
+
+
   services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
 
   networking.hostName = "ojs";
