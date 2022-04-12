@@ -41,7 +41,7 @@ windows:
           - stripe listen --forward-to localhost:4242/webhook
 
   - name: reddis
-    root: ~/cQuiqr/redis-server
+    root: ~/cQuiqr/quiqr-pay
     layout: main-vertical
     commands:
      - echo "hi"
