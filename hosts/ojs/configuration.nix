@@ -36,6 +36,10 @@ in
   ];
 
 
+  environment.systemPackages = with pkgs; [
+    htop
+    silver-searcher
+  ];
 
 
   services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
