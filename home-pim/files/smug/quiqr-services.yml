@@ -18,6 +18,7 @@ windows:
           - ./pogocli
       - type: horizontal
         commands:
+      - nix-shell
           - ./sentry --build="make build_cli" --run="ls"
       - type: horizontal
         commands:
