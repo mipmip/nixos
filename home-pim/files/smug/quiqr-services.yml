@@ -15,13 +15,15 @@ windows:
     panes:
       - type: horizontal
         commands:
+          - nix-shell
           - ./pogocli
       - type: horizontal
         commands:
-      - nix-shell
+          - nix-shell
           - ./sentry --build="make build_cli" --run="ls"
       - type: horizontal
         commands:
+          - nix-shell
           - ./sentry
 
   - name: pay
