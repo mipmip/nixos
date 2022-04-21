@@ -53,6 +53,8 @@
     unstable.gnome.gpaste
     glib.dev
     glade
+
+    whatsapp-for-linux
   ]);
 
 }
