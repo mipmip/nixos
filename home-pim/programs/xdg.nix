@@ -25,8 +25,8 @@
     vim = {
 
       name           = "VimSt";
-      comment        = "Vim";
-      genericName    = "Vim";
+      comment        = "VimSt";
+      genericName    = "VimSt";
       exec           = "st -e vim";
       categories     = [
         "TerminalEmulator"
@@ -37,7 +37,7 @@
       icon           = "gvim";
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
-        StartupWMClass = "vim";
+        StartupWMClass = "vimt;
       };
     };
 
