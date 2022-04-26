@@ -22,12 +22,12 @@
       };
     };
 
-    st = {
+    vim = {
 
       name           = "st";
       comment        = "st suckless terminal";
       genericName    = "st terminal";
-      exec           = "st";
+      exec           = "st -e vim";
       categories     = [
         "TerminalEmulator"
       ];
