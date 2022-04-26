@@ -34,7 +34,7 @@
       terminal       = false;
       startupNotify  = true;
       type           = "Application";
-      icon           = "org.gnome.Terminal";
+      icon           = "gvim";
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
         StartupWMClass = "vim";
