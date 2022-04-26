@@ -4,7 +4,6 @@
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      ultisnips
       vim-javascript
       vim-jsx-pretty
     ];
