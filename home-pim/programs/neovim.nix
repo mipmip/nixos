@@ -8,6 +8,7 @@
       vim-jsx-pretty
       NeoSolarized
       fzf-lsp-nvim
+      nerdtree
     ];
 
     extraConfig = ''
