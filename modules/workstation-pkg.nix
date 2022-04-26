@@ -9,6 +9,7 @@
     pandoc
     neofetch
     neovim
+    neovide
     ffmpeg
     alacritty
     go
