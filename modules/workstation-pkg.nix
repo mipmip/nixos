@@ -8,7 +8,7 @@
     weechat
     pandoc
     neofetch
-    neovim
+    unstable.neovim
     neovide
     neovim-qt
     gnvim
