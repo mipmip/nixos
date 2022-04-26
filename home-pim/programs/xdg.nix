@@ -29,25 +29,6 @@
       };
     };
 
-    xvim = {
-
-      name           = "xvim";
-      comment        = "xVim";
-      genericName    = "xVim";
-      exec           = "vim -g";
-      categories     = [
-        "TextEditor"
-      ];
-      terminal       = false;
-      startupNotify  = true;
-      type           = "Application";
-      icon           = "gvim";
-      settings       = {
-        Keywords = "shell;prompt;command;commandline;cmd;";
-        StartupWMClass = "gvim";
-      };
-    };
-
     quiqr-desktop = {
 
       name           = "Quiqr Desktop";
