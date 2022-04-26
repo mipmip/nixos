@@ -10,6 +10,7 @@
     neofetch
     neovim
     neovide
+    neovim-qt
     ffmpeg
     alacritty
     go
