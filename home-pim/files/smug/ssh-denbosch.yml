@@ -1,4 +1,4 @@
-session: sshdenbosch
+session: ssh-denbosch
 
 windows:
   - name: schurk
