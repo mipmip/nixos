@@ -37,7 +37,7 @@
       icon           = "gvim";
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
-        StartupWMClass = "vimt;
+        StartupWMClass = "vimst";
       };
     };
 
