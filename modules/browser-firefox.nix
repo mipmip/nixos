@@ -3,7 +3,7 @@
 {
 
   environment.systemPackages = with pkgs; [
-    unstable.firefox
+    firefox
   ];
 
   environment.sessionVariables = {
