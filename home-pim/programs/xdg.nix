@@ -37,7 +37,7 @@
       icon           = "org.gnome.Terminal";
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
-        StartupWMClass = "st-256color";
+        StartupWMClass = "vim";
       };
     };
 
