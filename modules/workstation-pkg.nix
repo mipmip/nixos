@@ -56,6 +56,7 @@
     baobab # GrandPerspective
     appimage-run
     unstable.gnome.gpaste
+    gnome.gpaste
     glib.dev
     glade
 
