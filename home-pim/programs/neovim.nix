@@ -7,9 +7,6 @@
       vim-javascript
       vim-jsx-pretty
     ];
-    settings = {
-      ignorecase = true;
-    };
 
     extraConfig = ''
     '';
