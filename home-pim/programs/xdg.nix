@@ -24,7 +24,7 @@
 
     vim = {
 
-      name           = "st";
+      name           = "vim";
       comment        = "st suckless terminal";
       genericName    = "st terminal";
       exec           = "st -e vim";
