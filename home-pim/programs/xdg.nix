@@ -1,14 +1,7 @@
 { config, pkgs, ... }:
 {
 
-#  xdg.mimeApps.enable = false;
-
-  #xdg.mimeApps.associations.added = {
-    #"application/x-yaml" = [ "xvim.desktop"];
-#  };
-
   xdg.desktopEntries = {
-
 
     st = {
 
