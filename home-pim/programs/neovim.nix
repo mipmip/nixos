@@ -7,6 +7,9 @@
       vim-javascript
       vim-jsx-pretty
       NeoSolarized
+      fzf-lsp-nvim
+
+
     ];
 
     extraConfig = ''
