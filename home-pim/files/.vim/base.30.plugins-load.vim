@@ -30,7 +30,7 @@ if filereadable($HOME."/.i-am-second-brain")
 
   " SNIPPETS
   if v:version >= 800 && (has('python') || has('python3'))
-    "Plug 'SirVer/ultisnips'
+    Plug 'SirVer/ultisnips'
     " Snippets are separated from the engine. Add this if you want them:
     Plug 'honza/vim-snippets'
   endif
@@ -80,8 +80,10 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-ruby/vim-ruby'
 Plug 'evanleck/vim-svelte'
 Plug 'cakebaker/scss-syntax.vim'
-"Plug 'pangloss/vim-javascript'
-"Plug 'mxw/vim-jsx'
+
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+
 Plug 'rhysd/vim-crystal'
 "Plug 'arrufat/vala.vim'
 Plug 'leafgarland/typescript-vim'

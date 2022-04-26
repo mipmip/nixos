@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
 {
+
+#  xdg.mimeApps.enable = false;
+
+  #xdg.mimeApps.associations.added = {
+    #"application/x-yaml" = [ "xvim.desktop"];
+#  };
+
   xdg.desktopEntries = {
 
 
@@ -22,14 +29,14 @@
       };
     };
 
-    vim = {
+    xvim = {
 
-      name           = "VimSt";
-      comment        = "VimSt";
-      genericName    = "VimSt";
-      exec           = "st -e vim";
+      name           = "xvim";
+      comment        = "xVim";
+      genericName    = "xVim";
+      exec           = "vim -g";
       categories     = [
-        "TerminalEmulator"
+        "TextEditor"
       ];
       terminal       = false;
       startupNotify  = true;
@@ -37,7 +44,7 @@
       icon           = "gvim";
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
-        StartupWMClass = "vimst";
+        StartupWMClass = "gvim";
       };
     };
 

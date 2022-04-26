@@ -22,6 +22,8 @@
     mipmip_pkg.fred # needed for linny
 
     vimHugeX
+    #vim_configurable
+
     gitFull
   ]
 
