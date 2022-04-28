@@ -92,6 +92,7 @@ Plug 'chr4/nginx.vim'
 Plug 'ledger/vim-ledger'
 
 Plug 'ap/vim-css-color'
+Plug 'RRethy/vim-hexokinase'
 
 "Plug 'morhetz/gruvbox'
 "
