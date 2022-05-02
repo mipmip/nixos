@@ -44,7 +44,7 @@
       type           = "Application";
       icon           = "gvim";
       settings       = {
-        Keywords = "Text;editor";
+        Keywords = "Text;editor;";
         StartupWMClass = "gvim";
       };
     };
