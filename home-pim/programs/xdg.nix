@@ -32,7 +32,7 @@
     gvim = {
 
       name           = "gvim";
-      comment        = "gvim";
+      comment        = "Edit text files";
       genericName    = "gvim";
       exec           = "gvim --remote-tab-silent %F";
       categories     = [
