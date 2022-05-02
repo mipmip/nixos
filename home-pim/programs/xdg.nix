@@ -30,7 +30,6 @@
     };
 
     gvim = {
-
       name           = "gvim";
       comment        = "Edit text files";
       genericName    = "Text editor";
