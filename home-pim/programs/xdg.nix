@@ -36,7 +36,8 @@
       genericName    = "gvim";
       exec           = "gvim --remote-tab-silent %F";
       categories     = [
-        ""
+        "Utility"
+        "TextEditor"
       ];
       terminal       = false;
       startupNotify  = true;
