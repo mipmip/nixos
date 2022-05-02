@@ -3,7 +3,6 @@
 
   xdg.desktopEntries = {
 
-
     st = {
 
       name           = "st";
