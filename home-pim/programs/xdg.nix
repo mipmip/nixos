@@ -1,7 +1,14 @@
 { config, pkgs, ... }:
 {
 
+#  xdg.mimeApps.enable = false;
+
+  #xdg.mimeApps.associations.added = {
+    #"application/x-yaml" = [ "xvim.desktop"];
+#  };
+
   xdg.desktopEntries = {
+
 
     st = {
 
@@ -19,6 +26,25 @@
       settings       = {
         Keywords = "shell;prompt;command;commandline;cmd;";
         StartupWMClass = "st-256color";
+      };
+    };
+
+    gvim = {
+
+      name           = "gvim";
+      comment        = "gvim";
+      genericName    = "gvim";
+      exec           = "gvim ";
+      categories     = [
+        "TextEditor"
+      ];
+      terminal       = false;
+      startupNotify  = true;
+      type           = "Application";
+      icon           = "gvim";
+      settings       = {
+        Keywords = "shell;prompt;command;commandline;cmd;";
+        StartupWMClass = "gvim";
       };
     };
 
