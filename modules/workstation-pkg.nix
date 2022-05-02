@@ -9,9 +9,6 @@
     pandoc
     neofetch
     unstable.neovim
-    neovide
-    neovim-qt
-    gnvim
     ffmpeg
     alacritty
     go
