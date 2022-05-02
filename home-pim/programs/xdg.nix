@@ -33,7 +33,7 @@
 
       name           = "gvim";
       comment        = "Edit text files";
-      genericName    = "gvim";
+      genericName    = "Text editor";
       exec           = "gvim --remote-tab-silent %F";
       categories     = [
         "Utility"
