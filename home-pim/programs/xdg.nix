@@ -34,7 +34,7 @@
       name           = "gvim";
       comment        = "gvim";
       genericName    = "gvim";
-      exec           = "gvim ";
+      exec           = "gvim --remote-tab-silent %F";
       categories     = [
         "TextEditor"
       ];
