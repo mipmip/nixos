@@ -2,7 +2,7 @@
 
 let
 
-    custom-python = nixpkgs.mkPython {
+    custom-python = pkgs.mkPython {
         python = "python39Full";
         requirements = ''
             pip
