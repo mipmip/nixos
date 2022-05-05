@@ -16,6 +16,7 @@
     yj
     imagemagick
     python3
+    python3Packages.setuptools
     openssl
     direnv
     zip
