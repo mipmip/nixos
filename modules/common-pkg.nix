@@ -16,8 +16,8 @@
     yj
     imagemagick
     python3Full
-    python35Packages.pip
-    python35Packages.setuptools
+    python3Packages.pip
+    python3Packages.setuptools
     openssl
     direnv
     zip
