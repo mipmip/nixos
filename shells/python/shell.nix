@@ -2,21 +2,11 @@
 
 let
 
-    mach-nix = import (
-        builtins.fetchGit {
-            url = "https://github.com/DavHau/mach-nix/";
-            ref = "refs/tags/3.3.0";
-        }
-    ) {};
-
-    custom-python = mach-nix.mkPython {
+    custom-python = nixpkgs.mkPython {
         python = "python39Full";
         requirements = ''
             pip
             ipython
-            griddly
-            matplotlib
-            pygame
         '';
         providers = {
             _default = "wheel,sdist,nixpkgs";
