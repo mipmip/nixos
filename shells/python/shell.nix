@@ -10,7 +10,7 @@ let
     ) {};
 
     custom-python = mach-nix.mkPython {
-        python = "python38Full";
+        python = "python39Full";
         requirements = ''
             pip
             ipython
