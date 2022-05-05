@@ -2,6 +2,7 @@
 with (import <nixpkgs> {});
 let
   my-python-packages = python-packages: with python-packages; [
+    setuptools
     requests
     # other python packages you want
   ];
