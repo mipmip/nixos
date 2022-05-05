@@ -19,14 +19,5 @@ with pkgs;
 mkShell {
   buildInputs = [
     custom-python
-    # tried with and without this next line:
-    gccStdenv
-    # griddly requires the Vulkan-SDK. Is this it?
-    vulkan-headers
-    vulkan-loader
-    vulkan-tools
   ];
-
-  # tried with and without this next line:
-  LD_LIBRARY_PATH="${lib.makeLibraryPath [stdenv.cc.cc]}";
 }
