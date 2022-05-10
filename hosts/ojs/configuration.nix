@@ -42,7 +42,7 @@ in
 
   networking.hosts = {
       "127.0.0.1" = [ "ojs" "localhost" ];
-      "213.206.241.6" = [ "status.pimsnel.com" "pdns-admin.pimsnel.com" "nextcloud.pimsnel.com" ];
+      "213.206.241.6" = [ "buwa.nl" "www.buwa.nl" ];
     };
 
 
