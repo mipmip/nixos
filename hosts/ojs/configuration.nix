@@ -40,6 +40,11 @@ in
     unity3d
   ];
 
+#  networking.hosts = {
+  #      "127.0.0.1" = [ "billquick" "localhost" ];
+  #      "161.97.169.230" = [ "status.pimsnel.com" "pdns-admin.pimsnel.com" "nextcloud.pimsnel.com" ];
+  #    };
+
 
   services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
 
