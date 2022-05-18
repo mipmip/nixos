@@ -48,6 +48,7 @@
     remmina
 
     zettlr
+    notify
     discord
   ];
 }
