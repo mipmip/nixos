@@ -15,7 +15,7 @@ buildGoModule rec {
     description = ''
     '';
     homepage = "https://github.com/src-d/hercules";
-    license = licenses.mit;
+    license = licenses.apache;
   };
 }
 
