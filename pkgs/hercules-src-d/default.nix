@@ -16,7 +16,7 @@ buildGoModule rec {
        Gaining advanced insights from Git repository history.
     '';
     homepage = "https://github.com/src-d/hercules";
-    license = licenses.apache;
+    license = licenses.asl20;
   };
 }
 
