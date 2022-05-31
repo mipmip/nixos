@@ -9,7 +9,7 @@ buildGoModule rec {
     sha256 = "";
   };
 
-  vendorSha256 = "sha256:xxx";
+  vendorSha256 = "";
 
   meta = with lib; {
     description = ''
