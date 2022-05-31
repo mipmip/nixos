@@ -1,7 +1,7 @@
 { lib, buildGoModule, fetchgit }:
 buildGoModule rec {
-  pname = "smug";
-  version = "0.2.4";
+  pname = "hercules-src-d";
+  version = "10.7.2";
 
   src = fetchgit {
     url = "https://github.com/src-d/hercules.git";
@@ -13,9 +13,8 @@ buildGoModule rec {
 
   meta = with lib; {
     description = ''
-      https://github.com/src-d/hercules
     '';
-    homepage = "https://github.com/ivaaaan/smug";
+    homepage = "https://github.com/src-d/hercules";
     license = licenses.mit;
   };
 }
