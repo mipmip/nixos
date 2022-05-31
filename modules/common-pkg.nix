@@ -9,6 +9,7 @@
     apg
     glow
     mipmip_pkg.smug
+    mipmip_pkg.hercules
     ctags
     git-lfs
     sc-im
