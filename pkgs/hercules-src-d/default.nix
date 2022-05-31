@@ -13,7 +13,7 @@ buildGoModule rec {
 
   meta = with lib; {
     description = ''
-      Session manager for tmux written in Go
+      https://github.com/src-d/hercules
     '';
     homepage = "https://github.com/ivaaaan/smug";
     license = licenses.mit;
