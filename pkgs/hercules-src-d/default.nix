@@ -13,6 +13,7 @@ buildGoModule rec {
 
   meta = with lib; {
     description = ''
+       Gaining advanced insights from Git repository history.
     '';
     homepage = "https://github.com/src-d/hercules";
     license = licenses.apache;
