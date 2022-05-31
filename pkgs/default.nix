@@ -11,12 +11,12 @@ let
 
     smug           = pkgs.callPackage ./smug      { };
     hercules-src-d = pkgs.callPackage ./hercules-src-d      { };
-    #yj-go     = pkgs.callPackage ./yj-go     { };
     crelease       = pkgs.callPackage ./crelease  { };
     fred           = pkgs.callPackage ./fred      { };
     embgit         = pkgs.callPackage ./embgit    { };
-    #dstp      = pkgs.callPackage ./dstp      { };
     cryptobox      = pkgs.callPackage ./cryptobox { };
+    #yj-go     = pkgs.callPackage ./yj-go     { };
+    #dstp      = pkgs.callPackage ./dstp      { };
 
     open3d    = pkgs.python38Packages.callPackage ./open3d    { };
 
