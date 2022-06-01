@@ -10,6 +10,7 @@
     glow
     mipmip_pkg.smug
     ctags
+    cheat
     git-lfs
     sc-im
     jq
