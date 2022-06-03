@@ -33,7 +33,7 @@
 
     kooha
     zoom-us
-    teams
+    #teams
 
     #PHOTO ORGANIZER
     shotwell
