@@ -41,6 +41,7 @@
     spotify
     unstable.tdesktop
     keepassxc
+    bitwarden
 
     gthumb
     peek
