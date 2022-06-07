@@ -12,7 +12,7 @@
     ffmpeg
     alacritty
     #go
-    go_1_18
+    unstable.go_1_18
     gox
     goreleaser
 
