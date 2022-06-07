@@ -24,7 +24,7 @@
     # HARDWARE UTILS
     dmidecode
     pciutils
-    xlibs.xvinfo
+    #xlibs.xvinfo
 
     newsflash
 
