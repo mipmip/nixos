@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    #mipmip_pkg.embgit
+    mipmip_pkg.embgit
     ansible
     terraform
     aws
