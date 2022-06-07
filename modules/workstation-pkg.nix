@@ -57,6 +57,7 @@
     glib.dev
     glade
 
+
     whatsapp-for-linux
   ]);
 
