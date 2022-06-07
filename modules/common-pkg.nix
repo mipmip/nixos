@@ -30,7 +30,6 @@
   ]
   else
   [
-    telnet
     vifm
     wtf
     binutils
