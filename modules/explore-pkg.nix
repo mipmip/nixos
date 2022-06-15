@@ -50,5 +50,7 @@
     zettlr
     notify
     discord
+
+    slop
   ];
 }
