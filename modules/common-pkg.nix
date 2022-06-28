@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    util-linux
     htop
     silver-searcher
     fzf
