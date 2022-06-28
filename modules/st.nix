@@ -7,7 +7,7 @@
       version = "0.8.4";
       src = fetchurl {
         url = "https://dl.suckless.org/st/${pname}-${version}.tar.gz";
-        hash = "19j66fhckihbg30ypngvqc9bcva47mp379ch5vinasjdxgn3qbfl";
+        sha256 = "19j66fhckihbg30ypngvqc9bcva47mp379ch5vinasjdxgn3qbfl";
         };
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       patches = [
