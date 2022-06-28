@@ -11,8 +11,7 @@
     neovim
     ffmpeg
     alacritty
-    #go
-    unstable.go_1_18
+    go_1_18
     gox
     goreleaser
 
