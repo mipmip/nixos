@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    dia
     gnome.networkmanager-openvpn
     youtube-dl
     tangram
