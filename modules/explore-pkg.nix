@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     gnome.networkmanager-openvpn
     youtube-dl
-    tangram
     kitty
     git-sync
 
