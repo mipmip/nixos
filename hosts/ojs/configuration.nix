@@ -31,7 +31,6 @@ in
       ../../modules/nixos-utils.nix
       ../../modules/explore-pkg.nix
       ../../modules/hardware.nix
-      ../../modules/since-nixos-21-05.nix
       <nix-ld/modules/nix-ld.nix>
   ];
 
