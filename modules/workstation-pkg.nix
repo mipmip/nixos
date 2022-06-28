@@ -8,7 +8,7 @@
     weechat
     pandoc
     neofetch
-    unstable.neovim
+    neovim
     ffmpeg
     alacritty
     #go
