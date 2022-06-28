@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     (st.overrideAttrs (oldAttrs: rec {
+      pname = "st";
       version = "0.8.4";
       src = fetchurl {
         url = "https://dl.suckless.org/st/${pname}-${version}.tar.gz";
