@@ -17,9 +17,6 @@
     #NIX/GNOME/HOMEMANAGER
     dconf2nix
 
-    # HARDWARE UTILS
-    dmidecode
-    pciutils
 
     newsflash
 
