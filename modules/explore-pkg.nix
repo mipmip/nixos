@@ -22,7 +22,7 @@
     urlview
 
     kooha
-    zoom-us
+    #zoom-us
     #teams
 
     #DSTP
