@@ -18,7 +18,7 @@ let
     #yj-go     = pkgs.callPackage ./yj-go     { };
     #dstp      = pkgs.callPackage ./dstp      { };
 
-    open3d    = pkgs.python38Packages.callPackage ./open3d    { };
+    #open3d    = pkgs.python38Packages.callPackage ./open3d    { };
 
   };
 in self
