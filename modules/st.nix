@@ -3,6 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     (st.overrideAttrs (oldAttrs: rec {
+      src = fetchurl {
+        url = "https://dl.suckless.org/st/${pname}-${version}.tar.gz";
+        hash = "sha256-6mgyID7QL/dBgry4raqexFTI+YnnkjLLhZZl4vVEqzc=";
+        };
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       patches = [
 #        (fetchpatch {
