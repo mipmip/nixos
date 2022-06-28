@@ -10,7 +10,7 @@ let
     hl4150cdn = callPackage_i686 ./hl4150cdn { };
 
     #smug           = pkgs.callPackage ./smug      { };
-    hercules-src-d = pkgs.callPackage ./hercules-src-d      { };
+    #hercules-src-d = pkgs.callPackage ./hercules-src-d      { };
     crelease       = pkgs.callPackage ./crelease  { };
     fred           = pkgs.callPackage ./fred      { };
     embgit         = pkgs.callPackage ./embgit    { };
