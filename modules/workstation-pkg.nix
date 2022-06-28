@@ -39,7 +39,7 @@
     blender
     libreoffice
     spotify
-    unstable.tdesktop
+    tdesktop
     keepassxc
     bitwarden
 
