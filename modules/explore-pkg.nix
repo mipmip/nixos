@@ -7,7 +7,7 @@
     gnome.networkmanager-openvpn
     youtube-dl
     tangram
-    vscode
+    #vscode
     kitty
     git-sync
 
