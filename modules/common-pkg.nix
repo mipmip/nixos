@@ -8,7 +8,7 @@
     bat
     apg
     glow
-    mipmip_pkg.smug
+    smug
     ctags
     cheat
     git-lfs
