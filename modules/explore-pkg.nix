@@ -35,22 +35,13 @@
     zoom-us
     #teams
 
-    #PHOTO ORGANIZER
-    #shotwell
-
     #DSTP
     dstp
 
     #TRANSLATION TOOLS
     poedit
     intltool
-
-    #remmina
-
-    #zettlr
     notify
-    #discord
-
     slop
   ];
 }
