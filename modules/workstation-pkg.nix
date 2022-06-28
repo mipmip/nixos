@@ -5,7 +5,6 @@
 
   environment.systemPackages = with pkgs; [
     potrace
-    weechat
     pandoc
     neofetch
     neovim
@@ -56,7 +55,6 @@
     gnome.gpaste
     glib.dev
     glade
-
 
     whatsapp-for-linux
   ]);
