@@ -36,10 +36,10 @@
     #teams
 
     #PHOTO ORGANIZER
-    shotwell
+    #shotwell
 
     #DSTP
-    unstable.dstp
+    dstp
 
     #TRANSLATION TOOLS
     poedit
