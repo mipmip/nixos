@@ -8,7 +8,6 @@
     git-sync
 
     nodePackages.livedown
-
     nodePackages.node2nix
 
     mipmip_pkg.cryptobox
