@@ -45,11 +45,11 @@
     poedit
     intltool
 
-    remmina
+    #remmina
 
-    zettlr
+    #zettlr
     notify
-    discord
+    #discord
 
     slop
   ];
