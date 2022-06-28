@@ -17,7 +17,6 @@
     #NIX/GNOME/HOMEMANAGER
     dconf2nix
 
-
     newsflash
 
     # tmux
