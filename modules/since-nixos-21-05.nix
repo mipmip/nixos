@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    util-linux
   ];
 
 }
