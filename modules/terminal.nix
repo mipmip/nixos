@@ -2,8 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
-    zoom-us
-    teams
+
+    # tmux
+    tmux
+    urlview
+
   ];
 }
 
