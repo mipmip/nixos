@@ -2,7 +2,9 @@ with (import <nixpkgs> {});
 
 mkShell {
   buildInputs = [
-    nodejs
+    terraform
+    awscli2
+    pre-commit
   ];
   shellHook = ''
   '';
