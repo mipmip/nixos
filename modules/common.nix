@@ -19,6 +19,11 @@
     extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
   };
 
+  users.users.pim = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
+  };
+
   users.users.guest = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" ];
