@@ -28,7 +28,7 @@ in
         ../../modules/nfspiet.nix
         ../../modules/peripherals_hurwenen.nix
         ../../modules/nixos-utils.nix
-        ../../modules/virtualbox.nix
+#        ../../modules/virtualbox.nix
         ../../modules/since-nixos-21-05.nix
         ../../modules/texlive.nix
       ];
