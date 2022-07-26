@@ -15,7 +15,7 @@ in
         ../../modules/base-minimal.nix
         ../../modules/common.nix
         ../../modules/common-pkg.nix
-        ../../modules/dev-crystal.nix
+#        ../../modules/dev-crystal.nix
         ../../modules/dev-quiqr.nix
         ../../modules/dev-technative.nix
         ../../modules/vim-large.nix
