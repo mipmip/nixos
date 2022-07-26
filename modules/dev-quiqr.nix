@@ -6,8 +6,6 @@
 
     ansible
     terraform
-    aws
-    awscli2
 
     act
   ]
