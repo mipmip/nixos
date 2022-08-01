@@ -11,6 +11,7 @@
     awsweeper
     awscli2
     aws-vault
+    drawio
   ];
 }
 
