@@ -12,6 +12,7 @@
     awscli2
     aws-vault
     drawio
+    terraformer
   ];
 }
 
