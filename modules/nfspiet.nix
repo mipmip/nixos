@@ -10,7 +10,7 @@
     fsType = "nfs";
   };
   fileSystems."/mnt/piethein3" = {
-    device = "192.168.13.37:/volume1/Cathalijne Archief";
+    device = "192.168.13.37:/volume1/CathalijneArchief";
     fsType = "nfs";
   };
 }
