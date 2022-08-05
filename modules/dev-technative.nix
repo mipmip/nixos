@@ -9,7 +9,7 @@
     aws-mfa
     unstable.cloud-nuke
     awsweeper
-    aws-nuke
+    unstable.aws-nuke
     awscli2
     aws-vault
     drawio
