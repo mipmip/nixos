@@ -80,7 +80,7 @@ call HotpopMap('nnoremap', '<silent>', '<Leader>-', ' :exe "vertical resize " . 
 call HotpopMap('xmap',     '',         'ga',        '<Plug>(EasyAlign)',                                    'Align',   'Start interactive EasyAlign in visual mode (e.g. vipga)')
 call HotpopMap('nmap',     '',         'ga',        '<Plug>(EasyAlign)',                                    'Align',   'Start interactive EasyAlign for a motion/text object (e.g. gaip)')
 call HotpopMap('nmap',     '',         '\g',        ':Goyo<CR>',                                            'Writing', 'Toggle Goyo')
-call HotpopMap('nmap',     '',         '\jf',       ':%!jq '.'<CR>',                                            'Writing', 'Toggle Goyo')
+call HotpopMap('nmap',     '',         '\jf',       ':%!jq '.'<CR>',                                        'Format', 'Toggle Goyo')
 call HotpopMap('nmap',     '',         '\s',        ':call ToggleSpell()<CR>',                              'Writing', 'Toggle Spellcheck')
 call HotpopMap('nmap',     '',         '\c',        ':RainbowLevelsToggle<CR>',                             'Colors',  'Toggle RainbowLevels')
 call HotpopMap('nmap',     '',         ',mt',       ':call PandocMakePDF()<CR>',                            'Pandoc',  'Create PDF from Markdown file')
