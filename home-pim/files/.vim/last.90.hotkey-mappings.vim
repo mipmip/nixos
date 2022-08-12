@@ -4,7 +4,7 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-function SearchUnderCursor()
+function! SearchUnderCursor()
   exec ":Ag " . expand('<cword>')
 endfunction
 
