@@ -19,6 +19,7 @@
       tn = "tmux new -d -s";
       smugs = "smug start doen && smug start sudo && smug start nixos && smug start tekst && smug start ssh-killerberg";
       hmswitch = "nix-shell -p home-manager --run 'home-manager switch'";
+      crmount = ""
     };
 
     plugins = [
