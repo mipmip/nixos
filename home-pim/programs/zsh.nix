@@ -14,6 +14,7 @@
     };
 
     shellAliases = {
+
       open = "xdg-open";
 
       t = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos && smug start tekst";
@@ -22,7 +23,7 @@
 
       hmswitch = "nix-shell -p home-manager --run 'home-manager switch'";
 
-      crstatus = "mount | grep /mnt/cryptobox";
+      ,crstatus = "mount | grep /mnt/cryptobox";
       crmount = "sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
       crumount = "sudo umount /mnt/cryptobox";
 
