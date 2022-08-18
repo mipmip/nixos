@@ -23,9 +23,9 @@
 
       hmswitch = "nix-shell -p home-manager --run 'home-manager switch'";
 
-      ,crstatus = "mount | grep /mnt/cryptobox";
-      ,crmount = "sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
-      ,crumount = "sudo umount /mnt/cryptobox";
+      crstatus = "mount | grep /mnt/cryptobox";
+      crmount = "sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
+      crumount = "sudo umount /mnt/cryptobox";
 
     };
 
