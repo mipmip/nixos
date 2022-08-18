@@ -18,6 +18,7 @@
     git-crypt
     gnupg
     pinentry
+    pass
 
     #RANDSTAD
     citrix_workspace
