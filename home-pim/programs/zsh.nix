@@ -20,7 +20,7 @@
       smugs = "smug start doen && smug start sudo && smug start nixos && smug start tekst && smug start ssh-killerberg";
       hmswitch = "nix-shell -p home-manager --run 'home-manager switch'";
       crmount = "sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
-      crumount = "sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
+      crumount = "sudo umount /mnt/cryptobox";
     };
 
     plugins = [
