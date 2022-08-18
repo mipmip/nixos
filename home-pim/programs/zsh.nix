@@ -26,7 +26,7 @@
       crb_status = "mount | grep /mnt/cryptobox";
       crb_mount = "crb_status || sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
       crb_umount = "sudo umount /mnt/cryptobox";
-      crb_diff = "diff -qr ~/.aws /mnt/cryptobox/encrypim/.aws; diff -qr ~/.aws /mnt/cryptobox/encrypim/.ssh;"
+      crb_diff = "diff -qr ~/.aws /mnt/cryptobox/encrypim/.aws; diff -qr ~/.aws /mnt/cryptobox/encrypim/.ssh";
 
     };
 
