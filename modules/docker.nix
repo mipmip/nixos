@@ -5,10 +5,11 @@
   services.onedrive.enable = true;
 
   environment.systemPackages = with pkgs; [
+    docker
+    docker-compose
+
   ];
 }
 
 
-    docker
-    docker-compose
 
