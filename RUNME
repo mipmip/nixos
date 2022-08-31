@@ -9,7 +9,7 @@ sysclean(){
   nix-collect-garbage -d
 }
 
-make_command "rebuild" "NixOS Rebuild"
+make_command "sysrebuild" "NixOS Rebuild"
 sysrebuild(){
   sudo nixos-rebuild switch
 }
