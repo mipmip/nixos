@@ -5,7 +5,7 @@ CMDS=();DESC=();NARGS=$#;ARG1=$1;make_command(){ CMDS+=($1);DESC+=("$2");};usage
 ##### PLACE YOUR COMMANDS BELOW #####
 
 
-make_command "clean" "Demo RUNME.sh command showing all functions."
+make_command "clean" "Run nix garbage collector"
 clean(){
   
   ls -al
