@@ -9,6 +9,13 @@ clean(){
   nix-collect-garbage -d
 }
 
+make_command "rebuild" "Run nix garbage collector"
+clean(){
+  sudo nix-collect-garbage -d
+  nix-collect-garbage -d
+}
+
+sudo nixos-rebuild switch
 
 
 runme
