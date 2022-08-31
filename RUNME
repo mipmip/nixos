@@ -4,13 +4,13 @@ CMDS=();DESC=();NARGS=$#;ARG1=$1;make_command(){ CMDS+=($1);DESC+=("$2");};usage
 
 
 make_command "clean" "Run nix garbage collector"
-clean(){
+sysclean(){
   sudo nix-collect-garbage -d
   nix-collect-garbage -d
 }
 
 make_command "rebuild" "NixOS Rebuild"
-rebuild(){
+sysrebuild(){
   sudo nix-collect-garbage -d
   nix-collect-garbage -d
 }
