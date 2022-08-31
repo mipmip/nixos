@@ -11,11 +11,9 @@ sysclean(){
 
 make_command "rebuild" "NixOS Rebuild"
 sysrebuild(){
-  sudo nix-collect-garbage -d
-  nix-collect-garbage -d
+  sudo nixos-rebuild switch
 }
 
-sudo nixos-rebuild switch
 
 
 runme
