@@ -5,7 +5,7 @@ CMDS=();DESC=();NARGS=$#;ARG1=$1;make_command(){ CMDS+=($1);DESC+=("$2");};usage
 
 make_command "clean" "Run nix garbage collector"
 clean(){
-  sudo nix-collect-garbage -d
+  #sudo nix-collect-garbage -d
   nix-collect-garbage -d
 }
 
