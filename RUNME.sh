@@ -5,9 +5,9 @@ CMDS=();DESC=();NARGS=$#;ARG1=$1;make_command(){ CMDS+=($1);DESC+=("$2");};usage
 ##### PLACE YOUR COMMANDS BELOW #####
 
 
-make_command "demo" "Demo RUNME.sh command showing all functions."
-demo(){
-  echo "showing the current directory"
+make_command "clean" "Demo RUNME.sh command showing all functions."
+clean(){
+  
   ls -al
 }
 
