@@ -9,8 +9,8 @@ clean(){
   nix-collect-garbage -d
 }
 
-make_command "rebuild" "Run nix garbage collector"
-clean(){
+make_command "rebuild" "NixOS Rebuild"
+rebuild(){
   sudo nix-collect-garbage -d
   nix-collect-garbage -d
 }
