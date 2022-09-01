@@ -30,6 +30,7 @@
     zathura
     x264
 
+    gh
 
     nextcloud-client
     gimp
