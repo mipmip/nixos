@@ -21,7 +21,7 @@
     #vim_configurable
 
     gitFull
-    gh
+    gh # GitHub Cli
   ]
 
   ++ (if pkgs.stdenv.isDarwin then [
