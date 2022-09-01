@@ -30,8 +30,6 @@
     zathura
     x264
 
-    docker
-    docker-compose
 
     nextcloud-client
     gimp
