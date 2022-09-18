@@ -35,8 +35,7 @@ crystal.buildCrystalPackage rec {
       ++ lib.optional (lockFile != null) "cp ${lockFile} ./shard.lock"
       ++ lib.optionals (shardsFile != null) [
         "test -e lib || mkdir lib"
-        "for d in ${crystalLib}/*; do ln -s $d lib/; done"
-        "for d in ${crystalLib}/*; do ln -s $d lib/; done"
+        "for d in ${crystalLib}/*; do cp -av $d lib/; done"
         "cp shard.lock lib/.shards.info"
       ]
       ++ [ "runHook postConfigure" ]
