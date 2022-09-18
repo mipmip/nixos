@@ -25,6 +25,9 @@ crystal.buildCrystalPackage rec {
 
   shardsFile = ./shards.nix;
   doCheck = false;
+  buildPhase = ''
+       shards
+  '';
 
   nativeBuildInputs = [
     pkg-config
