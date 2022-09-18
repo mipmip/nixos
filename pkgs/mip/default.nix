@@ -37,26 +37,26 @@ crystal.buildCrystalPackage rec {
   doCheck = false;
 
   buildPhase = ''
-       mkdir lib2
-       for d in lib/*; do cp -Lr $d lib2/ ; done
-       mv lib lib3
-       mv lib2 lib
-       chmod -R +w lib
+     mkdir lib2
+     for d in lib/*; do cp -Lr $d lib2/ ; done
+     mv lib lib3
+     mv lib2 lib
+     chmod -R +w lib
 
-       cd lib/webview
-       make
-       cd ../..
+     cd lib/webview
+     make
+     cd ../..
 
-       cd lib/common_marker/ext
-       cp -a ${markdfsrc} ./cmark-gfm
-       chmod -R +w ./cmark-gfm
-       ls -al
-       ls -al ./cmark-gfm
-       sed -i 's/git/echo/g' Makefile
-       make
-       cd ../../..
-       crystal build --release src/mip.cr
-       ls -al
+     cd lib/common_marker/ext
+     cp -a ${markdfsrc} ./cmark-gfm
+     chmod -R +w ./cmark-gfm
+     ls -al
+     ls -al ./cmark-gfm
+     sed -i 's/git/echo/g' Makefile
+     make
+     cd ../../..
+     crystal build --release src/mip.cr
+     ls -al
   '';
 
   installPhase = ''
