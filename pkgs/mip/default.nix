@@ -42,7 +42,8 @@ crystal.buildCrystalPackage rec {
     );
 
 
-  buildPhase = ''
+    buildPhase = ''
+
        ls -al
        ls -al src
        ls -al lib
@@ -51,7 +52,7 @@ crystal.buildCrystalPackage rec {
        #cd lib/webview && make
        #cd lib/common_marker/ext make
        crystal build --release src/mip.cr
-  '';
+    '';
 
   nativeBuildInputs = [
     pkg-config
