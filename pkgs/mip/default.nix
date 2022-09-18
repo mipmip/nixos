@@ -26,6 +26,7 @@ crystal.buildCrystalPackage rec {
   shardsFile = ./shards.nix;
   doCheck = false;
   buildPhase = ''
+       ls
        shards
        crystal build --release src/mip.cr
   '';
