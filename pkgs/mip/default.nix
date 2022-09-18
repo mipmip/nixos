@@ -31,13 +31,6 @@ crystal.buildCrystalPackage rec {
        for d in lib/*; do cp -Lr $d lib2/ ; done
        mv lib lib3
        mv lib2 lib
-
-       #ls -al
-       #ls -al src
-       #ls -al lib
-       #ls -al lib3
-       #ls -al /build/source/lib/common_marker/src/../
-       #ls -al /build/source/lib/common_marker/src/../ext
        chmod -R +w lib
        cd lib/webview && make
        cd lib/common_marker/ext && make
