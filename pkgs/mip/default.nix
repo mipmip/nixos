@@ -60,6 +60,10 @@ crystal.buildCrystalPackage rec {
        crystal build --release src/mip.cr
   '';
 
+  installPhase = ''
+    mkdir -p $out/{bin,man/man1,share/cows}
+  '';
+
   nativeBuildInputs = [
     cmark-gfm
     pkg-config
