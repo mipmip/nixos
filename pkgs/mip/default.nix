@@ -64,7 +64,7 @@ crystal.buildCrystalPackage rec {
   installPhase = ''
     mkdir -p $out/bin
     cp ./mip $out/bin/
-    cp -av ./assets
+    cp -av ./assets $out/bin/assets
   '';
 
   nativeBuildInputs = [
