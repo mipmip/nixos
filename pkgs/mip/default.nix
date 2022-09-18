@@ -38,7 +38,7 @@ crystal.buildCrystalPackage rec {
        ls -al lib3
        #ls -al /build/source/lib/common_marker/src/../
        #ls -al /build/source/lib/common_marker/src/../ext
-       chmod +w lib
+       chmod +x -r lib
        ls -al lib/webview
        cd lib/webview && make
        cd lib/common_marker/ext make
