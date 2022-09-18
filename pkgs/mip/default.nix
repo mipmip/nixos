@@ -1,4 +1,9 @@
-{ lib, fetchFromGitHub, crystal }:
+{ 
+  lib, 
+  fetchFromGitHub, 
+  crystal, 
+  pkg-config,
+}:
 
 crystal.buildCrystalPackage rec {
   pname = "mip";
