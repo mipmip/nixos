@@ -20,7 +20,7 @@ crystal.buildCrystalPackage rec {
     owner = "github";
     repo = "cmark-gfm";
     rev = "9d57d8a23142b316282bdfc954cb0ecda40a8655";
-    sha256 = "";
+    sha256 = "ekHY5EGSrJrQwlXNjKpyj7k0Bzq1dYPacRsfNZ8K+lk=";
   };
 
   pname = "mip";
