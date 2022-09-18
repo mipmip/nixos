@@ -2,11 +2,11 @@
 
 crystal.buildCrystalPackage rec {
   pname = "mip";
-  version = "0.3.6";
+  version = "0.1.2";
 
   src = fetchFromGitHub {
-    owner = "linden-project";
-    repo = "fred";
+    owner = "mipmip";
+    repo = "mip";
     rev = "846b1c26599ffe90afa96e9f4f64300250aa216d";
     sha256 = "071xj19jbsz5081v72q37zjxf4ar7ixw1iiawwl461z1ab8ysg48";
   };
