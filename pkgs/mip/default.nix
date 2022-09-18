@@ -81,7 +81,6 @@ crystal.buildCrystalPackage rec {
     cmake
   ];
 
-
   meta = with lib; {
     description = "Fast and simple markdown viewer";
     homepage = "https://github.com/mipmip/mip";
