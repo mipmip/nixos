@@ -28,9 +28,7 @@ crystal.buildCrystalPackage rec {
 
     buildPhase = ''
        mkdir lib2
-       for d in lib/*; do
-        cp -Lav $d lib2/
-        ; done
+       for d in lib/*; do cp -Lr $d lib2/ ; done
        mv lib lib3
        mv lib2 lib
 
