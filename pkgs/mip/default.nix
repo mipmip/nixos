@@ -62,7 +62,7 @@ crystal.buildCrystalPackage rec {
   '';
 
   installPhase = ''
-    mkdir -p $out/bin
+    mkdir -p $out/{bin,share}
     cp ./mip $out/bin/
     #cp -av ./asset $out/asset
   '';
