@@ -58,6 +58,7 @@ crystal.buildCrystalPackage rec {
 
        #ls -al src
        crystal build --release src/mip.cr
+       ls -al
   '';
 
   installPhase = ''
