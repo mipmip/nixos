@@ -49,15 +49,15 @@ crystal.buildCrystalPackage rec {
     webkitgtk
     cmake
   ];
-#  buildInputs = [
-#    fswatch
-#    openssl
-#    crystal
-#    nodejs
-#    yarn
-    webkitgtk
-#    cmake
-#  ];
+  buildInputs = [
+    fswatch
+    openssl
+    crystal
+    nodejs
+    yarn
+   webkitgtk
+    cmake
+  ];
 
 
   meta = with lib; {
