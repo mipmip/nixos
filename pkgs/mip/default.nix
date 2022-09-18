@@ -34,7 +34,8 @@ crystal.buildCrystalPackage rec {
        chmod -R +w lib
        cd lib/webview && make
        cd lib/common_marker/ext && make
-       crystal build --release src/mip.cr
+       make build
+       #crystal build --release src/mip.cr
     '';
 
   nativeBuildInputs = [
