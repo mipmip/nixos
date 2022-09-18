@@ -27,6 +27,7 @@ crystal.buildCrystalPackage rec {
   doCheck = false;
   buildPhase = ''
        shards
+       make build
   '';
 
   nativeBuildInputs = [
