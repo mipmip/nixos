@@ -26,20 +26,6 @@ crystal.buildCrystalPackage rec {
   shardsFile = ./shards.nix;
   doCheck = false;
 
-  #crystalBinaries.webview.src = "src/lucky.cr";
-  configurePhase = args.configurePhase or lib.concatStringsSep "\n"
-    (
-      [
-        "runHook preConfigure"
-      ]
-      ++ lib.optional (lockFile != null) "cp ${lockFile} ./shard.lock"
-      ++ lib.optionals (shardsFile != null) [
-        "test -e lib || mkdir lib"
-        "for d in ${crystalLib}/*; do cp -av $d lib/; done"
-        "cp shard.lock lib/.shards.info"
-      ]
-      ++ [ "runHook postConfigure" ]
-    );
 
 
     buildPhase = ''
