@@ -41,6 +41,7 @@ crystal.buildCrystalPackage rec {
     '';
 
   nativeBuildInputs = [
+    cmark-gfm
     pkg-config
     cmake
     fswatch
