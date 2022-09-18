@@ -29,6 +29,12 @@ crystal.buildCrystalPackage rec {
     pkg-config
     cmake
     fswatch
+    openssl
+    crystal
+    nodejs
+    yarn
+    webkitgtk
+    cmake
   ];
   buildInputs = [
     fswatch
