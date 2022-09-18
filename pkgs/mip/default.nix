@@ -46,6 +46,7 @@ crystal.buildCrystalPackage rec {
        cd lib/webview && make
        cd ../..
        cd lib/common_marker/ext
+       cp -av ${markdfsrc} ./
 
        cd ../../..
        #ls -al src
