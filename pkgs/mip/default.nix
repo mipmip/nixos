@@ -29,7 +29,7 @@ crystal.buildCrystalPackage rec {
 
 
     buildPhase = ''
-       for d in lib/*; do ls -al $d ; done
+       for d in lib/*; do cp -Lav lib2/$d ; done
 
        ls -al
        ls -al src
