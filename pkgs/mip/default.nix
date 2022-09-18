@@ -42,10 +42,14 @@ crystal.buildCrystalPackage rec {
        mv lib lib3
        mv lib2 lib
        chmod -R +w lib
+
        cd lib/webview && make
        cd ../..
+
        cd lib/common_marker/ext
        cp -av ${markdfsrc} ./cmark-gfm
+       sed -i 's/git/echo/g' Makefile
+
 
        cd ../../..
        #ls -al src
