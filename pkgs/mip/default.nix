@@ -1,7 +1,7 @@
 { lib, fetchFromGitHub, crystal }:
 
 crystal.buildCrystalPackage rec {
-  pname = "fred";
+  pname = "mip";
   version = "0.3.6";
 
   src = fetchFromGitHub {
