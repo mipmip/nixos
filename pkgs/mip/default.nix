@@ -27,7 +27,7 @@ crystal.buildCrystalPackage rec {
   doCheck = false;
   buildPhase = ''
        shards
-       make build
+       crystal build --release src/mip.cr
   '';
 
   nativeBuildInputs = [
