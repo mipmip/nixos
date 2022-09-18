@@ -34,9 +34,9 @@ crystal.buildCrystalPackage rec {
        chmod -R +w lib
        cd lib/webview && make
        cd ../..
-       cd lib/common_marker/ext && make
-       cd ../../..
-       ls -al src
+       #cd lib/common_marker/ext && make
+       #cd ../../..
+       #ls -al src
        crystal build --release src/mip.cr
     '';
 
