@@ -13,8 +13,13 @@
 }:
 
 crystal.buildCrystalPackage rec {
+  owner = "naqvis";
+  repo = "webview";
+  rev = "v0.1.5";
+  sha256 = "05ay40xl4v8hp23ipgybsyarv5p7ydjrz0zzrfvj7j6gxwnpq89b";
+
   pname = "webview";
-  version = "0.1.3";
+  rev = "0.1.3";
 
   src = fetchFromGitHub {
     owner = "mipmip";
