@@ -55,8 +55,6 @@ crystal.buildCrystalPackage rec {
        sed -i 's/git/echo/g' Makefile
        make
        cd ../../..
-
-       #ls -al src
        crystal build --release src/mip.cr
        ls -al
   '';
