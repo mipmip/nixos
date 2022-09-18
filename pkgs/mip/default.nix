@@ -55,7 +55,7 @@ crystal.buildCrystalPackage rec {
 #    crystal
 #    nodejs
 #    yarn
-#    webkitgtk
+    webkitgtk
 #    cmake
 #  ];
 
