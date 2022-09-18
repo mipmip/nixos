@@ -16,7 +16,7 @@ crystal.buildCrystalPackage rec {
 
   meta = with lib; {
     description = "";
-    homepage = "https://github.com/linden-project/fred";
+    homepage = "https://github.com/mipmip/mip";
     license = licenses.mit;
   };
 }
