@@ -14,13 +14,13 @@
 
 crystal.buildCrystalPackage rec {
   pname = "mip";
-  version = "0.1.2";
+  version = "0.1.3";
 
   src = fetchFromGitHub {
     owner = "mipmip";
     repo = "mip";
     rev = "0ec44d08ee4dacba063564f6a89bf1b7fcc635b1";
-    sha256 = "kk4Ykah5qjyXsUU71pv291KIgdec0zkyU/s1ygKyHok=";
+    sha256 = "/s1ygKyHok=";
   };
 
   shardsFile = ./shards.nix;
