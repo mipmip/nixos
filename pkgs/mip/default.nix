@@ -19,7 +19,7 @@ crystal.buildCrystalPackage rec {
   src = fetchFromGitHub {
     owner = "mipmip";
     repo = "mip";
-    rev = "8a67307f0b0bf63b005b0e59ec02e85e2516abc9";
+    rev = "0ec44d08ee4dacba063564f6a89bf1b7fcc635b1";
     sha256 = "kk4Ykah5qjyXsUU71pv291KIgdec0zkyU/s1ygKyHok=";
   };
 
