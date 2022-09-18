@@ -1,8 +1,14 @@
-{ 
-  lib, 
-  fetchFromGitHub, 
-  crystal, 
+{
+  lib,
+  fetchFromGitHub,
+  crystal,
   pkg-config,
+  cmake,
+  fswatch,
+  openssl,
+  nodejs,
+  yarn,
+  webkitgtk
 }:
 
 crystal.buildCrystalPackage rec {
