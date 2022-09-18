@@ -49,6 +49,7 @@ crystal.buildCrystalPackage rec {
 
        cd lib/common_marker/ext
        cp -a ${markdfsrc} ./cmark-gfm
+       chmod -R +w lib
        ls -al
        ls -al ./cmark-gfm
        sed -i 's/git/echo/g' Makefile
