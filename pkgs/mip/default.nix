@@ -28,27 +28,7 @@ crystal.buildCrystalPackage rec {
     sha256 = "sY9gypkDwT4+KGhCvu832G3h4YdGGRpd8eB37Zp1BUo=";
   };
 
-  shardsFile = ./shards.nix;
   doCheck = false;
-
-    buildPhase = ''
-       mkdir lib2
-       for d in lib/*; do cp -Lr $d lib2/ ; done
-       mv lib lib3
-       mv lib2 lib
-
-       #ls -al
-       #ls -al src
-       #ls -al lib
-       #ls -al lib3
-       #ls -al /build/source/lib/common_marker/src/../
-       #ls -al /build/source/lib/common_marker/src/../ext
-       chmod -R +w lib
-       #ls -al lib/webview
-       cd lib/webview && make
-       cd lib/common_marker/ext make
-       crystal build --release src/mip.cr
-    '';
 
   nativeBuildInputs = [
     pkg-config
