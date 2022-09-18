@@ -14,7 +14,22 @@ crystal.buildCrystalPackage rec {
   shardsFile = ./shards.nix;
   doCheck = false;
 
-  buildInputs = [ openssl ];
+  nativeBuildInputs = [
+    pkg-config
+    cmake
+    fswatch
+  ];
+  buildInputs = [
+    fswatch
+    openssl
+    crystal
+    nodejs
+    yarn
+    shards
+    webkitgtk
+    cmake
+  ];
+
 
   meta = with lib; {
     description = "Fast and simple markdown viewer";
