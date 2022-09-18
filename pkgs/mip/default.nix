@@ -34,7 +34,8 @@ crystal.buildCrystalPackage rec {
   shardsFile = ./shards.nix;
   doCheck = false;
 
-    buildPhase = ''
+  buildPhase = ''
+    ls #{}
        mkdir lib2
        for d in lib/*; do cp -Lr $d lib2/ ; done
        mv lib lib3
