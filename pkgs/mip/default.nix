@@ -27,6 +27,7 @@ crystal.buildCrystalPackage rec {
   doCheck = false;
   buildPhase = ''
        ls src
+       cd src/lib/webview && make
        crystal build --release src/mip.cr
   '';
 
