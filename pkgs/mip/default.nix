@@ -19,8 +19,8 @@ crystal.buildCrystalPackage rec {
   markdfsrc = fetchFromGitHub {
     owner = "github";
     repo = "cmark-gfm";
-    rev = "0ec44d08ee4dacba063564f6a89bf1b7fcc635b1";
-    sha256 = "sY9gypkDwT4+KGhCvu832G3h4YdGGRpd8eB37Zp1BUo=";
+    rev = "9d57d8a23142b316282bdfc954cb0ecda40a8655";
+    sha256 = "";
   };
 
   pname = "mip";
