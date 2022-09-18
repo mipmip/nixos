@@ -25,7 +25,9 @@ crystal.buildCrystalPackage rec {
 
   shardsFile = ./shards.nix;
   doCheck = false;
-    crystalBinaries.lucky.src = "src/lucky.cr";
+
+  #crystalBinaries.webview.src = "src/lucky.cr";
+
   buildPhase = ''
        ls src
        cd src/lib/webview && make
