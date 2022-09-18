@@ -16,6 +16,7 @@
 
     hugo # needed for linny
     mipmip_pkg.fred # needed for linny
+    mipmip_pkg.mip # needed for linny
 
     vimHugeX
     #vim_configurable
