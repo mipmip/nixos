@@ -31,8 +31,8 @@ crystal.buildCrystalPackage rec {
   buildPhase = ''
        ls -al
        ls src
-       cd src/lib/webview && make
-       cd src/lib/common_marker/ext make
+       cd lib/webview && make
+       cd lib/common_marker/ext make
        crystal build --release src/mip.cr
   '';
 
