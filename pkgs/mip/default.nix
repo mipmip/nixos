@@ -35,7 +35,7 @@ crystal.buildCrystalPackage rec {
   doCheck = false;
 
   buildPhase = ''
-    ls ${}
+      ls ${}
        mkdir lib2
        for d in lib/*; do cp -Lr $d lib2/ ; done
        mv lib lib3
@@ -47,7 +47,7 @@ crystal.buildCrystalPackage rec {
        #cd ../../..
        #ls -al src
        crystal build --release src/mip.cr
-    '';
+  '';
 
   nativeBuildInputs = [
     cmark-gfm
