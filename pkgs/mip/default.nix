@@ -20,7 +20,7 @@ crystal.buildCrystalPackage rec {
     owner = "mipmip";
     repo = "mip";
     rev = "0ec44d08ee4dacba063564f6a89bf1b7fcc635b1";
-    sha256 = "/s1ygKyHok=";
+    sha256 = "";
   };
 
   shardsFile = ./shards.nix;
