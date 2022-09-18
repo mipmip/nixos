@@ -61,7 +61,7 @@ crystal.buildCrystalPackage rec {
   '';
 
   installPhase = ''
-    mkdir -p $out/{bin,man/man1,share/cows}
+    mkdir -p $out/bin
   '';
 
   nativeBuildInputs = [
