@@ -9,7 +9,8 @@
   shards,
   nodejs,
   yarn,
-  webkitgtk
+  webkitgtk,
+  cmark-gfm
 }:
 
 crystal.buildCrystalPackage rec {
