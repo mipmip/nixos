@@ -16,9 +16,11 @@
 
 crystal.buildCrystalPackage rec {
 
-  cupsdeb = fetchurl {
-    url = "https://download.brother.com/welcome/dlf005942/${model}cupswrapper-1.1.1-5.i386.deb";
-    sha256 = "sha256:0p76g9v79j6dpk8m41rxms6c52166zs6q5v0qlr0av79dijv8c9w";
+  markdfsrc = fetchFromGitHub {
+    owner = "mipmip";
+    repo = "mip";
+    rev = "0ec44d08ee4dacba063564f6a89bf1b7fcc635b1";
+    sha256 = "sY9gypkDwT4+KGhCvu832G3h4YdGGRpd8eB37Zp1BUo=";
   };
 
   pname = "mip";
