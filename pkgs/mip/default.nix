@@ -15,7 +15,7 @@ crystal.buildCrystalPackage rec {
   doCheck = false;
 
   meta = with lib; {
-    description = "Fred, a cli front matter editor";
+    description = "";
     homepage = "https://github.com/linden-project/fred";
     license = licenses.mit;
   };
