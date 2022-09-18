@@ -34,7 +34,7 @@ crystal.buildCrystalPackage rec {
     crystal
     shards
     nodejs
-    yarn
+    #yarn
     webkitgtk
     cmake
   ];
