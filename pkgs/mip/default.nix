@@ -15,7 +15,7 @@ crystal.buildCrystalPackage rec {
   doCheck = false;
 
   meta = with lib; {
-    description = "";
+    description = "Fast and simple markdown viewer";
     homepage = "https://github.com/mipmip/mip";
     license = licenses.mit;
   };
