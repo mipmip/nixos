@@ -29,8 +29,8 @@ crystal.buildCrystalPackage rec {
   src = fetchFromGitHub {
     owner = "mipmip";
     repo = "mip";
-    rev = "";
-    sha256 = "+KGhCvu832G3h4YdGGRpd8eB37Zp1BUo=";
+    rev = "6887a84689c3f8717b09d63188a187fbff28c291";
+    sha256 = "";
   };
 
   shardsFile = ./shards.nix;
