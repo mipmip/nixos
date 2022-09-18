@@ -32,7 +32,7 @@ crystal.buildCrystalPackage rec {
     fswatch
     openssl
     crystal
-    shards,
+    shards
     nodejs
     yarn
     webkitgtk
