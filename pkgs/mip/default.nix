@@ -48,8 +48,9 @@ crystal.buildCrystalPackage rec {
        cd ../..
 
        cd lib/common_marker/ext
-       cp -av ${markdfsrc} ./cmark-gfm
+       cp -a ${markdfsrc} ./cmark-gfm
        sed -i 's/git/echo/g' Makefile
+       make
        cd ../../..
 
        #ls -al src
