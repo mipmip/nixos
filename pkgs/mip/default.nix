@@ -29,6 +29,7 @@ crystal.buildCrystalPackage rec {
   #crystalBinaries.webview.src = "src/lucky.cr";
 
   buildPhase = ''
+       ls -al
        ls src
        cd src/lib/webview && make
        cd src/lib/common_marker/ext make
