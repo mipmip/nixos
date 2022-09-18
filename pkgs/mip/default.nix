@@ -71,8 +71,6 @@ crystal.buildCrystalPackage rec {
     fswatch
     openssl
     crystal
-    shards
-    nodejs
     webkitgtk
     cmake
   ];
@@ -80,9 +78,7 @@ crystal.buildCrystalPackage rec {
     fswatch
     openssl
     crystal
-    nodejs
-    yarn
-   webkitgtk
+    webkitgtk
     cmake
   ];
 
