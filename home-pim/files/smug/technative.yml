@@ -1,4 +1,4 @@
-session: lobby
+session: technative
 windows:
 - name: zsh
   root: /home/pim
