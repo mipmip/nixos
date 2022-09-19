@@ -1,4 +1,4 @@
 session: technative
 windows:
 - name: zsh
-  root: /home/pim
+  root: /home/pim/cTechNative
