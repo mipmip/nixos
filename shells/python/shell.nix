@@ -5,7 +5,7 @@ let
     setuptools
     requests
     boto3
-    pip3
+    pip
     # other python packages you want
   ];
   python-with-my-packages = python3.withPackages my-python-packages;
