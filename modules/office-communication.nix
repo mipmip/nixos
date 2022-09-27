@@ -4,7 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     (pkgs.slack.overrideAttrs (oldAttrs: rec {
-      installPhase = builtins.replaceStrings ["a"] ["i"] oldAttrs.installPhase
+      installPhase = builtins.replaceStrings [""] ["i"] oldAttrs.installPhase
     }))
 
 
