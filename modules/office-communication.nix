@@ -26,8 +26,8 @@
         --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--enable-features=UseOzonePlatform --ozone-platform=wayland}}"
         # Fix the desktop link
         substituteInPlace $out/share/applications/slack.desktop \
-        --replace /usr/bin/ $out/bin/ \
-        --replace /usr/share/ $out/share/
+          --replace /usr/bin/ $out/bin/ \
+          --replace /usr/share/ $out/share/
         runHook postInstall
       '';
 
