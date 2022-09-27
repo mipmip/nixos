@@ -28,7 +28,7 @@
         makeWrapper $out/lib/slack/slack $out/bin/slack \
           --prefix XDG_DATA_DIRS : $GSETTINGS_SCHEMAS_PATH \
           --prefix PATH : ${lib.makeBinPath [xdg-utils]} \
-          --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--enable-features=UseOzonePlatform --ozone-platform=wayland}}"
+          --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--enable-features=UseOzonePlatform,  --ozone-platform=wayland}}"
 
         # Fix the desktop link
         substituteInPlace $out/share/applications/slack.desktop \
