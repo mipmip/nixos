@@ -2,13 +2,16 @@
 
 {
   environment.systemPackages = with pkgs; [
+
+
+
     zoom-us
     teams
     slack
   ];
 }
 
-(mypackage.overrideAttrs (oldAttrs: rec {
+(slack.overrideAttrs (oldAttrs: rec {
   desktopItem = oldAttrs.desktopItem.overrideAttrs (desktopAttrs: {
     buildCommand =
       let
