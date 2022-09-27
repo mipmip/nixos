@@ -34,6 +34,7 @@
         substituteInPlace $out/share/applications/slack.desktop \
           --replace /usr/bin/ $out/bin/ \
           --replace /usr/share/ $out/share/
+
         runHook postInstall
       '';
 
