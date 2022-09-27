@@ -9,7 +9,7 @@
 
     # Enable slack screensharing in Wayland
     (pkgs.slack.overrideAttrs (oldAttrs: rec {
-      installPhase = builtins.replaceStrings ["UseOzonePlatform"] ["UseOzonePlatform,WebRTCPipeWireCapturer"] oldAttrs.installPhase;
+      installPhase = builtins.replaceStrings ["UseOzonePlatform", "--ozone-platform=wayland"] ["UseOzonePlatform,WebRTCPipeWireCapturer" ""] oldAttrs.installPhase;
     }))
 
     zoom-us
