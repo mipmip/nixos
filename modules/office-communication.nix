@@ -7,7 +7,7 @@
       buildCommand =
         let
           oldExec = builtins.match ".*(\nExec=[^\n]+\n).*" desktopAttrs.buildCommand;
-          matches = oldExec ++ oldTerminal;
+          matches = oldExec;
           replacements = [ "\nExec=/usr/bin/slack --enable-features=WebRTCPipeWireCapturer %U\n" ];
         in
         assert oldExec != null && oldTerminal != null;
