@@ -8,7 +8,7 @@
         let
           oldExec = builtins.match ".*(\nExec=[^\n]+\n).*" desktopAttrs.buildCommand;
           matches = oldExec ++ oldTerminal;
-          replacements = [ "\nExec=/my_exec\n" ];
+          replacements = [ "\nExec=/\n" ];
         in
         assert oldExec != null && oldTerminal != null;
         builtins.replaceStrings matches replacements desktopAttrs.buildCommand;
