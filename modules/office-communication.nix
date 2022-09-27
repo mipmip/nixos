@@ -7,7 +7,6 @@
       installPhase = builtins.replaceStrings ["UseOzonePlatform"] ["UseOzonePlatform,WebRTCPipeWireCapturer"] oldAttrs.installPhase;
     }))
 
-
     zoom-us
     teams
   ];
