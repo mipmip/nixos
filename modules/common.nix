@@ -9,7 +9,7 @@
   nixpkgs.config = {
 
     allowUnfree = true;
-  }
+  };
 
   services.openssh.enable = true;
   services.cron.enable = true;
