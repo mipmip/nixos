@@ -8,7 +8,7 @@
         let
           oldExec = builtins.match ".*(\nExec=[^\n]+\n).*" desktopAttrs.buildCommand;
           matches = oldExec ++ oldTerminal;
-          replacements = [ "\nExec=/\n" ];
+          replacements = [ "\nExec=/usr/bin/slack --enable-features=WebRTCPipeWireCapturer %U\n" ];
         in
         assert oldExec != null && oldTerminal != null;
         builtins.replaceStrings matches replacements desktopAttrs.buildCommand;
