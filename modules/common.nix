@@ -7,7 +7,6 @@
   time.timeZone = "Europe/Amsterdam";
 
   nixpkgs.config = {
-
     allowUnfree = true;
   };
 
