@@ -2,7 +2,10 @@
 
 {
 
-  pkgs.slack.overrideAttrs (oldAttrs: rec {
+
+
+  environment.systemPackages = with pkgs; [
+      (pkgs.slack.overrideAttrs (oldAttrs: rec {
     desktopItem = oldAttrs.desktopItem.overrideAttrs (desktopAttrs: {
       buildCommand =
         let
@@ -14,12 +17,10 @@
         builtins.replaceStrings matches replacements desktopAttrs.buildCommand;
       });
       postInstall = builtins.replaceStrings [ "${oldAttrs.desktopItem}" ] [ "${desktopItem}" ] oldAttrs.postInstall;
-    })
+    }))
 
 
-  environment.systemPackages = with pkgs; [
     zoom-us
     teams
-    slack
   ];
 }
