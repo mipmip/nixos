@@ -7,11 +7,14 @@
 
       installPhase = ''
         runHook preInstall
+
         # The deb file contains a setuid binary, so 'dpkg -x' doesn't work here
         dpkg --fsys-tarfile $src | tar --extract
         rm -rf usr/share/lintian
+
         mkdir -p $out
         mv usr/* $out
+
         # Otherwise it looks "suspicious"
         chmod -R g-w $out
 
@@ -26,6 +29,7 @@
           --prefix XDG_DATA_DIRS : $GSETTINGS_SCHEMAS_PATH \
           --prefix PATH : ${lib.makeBinPath [xdg-utils]} \
           --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--enable-features=UseOzonePlatform --ozone-platform=wayland}}"
+
         # Fix the desktop link
         substituteInPlace $out/share/applications/slack.desktop \
           --replace /usr/bin/ $out/bin/ \
