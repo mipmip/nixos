@@ -90,7 +90,6 @@ call HotpopMap('nnoremap', '',         'tl',         ':tabnext<CR>',            
 call HotpopMap('nnoremap', '',         'th',         ':tabprev<CR>',                        'Tabs',    'Previous tab')
 call HotpopMap('nnoremap', '',         'tn',         ':tabnew<CR>',                         'Tabs',    'New tab')
 
-
 call HotpopMap('nnoremap', '<silent>', '<Leader>=', ' :exe "vertical resize " . (winwidth(0) * 16/15)<CR>', 'Resize',  'Make window wider')
 call HotpopMap('nnoremap', '<silent>', '<Leader>-', ' :exe "vertical resize " . (winwidth(0) * 14/15)<CR>', 'Resize',  'Make window smaller')
 
