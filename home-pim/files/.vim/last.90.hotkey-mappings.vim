@@ -25,7 +25,7 @@ function! OpenPandocPDF()
 endfunction
 
 function! OpenCurrentInNerdTree()
-  exe ':call panelmanager#PMPrepareToggleView("nerdtree")<cr>:NERDTreeFind<cr>:call panelmanager#PMSetCurrentViewForIdentifier("nerdtree")<cr>'
+  exe ':call panelmanager#PMPrepareToggleView("nerdtree")<cr>:NERDTreeFind<cr>:call panelmanager#PMSetCurrentViewForIdentifier("nerdtree")<CR>'
 endfunction
 
 
