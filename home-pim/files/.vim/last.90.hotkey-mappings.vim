@@ -47,10 +47,6 @@ call HotpopMap('map',  '', '<leader>0', ":call PMToggleView('minimap')<CR>",  'R
 
 
 
-call HotpopMap('nmap',     '',         ',fp',        ':let @" = expand("%:p")<CR>',         'File',    'Place complete path of current file in register')
-call HotpopMap('nnoremap', '<expr>',   '<leader>sa', 'Saveas()',                            'File',    'Save current file as...')
-call HotpopMap('nmap',     '',         ',vc',        ':call VimInNerdTree()<CR>',           'File',    'Open Vim configfiles in NERDTree')
-call HotpopMap('nmap',     '',         ',vr',        ':source ~/.vim/vimrc<CR>',            'File',    'Reload vim configuration ')
 
 call HotpopMap('nmap',     '',         ',b',         ':silent w<CR> :RunInBlender<CR><CR>', 'Blender', 'Run current script in Blender with listener')
 call HotpopMap('nmap',     '',         ',bk',        ':!killall -9 blender<CR>',            'Blender', 'Killall blender procs')
@@ -70,6 +66,10 @@ call HotpopMap('nnoremap', '',         '<Leader>gd', ':Gdiff<CR>',              
 call HotpopMap('nnoremap', '',         '<Leader>gb', ':Gblame<CR>',                         'Git',     'Git blame')
 call HotpopMap('nnoremap', '',         '<Leader>gp', ':Git push<CR>',                       'Git',     'Git push')
 
+call HotpopMap('nmap',     '',         ',fp',        ':let @" = expand("%:p")<CR>',         'File',    'Place complete path of current file in register')
+call HotpopMap('nnoremap', '<expr>',   '<leader>sa', 'Saveas()',                            'File',    'Save current file as...')
+call HotpopMap('nmap',     '',         ',vc',        ':call VimInNerdTree()<CR>',           'File',    'Open Vim configfiles in NERDTree')
+call HotpopMap('nmap',     '',         ',vr',        ':source ~/.vim/vimrc<CR>',            'File',    'Reload vim configuration ')
 call HotpopMap('map',      '<silent>', ',f',         ':!open "%:p:h"<CR><CR>',              'File',    'Open current file with OS default application')
 call HotpopMap('map',      '<silent>', ',o',         ':OIFM<CR>',                           'File',    'Show current file in Filemanager')
 call HotpopMap('map',      '<silent>', ',m',         ':MIP<CR>',                            'File',    'Open current file in MIP')
