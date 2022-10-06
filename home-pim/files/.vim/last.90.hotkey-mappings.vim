@@ -57,7 +57,10 @@ call HotpopMap('map',      '',         '<leader>d',  ':set background=dark<cr>',
 call HotpopMap('map',      '',         '<leader>l',  ':set background=light<cr>',           "Colors",  "Change to light background")
 call HotpopMap('map',      '',         '<leader>b',  ':Buffers<cr>',                        'FZF',     'FZF with open buffers')
 call HotpopMap('map',      '',         '<leader>f',  ':Files<cr>',                          'FZF',     'FZF with files in current directory')
+
 call HotpopMap('map',      '',         '<leader>w',  ':silent FixWhitespace<cr>',           'Format',    'Fix all whitespace')
+call HotpopMap('nmap',     '',         '\jf',       ':%!jq '.'<CR>',                        'Format',  'Format JSON')
+
 call HotpopMap('nnoremap', '',         '<Leader>gc', ':Gcommit<CR>',                        'Git',     'Git commit')
 call HotpopMap('nnoremap', '',         '<Leader>gs', ':Gstatus<CR>',                        'Git',     'Git status')
 call HotpopMap('nnoremap', '',         '<Leader>gd', ':Gdiff<CR>',                          'Git',     'Git diff')
@@ -81,7 +84,6 @@ call HotpopMap('nnoremap', '<silent>', '<Leader>-', ' :exe "vertical resize " . 
 call HotpopMap('xmap',     '',         'ga',        '<Plug>(EasyAlign)',                                    'Align',   'Start interactive EasyAlign in visual mode (e.g. vipga)')
 call HotpopMap('nmap',     '',         'ga',        '<Plug>(EasyAlign)',                                    'Align',   'Start interactive EasyAlign for a motion/text object (e.g. gaip)')
 call HotpopMap('nmap',     '',         '\g',        ':Goyo<CR>',                                            'Writing', 'Toggle Goyo')
-call HotpopMap('nmap',     '',         '\jf',       ':%!jq '.'<CR>',                                        'Format',  'Format JSON')
 call HotpopMap('nmap',     '',         '\s',        ':call ToggleSpell()<CR>',                              'Writing', 'Toggle Spellcheck')
 call HotpopMap('nmap',     '',         '\c',        ':RainbowLevelsToggle<CR>',                             'Colors',  'Toggle RainbowLevels')
 
