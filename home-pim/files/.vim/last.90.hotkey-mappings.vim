@@ -56,6 +56,8 @@ call HotpopMap('map',      '',         '<leader>l',  ':set background=light<cr>'
 
 call HotpopMap('map',      '',         '<leader>b',  ':Buffers<cr>',                        'FZF',     'FZF with open buffers')
 call HotpopMap('map',      '',         '<leader>f',  ':Files<cr>',                          'FZF',     'FZF with files in current directory')
+call HotpopMap('nmap',    '', '\/',                             ':Ag ', 'FZF', 'Silver Search in current directory')
+call HotpopMap('noremap', '', '<c-]>', ':call SearchUnderCursor()<CR>', 'FZF',     'SilverSearch word under cursor')
 
 call HotpopMap('map',      '',         '<leader>w',  ':silent FixWhitespace<cr>',           'Format',    'Fix all whitespace')
 call HotpopMap('nmap',     '',         '\jf',       ':%!jq '.'<CR>',                        'Format',  'Format JSON')
@@ -82,8 +84,6 @@ call HotpopMap('nnoremap', '',         'tl',         ':tabnext<CR>',            
 call HotpopMap('nnoremap', '',         'th',         ':tabprev<CR>',                        'Tabs',    'Previous tab')
 call HotpopMap('nnoremap', '',         'tn',         ':tabnew<CR>',                         'Tabs',    'New tab')
 
-call HotpopMap('nmap',    '', '\/',                             ':Ag ', 'SilverSearch', 'Silver Search in current directory')
-call HotpopMap('noremap', '', '<c-]>', ':call SearchUnderCursor()<CR>', 'SilverSearch',     'SilverSearch word under cursor')
 
 call HotpopMap('nnoremap', '<silent>', '<Leader>=', ' :exe "vertical resize " . (winwidth(0) * 16/15)<CR>', 'Resize',  'Make window wider')
 call HotpopMap('nnoremap', '<silent>', '<Leader>-', ' :exe "vertical resize " . (winwidth(0) * 14/15)<CR>', 'Resize',  'Make window smaller')
