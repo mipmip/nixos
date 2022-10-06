@@ -84,9 +84,9 @@ call HotpopMap('nmap',     '',         '\g',        ':Goyo<CR>',                
 call HotpopMap('nmap',     '',         '\jf',       ':%!jq '.'<CR>',                                        'Format',  'Format JSON')
 call HotpopMap('nmap',     '',         '\s',        ':call ToggleSpell()<CR>',                              'Writing', 'Toggle Spellcheck')
 call HotpopMap('nmap',     '',         '\c',        ':RainbowLevelsToggle<CR>',                             'Colors',  'Toggle RainbowLevels')
+
 call HotpopMap('nmap',     '',         ',mt',       ':call PandocMakePDF()<CR>',                            'Pandoc',  'Create PDF from Markdown file')
 call HotpopMap('nmap',     '',         ',mo',       ':call OpenPandocPDF()<CR>',                            'Pandoc',  'Open last created PDF')
-call HotpopMap('nmap',     '',         ',mv',       ':AsyncRun -silent showdown -B %<CR>',                  'Pandoc',  'Open Markdown in viewer')
 
 call HotpopMap('map','',',,', ':call panelmanager#PMPrepareToggleView("nerdtree")<cr>:NERDTreeFind<cr>:call panelmanager#PMSetCurrentViewForIdentifier("nerdtree")<cr>',"File", "Open directory of current file in NERDTree")
 
