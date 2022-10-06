@@ -26,7 +26,7 @@ endfunction
 
 function! OpenCurrentInNerdTree()
   call panelmanager#PMPrepareToggleView("nerdtree")
-  exe ':NERDTreeFind<cr>'
+  exe ':NERDTreeFind'
   call panelmanager#PMSetCurrentViewForIdentifier("nerdtree")'
 endfunction
 
