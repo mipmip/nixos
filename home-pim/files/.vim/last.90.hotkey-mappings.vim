@@ -65,7 +65,7 @@ call HotpopMap('nnoremap', '',         '<Leader>gb', ':Gblame<CR>',             
 call HotpopMap('nnoremap', '',         '<Leader>gp', ':Git push<CR>',                       'Git',     'Git push')
 call HotpopMap('map',      '<silent>', ',f',         ':!open "%:p:h"<CR><CR>',              'File',    'Open current file with OS default application')
 call HotpopMap('map',      '<silent>', ',o',         ':OIFM<CR>',                           'File',    'Show current file in Filemanager')
-call HotpopMap('map',      '<silent>', ',m',         ':MIP<CR>',                           'File',    'Show current file in Filemanager')
+call HotpopMap('map',      '<silent>', ',m',         ':MIP<CR>',                            'File',    'Open current file in MIP')
 call HotpopMap('map',      '',         '<leader>r',  ':silent redraw!<cr>',                 'Misc',    'Redraw screen')
 call HotpopMap('map',      '',         '<leader>tc', ':tabclose<cr>',                       'Tabs',    'close current tab')
 call HotpopMap('nnoremap', '',         'td',         ':tabclose<CR>',                       'Tabs',    'Close tab')
