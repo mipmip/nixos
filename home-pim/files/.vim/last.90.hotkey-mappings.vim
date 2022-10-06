@@ -80,7 +80,7 @@ call HotpopMap('nmap',     '',         ',vr',        ':source ~/.vim/vimrc<CR>',
 call HotpopMap('map',      '<silent>', ',f',         ':!open "%:p:h"<CR><CR>',              'File',    'Open current file with OS default application')
 call HotpopMap('map',      '<silent>', ',o',         ':OIFM<CR>',                           'File',    'Show current file in Filemanager')
 call HotpopMap('map',      '<silent>', ',m',         ':MIP<CR>',                            'File',    'Open current file in MIP')
-call HotpopMap('map','',',,', ':call panelmanager#PMPrepareToggleView("nerdtree")<cr>:NERDTreeFind<cr>:call panelmanager#PMSetCurrentViewForIdentifier("nerdtree")<cr>',"File", "Open directory of current file in NERDTree")
+call HotpopMap('map','',',,', ,"File", "Open directory of current file in NERDTree")
 
 call HotpopMap('map',      '',         '<leader>r',  ':silent redraw!<cr>',                 'Misc',    'Redraw screen')
 
