@@ -51,10 +51,13 @@ call HotpopMap('nmap',     '',         ',fp',        ':let @" = expand("%:p")<CR
 call HotpopMap('nnoremap', '<expr>',   '<leader>sa', 'Saveas()',                            'File',    'Save current file as...')
 call HotpopMap('nmap',     '',         ',vc',        ':call VimInNerdTree()<CR>',           'File',    'Open Vim configfiles in NERDTree')
 call HotpopMap('nmap',     '',         ',vr',        ':source ~/.vim/vimrc<CR>',            'File',    'Reload vim configuration ')
+
 call HotpopMap('nmap',     '',         ',b',         ':silent w<CR> :RunInBlender<CR><CR>', 'Blender', 'Run current script in Blender with listener')
 call HotpopMap('nmap',     '',         ',bk',        ':!killall -9 blender<CR>',            'Blender', 'Killall blender procs')
+
 call HotpopMap('map',      '',         '<leader>d',  ':set background=dark<cr>',            "Colors",  "Change to dark background")
 call HotpopMap('map',      '',         '<leader>l',  ':set background=light<cr>',           "Colors",  "Change to light background")
+
 call HotpopMap('map',      '',         '<leader>b',  ':Buffers<cr>',                        'FZF',     'FZF with open buffers')
 call HotpopMap('map',      '',         '<leader>f',  ':Files<cr>',                          'FZF',     'FZF with files in current directory')
 
