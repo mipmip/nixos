@@ -54,6 +54,15 @@
         ]
     },
     {
+        "name": "git",
+        "shortcuts": [
+            {
+                "key": "gsb",
+                "description": "git status"
+            }
+        ]
+    },
+    {
         "name": "st",
         "shortcuts": [
             {
