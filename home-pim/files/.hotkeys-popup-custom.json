@@ -69,8 +69,8 @@
                 "description": "git commit"
             },
             {
-                "key": "gc",
-                "description": "git commit"
+                "key": "gp",
+                "description": "git push"
             }
         ]
     },
