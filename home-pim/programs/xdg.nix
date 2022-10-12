@@ -1,3 +1,7 @@
+# LOOKING FOR ICONS?
+# cd /run/current-system/sw/share/icons/hicolor/scalable/apps
+
+
 { config, pkgs, ... }:
 {
 
