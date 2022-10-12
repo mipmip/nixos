@@ -77,8 +77,8 @@
                 "description": "git pull"
             },
             {
-                "key": "gl",
-                "description": "git pull"
+                "key": "gf",
+                "description": "git fetch"
             }
         ]
     },
