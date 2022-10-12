@@ -67,6 +67,10 @@
             {
                 "key": "gc",
                 "description": "git commit"
+            },
+            {
+                "key": "gc",
+                "description": "git commit"
             }
         ]
     },
