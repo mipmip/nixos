@@ -83,6 +83,10 @@
             {
                 "key": "gb",
                 "description": "git branch"
+            },
+            {
+                "key": "gm",
+                "description": "git merge"
             }
         ]
     },
