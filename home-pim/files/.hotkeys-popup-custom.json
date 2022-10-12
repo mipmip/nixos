@@ -71,6 +71,10 @@
             {
                 "key": "gp",
                 "description": "git push"
+            },
+            {
+                "key": "ga",
+                "description": "git add"
             }
         ]
     },
