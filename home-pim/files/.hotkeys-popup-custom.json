@@ -54,6 +54,15 @@
         ]
     },
     {
+        "name": "st",
+        "shortcuts": [
+            {
+                "key": "Shift + CTRL + J/K",
+                "description": "Scale fonts"
+            }
+        ]
+    },
+    {
         "name": "Tmux",
         "shortcuts": [
             {
