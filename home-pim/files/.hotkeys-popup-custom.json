@@ -79,6 +79,10 @@
             {
                 "key": "gf",
                 "description": "git fetch"
+            },
+            {
+                "key": "gb",
+                "description": "git branch"
             }
         ]
     },
