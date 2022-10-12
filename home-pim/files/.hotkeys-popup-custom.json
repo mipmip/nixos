@@ -63,6 +63,10 @@
             {
                 "key": "gd",
                 "description": "git diff"
+            },
+            {
+                "key": "gc",
+                "description": "git commit"
             }
         ]
     },
