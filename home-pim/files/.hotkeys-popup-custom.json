@@ -73,8 +73,8 @@
                 "description": "git push"
             },
             {
-                "key": "ga",
-                "description": "git add"
+                "key": "gl",
+                "description": "git pull"
             }
         ]
     },
