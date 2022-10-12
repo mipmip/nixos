@@ -61,8 +61,8 @@
                 "description": "git status"
             },
             {
-                "key": "gsb",
-                "description": "git status"
+                "key": "gd",
+                "description": "git diff"
             }
         ]
     },
