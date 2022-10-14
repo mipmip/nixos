@@ -1,3 +1,5 @@
+{ config, lib, pkgs, ... }:
+
 environment.systemPackages =
 let
   comma = (import (pkgs.fetchFromGitHub {
