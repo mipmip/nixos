@@ -115,7 +115,7 @@ in
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
       binding = "<Shift><Super>B";
       command = "firefox";
-      name = "screenshot";
+      name = "firefox";
     };
 
 
