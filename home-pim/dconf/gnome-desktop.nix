@@ -97,7 +97,7 @@ in
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       binding = "<Shift><Super>F";
       command = "nautilus";
-      name = "screenshot";
+      name = "filemanager";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
