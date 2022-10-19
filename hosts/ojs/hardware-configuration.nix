@@ -36,7 +36,7 @@
     };
 
   fileSystems."/virtualbox" =
-    { device = "/dev/disk/by-uuid/242C-46A0";
+    { device = "/dev/sdc1";
       fsType = "btrfs";
     };
 
