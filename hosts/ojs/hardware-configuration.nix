@@ -35,7 +35,7 @@
       fsType = "vfat";
     };
 
-  fileSystems."/boot" =
+  fileSystems."/virtualbox" =
     { device = "/dev/disk/by-uuid/242C-46A0";
       fsType = "btrfs";
     };
