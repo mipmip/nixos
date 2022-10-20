@@ -65,6 +65,10 @@
                 "description": "git clone --recurse-submodules"
             },
             {
+                "key": "gco",
+                "description": "git clone --recurse-submodules"
+            },
+            {
                 "key": "gsb",
                 "description": "git status"
             },
