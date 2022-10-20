@@ -57,6 +57,14 @@
         "name": "git",
         "shortcuts": [
             {
+                "key": "ga",
+                "description": "git add"
+            },
+            {
+                "key": "ga",
+                "description": "git add"
+            },
+            {
                 "key": "gsb",
                 "description": "git status"
             },
