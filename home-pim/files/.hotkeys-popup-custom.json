@@ -62,7 +62,7 @@
             },
             {
                 "key": "gcl",
-                "description": "git add"
+                "description": "git clone --recurse-submodules"
             },
             {
                 "key": "gsb",
