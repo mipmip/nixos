@@ -6,6 +6,7 @@
     tldr
     cheat
     xh
+    duf
   ]
   ++ (if pkgs.stdenv.isDarwin then
   [
