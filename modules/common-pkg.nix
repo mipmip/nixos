@@ -31,6 +31,7 @@
   ]
   else
   [
+    sysstat
     vifm
     wtf
     binutils
