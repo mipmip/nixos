@@ -42,6 +42,13 @@ in
   ];
 
 
+  nix = {
+      package = pkgs.nixFlakes;
+        extraOptions = ''
+            experimental-features = nix-command flakes
+              '';
+            };
+
   networking.hosts = {
       "127.0.0.1" = [ "ojs" "localhost" ];
       "213.206.241.6" = [ "buwa.nl" "www.buwa.nl" ];
