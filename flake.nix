@@ -29,7 +29,7 @@
       ];
     };
 
-    nixosConfigurations.ojs = inputs.nixpkgs.lib.nixosSystem {
+    nixosConfigurations.billquick = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/billquick/configuration.nix
