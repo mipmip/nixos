@@ -32,6 +32,7 @@
   else
   [
     sysstat
+    iotop
     vifm
     wtf
     binutils
