@@ -1,5 +1,4 @@
 {
-  # the source of your packages
   inputs = {
     # normal nix stuff
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
