@@ -24,10 +24,10 @@
       ];
     };
 
-    nixosConfigurations.billquick = inputs.nixpkgs.lib.nixosSystem {
+    nixosConfigurations.billquick-nixos = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/billquick/configuration.nix
+        ./hosts/billquick-nixos/configuration.nix
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
