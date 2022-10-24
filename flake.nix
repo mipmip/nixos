@@ -25,9 +25,6 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/ojs/configuration.nix
-
-        #inputs.comma.packages."x86_64-linux".default
-
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -38,7 +35,7 @@
     nixosConfigurations.ojs = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/ojs/configuration.nix
+        ./hosts/billquick/configuration.nix
 
         #inputs.comma.packages."x86_64-linux".default
 
