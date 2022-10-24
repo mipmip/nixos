@@ -2,9 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    ansible
-    terraform
-    act
+    bat
   ]
   ++ (if pkgs.stdenv.isDarwin then
   [
