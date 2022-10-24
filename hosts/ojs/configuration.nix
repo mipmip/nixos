@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, inputs, system, pkgs, ... }:
 
 let
   myCustomLayout = pkgs.writeText "xkb-layout" ''
@@ -24,9 +24,11 @@ in
       ../../modules/workstation.nix
       ../../modules/docker.nix
       ../../modules/virtualbox.nix
-      ../../modules/comma.nix
+#      ../../modules/comma.nix
       ../../modules/workstation-pkg.nix
+
       ../../modules/home-manager-global.nix
+
       ../../modules/texlive.nix
       ../../modules/fonts.nix
       ../../modules/st.nix
@@ -43,11 +45,11 @@ in
 
 
   nix = {
-      package = pkgs.nixFlakes;
-        extraOptions = ''
+    package = pkgs.nixFlakes;
+    extraOptions = ''
             experimental-features = nix-command flakes
-              '';
-            };
+    '';
+  };
 
   networking.hosts = {
       "127.0.0.1" = [ "ojs" "localhost" ];
