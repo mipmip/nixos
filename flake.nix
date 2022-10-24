@@ -14,11 +14,9 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     comma.url = "github:nix-community/comma";
-    #comma.inputs.nixpkgs.follows = "nixpkgs";
 
   };
 
-  # what will be produced (i.e. the build)
   outputs = inputs: {
 
     nixosConfigurations.ojs = inputs.nixpkgs.lib.nixosSystem {
