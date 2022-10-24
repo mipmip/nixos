@@ -5,6 +5,7 @@
     bat
     tldr
     cheat
+    xh
   ]
   ++ (if pkgs.stdenv.isDarwin then
   [
