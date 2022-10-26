@@ -1,6 +1,6 @@
 # Setup Home-Manager
 
-Make sure home-manager is installed.
+Make sure home-manager is installed. On mac I home-manager as single user install. On nixos home-manager is installed automatically.
 
 Create home dir conf:
 

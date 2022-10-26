@@ -18,7 +18,6 @@
     /Users/pim/nixos/home-pim/programs/tmux.nix
     /Users/pim/nixos/home-pim/programs/vim.nix
     /Users/pim/nixos/home-pim/programs/zsh.nix
-    /Users/pim/nixos/home-pim/dconf
   ];
 
 
