@@ -5,4 +5,10 @@
       recursive = true;
     };
   };
+
+  home.file = {
+    "Brewfile" = {
+      source = ./Brewfile;
+    };
+  };
 }
