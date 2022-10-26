@@ -4,6 +4,12 @@ This is my mono-repository for my machines configuration and my dotfiles.
 
 _documentation is work in progress_
 
+
+## MacOS
+
+For macOS provisioning I only use Home-Manager from Nix. Cli tools are declared
+in home-pim/programs/macos-bundle.nix. Other mac-apps are in home-pim/files-macos/Brewfile
+
 ## Linux Desktop Highlights
 
 I use GNOME as desktop environment with a few extensions to give me some

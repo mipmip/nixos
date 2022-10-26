@@ -1,7 +1,3 @@
-# THIS FILE IS INTENDED AS SINGLE USER in .config/nixpkgs/home.nix
-# after installing home-manager create a symlink ln -s ~/nixos/home-pim/home.nix ~/.config/nixpkgs/
-# it's because of the dconf bug
-
 { config, pkgs, ... }:
 
 {
