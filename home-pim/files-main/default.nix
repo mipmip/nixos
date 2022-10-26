@@ -22,13 +22,6 @@
   };
 
   home.file = {
-    ".vimcleanfortesting" = {
-      source = ./.vimcleanfortesting;
-      recursive = true;
-    };
-  };
-
-  home.file = {
     ".config/smug" = {
       source = ./smug;
       recursive = true;
