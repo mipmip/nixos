@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " MY PLUGINS
 "Plug 'mipmip/vim-fluid'
-"Plug 'mipmip/vim-petra'
+Plug 'mipmip/vim-petra'
 Plug 'mipmip/vim-hotpop'
 Plug 'mipmip/panelmanager.vim'
 Plug 'mipmip/vim-show-in-filemanager', { 'branch': 'main' }
