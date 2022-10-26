@@ -16,6 +16,7 @@
     /Users/pim/nixos/home-pim/programs/fzf.nix
     /Users/pim/nixos/home-pim/programs/git.nix
     /Users/pim/nixos/home-pim/programs/tmux.nix
+    /Users/pim/nixos/home-pim/programs/macos-bundle.nix
     /Users/pim/nixos/home-pim/programs/vim.nix
     /Users/pim/nixos/home-pim/programs/zsh.nix
   ];
