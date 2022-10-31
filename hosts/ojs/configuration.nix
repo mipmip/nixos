@@ -68,12 +68,7 @@ in
   networking.interfaces.enp9s0.useDHCP = true;
   networking.interfaces.wlp0s29f7u5.useDHCP = true;
 
-
-#  networking.firewall = {
-#    allowedUDPPorts = [ 51820 ]; # Clients and peers can use the same port, see listenport
-#  };
-
-  # Enable WireGuard
+  # Enable WireGuard (TrackLib)
   networking.wireguard.interfaces = {
     # "wg0" is the network interface name. You can name the interface arbitrarily.
     wg0 = {
