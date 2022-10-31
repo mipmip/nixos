@@ -83,6 +83,12 @@ in
     "hid_apple.fnmode=2"
   ];
 
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.broadcom_sta
+#    config.boot.kernelPackages.wireguard
+  ];
+
+
 
   system.stateVersion = "21.11"; # Did you read the comment?
 }
