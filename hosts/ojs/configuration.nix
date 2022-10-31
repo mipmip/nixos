@@ -68,6 +68,10 @@ in
   networking.interfaces.enp9s0.useDHCP = true;
   networking.interfaces.wlp0s29f7u5.useDHCP = true;
 
+
+
+
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
