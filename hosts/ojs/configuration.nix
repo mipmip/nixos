@@ -75,11 +75,6 @@ in
 
       ips = [ "10.0.0.126/32" ];
 
-      # Path to the private key file.
-      #
-      # Note: The private key can also be included inline via the privateKey option,
-      # but this makes the private key world-readable; thus, using privateKeyFile is
-      # recommended.
       privateKeyFile = "path to private key file";
 
       peers = [
