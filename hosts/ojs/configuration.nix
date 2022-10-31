@@ -70,9 +70,9 @@ in
 
   # Enable WireGuard (TrackLib)
   networking.wireguard.interfaces = {
-    # "wg0" is the network interface name. You can name the interface arbitrarily.
+
     wg0 = {
-      # Determines the IP address and subnet of the client's end of the tunnel interface.
+
       ips = [ "10.0.0.126/32" ];
 
       # Path to the private key file.
