@@ -24,13 +24,6 @@
     direnv
     zip
     unzip
-  ]
-  ++ (if pkgs.stdenv.isDarwin then
-  [
-    unixtools.watch
-  ]
-  else
-  [
     sysstat
     iotop
     vifm
@@ -46,6 +39,5 @@
     pkg-config
     whois
     xorg.xkill
-  ]
-  );
+  ];
 }

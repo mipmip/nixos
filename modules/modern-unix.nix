@@ -8,12 +8,5 @@
     httpie
     xh
     duf
-  ]
-  ++ (if pkgs.stdenv.isDarwin then
-  [
-  ]
-  else
-  [
-  ]
-  );
+  ];
 }

@@ -2,7 +2,6 @@
 
 {
 
-
   environment.systemPackages = with pkgs; [
     potrace
     pandoc
@@ -24,12 +23,7 @@
     gitFull
     #github-desktop
     gh # GitHub Cli
-  ]
 
-  ++ (if pkgs.stdenv.isDarwin then [
-     iterm2
-  ]
-  else [
     zathura
     pdftk
     x264
@@ -63,6 +57,6 @@
     protonmail-bridge
 
     whatsapp-for-linux
-  ]);
 
+  ];
 }

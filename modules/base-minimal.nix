@@ -8,15 +8,5 @@
   environment.systemPackages = with pkgs; [
     wget
     gitFull
-  ]
-  ++ (if pkgs.stdenv.isDarwin then
-  [
-  ]
-  else
-  [
-    curl
-    gnumake
-    zsh
-  ]
-  );
+  ];
 }

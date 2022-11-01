@@ -5,12 +5,5 @@
     ansible
     terraform
     act
-  ]
-  ++ (if pkgs.stdenv.isDarwin then
-  [
-  ]
-  else
-  [
-  ]
-  );
+  ];
 }
