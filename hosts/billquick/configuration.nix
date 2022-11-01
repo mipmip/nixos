@@ -11,7 +11,7 @@ in
     imports =
       [
         ./hardware-configuration.nix
-        ../../modules/nur_mipmip_pkgs.nix
+        ../../modules/nur-mipmip-pkgs.nix
         ../../modules/base-minimal.nix
         ../../modules/common.nix
         ../../modules/common-pkg.nix

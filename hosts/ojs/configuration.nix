@@ -12,7 +12,7 @@ in
 
       ./hardware-configuration.nix
 
-      ../../modules/nur_mipmip_pkgs.nix
+      ../../modules/nur-mipmip-pkgs.nix
 
       ../../modules/base-minimal.nix
       ../../modules/common.nix
@@ -25,7 +25,7 @@ in
       ../../modules/workstation.nix
       ../../modules/docker.nix
       ../../modules/virtualbox.nix
-#      ../../modules/comma.nix
+
       ../../modules/workstation-pkg.nix
 
       ../../modules/home-manager-global.nix
