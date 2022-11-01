@@ -22,7 +22,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [
-    (pkgs.callPackage ../pkgs/hl4150cdn/default.nix {})
+    (pkgs.callPackage ../nur-mipmip-pkgs/hl4150cdn/default.nix {})
   ];
 
   users.users.pim.initialPassword = "hallo";

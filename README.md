@@ -26,12 +26,13 @@ showing my writing environment.
 
 ### TODO
 
-unstable packages
-comma package
-billquick
-darwin confs
-vm ware confs
-minimal homemanager conf
+- [x] billquick
+- [x] darwin confs
+- [x] minimal homemanager conf
+- [ ] comma package working with flakes
+- [ ] unstable packages
+- [ ] split modules/pkgs/conf
+- [ ] dash or underscode
 
 
 
