@@ -23,6 +23,7 @@ in
       ../../modules/dev-technative.nix
       ../../modules/vim-large.nix
       ../../modules/workstation.nix
+      ../../modules/video.nix
       ../../modules/docker.nix
       ../../modules/virtualbox.nix
 
@@ -65,6 +66,7 @@ in
   networking.hostName = "ojs";
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
 
+  networking.networkmanager.enable = true;
   networking.useDHCP = false;
   networking.interfaces.enp10s0.useDHCP = true;
   networking.interfaces.enp9s0.useDHCP = true;

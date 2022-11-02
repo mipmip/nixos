@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    gnome.networkmanager-openvpn
+    #gnome.networkmanager-openvpn
     git-sync
 
     mipmip_pkg.cryptobox
@@ -13,7 +13,6 @@
 
     newsflash
 
-    kooha
 
     #DSTP
     dstp
