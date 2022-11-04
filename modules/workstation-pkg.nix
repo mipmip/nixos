@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, unstable, ... }:
 
 {
 
@@ -31,7 +31,7 @@
 
     nextcloud-client
     gimp
-    #unstable.inkscape-with-extensions
+    unstable.inkscape-with-extensions
     blender
     libreoffice
     spotify
