@@ -19,6 +19,5 @@
     pkgs.apg
     pkgs.smug
     pkgs.ctags
-
   ];
 }

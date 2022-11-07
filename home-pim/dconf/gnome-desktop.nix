@@ -102,7 +102,8 @@ in
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       binding = "<Shift><Super>exclam";
-      command = "appimage-run /home/pim/cTempo2/timenout2tempo/dist_electron/Timenaut-latest.AppImage";
+      #command = "appimage-run /home/pim/cTempo2/timenout2tempo/dist_electron/Timenaut-latest.AppImage";
+      command = "appimage-run /home/pim/cPassingTrain/trajno/dist_electron/Trajno-latest.AppImage";
       name = "Tempo";
     };
 

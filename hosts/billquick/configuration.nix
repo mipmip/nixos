@@ -20,7 +20,8 @@
     ../../modules/browser-chrome.nix
     ../../modules/explore-pkg.nix
     ../../modules/st.nix
-    ../../modules/nfspiet.nix
+    ../../modules/network_nfspiet.nix
+    ../../modules/network_wireguard.nix
     ../../modules/peripherals_hurwenen.nix
     ../../modules/nixos-utils.nix
     ../../modules/video.nix

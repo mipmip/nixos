@@ -30,7 +30,6 @@
     ../../modules/office-communication.nix
     ../../modules/browser-firefox.nix
     ../../modules/browser-chrome.nix
-    ../../modules/nfspiet.nix
     ../../modules/peripherals_hurwenen.nix
     ../../modules/nixos-utils.nix
     ../../modules/explore-pkg.nix
@@ -38,6 +37,7 @@
 
     ../../modules/keyboard_keychron.nix
     ../../modules/keyboard_disable_caps.nix
+    ../../modules/network_nfspiet.nix
     ../../modules/network_wireguard.nix
   ];
 
