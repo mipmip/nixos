@@ -19,6 +19,11 @@ homerebuild(){
   home-manager switch
 }
 
+make_command "macbrew" "Run brew bundle"
+macbrew(){
+  cd ~ && brew bundle
+}
+
 make_command "pcirescan" "Rescan for devices that don't wake up"
 pcirescan(){
   sudo echo "1" /sys/bus/pci/rescan
