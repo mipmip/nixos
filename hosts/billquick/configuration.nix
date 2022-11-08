@@ -25,6 +25,7 @@
     ../../modules/peripherals_hurwenen.nix
     ../../modules/nixos-utils.nix
     ../../modules/video.nix
+    ../../modules/comma.nix
     ../../modules/texlive.nix
     ../../modules/keyboard_keychron.nix
     ../../modules/keyboard_disable_caps.nix

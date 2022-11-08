@@ -23,5 +23,10 @@
 
     notify
     slop
+
+    #VNC ADEVINTA
+    remmina
+    realvnc-vnc-viewer
+    dog
   ];
 }
