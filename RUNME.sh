@@ -19,4 +19,9 @@ homerebuild(){
   home-manager switch
 }
 
+make_command "pcirescan" "Rescan for devices that don't wake up"
+pcirescan(){
+  sudo echo "1" /sys/bus/pci/rescan
+}
+
 runme
