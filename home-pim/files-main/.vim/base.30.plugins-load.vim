@@ -77,6 +77,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-ruby/vim-ruby'
 Plug 'evanleck/vim-svelte'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'rodjek/vim-puppet'
 
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
