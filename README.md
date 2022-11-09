@@ -29,10 +29,12 @@ showing my writing environment.
 - [x] billquick
 - [x] darwin confs
 - [x] minimal homemanager conf
+- [x] unstable packages
 - [ ] comma package working with flakes
-- [ ] unstable packages
 - [ ] split modules/pkgs/conf
 - [ ] dash or underscode
+- [ ] finish gnome-screenshot
+- [ ] fix NUR url, maybe nur.nix
 
 
 

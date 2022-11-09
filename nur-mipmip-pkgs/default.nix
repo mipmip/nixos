@@ -15,6 +15,7 @@ let
     fred           = pkgs.callPackage ./fred      { };
     embgit         = pkgs.callPackage ./embgit    { };
     cryptobox      = pkgs.callPackage ./cryptobox { };
+    gnome-screenshot      = pkgs.callPackage ./gnome-screenshot { };
     #yj-go     = pkgs.callPackage ./yj-go     { };
     #dstp      = pkgs.callPackage ./dstp      { };
 

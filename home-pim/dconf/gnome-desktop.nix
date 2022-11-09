@@ -83,6 +83,7 @@ in
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
       ];
       screensaver = [];
       search = [ "<Super>space" ];
@@ -102,13 +103,13 @@ in
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       binding = "<Shift><Super>exclam";
-      #command = "appimage-run /home/pim/cTempo2/timenout2tempo/dist_electron/Timenaut-latest.AppImage";
       command = "appimage-run /home/pim/cPassingTrain/trajno/dist_electron/Trajno-latest.AppImage";
       name = "Tempo";
     };
 
+
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-      binding = "<Primary><Super>4";
+      binding = "<Shift><Super>dollar";
       command = "gnome-screenshot -i";
       name = "screenshot";
     };
@@ -119,19 +120,15 @@ in
       name = "firefox";
     };
 
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
+      binding = "<Shift><Super>at";
+      command = "keepassxc";
+      name = "keepassxc";
+    };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {
       overrides = "{'Gtk/EnablePrimaryPaste': <0>, 'Gtk/DecorationLayout': <'close,minimize,maximize:menu'>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DialogsUseHeader': <0>}";
     };
-
-    #"org/gnome/GPaste" = {
-    #  history-name = "history";
-    #  images-support = true;
-    #  show-history = "<Primary>space";
-    #  synchronize-clipboards = true;
-    #  track-changes = true;
-    #  trim-items = true;
-    #};
 
     "org/gnome/mutter" = {
       center-new-windows = true;
