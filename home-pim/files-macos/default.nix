@@ -11,4 +11,11 @@
       source = ./Brewfile;
     };
   };
+
+  home.file = {
+    ".amethyst.yml" = {
+      source = ./.amethyst.yml;
+    };
+  };
+
 }
