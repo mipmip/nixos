@@ -31,6 +31,9 @@ set smartcase   " ... unless they contain at least one capital letter
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim_temp/undodir
 
+" vim vimtricks
+set history=1000
+
 filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
 au FileType python setlocal tabstop=4 shiftwidth=4
 
