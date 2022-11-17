@@ -31,7 +31,7 @@ set smartcase   " ... unless they contain at least one capital letter
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim_temp/undodir
 
-" vim vimtricks
+" vim vimtricks https://www.getrevue.co/profile/vim_tricks/issues/vim-command-line-window-1458375
 set history=1000
 
 filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
