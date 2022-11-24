@@ -71,7 +71,8 @@ Plug 'scrooloose/nerdcommenter'
 " SYNTAX FILES
 Plug 'fatih/vim-go'
 Plug 'LnL7/vim-nix'
-Plug 'posva/vim-vue'
+"vim-vue makes it very slow
+"Plug 'posva/vim-vue'
 "Plug 'elmar-hinz/vim.typoscript'
 Plug 'hashivim/vim-terraform'
 Plug 'vim-ruby/vim-ruby'

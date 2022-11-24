@@ -1,14 +1,15 @@
 { config, inputs, system, pkgs, ... }:
 
 {
-  networking.wireguard.interfaces = {
+  networking.wg-quick.interfaces = {
     wg0 = {
-      ips = [ "10.0.0.126/32" ];
+      address = [ "10.0.0.126/32" ];
+      #dns = [ "1.1.1.1" ];
       privateKeyFile = "/etc/secrets/wg-tracklib-key";
+
       peers = [
         {
           publicKey = "QGTFSDQ3KirYWvoUaLeVvWkupuDGy+0Kw5o5w3i6bBk=";
-
           allowedIPs = [
             "108.128.202.66/32"
             "18.34.240.0/22"
@@ -37,6 +38,7 @@
             "63.33.57.42/32"
             "63.33.80.225/32"
           ];
+
 #          allowedIPs = [
 #            "18.34.240.0/22"
 #            "18.34.32.0/20"
@@ -72,5 +74,6 @@
       ];
     };
   };
+
 
 }

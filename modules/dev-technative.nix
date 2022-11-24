@@ -4,25 +4,25 @@
 
   services.onedrive.enable = true;
 
-  services.globalprotect = {
-    enable = true;
-    #csdWrapper = "${pkgs.openconnect}/libexec/openconnect/hipreport.sh";
-    csdWrapper = "/etc/secrets/hipreport-adevinta.sh";
-#    settings = {
-#      vpn.advgo.net = {
-#        openconnect-args="--csd-wrapper=/etc/secrets/hipreport-adevinta.sh --dump-http-traffic --useragent='PAN GlobalProtect/5.2.11-10 (Apple Mac OS X 12.4.0)' --version-string='5.2.11-10' --os=mac-intel";
-#      };
-#    };
-  };
+#  services.globalprotect = {
+#    enable = true;
+#    #csdWrapper = "${pkgs.openconnect}/libexec/openconnect/hipreport.sh";
+#    csdWrapper = "/etc/secrets/hipreport-adevinta.sh";
+##    settings = {
+##      vpn.advgo.net = {
+##        openconnect-args="--csd-wrapper=/etc/secrets/hipreport-adevinta.sh --dump-http-traffic --useragent='PAN GlobalProtect/5.2.11-10 (Apple Mac OS X 12.4.0)' --version-string='5.2.11-10' --os=mac-intel";
+##      };
+##    };
+#  };
 
-  programs.proxychains.enable = true;
-  programs.proxychains.proxies = {
-    myproxy = {
-      type = "socks4";
-      host = "127.0.0.1";
-      port = 1080;
-    };
-  };
+#  programs.proxychains.enable = true;
+#  programs.proxychains.proxies = {
+#    myproxy = {
+#      type = "socks4";
+#      host = "127.0.0.1";
+#      port = 1080;
+#    };
+#  };
 
   environment.systemPackages = with pkgs; [
     pre-commit
@@ -54,10 +54,11 @@
 
     #TRACKLIB
     wireguard-tools
+    unstable.nodePackages.aws-cdk
 
     #ADEVINTA
-    unstable.globalprotect-openconnect
-    openconnect
+    #unstable.globalprotect-openconnect
+    #openconnect
     proxychains
 
   ];

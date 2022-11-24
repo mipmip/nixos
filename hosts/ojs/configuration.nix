@@ -38,7 +38,8 @@
     ../../modules/keyboard_keychron.nix
     ../../modules/keyboard_disable_caps.nix
     ../../modules/network_nfspiet.nix
-#    ../../modules/network_wireguard.nix
+    #../../modules/network_wireguard.nix
+    ../../modules/network_wireguard_quick.nix
   ];
 
   nix = {
@@ -60,6 +61,8 @@
 
   networking.hostName = "ojs";
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
+
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   networking.networkmanager.enable = true;
   networking.useDHCP = false;
