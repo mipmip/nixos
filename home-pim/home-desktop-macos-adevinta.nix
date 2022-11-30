@@ -16,6 +16,7 @@
     /Users/pim.snel/nixos/home-pim/programs/macos-bundle.nix
     /Users/pim.snel/nixos/home-pim/programs/vim.nix
     /Users/pim.snel/nixos/home-pim/programs/zsh.nix
+    /Users/pim.snel/nixos/home-pim/programs/zsh_macos_extra.nix
   ];
 
 
