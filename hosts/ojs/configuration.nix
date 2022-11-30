@@ -38,7 +38,7 @@
     ../../modules/keyboard_keychron.nix
     ../../modules/keyboard_disable_caps.nix
     ../../modules/network_nfspiet.nix
-    ../../modules/network_wireguard.nix
+#    ../../modules/network_wireguard.nix
   ];
 
   nix = {
@@ -52,6 +52,9 @@
     "127.0.0.1" = [
       "ojs"
       "localhost"
+    ];
+    "10.57.194.13" = [
+      "jenkins.prod.ki.ecg.so"
     ];
   };
 

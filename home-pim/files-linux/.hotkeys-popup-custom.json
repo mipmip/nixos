@@ -116,6 +116,10 @@
             {
                 "key": "Shift + CTRL + S",
                 "description": "Cycle fonts"
+            },
+            {
+                "key": "Shift + CTRL + V",
+                "description": "Paste"
             }
         ]
     },

@@ -14,6 +14,10 @@
         enable = true;
         theme = "robbyrussell";
         plugins=["git" "tmux" "docker" "python" "vi-mode" "systemd" ];
+        extraConfig=
+          ''
+          zstyle :omz:plugins:ssh-agent identities id_rsa id_rsa2 id_github
+          '';
       };
     };
 
