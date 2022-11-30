@@ -29,4 +29,9 @@ pcirescan(){
   sudo echo "1" /sys/bus/pci/rescan
 }
 
+
+make_command "fixmacnixpath" "set nix path on the mac"
+fixmacnixpath(){
+  source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+}
 runme
