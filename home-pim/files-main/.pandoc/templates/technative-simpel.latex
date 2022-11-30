@@ -66,7 +66,7 @@ $else$
   hidelinks,
 $endif$
   breaklinks=true,
-  pdfcreator={LaTeX via pandoc door Lingewoud}}
+  pdfcreator={LaTeX via pandoc by TechNative}}
 
 %PANDOC FOUTEN SNEL OPLOSSEN
 $if(highlighting-macros)$
@@ -108,7 +108,7 @@ $endif$
 \rhead{}
 
 $if(tex_pagina_nummers)$
-  \lhead{\color{gray}Pagina \thepage\ van \pageref{LastPage}}
+  \lhead{\color{gray}Page \thepage\ of \pageref{LastPage}}
 $else$
 $endif$
 
@@ -150,23 +150,23 @@ $if(tex_voorblad)$
 \noindent\begin{tabular}{@{}l l }
 
 $if(opdrachtgever)$
-{\bf opdrachtgever:} & $opdrachtgever$ \\
+{\bf customer:} & $opdrachtgever$ \\
 $endif$
 
 $if(contactpersoon)$
-{\bf contactpersoon:} & $contactpersoon$ \\
+{\bf contact:} & $contactpersoon$ \\
 $endif$
 
 $if(schrijver)$
-{\bf door: } & $schrijver$ \\
+{\bf author: } & $schrijver$ \\
 $endif$
 
 $if(datum)$
-{\bf datum: } & $datum$ \\
+{\bf date: } & $datum$ \\
 $endif$
 
 $if(tex_laatst_gewijzigd)$
-{\bf laatst gewijzigd:} & \today \\
+{\bf last updated:} & \today \\
 $endif$
 
 $if(document_type)$
@@ -176,7 +176,7 @@ $endif$
 $endif$
 
 $if(document_versie)$
-{\bf versie:} & $document_versie$ \\
+{\bf version:} & $document_versie$ \\
 $endif$
 
 \end{tabular}

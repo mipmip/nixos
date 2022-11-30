@@ -14,6 +14,7 @@
     ../../modules/modern-unix.nix
     ../../modules/vim-large.nix
     ../../modules/workstation.nix
+    ../../modules/gnome.nix
     ../../modules/workstation-pkg.nix
     ../../modules/fonts.nix
     ../../modules/browser-firefox.nix

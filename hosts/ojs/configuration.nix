@@ -20,6 +20,7 @@
     ../../modules/virtualbox.nix
 
     ../../modules/workstation-pkg.nix
+    ../../modules/gnome.nix
 
     ../../modules/home-manager-global.nix
 
