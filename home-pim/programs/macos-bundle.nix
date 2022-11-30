@@ -19,5 +19,6 @@
     pkgs.apg
     pkgs.smug
     pkgs.ctags
+    pkgs.tmux
   ];
 }
