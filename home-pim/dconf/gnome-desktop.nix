@@ -84,6 +84,7 @@ in
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/"
       ];
       screensaver = [];
       search = [ "<Super>space" ];
@@ -110,7 +111,7 @@ in
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
       binding = "<Shift><Super>dollar";
-      command = "gnome-screenshot -i";
+      command = "gnome-screenshot -a";
       name = "screenshot";
     };
 
@@ -124,6 +125,11 @@ in
       binding = "<Shift><Super>at";
       command = "keepassxc";
       name = "keepassxc";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
+      binding = "<Shift><Super>percent";
+      command = "gnome-screenshot -i";
+      name = "screenshot-interactive";
     };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {
