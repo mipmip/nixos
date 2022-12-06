@@ -124,6 +124,43 @@
         ]
     },
     {
+        "name": "Readline",
+        "shortcuts": [
+            {
+                "key": "Alt + b / Alt + f",
+                "description": "Move backward/forward by word"
+            },
+            {
+                "key": "Alt + w / Alt + d",
+                "description": "Kill word backward/forward"
+            },
+            {
+                "key": "CTRL + k / CTRL + u",
+                "description": "Kill to end of line/beginning of line"
+            },
+            {
+                "key": "CTRL + y",
+                "description": "Yank from kill ring"
+            },
+            {
+                "key": "Alt + y",
+                "description": "Cycle through kill ring history (after Ctrl-y)"
+            },
+            {
+                "key": "Alt + t",
+                "description": "Transpose word"
+            },
+            {
+                "key": "Alt + t",
+                "description": "Upper forward word"
+            },
+            {
+                "key": "CTRL + /",
+                "description": "Cycle through the undo list"
+            }
+        ]
+    },
+    {
         "name": "Tmux",
         "shortcuts": [
             {
