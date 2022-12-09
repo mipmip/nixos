@@ -30,11 +30,11 @@ showing my writing environment.
 - [x] darwin confs
 - [x] minimal homemanager conf
 - [x] unstable packages
-- [ ] comma package working with flakes
+- [x] finish gnome-screenshot
 - [ ] split modules/pkgs/conf
-- [ ] dash or underscode
-- [ ] finish gnome-screenshot
 - [ ] fix NUR url, maybe nur.nix
+- [ ] public features and documentation
+- [ ] gnome desktop setup
 
 
 

@@ -43,7 +43,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins=["git" "docker" "docker-compose" "pass"];
+      plugins=["git"];
     };
 
     initExtra = ''

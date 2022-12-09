@@ -67,3 +67,11 @@ let g:mundo_right = 1
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "%i"}
 let g:slime_no_mappings = 1
+
+let g:openbrowser_search_engines = {
+      \'kagi': 'https://kagi.com/search?q={query}',
+      \'github': 'https://github.com/search?q={query}',
+      \'google': 'https://google.com/search?q={query}'
+      \}
+
+let g:openbrowser_default_search = 'kagi'
