@@ -6,7 +6,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    wget
+    ctags
+    sc-im
+    git-sync
     gitFull
+    neovim
   ];
 }

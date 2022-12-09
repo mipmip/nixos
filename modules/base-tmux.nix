@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
 
-    # tmux
+    smug
     tmux
     urlview
 

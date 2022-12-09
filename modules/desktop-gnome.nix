@@ -2,24 +2,37 @@
 
 {
   environment.systemPackages = with pkgs; [
-    gnome-secrets
 
-    gthumb
+    # NEMO-DESKTOP
     cinnamon.nemo
 
-    baobab # GrandPerspective
+    # GrandPerspective
+    baobab
 
+    # SCREENCAST
     peek
     kooha
 
+    # MAIL
     evolution
+
+    # UTILS
     gnome.gnome-tweaks
     gnome.gpaste
+    gnome-secrets
+
+    # IMAGE
     #gnome.gnome-screenshot
     mipmip_pkg.gnome-screenshot
+    image-roll
+    gthumb
 
+    #DEV
     glib.dev
     glade
+
+    #RSS
+    newsflash
   ];
 }
 

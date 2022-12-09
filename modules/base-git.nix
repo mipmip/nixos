@@ -2,8 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
-    ansible
-    terraform
-    act
+    git-crypt
+    pre-commit
+    git-lfs
+    gitFull
+
   ];
 }
+

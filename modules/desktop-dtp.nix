@@ -3,12 +3,12 @@
 {
 
   environment.systemPackages = with pkgs; [
+
     potrace
-    pandoc
-    neofetch
-    neovim
-    ffmpeg
+
+
     alacritty
+
     go_1_18
     gox
     goreleaser
@@ -20,7 +20,7 @@
     vimHugeX
     #vim_configurable
 
-    gitFull
+    # GITHUB
     #github-desktop
     gh # GitHub Cli
 
@@ -50,6 +50,7 @@
     protonmail-bridge
 
     whatsapp-for-linux
+    xorg.xkill
 
   ];
 }
