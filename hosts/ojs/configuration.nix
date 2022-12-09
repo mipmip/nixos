@@ -19,6 +19,7 @@
     ../../modules/desktop-communication.nix
     ../../modules/desktop-dtp.nix
     ../../modules/desktop-firefox.nix
+    ../../modules/desktop-dev.nix
     ../../modules/desktop-fonts.nix
     ../../modules/desktop-gnome.nix
     ../../modules/desktop-st.nix

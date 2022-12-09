@@ -21,6 +21,7 @@
     ../../modules/desktop-fonts.nix
     ../../modules/desktop-gnome.nix
     ../../modules/desktop-st.nix
+    ../../modules/desktop-dev.nix
     ../../modules/desktop-video.nix
     ../../modules/desktop-virtualbox.nix
 
