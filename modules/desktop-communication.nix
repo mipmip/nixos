@@ -12,7 +12,11 @@
       installPhase = builtins.replaceStrings ["UseOzonePlatform" "--ozone-platform=wayland"] ["UseOzonePlatform,WebRTCPipeWireCapturer" ""] oldAttrs.installPhase;
     }))
 
+
+    whatsapp-for-linux
+    protonmail-bridge
     zoom-us
+    tdesktop
     teams
   ];
 }

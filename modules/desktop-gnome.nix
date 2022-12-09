@@ -3,6 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
 
+    #NIX/GNOME/HOMEMANAGER
+    dconf2nix
+
     # NEMO-DESKTOP
     cinnamon.nemo
 

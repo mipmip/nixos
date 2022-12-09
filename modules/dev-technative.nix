@@ -49,6 +49,12 @@
     #unstable.globalprotect-openconnect
     #openconnect
     proxychains
+
+    #VNC ADEVINTA
+    remmina
+    realvnc-vnc-viewer
+    dog
+
   ];
 }
 

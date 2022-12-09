@@ -2,7 +2,6 @@
 #(C)2019-2022 Pim Snel - https://github.com/mipmip/RUNME.sh
 CMDS=();DESC=();NARGS=$#;ARG1=$1;make_command(){ CMDS+=($1);DESC+=("$2");};usage(){ printf "\nUsage: %s [command]\n\nCommands:\n" $0;line="              ";for((i=0;i<=$(( ${#CMDS[*]} -1));i++));do printf "  %s %s ${DESC[$i]}\n" ${CMDS[$i]} "${line:${#CMDS[$i]}}";done;echo;};runme(){ if test $NARGS -eq 1;then eval "$ARG1"||usage;else usage;fi;}
 
-
 make_command "sysclean" "Run nix garbage collector"
 sysclean(){
   sudo nix-collect-garbage -d
@@ -12,6 +11,7 @@ sysclean(){
 make_command "sysrebuild" "NixOS Rebuild"
 sysrebuild(){
   sudo nixos-rebuild switch
+  echo "run sudo nixos-rebuild switch --flake .#ojs"
 }
 
 make_command "homerebuild" "Home Manager Rebuild"
@@ -27,6 +27,27 @@ macbrew(){
 make_command "pcirescan" "Rescan for devices that don't wake up"
 pcirescan(){
   sudo echo "1" /sys/bus/pci/rescan
+}
+
+make_command "missing_modules" "List missing modules in configuration"
+missing_modules(){
+  files=(modules/*.nix)
+  hosts=(hosts/*)
+
+  for hostdir in "${hosts[@]}"
+  do
+    host=`basename $hostdir`
+    echo Missing modules for $host
+
+    for filename in "${files[@]}"
+    do
+      grep -q $filename hosts/$host/configuration.nix || echo ../../${filename}
+    done
+
+    echo
+
+  done
+
 }
 
 make_command "fixmacnixpath" "set nix path on the mac"

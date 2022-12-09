@@ -5,9 +5,8 @@
 
     ansible
     terraform
-
-    # RUN GITHUB WORKFLOWS LOCALLY
-    act
+    act # run github workflows locally
+    notify # Notify allows sending the output from any tool to Slack, Discord and Telegram
 
   ];
 }

@@ -4,53 +4,21 @@
 
   environment.systemPackages = with pkgs; [
 
-    potrace
-
-
-    alacritty
-
-    go_1_18
-    gox
-    goreleaser
-
-    hugo # needed for linny
-    mipmip_pkg.fred # needed for linny
-    mipmip_pkg.mip # Markdown in Preview
-
-    vimHugeX
-    #vim_configurable
-
-    # GITHUB
-    #github-desktop
-    gh # GitHub Cli
-
+    # PDF
     zathura
     pdftk
-    x264
 
-    nextcloud-client
 
     gimp
     unstable.inkscape-with-extensions
+    feh
+
     blender
+
     libreoffice
 
+    nextcloud-client
     spotify
-
-    tdesktop
-
-    keepassxc
-    bitwarden
-
-    feh
-    xclip
-    nfs-utils
-    appimage-run
-    vlc
-    protonmail-bridge
-
-    whatsapp-for-linux
-    xorg.xkill
 
   ];
 }

@@ -7,6 +7,7 @@
     wget
     bind.dnsutils
     whois
+    nfs-utils
 
     #SYSTEM
     htop
@@ -38,7 +39,6 @@
 
     # GRAPHIC
     imagemagick
-    ffmpeg
 
     # PYthon
     python3Full

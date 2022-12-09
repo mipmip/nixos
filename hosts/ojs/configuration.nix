@@ -25,8 +25,10 @@
     ../../modules/desktop-st.nix
     ../../modules/desktop-video.nix
     ../../modules/desktop-virtualbox.nix
+    ../../modules/desktop-security.nix
 
     ../../modules/dev-crystal.nix
+    ../../modules/dev-go.nix
     ../../modules/dev-technative.nix
 
     ../../modules/explore-pkg.nix
@@ -34,8 +36,6 @@
     ../../modules/hardware-kbd-keychron.nix
     ../../modules/hardware-krd_disable-caps.nix
     ../../modules/hardware-printers.nix
-
-#   ../../modules/network-nfs-piet.nix
 
     ../../modules/network-wireguard-tracklib.nix
     ../../modules/nix-comma.nix
