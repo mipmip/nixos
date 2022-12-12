@@ -4,23 +4,31 @@
         "shortcuts": [
             {
                 "key": "Super + Enter",
-                "description": "Open Terminal"
+                "description": "Terminal"
             },
             {
                 "key": "Shift + Super + B",
-                "description": "Open Firefox"
+                "description": "Firefox"
             },
             {
                 "key": "Shift + Super + F",
-                "description": "Open Files"
-            },
-            {
-                "key": "CTRL + Super + 4",
-                "description": "Open Screenshot"
+                "description": "Files"
             },
             {
                 "key": "Shift + Super + 1",
-                "description": "Open Tempo"
+                "description": "Trajno"
+            },
+            {
+                "key": "CTRL + Super + 2",
+                "description": "KeePass"
+            },
+            {
+                "key": "CTRL + Super + 4",
+                "description": "Screenshot Area"
+            },
+            {
+                "key": "CTRL + Super + 5",
+                "description": "Screenshot Interactive"
             }
         ]
     },
