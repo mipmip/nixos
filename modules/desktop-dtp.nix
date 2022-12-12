@@ -10,7 +10,7 @@
 
 
     gimp
-    unstable.inkscape-with-extensions
+    inkscape-with-extensions
     feh
 
     blender
