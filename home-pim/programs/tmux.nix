@@ -49,6 +49,12 @@
       # START WITH MOUSE MODE ENABLED
       set -g mouse on
 
+      set -g default-terminal "screen-256color"
+      set -sa terminal-overrides ',xterm-256color:RGB'
+      setw -g xterm-keys on
+      set -q -g status-utf8 on                  # expect UTF-8 (tmux < 2.2)
+      setw -q -g utf8 on
+
       if '[ -f ~/.tmux/gpakosz.cf ]' 'source ~/.tmux/gpakosz.cf'
       run 'cat ~/.tmux/gpakosz.sh | sh -s _apply_configuration'
 

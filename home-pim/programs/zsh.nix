@@ -7,10 +7,8 @@
     enableAutosuggestions = false;
 
     sessionVariables = {
-
       BROWSER = "firefox";
       EDITOR = "vim";
-
     };
 
     shellAliases = {
