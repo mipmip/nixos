@@ -52,8 +52,17 @@ missing_modules(){
 
 make_command "fixmacnixpath" "set nix path on the mac"
 fixmacnixpath(){
-  source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
-  source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-  source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+  set -a
+  . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  . ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+
+  export NIX_PROFILES
+  export NIX_SSL_CERT_FILE
+  export MANPATH="$NIX_LINK/share/man:$MANPATH"
+  export PATH=$PATH
+echo $PATH
+  export  __HM_SESS_VARS_SOURCED
+
 }
 runme

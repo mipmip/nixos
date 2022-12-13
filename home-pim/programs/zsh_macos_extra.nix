@@ -3,8 +3,12 @@
 {
   programs.zsh = {
 
-    shellAliases = {
-      python = "/usr/bin/python3";
+#    shellAliases = {
+#      python = "/usr/bin/python3";
+#    };
+
+    sessionVariables = {
+      LC_CTYPE = "en_US.UTF-8";
     };
 
     initExtra = ''
