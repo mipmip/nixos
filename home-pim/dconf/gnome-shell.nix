@@ -195,51 +195,55 @@ in
     };
 
     "org/gnome/shell/extensions/hotkeys-popup" = {
-      hide-array = [ "cycle-panels" "cycle-windows-backward" "panel-main-menu" "move-to-monitor-down" "move-to-monitor-up" "move-to-workspace-down" "move-to-workspace-up" "move-to-workspace-last" "move-to-workspace-left" "move-to-workspace-right" "switch-panels" "switch-panels-backward" "switch-group" "switch-group-backward" "switch-to-workspace-down" "switch-to-workspace-up" "switch-to-workspace-left" "switch-to-workspace-right" "cycle-group-backward" "cycle-panels-backward" "toggle-maximized" "toggle-overview" "switch-to-workspace-4" "move-to-workspace-4" "cycle-group" "toggle-message-tray" "focus-active-notification" "activate-window-menu" "switch-applications-backward" ];
+
+      hide-array=[
+        "cycle-panels"
+        "cycle-windows-backward"
+        "panel-main-menu"
+        "move-to-monitor-down"
+        "move-to-monitor-up"
+        "move-to-workspace-down"
+        "move-to-workspace-up"
+        "move-to-workspace-last"
+        "move-to-workspace-left"
+        "move-to-workspace-right"
+        "switch-panels"
+        "switch-panels-backward"
+        "switch-group"
+        "switch-group-backward"
+        "switch-to-workspace-down"
+        "switch-to-workspace-up"
+        "switch-to-workspace-left"
+        "switch-to-workspace-right"
+        "cycle-group-backward"
+        "cycle-panels-backward"
+        "toggle-maximized"
+        "toggle-overview"
+        "switch-to-workspace-4"
+        "move-to-workspace-4"
+        "cycle-group"
+        "toggle-message-tray"
+        "focus-active-notification"
+        "activate-window-menu"
+        "switch-applications-backward"
+        "toggle-application-view"
+        "show-screen-recording-ui"
+        "screenshot"
+        "open-application-menu"
+        "shift-overview-up"
+        "shift-overview-down"
+        "screenshot-window"
+        "switch-to-workspace-1"
+        "switch-to-workspace-2"
+        "move-to-workspace-1"
+        "switch-to-workspace-3"
+        "move-to-workspace-2"
+        "move-to-workspace-3"
+      ];
+
       keybinding-show-popup = [ "<Super>s" ];
       show-icon = true;
       transparent-popup = true;
-    };
-
-    "extensions/just-perfection" = {
-      accessibility-menu = true;
-      activities-button = true;
-      aggregate-menu = true;
-      app-menu = true;
-      app-menu-icon = true;
-      background-menu = true;
-      clock-menu = true;
-      clock-menu-position = 0;
-      dash = true;
-      dash-icon-size = 0;
-      double-super-to-appgrid = true;
-      gesture = true;
-      hot-corner = false;
-      keyboard-layout = true;
-      notification-banner-position = 1;
-      osd = true;
-      panel = true;
-      panel-arrow = true;
-      panel-button-padding-size = 0;
-      panel-corner-size = 0;
-      panel-in-overview = true;
-      panel-indicator-padding-size = 0;
-      panel-notification-icon = true;
-      power-icon = true;
-      ripple-box = true;
-      search = true;
-      show-apps-button = true;
-      startup-status = 1;
-      theme = false;
-      top-panel-position = 0;
-      window-demands-attention-focus = false;
-      window-picker-icon = true;
-      window-preview-caption = true;
-      workspace = true;
-      workspace-background-corner-size = 0;
-      workspace-popup = true;
-      workspace-switcher-size = 0;
-      workspaces-in-app-grid = true;
     };
 
     "org/gnome/shell/extensions/trayIconsReloaded" = {
@@ -268,7 +272,7 @@ in
       toggle-overview = [ "" ];
     };
 
-    
+
 
   };
 }

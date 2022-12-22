@@ -13,7 +13,7 @@
 "let g:solarized_visibility = "normal"
 
 " THESE ARE 2 LINES ARE NEEDED FOR REMOTE SSH SESSIONS WITH MACOS
-# AND DON'T SEEM TO BOTHER LINUX TERMINALS
+" AND DON'T SEEM TO BOTHER LINUX TERMINALS
 set t_Co=265
 let g:solarized_termcolors = 256
 

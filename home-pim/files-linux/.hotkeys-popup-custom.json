@@ -1,5 +1,14 @@
 [
     {
+        "name": "Gnome Extra",
+        "shortcuts": [
+            {
+                "key": "Alt + `",
+                "description": "Cycle windows within same Application"
+            }
+        ]
+    },
+    {
         "name": "Launchers",
         "shortcuts": [
             {

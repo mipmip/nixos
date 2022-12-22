@@ -1,0 +1,7 @@
+session: sdevinta
+root: ~/tcAdevinta
+
+windows:
+- name: adetinta-tmux
+- name: dsocks
+- name: proxychains

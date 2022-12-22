@@ -6,6 +6,8 @@ This is my mono-repository for my machines configuration and my dotfiles.
 
 - [ ] fix NUR url, maybe nur.nix
 - [ ] public features and documentation## Usage
+- [ ] setup firefox profiles: https://discourse.nixos.org/t/help-setting-up-firefox-with-home-manager/23333
+- [ ] install firefox language packs from nur
 
 ### MacOS Provisioning
 

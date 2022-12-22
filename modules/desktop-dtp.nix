@@ -7,11 +7,15 @@
     # PDF
     zathura
     pdftk
-
+    pdfarranger
+    paperwork # could replace papermerge
 
     gimp
     inkscape-with-extensions
     feh
+    swappy
+
+    emulsion-palette
 
     blender
 
