@@ -87,7 +87,7 @@ in
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/"
       ];
       screensaver = [];
-      search = [ "<Super>space" ];
+      search = [ "<Super>/" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {

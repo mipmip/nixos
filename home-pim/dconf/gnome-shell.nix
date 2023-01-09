@@ -258,6 +258,22 @@ in
       wine-behavior = false;
     };
 
+    "org/gnome/shell/extensions/search-light" = {
+      background-color = (0.075 0.25 0.068 0.68);
+      blur-background = false;
+      blur-brightness = 0.6;
+      blur-sigma = 30.0;
+      border-radius = 1.22;
+      border-thickness = 1;
+      entry-font-size = 1;
+      monitor-count = 1;
+      scale-height = 0.3;
+      scale-width = 0.19;
+      show-panel-icon = false;
+#      text-color = [1.0 1.0 1.0 0.47];
+    };
+
+
     "org/gnome/shell/keybindings" = {
       switch-to-application-1 = [];
       switch-to-application-2 = [];
