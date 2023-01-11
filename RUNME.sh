@@ -6,6 +6,7 @@ make_command "sysclean" "Run nix garbage collector"
 sysclean(){
   sudo nix-collect-garbage -d
   nix-collect-garbage -d
+  sudo rm -Rf /root/.cache/nix/eval-cache-v2
 }
 
 make_command "sysrebuild" "NixOS Rebuild"
