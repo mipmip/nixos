@@ -16,6 +16,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   services.lorri.enable = true;
+  services.journald.extraConfig = "SystemMaxUse=100M";
 
   users.users.pim = {
     isNormalUser = true;
