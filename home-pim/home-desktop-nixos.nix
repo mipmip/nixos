@@ -16,6 +16,7 @@
     /home/pim/nixos/home-pim/programs/vim.nix
     /home/pim/nixos/home-pim/programs/xdg.nix
     /home/pim/nixos/home-pim/programs/zsh.nix
+    /home/pim/nixos/home-pim/programs/firefox.nix
 
     /home/pim/nixos/home-pim/dconf
   ];

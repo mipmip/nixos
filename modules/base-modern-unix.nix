@@ -3,12 +3,18 @@
 {
   environment.systemPackages = with pkgs; [
     neofetch
-    bat
     tldr
     cheat
     httpie
     xh
+
+    # disk
     duf
+
     dstp # Run common networking tests against your site
+
+    # modern cat
+    dog
+    bat
   ];
 }

@@ -259,7 +259,7 @@ in
     };
 
     "org/gnome/shell/extensions/search-light" = {
-      background-color = (0.075 0.25 0.068 0.68);
+      #background-color = (0.075 0.25 0.068 0.68);
       blur-background = false;
       blur-brightness = 0.6;
       blur-sigma = 30.0;

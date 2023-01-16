@@ -33,17 +33,16 @@
     terrascan
     terraformer
     tflint
+    #tfswitch
     #unstable.terracognita
 
-    # Swiss army knife for data
-    sq
 
     #RANDSTAD
     #citrix_workspace
 
     #TRACKLIB
-    wireguard-tools
-    unstable.nodePackages.aws-cdk
+    #wireguard-tools
+    #unstable.nodePackages.aws-cdk
 
     #ADEVINTA
     #unstable.globalprotect-openconnect
@@ -53,7 +52,6 @@
     #VNC ADEVINTA
     remmina
     realvnc-vnc-viewer
-    dog
 
   ];
 }
