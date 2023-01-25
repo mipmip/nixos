@@ -3,14 +3,14 @@ call plug#begin('~/.vim/plugged')
 " MY PLUGINS
 "Plug 'mipmip/vim-fluid'
 Plug 'mipmip/vim-petra'
-Plug 'mipmip/vim-hotpop'
+Plug 'mipmip/vim-hotpop', { 'branch': 'main' }
 Plug 'mipmip/panelmanager.vim'
 Plug 'mipmip/vim-show-in-filemanager', { 'branch': 'main' }
 Plug 'mipmip/vim-open-mip', { 'branch': 'main' }
 
 if filereadable($HOME."/.i-am-second-brain")
   Plug 'mipmip/vim-scimark'
-  Plug 'linden-project/linny.vim'
+  Plug 'linden-project/linny.vim', { 'branch': 'main' }
   "Plug 'mipmip/linny-wikitag-github'
 
   " writing
@@ -23,6 +23,11 @@ if filereadable($HOME."/.i-am-second-brain")
   " MARKDOWN/YAML/ETC
   Plug 'aserebryakov/vim-todo-lists'
   Plug 'dhruvasagar/vim-table-mode'
+
+  "TOO SLOW
+"  Plug 'godlygeek/tabular'
+"  Plug 'preservim/vim-markdown'
+
 "  Plug 'pedrohdz/vim-yaml-folds'
 
   " SNIPPETS
