@@ -28,7 +28,16 @@ if filereadable($HOME."/.i-am-second-brain")
 "  Plug 'godlygeek/tabular'
 "  Plug 'preservim/vim-markdown'
 
-"  Plug 'pedrohdz/vim-yaml-folds'
+  " Nice
+  " great folding
+  " clean
+  " lacks promoting headings
+  "Plug 'gabrielelana/vim-markdown'
+
+  " clean focus on mappings
+  Plug 'SidOfc/mkdx'
+
+  "Plug 'pedrohdz/vim-yaml-folds'
 
   " SNIPPETS
   if v:version >= 800 && (has('python') || has('python3'))

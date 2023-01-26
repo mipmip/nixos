@@ -120,6 +120,39 @@
         ]
     },
     {
+        "name": "sc-im",
+        "shortcuts": [
+            {
+                "key": "yy",
+                "description": "Yank Cell"
+            },
+            {
+                "key": "p",
+                "description": "Simple paste"
+            },
+            {
+                "key": "Pc",
+                "description": "Paste, refs are adjusted"
+            },
+            {
+                "key": "fsum",
+                "description": "sum all above"
+            },
+            {
+                "key": "{ }",
+                "description": "Left or Right align"
+            },
+            {
+                "key": "aa",
+                "description": "Resize column to fit content"
+            },
+            {
+                "key": "dr",
+                "description": "Delete row"
+            }
+        ]
+    },
+    {
         "name": "st",
         "shortcuts": [
             {
@@ -132,7 +165,7 @@
             },
             {
                 "key": "Shift + CTRL + S",
-                "description": "Cycle fonts"
+                "description": "Cycle fonts (Lib-Mono/DeJaVu-Sans)"
             },
             {
                 "key": "Shift + CTRL + V",
