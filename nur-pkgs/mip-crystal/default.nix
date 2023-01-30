@@ -22,7 +22,7 @@ crystal.buildCrystalPackage rec {
     sha256 = "ekHY5EGSrJrQwlXNjKpyj7k0Bzq1dYPacRsfNZ8K+lk=";
   };
 
-  pname = "mip";
+  pname = "mip-cr";
   version = "0.1.4";
 
   src = fetchFromGitHub {

@@ -17,7 +17,7 @@
 
     vimHugeX
     mipmip_pkg.fred # needed for linny
-    mipmip_pkg.mip # Markdown in Preview
+    mipmip_pkg.mip-rust
 
 
     hugo # needed for linny

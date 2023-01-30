@@ -3,7 +3,7 @@
 {
   nixpkgs.config.packageOverrides = pkgs: {
 
-    mipmip_pkg = import (../nur-mipmip-pkgs) {
+    mipmip_pkg = import (../nur-pkgs) {
       inherit pkgs;
     };
 
