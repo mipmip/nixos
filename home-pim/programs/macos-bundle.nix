@@ -7,7 +7,6 @@
     pkgs.htop
     pkgs.hugo
     pkgs.jq
-    pkgs.terraform
     pkgs.tldr
     pkgs.yarn
     pkgs.yq
