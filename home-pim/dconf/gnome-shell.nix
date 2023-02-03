@@ -270,6 +270,7 @@ in
       scale-height = 0.3;
       scale-width = 0.19;
       show-panel-icon = false;
+      shortcut-search=[ "<Super>space" ];
 #      text-color = [1.0 1.0 1.0 0.47];
     };
 
