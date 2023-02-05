@@ -18,6 +18,7 @@
   services.lorri.enable = true;
   services.journald.extraConfig = "SystemMaxUse=100M";
 
+
   users.users.pim = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "networkmanager" "disk"];

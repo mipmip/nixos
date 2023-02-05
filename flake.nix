@@ -14,6 +14,8 @@
 
   outputs = inputs: {
 
+    overlays = import ./overlays;
+
     nixosConfigurations.ojs = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
