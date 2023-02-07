@@ -44,6 +44,25 @@
       };
     };
 
+
+
+    firefox-extra = {
+
+      name           = "Firefox Extra";
+      comment        = "Extra Firefox with other icon";
+      genericName    = "Extra Web Browser";
+      exec           = "firefox";
+      categories     = [ "Network" ];
+      terminal       = false;
+      startupNotify  = true;
+      type           = "Application";
+      icon           = "ffextra";
+      settings       = {
+        Keywords = "browser;";
+        StartupWMClass = "ffextra";
+      };
+    };
+
     quiqr-desktop = {
 
       name           = "Quiqr Desktop";
