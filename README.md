@@ -12,8 +12,8 @@ This is my mono-repository for my machines configuration and my dotfiles.
 ### MacOS Provisioning
 
 For macOS provisioning I only use Home-Manager from Nix. Cli tools are declared
-in home-pim/programs/macos-bundle.nix. Other mac-apps are in
-`home-pim/files-macos/Brewfile`. Install them with `brew bundle install`
+in home-manager/programs/macos-bundle.nix. Other mac-apps are in
+`home-manager/files-macos/Brewfile`. Install them with `brew bundle install`
 
 - install [Homebrew](https://brew.sh/)
 - install Nix on mac](https://nixos.org/download.html#nix-install-macos).
@@ -43,11 +43,11 @@ echo "{\n  allowUnfree = true;\n}" > ~/.config/nixpkgs/config.nix
 ```
 
 Make the symlink `~/.config/nixpkgs/home.nix` pointing to one of the home-confs
-located in `~/nixos/home-pim/`
+located in `~/nixos/home-manager/`
 
 
 ```sh
-ln -s ~/nixos/home-pim/home-[some-home-conf].nix ~/.config/nixpkgs/
+ln -s ~/nixos/home-manager/home-[some-home-conf].nix ~/.config/nixpkgs/
 ```
 
 Test configuration with:
@@ -74,4 +74,7 @@ showing my writing environment.
 
 ![writing in vim](./docs/gelukkigmetvim.png)
 
+## Private
 
+Stage 2 of my security strategy is a git submodule with some configurations not
+relevant for public. This repo does not contain passwords or secrets.

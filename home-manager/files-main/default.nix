@@ -35,12 +35,13 @@
     };
   };
 
-  home.file = {
-    ".config/wtf" = {
-      source = ./wtf;
-      recursive = true;
-    };
-  };
+# NOTE archived
+#  home.file = {
+#    ".config/wtf" = {
+#      source = ./wtf;
+#      recursive = true;
+#    };
+#  };
 
   home.file = {
     "./.ansible.cfg" = {
