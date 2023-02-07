@@ -8,7 +8,6 @@
     pkgs.hugo
     pkgs.jq
     pkgs.tldr
-    pkgs.wtf
     pkgs.tfswitch
     pkgs.yarn
     pkgs.yq
