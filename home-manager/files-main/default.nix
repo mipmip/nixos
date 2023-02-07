@@ -28,13 +28,6 @@
     };
   };
 
-  home.file = {
-    ".config/vifm" = {
-      source = ./vifm;
-      recursive = true;
-    };
-  };
-
 # NOTE archived
 #  home.file = {
 #    ".config/wtf" = {
