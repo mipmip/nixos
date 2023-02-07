@@ -12,6 +12,7 @@
     pkgs.yarn
     pkgs.yq
     pkgs.smug
+    pkgs.ssl-cert-check
     pkgs.unixtools.watch
     pkgs.git-sync
     pkgs.silver-searcher

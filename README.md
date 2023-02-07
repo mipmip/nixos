@@ -74,4 +74,7 @@ showing my writing environment.
 
 ![writing in vim](./docs/gelukkigmetvim.png)
 
+## Private
 
+Stage 2 of my security strategy is a git submodule with some configurations not
+relevant for public. This repo does not contain passwords or secrets.

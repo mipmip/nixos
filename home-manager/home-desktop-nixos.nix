@@ -19,6 +19,8 @@
     /home/pim/nixos/home-manager/programs/firefox.nix
 
     /home/pim/nixos/home-manager/dconf
+
+    /home/pim/nixos/private/adevinta/home-manager/files-main
   ];
 
 

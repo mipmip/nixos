@@ -18,6 +18,8 @@
     /Users/pim.snel/nixos/home-manager/programs/vim.nix
     /Users/pim.snel/nixos/home-manager/programs/zsh.nix
     /Users/pim.snel/nixos/home-manager/programs/zsh_macos_extra.nix
+
+    /Users/pim.snel/nixos/private/adevinta/home-manager/files-main
   ];
 
 
