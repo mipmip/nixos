@@ -93,6 +93,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'evanleck/vim-svelte'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'rodjek/vim-puppet'
+Plug 'google/vim-jsonnet'
 
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'

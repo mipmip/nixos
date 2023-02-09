@@ -51,6 +51,12 @@ missing_modules(){
 
 }
 
+
+make_command "disable_mac_trackpad" "disable trackpad when it acts funny"
+disable_mac_trackpad(){
+  xinput set-prop 13 "Device Enabled" 0
+}
+
 make_command "fixmacnixpath" "set nix path on the mac"
 fixmacnixpath(){
   set -a
