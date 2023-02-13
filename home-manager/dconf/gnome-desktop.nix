@@ -85,6 +85,7 @@ in
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/"
       ];
       screensaver = [];
       search = [ "<Super>/" ];
@@ -130,6 +131,11 @@ in
       binding = "<Shift><Super>percent";
       command = "gnome-screenshot -i";
       name = "screenshot-interactive";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
+      binding = "<Super>s";
+      command = "/home/pim/cGnome/gnome-hotkeys.cr/bin/myhotkeys -c /home/pim/.hotkeys-custom.json";
+      name = "myhotkeys";
     };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {

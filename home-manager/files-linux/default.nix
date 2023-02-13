@@ -30,4 +30,10 @@
     };
   };
 
+  home.file = {
+    "./.hotkeys-custom.json" = {
+      source = ./.hotkeys-custom.json;
+    };
+  };
+
 }
