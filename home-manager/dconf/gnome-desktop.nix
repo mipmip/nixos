@@ -134,7 +134,7 @@ in
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
       binding = "<Super>s";
-      command = "/home/pim/cGnome/gnome-hotkeys.cr/bin/myhotkeys -c /home/pim/.hotkeys-custom.json";
+      command = "/home/pim/cGnome/gnome-hotkeys.cr/bin/myhotkeys /home/pim/.hotkeys-custom.json";
       name = "myhotkeys";
     };
 

@@ -9,6 +9,15 @@
         ]
     },
     {
+        "name": "Firefox",
+        "shortcuts": [
+            {
+                "key": "<CTRL>k",
+                "description": "Focus address bar"
+            }
+        ]
+    },
+    {
         "name": "Launchers",
         "shortcuts": [
             {
