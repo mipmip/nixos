@@ -67,6 +67,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 "Plug 'jpalardy/vim-slime', { 'branch': 'main' }
 
+Plug 'bkad/camelcasemotion'
+
 " VIM TEXT TOOLS
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/vim-easy-align'
