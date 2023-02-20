@@ -15,7 +15,7 @@
 
       open = "xdg-open";
       t = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos && smug start tekst";
-      lin = "vim -c LinnyMenuOpen";
+      lin = "vim -c LinnyStart";
       tn = "tmux new -d -s";
       smugs = "smug start doen && smug start sudo && smug start nixos && smug start tekst && smug start ssh-killerberg && smug start technative";
 

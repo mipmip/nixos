@@ -8,6 +8,11 @@
     httpie
     xh
 
+    # includes vidir
+    moreutils
+
+    # includes universal templating
+
     # disk
     duf
 
