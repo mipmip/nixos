@@ -1,14 +1,19 @@
+## ALL PACKAGES NOT HERE ARE IN ../files-macos/Brewfile
 { config, pkgs, lib, ... }:
 
 {
   home.packages = [
-    pkgs.awscli
     pkgs.git
     pkgs.htop
     pkgs.hugo
     pkgs.jq
     pkgs.tldr
+
+    #ADEVINTA
+    pkgs.awscli
     pkgs.tfswitch
+    pkgs.terraform-docs
+
     pkgs.yarn
     pkgs.yq
     pkgs.smug
