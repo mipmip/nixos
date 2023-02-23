@@ -7,7 +7,7 @@
       version = "0.8.4";
       src = fetchurl {
         url = "https://dl.suckless.org/st/${pname}-${version}.tar.gz";
-        sha256 = "19j66fhckihbg30ypngvqc9bcva47mp379ch5vinasjdxgn3qbfl";
+        sha256 = "sha256-1C087OtNamXjLpClM249RG22EsP72evBeAvGyaAzRqY=";
         };
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       patches = [
@@ -20,6 +20,8 @@
         ../resources/st/st-cyclefonts-lineheight-0.8.4.diff
         ../resources/st/st-vertcenter-20180320-6ac8c8a.diff
         ../resources/st/st-blinking_cursor-0.8.4-custom2.diff
+        ../resources/st/st-workingdir-20200317-51e19ea.diff
+
 
 #        (fetchpatch {
 #          url = "https://st.suckless.org/patches/cyclefonts/st-cyclefonts-0.8.4.diff";
