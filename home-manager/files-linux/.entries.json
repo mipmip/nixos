@@ -4,13 +4,8 @@
   "entries": [
     {
       "type": "launcher",
-      "title": "Show Icons",
-      "command": "nemo-desktop"
-    },
-    {
-      "type": "launcher",
-      "title": "Hide Icons",
-      "command": "pkill nemo-desktop"
+      "title": "Toggle Icons",
+      "command": "pkill nemo-desktop || nemo-desktop"
     },
     {
       "type": "launcher",

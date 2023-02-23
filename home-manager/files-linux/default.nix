@@ -24,11 +24,11 @@
     };
   };
 
-  home.file = {
-    "./.hotkeys-popup-custom.json" = {
-      source = ./.hotkeys-popup-custom.json;
-    };
-  };
+#  home.file = {
+#    "./.hotkeys-popup-custom.json" = {
+#      source = ./.hotkeys-popup-custom.json;
+#    };
+#  };
 
   home.file = {
     "./.hotkeys-custom.json" = {

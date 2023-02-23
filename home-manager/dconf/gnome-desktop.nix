@@ -43,37 +43,36 @@ in
     };
 
     "org/gnome/desktop/wm/keybindings" = {
-      close = [ "<Super>q" ];
-      cycle-windows-backward = [ "<Shift><Super>Escape" ];
-      maximize = [ "<Super>Up" ];
-      toggle-maximized = [ "<Super>t" ];
-      minimize = [ "<Alt>F4" ];
-      move-to-workspace-1 = [ "<Primary><Super>1" ];
-      move-to-workspace-2 = [ "<Primary><Super>2" ];
-      move-to-workspace-3 = [ "<Primary><Super>3" ];
-      move-to-workspace-4 = [ "<Primary><Super>4" ];
-      show-desktop = [ "F12" ];
-      switch-input-source = [];
+      close                        = [ "<Super>q" ];
+      cycle-windows-backward       = [ "<Shift><Super>Escape" ];
+      maximize                     = [ "<Super>Up" ];
+      toggle-maximized             = [ "<Super>t" ];
+      minimize                     = [ "<Alt>F4" ];
+      move-to-workspace-1          = [];
+      move-to-workspace-2          = [];
+      move-to-workspace-3          = [];
+      move-to-workspace-4          = [];
+      show-desktop                 = [ "F12" ];
+      switch-input-source          = [];
       switch-input-source-backward = [];
-      switch-to-workspace-1 = [ "<Super>1" ];
-      switch-to-workspace-2 = [ "<Super>2" ];
-      switch-to-workspace-3 = [ "<Super>3" ];
-      switch-to-workspace-4 = [ "" ];
-      switch-to-workspace-last = [];
-      toggle-fullscreen = [ "<Super>f" ];
-
-      cycle-windows = [ "<Super>Escape" ];
+      switch-to-workspace-1        = [];
+      switch-to-workspace-2        = [];
+      switch-to-workspace-3        = [];
+      switch-to-workspace-4        = [];
+      switch-to-workspace-last     = [];
+      toggle-fullscreen            = [ "<Super>f" ];
+      cycle-windows                = [ "<Super>Escape" ];
     };
 
     "org/gnome/desktop/wm/preferences" = {
       action-double-click-titlebar = "minimize";
-      auto-raise = true;
-      button-layout = "close:appmenu";
-      focus-mode = "click";
-      num-workspaces = 3;
-      resize-with-right-button = false;
-      theme = "Default";
-      workspace-names = [ "1" "2" "3" "4" ];
+      auto-raise                   = true;
+      button-layout                = "close:appmenu";
+      focus-mode                   = "click";
+      num-workspaces               = 3;
+      resize-with-right-button     = false;
+      theme                        = "Default";
+      workspace-names              = [ "1" "2" "3" "4" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -86,6 +85,7 @@ in
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/"
       ];
       screensaver = [];
       search = [ "<Super>/" ];
@@ -136,6 +136,11 @@ in
       binding = "<Super>s";
       command = "/home/pim/cGnome/gnome-hotkeys.cr/bin/myhotkeys /home/pim/.hotkeys-custom.json";
       name = "myhotkeys";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8" = {
+      binding = "F11";
+      command = "bash -c 'pkill nemo-desktop || nemo-desktop'";
+      name = "toggle-nemo-desktop";
     };
 
     "org/gnome/settings-daemon/plugins/xsettings" = {

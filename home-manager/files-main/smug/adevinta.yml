@@ -1,7 +1,9 @@
-session: sdevinta
+session: adevinta
 root: ~/tcAdevinta
 
 windows:
 - name: adetinta-tmux
 - name: dsocks
 - name: proxychains
+- name: shell-ams
+- name: shell-dus
