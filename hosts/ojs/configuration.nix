@@ -69,6 +69,19 @@
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
+  #networking.firewall.allowedTCPPorts = [ 21 ];
+  networking.firewall.extraCommands = ''
+    iptables -A nixos-fw -p tcp --source 192.168.13.0/24 --dport 21:21 -j nixos-fw-accept
+  '';
+
+  services.vsftpd = {
+    enable = true;
+    writeEnable = true;
+    localUsers = true;
+    userlist = [ "pim" ];
+    userlistEnable = true;
+  };
+
   networking.networkmanager.enable = true;
   networking.useDHCP = false;
   networking.interfaces.enp10s0.useDHCP = true;
