@@ -16,6 +16,24 @@
 
     overlays = import ./overlays;
 
+    nixosConfigurations.rodin = inputs.nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+
+      modules =
+        let
+          defaults = { pkgs, ... }: {
+            _module.args.unstable = import inputs.unstable { inherit (pkgs.stdenv.targetPlatform) system; };
+          };
+        in [
+          defaults
+          ./hosts/rodin/configuration.nix
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+          }
+      ];
+    };
+
     nixosConfigurations.ojs = inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 

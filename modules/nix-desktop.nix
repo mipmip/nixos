@@ -26,7 +26,6 @@
   ];
 
   users.users.pim.initialPassword = "hallo";
-  users.users.tim.initialPassword = "hallo";
 
   # Enable sound.
   sound.enable = true;
