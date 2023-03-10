@@ -18,7 +18,6 @@
       lin = "vim -c LinnyStart";
       tn = "tmux new -d -s";
       smugs = "smug start doen && smug start sudo && smug start nixos && smug start quiqr-data && smug start ssh-killerberg && smug start technative";
-      smugsadv = "smug start nixos && tn legacy && tn common";
 
       crb_status = "mount | grep /mnt/cryptobox";
       crb_mount = "crb_status || sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
