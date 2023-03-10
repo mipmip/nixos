@@ -3,7 +3,7 @@
   "dirs" : [
     "~/tc*",
     "~/.vim/plugged",
-    "~/cDis"
+    "~/c*"
   ],
   "description_repos": "Defined repositories to monitor.",
   "repos": [
