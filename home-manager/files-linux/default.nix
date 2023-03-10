@@ -1,5 +1,12 @@
 {
 
+
+  home.file = {
+    ".config/git-monitor.json" = {
+      source = ./.config/git-monitor.json;
+    };
+  };
+
   home.file = {
     ".local/share/icons" = {
       source = ./local-share-icons;

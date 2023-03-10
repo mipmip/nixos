@@ -2,13 +2,13 @@
 
 crystal.buildCrystalPackage rec {
   pname = "fred";
-  version = "v0.4.0";
+  version = "v0.5.0";
 
   src = fetchFromGitHub {
     owner = "linden-project";
     repo = "fred";
-    rev = "v0.4.0";
-    sha256 = "sha256-14IXveCtkbNKnH3DvN//xEcozZAcNtVRWDb3jk4aKl4=";
+    rev = "v0.5.0";
+    sha256 = "sha256-00CRcZGBweLFzqtDO/+gImYB+SFTs9uK209yNZYmaPc=";
   };
 
   shardsFile = ./shards.nix;

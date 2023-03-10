@@ -69,7 +69,6 @@
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  #networking.firewall.allowedTCPPorts = [ 21 ];
   networking.firewall.extraCommands = ''
     iptables -A nixos-fw -p tcp --source 192.168.13.0/24 --dport 21:21 -j nixos-fw-accept
   '';

@@ -1,0 +1,23 @@
+{
+  "description": "Defined Parent directory for git directory.",
+  "dirs" : [
+    "~/gitMonitor",
+    "~/tc*",
+    "~/.vim/plugged",
+    "~/"
+  ],
+  "dirs2": [
+    "~/gitMonitor",
+    "~/tcAdevinta",
+    "~/tcTracklib",
+    "~/tcTechNative",
+    "~/cUtils",
+    "~/cTextUtils",
+    "~/cQuiqr",
+    "~/cQuiqrKillerberg",
+    "~/cLinden",
+    "~/cNixos",
+    "~/cGnome",
+    "~/.vim/plugged"
+  ]
+}
