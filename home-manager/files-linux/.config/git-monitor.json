@@ -1,23 +1,13 @@
 {
-  "description": "Defined Parent directory for git directory.",
+  "description_dirs": "Defined parent directories containing git repositories to monitor",
   "dirs" : [
-    "~/gitMonitor",
     "~/tc*",
     "~/.vim/plugged",
-    "~/"
+    "~/cDis"
   ],
-  "dirs2": [
-    "~/gitMonitor",
-    "~/tcAdevinta",
-    "~/tcTracklib",
-    "~/tcTechNative",
-    "~/cUtils",
-    "~/cTextUtils",
-    "~/cQuiqr",
-    "~/cQuiqrKillerberg",
-    "~/cLinden",
-    "~/cNixos",
-    "~/cGnome",
-    "~/.vim/plugged"
+  "description_repos": "Defined repositories to monitor.",
+  "repos": [
+    "~/nixos",
+    "~/secondbrain"
   ]
 }
