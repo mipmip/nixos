@@ -23,7 +23,7 @@
 
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
-\usepackage[dutch]{babel}
+%\usepackage[dutch]{babel}
 
 %\widowpenalties=1 10000
 %\widowpenalties=0
@@ -38,6 +38,14 @@
 \definecolor{default-filecolor}{HTML}{A50000}
 \definecolor{default-citecolor}{HTML}{4077C0}
 \definecolor{default-urlcolor}{HTML}{4077C0}
+
+
+$if(tex_letterhead_dia)$
+  \color{white}
+  \definecolor{tableheadercolor}{RGB}{13,35,48}
+$else$
+  \definecolor{tableheadercolor}{RGB}{221,221,221}
+$endif$
 
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
@@ -66,7 +74,7 @@ $else$
   hidelinks,
 $endif$
   breaklinks=true,
-  pdfcreator={LaTeX via pandoc by TechNative}}
+  pdfcreator={LaTeX via pandoc by Pim Snel}}
 
 %PANDOC FOUTEN SNEL OPLOSSEN
 $if(highlighting-macros)$
@@ -77,15 +85,32 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-$if(tex_briefpapier)$
-\usepackage{background}
-\backgroundsetup{
-scale=1,
-angle=0,
-opacity=1.0,
-position=current page.center,
-contents={\includegraphics[width=\paperwidth,height=\paperheight]{/home/pim/.pandoc/briefpapier4-technative.png}}
-}
+$if(tex_letterhead)$
+
+  $if(tex_letterhead_dia)$
+
+    \usepackage{background}
+    \backgroundsetup{
+    scale=1,
+    angle=0,
+    opacity=1.0,
+    position=current page.center,
+    contents={\includegraphics[width=\paperwidth,height=\paperheight]{\string~/.pandoc/letterhead-technative-dia.png}}
+    }
+
+  $else$
+    \usepackage{background}
+    \backgroundsetup{
+    scale=1,
+    angle=0,
+    opacity=1.0,
+    position=current page.center,
+    contents={\includegraphics[width=\paperwidth,height=\paperheight]{\string~/.pandoc/letterhead-technative.png}}
+    }
+
+  $endif$
+
+
 $endif$
 
 \usepackage{fontspec}
@@ -107,9 +132,12 @@ $endif$
 \renewcommand{\headrulewidth}{0pt}
 \rhead{}
 
-$if(tex_pagina_nummers)$
+$if(tex_page_numbers)$
+  $if(tex_letterhead_dia)$
+  \lhead{\color{gray!60}Page \thepage\ of \pageref{LastPage}}
+  $else$
   \lhead{\color{gray}Page \thepage\ of \pageref{LastPage}}
-$else$
+  $endif$
 $endif$
 
 
@@ -129,54 +157,58 @@ $endif$
 
 \begin{document}
 
-% VOORBLAD
-$if(tex_voorblad)$
+% COVER
+$if(tex_cover)$
 \begin{titlepage}
 
-\vspace*{0.22\textheight}
+% \vspace*{0.12\textheight}
+
+\begin{center}
+    \includegraphics[width=0.9\columnwidth]{unleash.jpg}
+\end{center}
 
 \begin{spacing}{2.0}
 
 \noindent
+\\
 {\huge {\MakeUppercase{$title$}}}\\
 {\Large {$subtitle$}}\\
-\\
 \end{spacing}
 
 \newdateformat{mydate}{\twodigit{\THEDAY}{ }\shortmonthname[\THEMONTH], \THEYEAR}
 
-\setlength\extrarowheight{4pt}
+\setlength\extrarowheight{3pt}
 \begin{flushleft}
 \noindent\begin{tabular}{@{}l l }
 
-$if(opdrachtgever)$
-{\bf customer:} & $opdrachtgever$ \\
+$if(client)$
+{\bf Client:} & $client$ \\
 $endif$
 
-$if(contactpersoon)$
-{\bf contact:} & $contactpersoon$ \\
+$if(contact_person)$
+  {\bf Contact Person:} & $contact_person$ \\
 $endif$
 
-$if(schrijver)$
-{\bf author: } & $schrijver$ \\
+$if(author)$
+{\bf By: } & $author$ \\
 $endif$
 
-$if(datum)$
-{\bf date: } & $datum$ \\
+$if(date)$
+{\bf Date: } & $date$ \\
 $endif$
 
-$if(tex_laatst_gewijzigd)$
-{\bf last updated:} & \today \\
+$if(tex_last_changed)$
+{\bf Last change:} & \today \\
 $endif$
 
 $if(document_type)$
-$if(document_nummer)$
-{\bf $document_type$:} & $document_nummer$ \\
+$if(document_number)$
+{\bf $document_type$:} & $document_number$ \\
 $endif$
 $endif$
 
-$if(document_versie)$
-{\bf version:} & $document_versie$ \\
+$if(document_version)$
+{\bf Version:} & $document_version$ \\
 $endif$
 
 \end{tabular}
@@ -196,12 +228,12 @@ $else$
 {\Large {$subtitle$}}
 \end{spacing}
 
-$endif$ %EIND IF VOORBLAD
+$endif$ %EIND IF COVER
 
 $if(tex_toc)$
 \tableofcontents
 
-% VERVOLGPAGINA's
+% REGULAR PAGES
 
 \newpage
 $endif$
