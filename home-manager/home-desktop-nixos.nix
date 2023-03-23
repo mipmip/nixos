@@ -7,6 +7,9 @@
   home.stateVersion = "22.05";
 
   imports = [
+
+    /home/pim/nixos/home-manager/dirs-main
+
     /home/pim/nixos/home-manager/files-main
     /home/pim/nixos/home-manager/files-linux
 

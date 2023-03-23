@@ -11,7 +11,7 @@ Plug 'mipmip/vim-open-mip', { 'branch': 'main' }
 if filereadable($HOME."/.i-am-second-brain")
   Plug 'mipmip/vim-scimark'
   Plug 'linden-project/linny.vim', { 'branch': 'main' }
-  "Plug 'mipmip/linny-wikitag-github'
+  Plug 'mipmip/linny-wikitag-github'
 
   " writing
   Plug 'junegunn/goyo.vim'
