@@ -7,6 +7,7 @@
   home.stateVersion = "22.05";
 
   imports = [
+
     /home/pim/nixos/home-manager/files-main
     /home/pim/nixos/home-manager/files-linux
 
@@ -18,7 +19,7 @@
     /home/pim/nixos/home-manager/programs/zsh.nix
     /home/pim/nixos/home-manager/programs/firefox.nix
 
-    /home/pim/nixos/home-manager/dconf
+    /home/pim/nixos/home-manager/gnome
 
     /home/pim/nixos/private/adevinta/home-manager/files-main
   ];

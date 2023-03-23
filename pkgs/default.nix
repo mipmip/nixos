@@ -19,5 +19,7 @@ let
     mip-crystal       = pkgs.callPackage ./pims-projects/mip-crystal             { };
     mip-rust          = pkgs.callPackage ./pims-projects/mip-rust                { };
 
+    gnomeExt-gs-git   = pkgs.callPackage ./gnome-shell-extensions/gs-git         { };
+
   };
 in self
