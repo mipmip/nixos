@@ -7,8 +7,8 @@ crystal.buildCrystalPackage rec {
   src = fetchFromGitHub {
     owner = "mipmip";
     repo = "skull";
-    rev = "v0.1.1";
-    sha256 = "sha256-/D0i69OlyM5PcXjV/D2fi60wZAylVyWxPKdJ8xd5uPg=";
+    rev = "v0.1.2";
+    sha256 = "sha256-J+NVXNJD4hJTgSMLmBRMZUoyM+xO1/AM42fvNDPKTjY=";
   };
 
   shardsFile = ./shards.nix;
