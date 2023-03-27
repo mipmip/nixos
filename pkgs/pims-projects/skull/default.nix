@@ -2,7 +2,7 @@
 
 crystal.buildCrystalPackage rec {
   pname = "skull";
-  version = "v0.1.1";
+  version = "v0.1.2";
 
   src = fetchFromGitHub {
     owner = "mipmip";
