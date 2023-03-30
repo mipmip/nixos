@@ -1,5 +1,7 @@
 { ... }:
 
+# Custom Gnome keyboard keys are listed here:
+# https://discussion.fedoraproject.org/t/custom-keyboard-layout-in-gnome-wayland/68923
 {
   dconf.settings = {
 
@@ -72,7 +74,7 @@
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9" = {
-      binding = "<Shift><Super>dead_circumflex";
+      binding = "<Shift><Super>asciicircum";
       command = "slack";
       name = "slack";
     };
