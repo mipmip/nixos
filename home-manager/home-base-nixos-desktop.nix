@@ -7,9 +7,9 @@
 
     ./files-linux
 
-    ./programs/firefox.nix
-    ./programs/xdg.nix
-    ./gnome
+    ./conf-desktop-linux/firefox.nix
+    ./conf-desktop-linux/xdg.nix
+    ./conf-gnome
 
     /home/pim/nixos/private/adevinta/home-manager/files-main
   ];
