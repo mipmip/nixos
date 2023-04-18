@@ -19,8 +19,8 @@
       ../../modules/base-tmux.nix
       ../../modules/base-vim.nix
 
-      ../../modules/desktop-chrome.nix
-      ../../modules/desktop-communication.nix
+#      ../../modules/desktop-chrome.nix
+#      ../../modules/desktop-communication.nix
       ../../modules/desktop-dtp.nix
       ../../modules/desktop-firefox.nix
       ../../modules/desktop-dev.nix
