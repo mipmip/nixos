@@ -10,8 +10,10 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
   # IF TRUE WAYLAND WILL BE USED
   services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.defaultSession = "gnome";
 
   services.flatpak.enable = true;
 
@@ -22,7 +24,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [
-    (pkgs.callPackage ../nur-pkgs/hl4150cdn/default.nix {})
+    (pkgs.callPackage ../pkgs/drivers/hl4150cdn/default.nix {})
   ];
 
   users.users.pim.initialPassword = "hallo";

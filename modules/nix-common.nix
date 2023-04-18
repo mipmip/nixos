@@ -11,6 +11,7 @@
   };
 
   services.openssh.enable = true;
+
   services.cron.enable = true;
 
   users.defaultUserShell = pkgs.zsh;

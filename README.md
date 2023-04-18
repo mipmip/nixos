@@ -2,12 +2,64 @@
 
 This is my mono-repository for my machines configuration and my dotfiles.
 
+## Features
+
+- multi machine
+- flakes
+- Custom patched Suckless Terminal (st)
+
+### Mentional NUR's
+- A 32 bits Brother printer driver
+- Some Gnome Extensions packed directly from Github (useful is maintainers keep behind supporting the latest Gnome Versions)
+- mip.rs, a fast and suckless markdown viewer written in Rust.
+- WIP: Skull, a tool for managing git working copies on demand.
+- some NUR crystal apps
+
+## Usage
+
+clone:
+
+```
+cd ~
+git clone --recurse-submodules git@github.com:mipmip/nixos.git
+cd /etc
+mv /etc/nixos /etc/nixos.bak
+sudo ln -s /home/pim/nixos nixos
+```
+
+nixos-rebuild:
+
+```
+cd /etc/nixos
+sudo nixos-rebuild switch --flake .#ojs
+```
+
+Home Manager:
+
+```
+cd /etc/nixos
+home-manager switch  --flake .#pim@ojs --impure
+```
+
 ### TODO
 
-- [ ] fix NUR url, maybe nur.nix
-- [ ] public features and documentation## Usage
+- [x] fix NUR url, maybe nur.nix
+- [x] home manager flake
+- [ ] public features and documentation Usage
 - [ ] setup firefox profiles: https://discourse.nixos.org/t/help-setting-up-firefox-with-home-manager/23333
 - [ ] install firefox language packs from nur
+- [ ] delete i-am-desktop
+- [ ] new method i-am-secondbrain
+- [ ] tmux A or B
+
+Lego1
+- [x] swap alt/win keys
+- [x] commit nixos
+- [ ] swap ctrl/fn keys
+- [ ] wayland and scaling
+
+Rodin
+- [ ] commit nixos
 
 ### MacOS Provisioning
 
@@ -30,7 +82,7 @@ see this run:
 ./RUNME.sh missing_modules
 ```
 
-### Home-Manager
+### Home-Manager Depreciated (remove once tested)
 
 Make sure home-manager is installed. On Mac I home-manager as single user
 install. On nixos home-manager is installed automatically.
@@ -54,6 +106,12 @@ Test configuration with:
 
 ```
 home-manager switch
+```
+
+### Home-Manager
+
+```
+home-manager switch  --flake .#pim --impure
 ```
 
 ## Features

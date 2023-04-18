@@ -8,7 +8,6 @@
     #github-desktop
     gh # GitHub Cli
 
-
     alacritty
     xclip
     xorg.xkill
@@ -18,6 +17,7 @@
     vimHugeX
     mipmip_pkg.fred # needed for linny
     mipmip_pkg.mip-rust
+    mipmip_pkg.skull
 
 
     hugo # needed for linny
