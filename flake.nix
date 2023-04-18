@@ -69,6 +69,19 @@
           inherit localOverlay;
         };
       };
+
+      "pim@rodin" = home-manager.lib.homeManagerConfiguration {
+        modules = [ (import ./home-manager/home-machine-rodin.nix) ];
+
+        pkgs = pkgsForSystem "x86_64-linux";
+        extraSpecialArgs = {
+          withLinny = false;
+          isDesktop = false;
+          tmuxPrefix = "b";
+          unstable = unstableForSystem "x86_64-linux";
+          inherit localOverlay;
+        };
+      };
     };
 
     inherit home-manager;

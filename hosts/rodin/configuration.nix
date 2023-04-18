@@ -57,6 +57,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+         experimental-features = nix-command flakes
+    '';
+  };
+
 
   # enable the nvidia driver
   services.xserver.videoDrivers = [ "nvidia" ];
