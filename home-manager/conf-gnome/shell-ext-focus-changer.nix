@@ -6,8 +6,8 @@
     value = {
       focus-left= ["<Super>Left"];
       focus-right= ["<Super>Right"];
-      focus-up= ["<Super>Up"];
-      focus-down= ["<Super>Down"];
+      focus-up= ["<Super>k"];
+      focus-down= ["<Super>j"];
     };
   };
 }
