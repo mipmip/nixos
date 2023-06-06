@@ -115,6 +115,7 @@ adevinta:
     - source: git@github.mpi-internal.com:automobile-it/automobile-elasticache-infrastructure
     - source: git@github.mpi-internal.com:automobile-it/automobile_grafonnet
     - source: git@github.mpi-internal.com:automobile-it/automobile-core-vitals-metrics.git
+    - source: git@github.mpi-internal.com:automobile-it/adsmetrics
 
 tracklib:
   base_dir: ~/tcTracklib
