@@ -12,6 +12,7 @@
       ../../modules/base-common.nix
       ../../modules/base-docker.nix
       ../../modules/base-git.nix
+      ../../modules/base-vpn.nix
       ../../modules/base-hardware.nix
       ../../modules/base-infrastructure.nix
       ../../modules/base-modern-unix.nix
