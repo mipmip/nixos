@@ -19,6 +19,8 @@
       ../../modules/base-tmux.nix
       ../../modules/base-vim.nix
 
+      ../../modules/desktop-openai.nix
+
       ../../modules/desktop-chrome.nix
       ../../modules/desktop-communication.nix
       ../../modules/desktop-dtp.nix
@@ -78,6 +80,8 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.kernelPackages = unstable.linuxPackages_latest;
   networking.hostName = "lego1";
+
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # Setup keyfile
   boot.initrd.secrets = {
