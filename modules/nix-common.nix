@@ -33,7 +33,6 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
-  users.users.pim.initialPassword = "hallo";
 
   users.users.pim = {
     initialPassword = "hallo";
@@ -48,7 +47,6 @@
   };
 
   users.users.annemarie = {
-    initialPassword = "hallo";
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
   };
