@@ -8,6 +8,7 @@
     bind.dnsutils
     whois
     nfs-utils
+    mosh
 
     #SYSTEM
     htop
@@ -33,10 +34,6 @@
     #help
     cheat
 
-    # data tools
-    sq # Swiss army knife for data
-    jq
-    yj
 
     # GRAPHIC
     imagemagick
@@ -60,9 +57,6 @@
 
     gcc
     pkg-config
-
-    ruby
-    rake
 
     trash-cli
   ];

@@ -11,6 +11,10 @@
   boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "wl" ];
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.broadcom_sta
+    config.boot.kernelPackages.rtl88x2bu
+  ];
 
 
   fileSystems."/" =
@@ -32,4 +36,6 @@
   swapDevices =
     [ { device = "/dev/disk/by-uuid/2e14da16-1eb5-4a43-9f1b-feffa2e3d9ad"; }
     ];
+
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

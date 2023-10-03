@@ -3,16 +3,19 @@
 
     utils.url = "github:numtide/flake-utils";
 
-    nixpkgs-22-05.url = "github:NixOS/nixpkgs/nixos-22.05";
+    #nixpkgs-22-05.url = "github:NixOS/nixpkgs/nixos-22.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    #nixpkgs-23-05.url = "github:NixOS/nixpkgs/nixos-23.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
+
+    home-manager.url = "github:nix-community/home-manager/release-22.11";
+    #home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, home-manager, nixpkgs, nixpkgs-22-05, unstable, utils }:
-  let
+  outputs = { self, home-manager, nixpkgs, unstable, utils }:
 
+  let
     localOverlay = prev: final: {
     };
 
@@ -24,6 +27,17 @@
       inherit system;
       config.allowUnfree = true;
     };
+
+#    old2211ForSystem = system: import nixpkgs-22-11 {
+#      overlays = [
+#        localOverlay
+#      ];
+#
+#      inherit system;
+#      config.allowUnfree = true;
+#    };
+
+
     unstableForSystem = system: import unstable {
       overlays = [
         localOverlay
@@ -45,10 +59,28 @@
     */
 
     homeConfigurations = {
+      "pim@adevintamac" = home-manager.lib.homeManagerConfiguration {
+        modules = [ (import ./home/pim/home-machine-adevinta.nix) ];
+        pkgs = pkgsForSystem "x86_64-darwin";
+        extraSpecialArgs = {
+          username = "pim.snel";
+          homedir = "/Users/pim.snel";
+          withLinny = true;
+          isDesktop = true;
+          tmuxPrefix = "a";
+          unstable = unstableForSystem "x86_64-darwin";
+          inherit localOverlay;
+        };
+      };
+
+
+
       "pim@lego1" = home-manager.lib.homeManagerConfiguration {
-        modules = [ (import ./home-manager/home-machine-lego1.nix) ];
+        modules = [ (import ./home/pim/home-machine-lego1.nix) ];
         pkgs = pkgsForSystem "x86_64-linux";
         extraSpecialArgs = {
+          username = "pim";
+          homedir = "/home/pim";
           withLinny = true;
           isDesktop = true;
           tmuxPrefix = "a";
@@ -58,23 +90,28 @@
       };
 
       "pim@ojs" = home-manager.lib.homeManagerConfiguration {
-        modules = [ (import ./home-manager/home-machine-ojs.nix) ];
+        modules = [ (import ./home/pim/home-machine-ojs.nix) ];
 
         pkgs = pkgsForSystem "x86_64-linux";
         extraSpecialArgs = {
+          username = "pim";
+          homedir = "/home/pim";
           withLinny = true;
           isDesktop = true;
           tmuxPrefix = "a";
           unstable = unstableForSystem "x86_64-linux";
+          #old2211 = old2211ForSystem "x86_64-linux";
           inherit localOverlay;
         };
       };
 
       "pim@rodin" = home-manager.lib.homeManagerConfiguration {
-        modules = [ (import ./home-manager/home-machine-rodin.nix) ];
+        modules = [ (import ./home/pim/home-machine-rodin.nix) ];
 
         pkgs = pkgsForSystem "x86_64-linux";
         extraSpecialArgs = {
+          username = "pim";
+          homedir = "/home/pim";
           withLinny = false;
           isDesktop = false;
           tmuxPrefix = "b";

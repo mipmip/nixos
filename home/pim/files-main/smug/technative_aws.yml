@@ -1,0 +1,5 @@
+session: TechNative AWS
+root: ~/tcTechNative
+
+windows:
+- name: zsh

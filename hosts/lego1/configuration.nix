@@ -19,6 +19,8 @@
       ../../modules/base-tmux.nix
       ../../modules/base-vim.nix
 
+      ../../modules/desktop-openai.nix
+
       ../../modules/desktop-chrome.nix
       ../../modules/desktop-communication.nix
       ../../modules/desktop-dtp.nix
@@ -28,11 +30,15 @@
       ../../modules/desktop-gnome.nix
       ../../modules/desktop-st.nix
       ../../modules/desktop-video.nix
-      ../../modules/desktop-virtualbox.nix
+#      ../../modules/desktop-virtualbox.nix
       ../../modules/desktop-security.nix
+      ../../modules/desktop-minecraft.nix
 
+      ../../modules/dev-android.nix
+      ../../modules/dev-core.nix
       ../../modules/dev-crystal.nix
       ../../modules/dev-go.nix
+      ../../modules/dev-jsonyaml.nix
       ../../modules/dev-technative.nix
 
       ../../modules/explore-pkg.nix
@@ -57,12 +63,26 @@
   };
   #services.xserver.xkbOptions = "caps:none,terminate:ctrl_alt_bks,altwin:swap_alt_win";
 
+  networking.hosts = {
+    "127.0.0.1" = [
+      "ojs"
+      "localhost"
+    ];
+    "161.97.169.230" = [
+      "invokeai.amy.node.snel.city"
+    ];
+  };
+
+
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.kernelPackages = unstable.linuxPackages_latest;
   networking.hostName = "lego1";
+
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   # Setup keyfile
   boot.initrd.secrets = {
@@ -76,20 +96,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nl_NL.UTF-8";
-    LC_IDENTIFICATION = "nl_NL.UTF-8";
-    LC_MEASUREMENT = "nl_NL.UTF-8";
-    LC_MONETARY = "nl_NL.UTF-8";
-    LC_NAME = "nl_NL.UTF-8";
-    LC_NUMERIC = "nl_NL.UTF-8";
-    LC_PAPER = "nl_NL.UTF-8";
-    LC_TELEPHONE = "nl_NL.UTF-8";
-    LC_TIME = "nl_NL.UTF-8";
-  };
 
   networking.firewall.enable = false;
 

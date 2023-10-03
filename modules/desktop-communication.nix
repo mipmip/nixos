@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, unstable, ... }:
 
 {
   environment.sessionVariables = {
@@ -12,11 +12,13 @@
       installPhase = builtins.replaceStrings ["UseOzonePlatform" "--ozone-platform=wayland"] ["UseOzonePlatform,WebRTCPipeWireCapturer" ""] oldAttrs.installPhase;
     }))
 
+    msmtp
 
     whatsapp-for-linux
-    protonmail-bridge
     zoom-us
     tdesktop
     teams
+
+    unstable.himalaya
   ];
 }
