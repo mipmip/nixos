@@ -11,7 +11,7 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-2NZjlh2vQXYMue4yHvsEJCwzP7kQjIi/FnTYtBYcN1I=";
   };
 
-  cargoSha256 = "sha256-fzfNHukLWrmli6o9XE0iSQDheFMy91awU3R4UA9jN0k=";
+  cargoSha256 = "sha256-cJzPFW46aZ/7Gs1J8fZ9Ja6HUzltWRH9+aGp6DPqPrk=";
 
   nativeBuildInputs = [ pkg-config glib cairo webkitgtk ];
 
