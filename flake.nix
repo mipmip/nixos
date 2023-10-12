@@ -141,6 +141,7 @@
 
       modules =
         let
+          system = "x86_64-linux";
           defaults = { pkgs, ... }: {
             _module.args.unstable = unstableForSystem "x86_64-linux";
           };
