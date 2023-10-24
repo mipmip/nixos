@@ -22,6 +22,7 @@
       ../../modules/desktop-openai.nix
 
       ../../modules/desktop-chrome.nix
+      ../../modules/desktop-hyprland.nix
       ../../modules/desktop-communication.nix
       ../../modules/desktop-dtp.nix
       ../../modules/desktop-firefox.nix
@@ -47,7 +48,7 @@
       ../../modules/hardware-krd_disable-caps.nix
       ../../modules/hardware-printers.nix
 
-      ../../modules/nix-comma.nix
+      ../../modules/nix-agenix.nix
       ../../modules/nix-common.nix
       ../../modules/nix-desktop.nix
       ../../modules/nix-home-manager-global.nix
