@@ -12,13 +12,13 @@
     plugins = {
       mappings = {
 #        c = "chksum";
-#        d = "dragdrop";
+        d = "dragdrop";
         D = "diffs";
 #        M = "nmount";
-        n = "bulknew";
+#        n = "bulknew";
         p = "preview-tui";
-        s = "!zsh -i";
-        z = "autojump";
+#        s = "!zsh -i";
+#        z = "autojump";
       };
       src = "${pkgs.nnn}/share/plugins";
     };
@@ -87,17 +87,24 @@
     in
     {
       NNN_OPTS = "cDEix";
+
       NNN_OPENER = "$HOME/.config/nnn/plugins/nuke";
       # Have nuke open GUI programs
       GUI = 1;
+
       # FIFO to write hovered path to for live previews
       NNN_FIFO = "/tmp/nnn.fifo";
       NNN_BATTHEME = "Solarized";
+
       # context colors
-      NNN_COLORS = "#0a1b2c3d";
+      #NNN_COLORS = "#0a1b2c3d";
+      NNN_COLORS = "1234";
+      NNN_FCOLORS = "123412341111";
+
       # Supported archive formats
       # Needed because using bsdtar increases supported archive formats
       NNN_ARCHIVE = "\\.(${lib.strings.concatStringsSep "|" archiveFormats})$";
+
       # preview-tui directory icons
       NNN_ICONLOOKUP = 1;
     };
