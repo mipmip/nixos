@@ -28,6 +28,11 @@ set hlsearch    " highlight matches
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
+
+
+if !isdirectory("~/.vim_temp/undodir")
+  call mkdir("~/.vim_temp/undodir", "p")
+endif
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim_temp/undodir
 
