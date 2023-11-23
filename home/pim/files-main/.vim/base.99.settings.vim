@@ -30,9 +30,7 @@ set smartcase   " ... unless they contain at least one capital letter
 
 
 
-if !isdirectory("~/.vim_temp/undodir")
-  call mkdir("~/.vim_temp/undodir", "p")
-endif
+silent !mkdir ~/.vim_temp/undodir > /dev/null 2>&1
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim_temp/undodir
 
