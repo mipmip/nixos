@@ -62,13 +62,23 @@
       config.allowBroken = true;
     };
 
-  in utils.lib.eachSystem [ "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ] (system: rec {
-    legacyPackages = pkgsForSystem system;
-  }) // {
+  in {
 
-    /*
-    DOT FILES
-    */
+    homeConfigurations."pim@rodin" = home-manager.lib.homeManagerConfiguration {
+      modules = [
+        (import ./home/pim/home-machine-rodin.nix)
+      ];
+
+      pkgs = pkgsForSystem "x86_64-linux";
+      extraSpecialArgs = {
+        username = "pim";
+        homedir = "/home/pim";
+        withLinny = true;
+        isDesktop = true;
+        tmuxPrefix = "a";
+        unstable = unstableForSystem "x86_64-linux";
+      };
+    };
 
     homeConfigurations = {
       "pim@adevintamac" = home-manager.lib.homeManagerConfiguration {
@@ -83,8 +93,6 @@
           unstable = unstableForSystem "x86_64-darwin";
         };
       };
-
-
 
       "pim@lego1" = home-manager.lib.homeManagerConfiguration {
         modules = [ (import ./home/pim/home-machine-lego1.nix) ];
@@ -112,171 +120,162 @@
           unstable = unstableForSystem "x86_64-linux";
         };
       };
-
-      "pim@rodin" = home-manager.lib.homeManagerConfiguration {
-        modules = [ (import ./home/pim/home-machine-rodin.nix) ];
-
-        pkgs = pkgsForSystem "x86_64-linux";
-        extraSpecialArgs = {
-          username = "pim";
-          homedir = "/home/pim";
-          withLinny = true;
-          isDesktop = true;
-          tmuxPrefix = "a";
-          unstable = unstableForSystem "x86_64-linux";
-        };
-      };
     };
-
-    inherit home-manager;
-    inherit (home-manager) packages;
-
-    /*
-    MACHINES
-    */
 
     nixosConfigurations.rodin = nixpkgs.lib.nixosSystem {
 
+      system = "x86_64-linux";
       modules =
         let
           system = "x86_64-linux";
+
           defaults = { pkgs, ... }: {
             _module.args.unstable = unstableForSystem "x86_64-linux";
             _module.args.nixpkgs-inkscape13 = nixpkgs-inkscape13ForSystem "x86_64-linux";
           };
+
+          agenixBin = {
+            environment.systemPackages = [ agenix.packages."${system}".default ];
+          };
+
         in [
-          defaults
           ./hosts/rodin/configuration.nix
-          { environment.systemPackages = [ agenix.packages."${system}".default ]; }
+          defaults
+          agenixBin
           agenix.nixosModules.default
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
           }
 
-##          {
-##              imports = [
-##                nixified-ai.nixosModules.invokeai
-##              ];
-##
-##              environment.systemPackages = [
-##                nixified-ai.packages.${system}.invokeai-nvidia
-##              ];
-##
-##  #            services.invokeai = {
-##  #              enable = false;
-##  #              host = "0.0.0.0";
-##  #              nsfwChecker = false;
-##  #              package = nixified-ai.packages.${system}.invokeai-nvidia;
-##  #            };
-##
-##            }
+  ##          {
+  ##              imports = [
+  ##                nixified-ai.nixosModules.invokeai
+  ##              ];
+  ##
+  ##              environment.systemPackages = [
+  ##                nixified-ai.packages.${system}.invokeai-nvidia
+  ##              ];
+  ##
+  ##  #            services.invokeai = {
+  ##  #              enable = false;
+  ##  #              host = "0.0.0.0";
+  ##  #              nsfwChecker = false;
+  ##  #              package = nixified-ai.packages.${system}.invokeai-nvidia;
+  ##  #            };
+  ##
+  ##            }
 
 
-      ];
-    };
+];
+      };
 
-    nixosConfigurations.lego1 = nixpkgs.lib.nixosSystem {
 
-      modules =
-        let
-          system = "x86_64-linux";
-          defaults = { pkgs, ... }: {
-            _module.args.unstable = unstableForSystem "x86_64-linux";
-            _module.args.nixpkgs-inkscape13 = nixpkgs-inkscape13ForSystem "x86_64-linux";
+      nixosConfigurations.lego1 = nixpkgs.lib.nixosSystem {
+
+        modules =
+          let
+            system = "x86_64-linux";
+            defaults = { pkgs, ... }: {
+              _module.args.unstable = unstableForSystem "x86_64-linux";
+              _module.args.nixpkgs-inkscape13 = nixpkgs-inkscape13ForSystem "x86_64-linux";
+            };
+          in [
+            defaults
+            ./hosts/lego1/configuration.nix
+            { environment.systemPackages = [ agenix.packages."${system}".default ]; }
+            agenix.nixosModules.default
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+            }
+          ];
+        };
+
+        nixosConfigurations.ojs = nixpkgs.lib.nixosSystem {
+
+          modules =
+            let
+              system = "x86_64-linux";
+              defaults = { pkgs, ... }: {
+                _module.args.unstable = unstableForSystem "x86_64-linux";
+                _module.args.nixpkgs-inkscape13 = nixpkgs-inkscape13ForSystem "x86_64-linux";
+              };
+            in [
+              defaults
+              ./hosts/ojs/configuration.nix
+
+              { environment.systemPackages = [ agenix.packages."${system}".default ]; }
+              agenix.nixosModules.default
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+              }
+            ];
           };
-        in [
-          defaults
-          ./hosts/lego1/configuration.nix
-          { environment.systemPackages = [ agenix.packages."${system}".default ]; }
-          agenix.nixosModules.default
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-          }
-      ];
-    };
+        nixosConfigurations.grannyos = nixpkgs.lib.nixosSystem {
 
-    nixosConfigurations.ojs = nixpkgs.lib.nixosSystem {
+          modules =
+            let
+              system = "x86_64-linux";
+              defaults = { pkgs, ... }: {
+                _module.args.unstable = unstableForSystem "x86_64-linux";
+              };
+            in [
+              defaults
+              ./hosts/grannyos/configuration.nix
 
-      modules =
-        let
-          system = "x86_64-linux";
-          defaults = { pkgs, ... }: {
-            _module.args.unstable = unstableForSystem "x86_64-linux";
-            _module.args.nixpkgs-inkscape13 = nixpkgs-inkscape13ForSystem "x86_64-linux";
+              { environment.systemPackages = [ agenix.packages."${system}".default ]; }
+              agenix.nixosModules.default
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+              }
+            ];
           };
-        in [
-          defaults
-          ./hosts/ojs/configuration.nix
 
-          { environment.systemPackages = [ agenix.packages."${system}".default ]; }
-          agenix.nixosModules.default
+          nixosConfigurations.gnome-45 = nixpkgs-gnome-45.lib.nixosSystem {
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-          }
-      ];
-    };
-
-    nixosConfigurations.grannyos = nixpkgs.lib.nixosSystem {
-
-      modules =
-        let
-          system = "x86_64-linux";
-          defaults = { pkgs, ... }: {
-            _module.args.unstable = unstableForSystem "x86_64-linux";
-          };
-        in [
-          defaults
-          ./hosts/grannyos/configuration.nix
-
-          { environment.systemPackages = [ agenix.packages."${system}".default ]; }
-          agenix.nixosModules.default
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-          }
-      ];
-    };
-
-    nixosConfigurations.gnome-45 = nixpkgs-gnome-45.lib.nixosSystem {
-
-      pkgs = gnome45ForSystem "x86_64-linux";
-      modules =
-        let
-          system = "x86_64-linux";
-          defaults = { gnome45ForSystem, ... }: {
-            _module.args.unstable = unstableForSystem "x86_64-linux";
-          };
-        in [
-          defaults
-          ./hosts/gnome-45/configuration.nix
+            pkgs = gnome45ForSystem "x86_64-linux";
+            modules =
+              let
+                system = "x86_64-linux";
+                defaults = { gnome45ForSystem, ... }: {
+                  _module.args.unstable = unstableForSystem "x86_64-linux";
+                };
+              in [
+                defaults
+                ./hosts/gnome-45/configuration.nix
 
 
-      ];
-    };
+              ];
+            };
 
-    nixosConfigurations.billquick = nixpkgs.lib.nixosSystem {
+            nixosConfigurations.billquick = nixpkgs.lib.nixosSystem {
 
-      modules =
-        let
-          defaults = { pkgs, ... }: {
-            _module.args.unstable = unstableForSystem "x86_64-linux";
-          };
-        in [
-          defaults
-          ./hosts/billquick/configuration.nix
-          .home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-          }
-      ];
+              modules =
+                let
+                  defaults = { pkgs, ... }: {
+                    _module.args.unstable = unstableForSystem "x86_64-linux";
+                  };
+                in [
+                  defaults
+                  ./hosts/billquick/configuration.nix
+                  .home-manager.nixosModules.home-manager
+                  {
+                    home-manager.useGlobalPkgs = true;
+                  }
+                ];
 
-    };
+              };
+
+    #inherit home-manager;
+    #inherit (home-manager) packages;
+
 
   };
+
 }

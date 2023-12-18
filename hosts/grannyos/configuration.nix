@@ -13,7 +13,7 @@
       ../../modules/base-git.nix
       ../../modules/base-vim.nix
 
-      ../../modules/desktop-firefox.nix
+#      ../../modules/desktop-firefox.nix
       ../../modules/desktop-fonts.nix
       ../../modules/desktop-gnome.nix
 
@@ -45,7 +45,7 @@
 
   networking.firewall.enable = false;
 
-  system.stateVersion = "22.11"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
   virtualisation.vmVariant = {
     virtualisation = {
@@ -53,5 +53,7 @@
       cores = 3;
     };
   };
+
+  users.users.pim.initialPassword = "test";
 
 }
