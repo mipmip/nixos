@@ -3,9 +3,9 @@
 
     ## MAIN NIXPKGS
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs-2311.url = "github:NixOS/nixpkgs/nixos-23.11";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixpkgs-gnome-45.url = "github:NixOS/nixpkgs?ref=gnome";
 
     nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
@@ -27,9 +27,9 @@
     self,
     home-manager,
     nixpkgs,
+    nixpkgs-2311,
     unstable,
     nixpkgs-inkscape13,
-    nixpkgs-gnome-45,
     utils,
     agenix,
     nixified-ai
@@ -55,12 +55,6 @@
       config.allowUnfree = true;
     };
 
-    gnome45ForSystem = system: import nixpkgs-gnome-45 {
-      inherit system;
-      config.allowUnfree = true;
-      config.allowUnsupportedSystem = true;
-      config.allowBroken = true;
-    };
 
   in {
 
@@ -215,62 +209,36 @@
             ];
           };
 
-        nixosConfigurations.grannyos = nixpkgs.lib.nixosSystem {
-
+        nixosConfigurations.grannyos = nixpkgs-2311.lib.nixosSystem {
           modules =
             let
               system = "x86_64-linux";
+            in
+            [
+              {
+                nixpkgs.config.pkgs = import nixpkgs-2311 { inherit system; };
+              }
+              ./hosts/grannyos/configuration.nix
+            ];
+          };
+
+        nixosConfigurations.billquick = nixpkgs.lib.nixosSystem {
+
+          modules =
+            let
               defaults = { pkgs, ... }: {
                 _module.args.unstable = unstableForSystem "x86_64-linux";
               };
             in [
               defaults
-              ./hosts/grannyos/configuration.nix
-
-              { environment.systemPackages = [ agenix.packages."${system}".default ]; }
-              agenix.nixosModules.default
-
-              home-manager.nixosModules.home-manager
+              ./hosts/billquick/configuration.nix
+              .home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
               }
             ];
+
           };
-
-          nixosConfigurations.gnome-45 = nixpkgs-gnome-45.lib.nixosSystem {
-
-            pkgs = gnome45ForSystem "x86_64-linux";
-            modules =
-              let
-                system = "x86_64-linux";
-                defaults = { gnome45ForSystem, ... }: {
-                  _module.args.unstable = unstableForSystem "x86_64-linux";
-                };
-              in [
-                defaults
-                ./hosts/gnome-45/configuration.nix
-
-
-              ];
-            };
-
-            nixosConfigurations.billquick = nixpkgs.lib.nixosSystem {
-
-              modules =
-                let
-                  defaults = { pkgs, ... }: {
-                    _module.args.unstable = unstableForSystem "x86_64-linux";
-                  };
-                in [
-                  defaults
-                  ./hosts/billquick/configuration.nix
-                  .home-manager.nixosModules.home-manager
-                  {
-                    home-manager.useGlobalPkgs = true;
-                  }
-                ];
-
-              };
 
     #inherit home-manager;
     #inherit (home-manager) packages;
