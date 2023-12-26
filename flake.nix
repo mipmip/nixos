@@ -214,6 +214,16 @@
             in [
               defaults
               ./hosts/ojs/configuration.nix
+              peerix.nixosModules.peerix {
+                services.peerix = {
+                  enable = true;
+                  package = peerix.packages.x86_64-linux.peerix;
+                  openFirewall = true; # UDP/12304
+                  privateKeyFile = ./hosts/ojs/peerix-private;
+                  publicKeyFile =  ./hosts/ojs/peerix-public;
+                  publicKey = "peerix-lego1:UEbvvZ0dbQbFqktNWaeo4hyTIBovOb/3Is/AuzBUNJI=";
+                };
+              }
 
               { environment.systemPackages = [ agenix.packages."${system}".default ]; }
               agenix.nixosModules.default
