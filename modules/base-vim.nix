@@ -28,6 +28,7 @@
     rust-analyzer
     cargo
     rustc
+    nodejs
 
     sox
 
