@@ -48,10 +48,14 @@ buildGoModule rec {
     runHook preInstall
 
     #mkdir -p $out/bin
-    cp -av build/* $out/
+    #cp -av build/* $out/
     mkdir -p $out/etc
 
-    cp -av build/linux_amd64 $out/bin
+    ###FAKE
+    #mkdir -p build/bin/linux_amd64
+    #touch build/bin/linux_amd64/fakebin
+
+    cp -av build/bin/linux_amd64 $out/bin
     #cp build/linux_amd64/amazon-cloudwatch-agent $out/bin/
     #cp build/linux_amd64/amazon-cloudwatch-agent-config-wizard $out/bin/
     #cp build/linux_amd64/config-downloader $out/bin/
@@ -60,15 +64,15 @@ buildGoModule rec {
 
     cp LICENSE $out/
     cp NOTICE $out/
-    cp THIRD-PARTY-LICENSES $out/
+    cp licensing/THIRD-PARTY-LICENSES $out/
     cp RELEASE_NOTES $out/
     cp packaging/dependencies/amazon-cloudwatch-agent-ctl $out/bin/
     cp cfg/commonconfig/common-config.toml $out/etc/
     substituteInPlace $out/bin/amazon-cloudwatch-agent-ctl --replace /opt/aws/amazon-cloudwatch-agent "$out"
 
-    mkdir /var/log/amazon-cloudwatch-agent
-    touch /var/log/amazon-cloudwatch-agent/amazon-cloudwatch-agent.log
-    ln -s /var/log/amazon-cloudwatch-agent/log /var/log/amazon-cloudwatch-agent
+    mkdir -p /tmp/amazon-cloudwatch-agent
+    touch /tmp/amazon-cloudwatch-agent/amazon-cloudwatch-agent.log
+    ln -s /tmp/amazon-cloudwatch-agent/log $out/log
 
     runHook postInstall
     '';
