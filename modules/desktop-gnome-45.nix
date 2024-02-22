@@ -30,6 +30,8 @@
 
   environment.systemPackages = with pkgs; [
 
+
+    glib.dev
     # UTILS
     #gnome.gnome-tweaks
 

@@ -35,6 +35,7 @@
 #  ];
 #
 
+
   services.flatpak.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
