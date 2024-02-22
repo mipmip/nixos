@@ -35,24 +35,41 @@ buildGoModule rec {
     echo -e "\t\$(LINUX_AMD64_BUILD)/start-amazon-cloudwatch-agent github.com/aws/amazon-cloudwatch-agent/cmd/start-amazon-cloudwatch-agent" >> Makefile
     echo -e "\t\$(LINUX_AMD64_BUILD)/amazon-cloudwatch-agent-config-wizard github.com/aws/amazon-cloudwatch-agent/cmd/amazon-cloudwatch-agent-config-wizard" >> Makefile
 
-    cat Makefile
+    #cat Makefile
 
     make amazon-cloudwatch-agent-nixos-linux
   '';
 
   preInstall = ''
-    echo Here are the commands executed before installPhase
     '';
 
   installPhase = ''
-  # Run preInstall commands. Included in the default installPhase, but not in your specified one. You need to add this yourself, or preInstall won't run
+
     runHook preInstall
 
-    echo Here are the commands for installPhase
-
+    #mkdir -p $out/bin
     cp -av build/* $out/
+    mkdir -p $out/etc
 
-  # Run postInstall commands, same as above
+    cp -av build/linux_amd64 $out/bin
+    #cp build/linux_amd64/amazon-cloudwatch-agent $out/bin/
+    #cp build/linux_amd64/amazon-cloudwatch-agent-config-wizard $out/bin/
+    #cp build/linux_amd64/config-downloader $out/bin/
+    #cp build/linux_amd64/config-translator $out/bin/
+    #cp build/linux_amd64/start-amazon-cloudwatch-agent $out/bin/
+
+    cp LICENSE $out/
+    cp NOTICE $out/
+    cp THIRD-PARTY-LICENSES $out/
+    cp RELEASE_NOTES $out/
+    cp packaging/dependencies/amazon-cloudwatch-agent-ctl $out/bin/
+    cp cfg/commonconfig/common-config.toml $out/etc/
+    substituteInPlace $out/bin/amazon-cloudwatch-agent-ctl --replace /opt/aws/amazon-cloudwatch-agent "$out"
+
+    mkdir /var/log/amazon-cloudwatch-agent
+    touch /var/log/amazon-cloudwatch-agent/amazon-cloudwatch-agent.log
+    ln -s /var/log/amazon-cloudwatch-agent/log /var/log/amazon-cloudwatch-agent
+
     runHook postInstall
     '';
 
