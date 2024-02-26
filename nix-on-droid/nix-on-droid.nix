@@ -8,19 +8,22 @@
 
     # Some common stuff that people expect to have
     git
+    git-sync
+    watch
     openssh
     htop
     #diffutils
     which
+  
     tmux
     zsh
     procps
-    #findutils
+    findutils
     #utillinux
     #tzdata
     #hostname
     #man
-    #gnugrep
+    gnugrep
     #gnupg
     #gnused
     #gnutar
