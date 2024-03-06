@@ -13,6 +13,8 @@
     # 2FA
     authenticator
 
+    sqlite
+
     # PASSWORDS
     gnupg
     pinentry

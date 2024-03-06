@@ -20,26 +20,6 @@
     '';
   };
 
-  environment.systemPackages = with pkgs; [
-    mipmip_pkg.amazon-cloudwatch-agent
-  ];
-
-  systemd.services.amazon-cloudwatch-agent = {
-    enable = true;
-    description = "Amazon CloudWatch Agent";
-    unitConfig = {
-      Type = "simple";
-    };
-    serviceConfig = {
-      ExecStart = "${pkgs.mipmip_pkg.amazon-cloudwatch-agent}/bin/start-amazon-cloudwatch-agent";
-      Restart = "on-failure";
-      RestartSec = 60;
-      KillMode="process";
-    };
-    wantedBy = [ "multi-user.target" ];
-    after =[ "network.target" ];
-  };
-
   virtualisation.vmVariant = {
 
     virtualisation = {

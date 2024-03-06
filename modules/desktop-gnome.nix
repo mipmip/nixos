@@ -2,6 +2,8 @@
 
 {
 
+  services.gnome.gnome-keyring.enable = true;
+
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
