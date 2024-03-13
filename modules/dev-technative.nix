@@ -37,6 +37,9 @@
 
     git-remote-codecommit
 
+    unstable.azure-cli
+    unstable.bruno
+
 
     # TERRAFORM
     terraform-docs
