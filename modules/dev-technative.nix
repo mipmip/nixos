@@ -20,6 +20,9 @@
     pass
 
     unstable.nickel
+
+
+    vscode
     dhall
 
     # AWS
