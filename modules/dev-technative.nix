@@ -13,6 +13,8 @@
     # 2FA
     authenticator
 
+    sqlite
+
     # PASSWORDS
     gnupg
     pinentry
@@ -37,6 +39,9 @@
     ssmsh
 
     git-remote-codecommit
+
+    unstable.azure-cli
+    unstable.bruno
 
 
     # TERRAFORM

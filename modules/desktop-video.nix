@@ -6,8 +6,10 @@
     x264
     ffmpeg
     vlc
-    obs-studio
     vhs
+
+   # obs-studio
+   # obs-studio-plugins.input-overlay
   ];
 }
 

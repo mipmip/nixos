@@ -29,8 +29,6 @@ let
     gnomeExtensions.highlight-focus       = pkgs.callPackage ./gnome-shell-extensions/highlight-focus       { };
     gnomeExtensions.search-light          = pkgs.callPackage ./gnome-shell-extensions/search-light          { };
 
-    # > 24.11
-    amazon-cloudwatch-agent               = pkgs.callPackage ./aws/amazon-cloudwatch-agent                  { };
 
   };
 in self
