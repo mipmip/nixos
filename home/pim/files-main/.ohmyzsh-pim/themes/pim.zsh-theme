@@ -1,3 +1,7 @@
+# vim: set filetype=zsh:
+
+RPROMPT='$(aws_prompt_info)$(tfbackend_prompt_info)'
+
 PROMPT="%(?:%{$fg_bold[green]%}➜:%{$fg_bold[red]%}➜) %F{magenta}%n%f%{$fg[blue]%}@%M %{$fg[cyan]%}%c%{$reset_color%}"
 PROMPT+=' $(git_prompt_info)'
 
