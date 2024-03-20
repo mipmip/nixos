@@ -16,5 +16,6 @@
       ./conf-cli/vim.nix
       #./conf-cli/neovim.nix
       ./conf-cli/zsh.nix
+      ./conf-cli/awscli.nix
   ];
 }

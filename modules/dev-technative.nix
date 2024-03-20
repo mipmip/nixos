@@ -10,6 +10,9 @@
     drawio
     graphviz
 
+    # SHELL
+    gum
+
     # 2FA
     authenticator
 

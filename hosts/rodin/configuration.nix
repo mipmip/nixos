@@ -29,4 +29,15 @@
   networking.firewall.enable = false;
 
   system.stateVersion = "22.11";
+
+  networking.hosts = {
+    "127.0.0.1" = [
+      "ojs"
+      "localhost"
+    ];
+    "3.70.96.68" = [
+      "phpdemo.example.com"
+    ];
+  };
+
 }
