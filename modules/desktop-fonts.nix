@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, unstable, ... }:
 
 let
   fontsList = with pkgs; [
@@ -9,6 +9,7 @@ let
     inter
     rubik
     lato
+    unstable.fira-code-nerdfont
     nerdfonts
   ];
 in

@@ -30,13 +30,21 @@
 
   system.stateVersion = "22.11";
 
+  environment.systemPackages = with pkgs; [
+    tmux
+
+  ];
+
+
   networking.hosts = {
     "127.0.0.1" = [
       "ojs"
       "localhost"
     ];
-    "3.70.96.68" = [
-      "phpdemo.example.com"
+    "3.122.241.107" = [
+      "rrs-dev.healtcheck.internal"
+      "rrs-acc.healtcheck.internal"
+      "rrs-test.healtcheck.internal"
     ];
   };
 
