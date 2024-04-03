@@ -83,7 +83,9 @@
 
     homeConfigurations = {
       "pim@adevintamac" = home-manager.lib.homeManagerConfiguration {
-        modules = [ (import ./home/pim/home-machine-adevinta.nix) ];
+        modules = [ 
+        (import ./home/pim/home-machine-adevinta.nix) 
+        ];
         pkgs = pkgsForSystem "x86_64-darwin";
         extraSpecialArgs = {
           username = "pim.snel";
