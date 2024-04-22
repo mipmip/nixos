@@ -10,6 +10,7 @@
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
+    nixpkgs-share-preview-03.url = "github:raboof/nixpkgs?ref=share-preview-init-at-0.3.0";
 
     ## HOME MANAGER
     home-manager.url = "github:nix-community/home-manager/release-22.11";
@@ -37,6 +38,7 @@
     peerix,
     unstable,
     nixpkgs-inkscape13,
+    nixpkgs-share-preview-03,
     agenix,
     nixified-ai
   }:
@@ -56,7 +58,17 @@
       config.allowUnfree = true;
     };
 
+    pkgs-share-preview-03 = system: import nixpkgs-share-preview-03 {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
     unstableForSystem = system: import unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
+    importFromChannelForSystem = system: channel: import channel {
       inherit system;
       config.allowUnfree = true;
     };
@@ -133,9 +145,10 @@
           system = "x86_64-linux";
 
           defaults = { pkgs, ... }: {
-            _module.args.unstable = unstableForSystem "x86_64-linux";
-            _module.args.pkgs-2311 = nixpkgs-2311 "x86_64-linux";
-            _module.args.nixpkgs-inkscape13 = nixpkgs-inkscape13ForSystem "x86_64-linux";
+            _module.args.unstable = importFromChannelForSystem system unstable;
+            _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
+            _module.args.pkgs-inkscape13 = importFromChannelForSystem system nixpkgs-inkscape13;
+            _module.args.pkgs-share-preview-03 = importFromChannelForSystem system nixpkgs-share-preview-03;
           };
 
           agenixBin = {
@@ -185,17 +198,16 @@
 ];
       };
 
-
       nixosConfigurations.lego1 = nixpkgs.lib.nixosSystem {
 
         modules =
           let
             system = "x86_64-linux";
             defaults = { pkgs, ... }: {
-
-              _module.args.unstable = unstableForSystem "x86_64-linux";
-              _module.args.pkgs-2311 = nixpkgs-2311 "x86_64-linux";
-              _module.args.nixpkgs-inkscape13 = nixpkgs-inkscape13ForSystem "x86_64-linux";
+              _module.args.unstable = importFromChannelForSystem system unstable;
+              _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
+              _module.args.pkgs-inkscape13 = importFromChannelForSystem system nixpkgs-inkscape13;
+              _module.args.pkgs-share-preview-03 = importFromChannelForSystem system nixpkgs-share-preview-03;
             };
           in [
             defaults

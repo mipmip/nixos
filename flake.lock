@@ -340,6 +340,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-share-preview-03": {
+      "locked": {
+        "lastModified": 1708469258,
+        "narHash": "sha256-sUqAgMN57GRV3SzUx7N4BmWKQ4LcBZL9hkHVwVrcuU4=",
+        "owner": "raboof",
+        "repo": "nixpkgs",
+        "rev": "c165a1094bfbfba530f2041383388d8ad5f6868f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "raboof",
+        "ref": "share-preview-init-at-0.3.0",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1686501370,
@@ -418,6 +434,7 @@
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-2311": "nixpkgs-2311",
         "nixpkgs-inkscape13": "nixpkgs-inkscape13",
+        "nixpkgs-share-preview-03": "nixpkgs-share-preview-03",
         "peerix": "peerix",
         "unstable": "unstable"
       }

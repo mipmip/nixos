@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-2311, unstable, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -8,7 +8,8 @@
     vlc
     vhs
 
-   # obs-studio
+   pkgs-2311.obs-studio
+   pkgs-2311.obs-studio-plugins.advanced-scene-switcher
    # obs-studio-plugins.input-overlay
   ];
 }

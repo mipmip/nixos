@@ -15,12 +15,16 @@
     msmtp
 
     unstable.whatsapp-for-linux
+    unstable.signal
+    tdesktop
+
     zoom-us
     skypeforlinux
-    tdesktop
     teams
-    unstable.srain
-    unstable.tuba
+
+    unstable.srain #IRC
+    unstable.tuba # Mastodon
+
 
     unstable.himalaya
   ];

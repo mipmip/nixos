@@ -1,4 +1,4 @@
-{ config, inputs, system, pkgs, ... }:
+{ config, inputs, system, pkgs, pkgs-share-preview-03, ... }:
 
 {
   imports = [
@@ -32,8 +32,15 @@
 
   environment.systemPackages = with pkgs; [
     tmux
-
+    pkgs-share-preview-03.share-preview
   ];
+
+  services.pixiecore = {
+    enable = true;
+    openFirewall = true;
+    dhcpNoBind = true;
+    kernel = "https://boot.netboot.xyz";
+  };
 
 
   networking.hosts = {
