@@ -15,7 +15,7 @@
     msmtp
 
     unstable.whatsapp-for-linux
-    unstable.signal
+    unstable.signal-desktop
     tdesktop
 
     zoom-us
