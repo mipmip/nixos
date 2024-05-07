@@ -53,10 +53,10 @@ let
 in
 {
   imports = [
-    ../../../home-manager-modules/programs/awscli.nix
+    ../../../home-manager-modules/programs/awscli-cust.nix
   ];
 
-  programs.awscli = {
+  programs.awscli-cust = {
     package = unstable.awscli2;
     enable = true;
     settings = {

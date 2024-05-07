@@ -97,8 +97,8 @@
 
     homeConfigurations = {
       "pim@adevintamac" = home-manager.lib.homeManagerConfiguration {
-        modules = [ 
-        (import ./home/pim/home-machine-adevinta.nix) 
+        modules = [
+        (import ./home/pim/home-machine-adevinta.nix)
         ];
         pkgs = pkgsForSystem "x86_64-darwin";
         extraSpecialArgs = {
@@ -148,6 +148,7 @@
 
           defaults = { pkgs, ... }: {
             _module.args.unstable = importFromChannelForSystem system unstable;
+            _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
             _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
             #_module.args.pkgs-inkscape13 = importFromChannelForSystem system nixpkgs-inkscape13;
             _module.args.pkgs-share-preview-03 = importFromChannelForSystem system nixpkgs-share-preview-03;
@@ -160,16 +161,16 @@
         in [
           ./hosts/rodin/configuration.nix
           defaults
-          peerix.nixosModules.peerix {
-              services.peerix = {
-                enable = true;
-                package = peerix.packages.x86_64-linux.peerix;
-                openFirewall = true; # UDP/12304
-                privateKeyFile = ./hosts/lego1/peerix-private;
-                publicKeyFile =  ./hosts/lego1/peerix-public;
-                publicKey = peerixPubkeys;
-              };
-            }
+#          peerix.nixosModules.peerix {
+#              services.peerix = {
+#                enable = true;
+#                package = peerix.packages.x86_64-linux.peerix;
+#                openFirewall = true; # UDP/12304
+#                privateKeyFile = ./hosts/lego1/peerix-private;
+#                publicKeyFile =  ./hosts/lego1/peerix-public;
+#                publicKey = peerixPubkeys;
+#              };
+#            }
 
           agenixBin
           agenix.nixosModules.default

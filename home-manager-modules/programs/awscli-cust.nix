@@ -1,13 +1,13 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.programs.awscli;
+  cfg = config.programs.awscli-cust;
   iniFormat = pkgs.formats.ini { };
 
 in {
   meta.maintainers = [ lib.maintainers.anthonyroussel ];
 
-  options.programs.awscli = {
+  options.programs.awscli-cust = {
     enable = lib.mkEnableOption "AWS CLI tool";
 
     package = lib.mkOption {
