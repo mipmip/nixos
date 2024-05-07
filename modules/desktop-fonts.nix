@@ -15,6 +15,6 @@ let
 in
 {
   environment.systemPackages = fontsList;
-  fonts.fonts = fontsList;
+  fonts.packages = fontsList;
 }
 
