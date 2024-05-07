@@ -214,16 +214,16 @@
           in [
             defaults
             ./hosts/lego1/configuration.nix
-            peerix.nixosModules.peerix {
-              services.peerix = {
-                enable = true;
-                package = peerix.packages.x86_64-linux.peerix;
-                openFirewall = true; # UDP/12304
-                privateKeyFile = ./hosts/lego1/peerix-private;
-                publicKeyFile =  ./hosts/lego1/peerix-public;
-                publicKey = peerixPubkeys;
-              };
-            }
+#            peerix.nixosModules.peerix {
+#              services.peerix = {
+#                enable = true;
+#                package = peerix.packages.x86_64-linux.peerix;
+#                openFirewall = true; # UDP/12304
+#                privateKeyFile = ./hosts/lego1/peerix-private;
+#                publicKeyFile =  ./hosts/lego1/peerix-public;
+#                publicKey = peerixPubkeys;
+#              };
+#            }
 
             { environment.systemPackages = [ agenix.packages."${system}".default ]; }
             agenix.nixosModules.default
