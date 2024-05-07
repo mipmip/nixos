@@ -3,7 +3,8 @@
   inputs = {
 
     ## MAIN NIXPKGS
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";       # GNOME 43.2
+    nixpkgs-2211.url = "github:NixOS/nixpkgs/nixos-22.11";       # GNOME 43.2
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";       # GNOME 43.2
     #nixpkgs-2305.url = "github:NixOS/nixpkgs/nixos-23.05";  # GNOME 44.2?
     nixpkgs-2311.url = "github:NixOS/nixpkgs/nixos-23.11";  # GNOME 45.2
 
@@ -13,7 +14,7 @@
     nixpkgs-share-preview-03.url = "github:raboof/nixpkgs?ref=share-preview-init-at-0.3.0";
 
     ## HOME MANAGER
-    home-manager.url = "github:nix-community/home-manager/release-22.11";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     #home-manager-main.url = "github:nix-community/home-manager";
@@ -34,6 +35,7 @@
     self,
     home-manager,
     nixpkgs,
+    nixpkgs-2211,
     nixpkgs-2311,
     peerix,
     unstable,

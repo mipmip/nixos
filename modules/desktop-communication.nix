@@ -20,7 +20,7 @@
 
     zoom-us
     skypeforlinux
-    teams
+    # teams
 
     unstable.srain #IRC
     unstable.tuba # Mastodon
