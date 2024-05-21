@@ -25,6 +25,9 @@
     unstable.srain #IRC
     unstable.tuba # Mastodon
 
+    discord
+
+
 
     unstable.himalaya
   ];

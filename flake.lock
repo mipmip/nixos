@@ -412,15 +412,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1661429880,
-        "narHash": "sha256-7/m468XZW82O7KhDtRdQ7RnPsh83+tA8N4U0FncFo1U=",
-        "owner": "cid-chan",
+        "lastModified": 1715117029,
+        "narHash": "sha256-WBvXwEZ6vT+kfP0aUMqz9N1zxtVzE28y+IZhaiGgjIg=",
+        "owner": "mipmip",
         "repo": "peerix",
-        "rev": "32cd1b098b83c90726848bd6726f74e72c557abb",
+        "rev": "dc5b1e490e3093c4b129590295c4a1a3cf99f797",
         "type": "github"
       },
       "original": {
-        "owner": "cid-chan",
+        "owner": "mipmip",
         "repo": "peerix",
         "type": "github"
       }

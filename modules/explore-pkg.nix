@@ -5,6 +5,7 @@
     unstable.zellij
 
       unstable.zed-editor
+      etherape
 
 
 
