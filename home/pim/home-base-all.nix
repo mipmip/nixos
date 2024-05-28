@@ -14,6 +14,7 @@
       ./conf-cli/git.nix
       ./conf-cli/tmux.nix
       ./conf-cli/vim.nix
+      ./conf-cli/atuin.nix
       #./conf-cli/neovim.nix
       ./conf-cli/terminals.nix
       ./conf-cli/zsh.nix

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstable, ... }:
+{ config, lib, pkgs, pkgs-2211, unstable, ... }:
 
 {
   environment.sessionVariables = {
@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs; [
 
     ctags
-    sc-im
+    pkgs-2211.sc-im
 
     git-sync
     gitFull

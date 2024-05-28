@@ -20,8 +20,9 @@
       tn = "tmux new -d -s";
       tmxa = "tmux unbind C-a && tmux set-option -g prefix C-a && tmux bind-key C-a send-prefix";
       tmxb = "tmux unbind C-b && tmux set-option -g prefix C-b && tmux bind-key C-b send-prefix";
-      smugs = "smug start doen && smug start sudo && smug start nixos && smug start technative_aws && smug start lobby";
-      smugs_quiqr = "smug start quiqr_dev_run && smug start quiqr_data";
+      smugs = "smug start doen && smug start sudo && smug start nixos && smug start lobby";
+      smugs_q = "smug start quiqr_dev_run && smug start quiqr_data";
+      smugs_tn = "smug start technative_aws && smug start technative_docs && smug start technative_weare";
 
       crb_status = "mount | grep /mnt/cryptobox";
       crb_mount = "crb_status || sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
