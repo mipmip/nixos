@@ -17,6 +17,7 @@
       ./conf-cli/atuin.nix
       #./conf-cli/neovim.nix
       ./conf-cli/terminals.nix
+      ./conf-cli/alacritty.nix
       ./conf-cli/zsh.nix
       ./conf-cli/awscli.nix
   ];

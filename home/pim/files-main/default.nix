@@ -55,11 +55,11 @@
     };
   };
 
-  home.file = {
-    "./.config/alacritty.yml" = {
-      source = ./alacritty.yml;
-    };
-  };
+#  home.file = {
+#    "./.config/alacritty.yml" = {
+#      source = ./alacritty.yml;
+#    };
+#  };
 
   home.file = {
     ".config/skulls.yaml" = {

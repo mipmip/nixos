@@ -18,7 +18,7 @@
     #language servers
     sqls
     gopls
-    rnix-lsp
+    #rnix-lsp
     unstable.nixd
     terraform-ls
     sumneko-lua-language-server
@@ -37,7 +37,7 @@
     nodePackages.tailwindcss
 
     # Formatters
-    nixfmt
+    nixfmt-classic
     rustfmt
     nodePackages.prettier
 

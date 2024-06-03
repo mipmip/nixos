@@ -3,14 +3,14 @@
     enable = true;
   };
 
-  programs.alacritty = {
-    enable = true;
-    settings.font.normal = {
-      family = "DejaVu Sans Mono";
-      #family = "Iosevka Nerd Font";
-      style = "Regular";
-    };
-  };
+
+
+
+
+
+
+
+
 
   programs.kitty = {
     enable = true;
