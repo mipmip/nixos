@@ -8,7 +8,7 @@ let
 
   gnomeExtensionsWithOutConf = [
     mipmip_pkg.gnomeExtensions.custom-menu-panel
-    pkgs.gnomeExtensions.emoji-selector
+    #pkgs.gnomeExtensions.emoji-selector
     pkgs.gnomeExtensions.espresso
     #pkgs.gnomeExtensions.lightdark-theme-switcher
     pkgs.gnomeExtensions.spotify-tray

@@ -9,12 +9,28 @@ let
     inter
     rubik
     lato
-    unstable.fira-code-nerdfont
+    noto-fonts
+    noto-fonts-color-emoji
+    fira-code-nerdfont
+    liberation_ttf
     nerdfonts
+    inconsolata-nerdfont
+    ubuntu_font_family
   ];
 in
 {
-  environment.systemPackages = fontsList;
-  fonts.packages = fontsList;
-}
+  fonts = {
+    enableDefaultPackages = true;
+    fontconfig.enable = true;
+    packages = fontsList;
 
+    fontconfig = {
+      defaultFonts = {
+        serif = [  "Liberation Serif"  ];
+        sansSerif = [ "Ubuntu" "Vazirmatn" ];
+        monospace = [ "Ubuntu Mono" ];
+      };
+    };
+  };
+  environment.systemPackages = fontsList;
+}

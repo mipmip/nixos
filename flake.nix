@@ -4,17 +4,21 @@
 
     ## MAIN NIXPKGS
     nixpkgs-2211.url = "github:NixOS/nixpkgs/nixos-22.11";       # GNOME 43.2
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";       # GNOME 43.2
     #nixpkgs-2305.url = "github:NixOS/nixpkgs/nixos-23.05";  # GNOME 44.2?
     nixpkgs-2311.url = "github:NixOS/nixpkgs/nixos-23.11";  # GNOME 45.2
+    #nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05";  # GNOME 46
+
+    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
+
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     #nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
-    nixpkgs-share-preview-03.url = "github:raboof/nixpkgs?ref=share-preview-init-at-0.3.0";
+    #nixpkgs-share-preview-03.url = "github:raboof/nixpkgs?ref=share-preview-init-at-0.3.0";
 
     ## HOME MANAGER
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     #home-manager-main.url = "github:nix-community/home-manager";
@@ -23,7 +27,9 @@
     agenix.url = "github:ryantm/agenix";
 
     peerix = {
-      url = "github:cid-chan/peerix";
+      #url = "github:cid-chan/peerix";
+      #url = "git+file:///home/pim/cNixos/peerix";
+      url = "github:mipmip/peerix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -37,10 +43,11 @@
     nixpkgs,
     nixpkgs-2211,
     nixpkgs-2311,
+    alacritty-theme,
     peerix,
     unstable,
 #    nixpkgs-inkscape13,
-    nixpkgs-share-preview-03,
+#    nixpkgs-share-preview-03,
     agenix,
     nixified-ai
   }:
@@ -50,6 +57,7 @@
     pkgsForSystem = system: import nixpkgs {
       overlays = [
         (import ./overlays)
+        alacritty-theme.overlays.default
       ];
       inherit system;
       config.allowUnfree = true;
@@ -60,10 +68,10 @@
 #      config.allowUnfree = true;
 #    };
 
-    pkgs-share-preview-03 = system: import nixpkgs-share-preview-03 {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    #pkgs-share-preview-03 = system: import nixpkgs-share-preview-03 {
+    #  inherit system;
+    #  config.allowUnfree = true;
+    #};
 
     unstableForSystem = system: import unstable {
       inherit system;
@@ -149,9 +157,9 @@
           defaults = { pkgs, ... }: {
             _module.args.unstable = importFromChannelForSystem system unstable;
             _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
-            _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
+            #_module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
             #_module.args.pkgs-inkscape13 = importFromChannelForSystem system nixpkgs-inkscape13;
-            _module.args.pkgs-share-preview-03 = importFromChannelForSystem system nixpkgs-share-preview-03;
+            #_module.args.pkgs-share-preview-03 = importFromChannelForSystem system nixpkgs-share-preview-03;
           };
 
           agenixBin = {
@@ -211,7 +219,7 @@
               _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
               _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
               #_module.args.pkgs-inkscape13 = importFromChannelForSystem system nixpkgs-inkscape13;
-              _module.args.pkgs-share-preview-03 = importFromChannelForSystem system nixpkgs-share-preview-03;
+              #_module.args.pkgs-share-preview-03 = importFromChannelForSystem system nixpkgs-share-preview-03;
             };
           in [
             defaults

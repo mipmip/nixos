@@ -7,6 +7,7 @@
  */
 
 static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+//static char *font = "Fira Code:pixelsize=12:antialias=true:autohint=true";
 static char *fonts[] = {
   "Liberation Mono:pixelsize=16:antialias=true:autohint=true",
   "DejaVu Sans Mono:pixelsize=16:antialias=true:autohint=true"

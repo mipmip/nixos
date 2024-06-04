@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, unstable, ... }:
 
 {
 
@@ -7,6 +7,8 @@
     pandoc
 
     quarto
+    jupyter
+    python311Packages.numpy
   ];
 }
 
