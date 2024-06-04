@@ -20,6 +20,7 @@
 
     zoom-us
     skypeforlinux
+    rustdesk
     # teams
 
     unstable.srain #IRC
