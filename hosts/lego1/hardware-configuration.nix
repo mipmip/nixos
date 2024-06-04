@@ -11,7 +11,11 @@
   boot.initrd.verbose = false;
   boot.kernelModules = [ "kvm-intel" ];
   boot.kernelParams = [ "quiet" "udev.log_level=0" "i915.force_probe=4626" "i915.enable_psr=1"];
-  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    broadcom_sta
+    rtl88x2bu
+    v4l2loopback
+  ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/67f2b2e1-0854-4e1f-b2da-698222a22d0c";

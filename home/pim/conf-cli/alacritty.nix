@@ -6,8 +6,8 @@
     enable = true;
 
     # COLORS
-    #settings.import = [ pkgs.alacritty-theme.monokai_charcoal ];
-    settings.import = [ pkgs.alacritty-theme.hyper ];
+    settings.import = [ pkgs.alacritty-theme.monokai_charcoal ];
+    #settings.import = [ pkgs.alacritty-theme.hyper ];
 
     settings = {
       live_config_reload = true;

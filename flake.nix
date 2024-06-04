@@ -169,16 +169,16 @@
         in [
           ./hosts/rodin/configuration.nix
           defaults
-          peerix.nixosModules.peerix {
-              services.peerix = {
-                enable = true;
-                package = peerix.packages.x86_64-linux.peerix;
-                openFirewall = true; # UDP/12304
-                privateKeyFile = ./hosts/lego1/peerix-private;
-                publicKeyFile =  ./hosts/lego1/peerix-public;
-                publicKey = peerixPubkeys;
-              };
-            }
+#          peerix.nixosModules.peerix {
+#              services.peerix = {
+#                enable = true;
+#                package = peerix.packages.x86_64-linux.peerix;
+#                openFirewall = true; # UDP/12304
+#                privateKeyFile = ./hosts/lego1/peerix-private;
+#                publicKeyFile =  ./hosts/lego1/peerix-public;
+#                publicKey = peerixPubkeys;
+#              };
+#            }
 
           agenixBin
           agenix.nixosModules.default
