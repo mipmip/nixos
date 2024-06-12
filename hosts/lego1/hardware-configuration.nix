@@ -9,12 +9,14 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.initrd.verbose = false;
+
   boot.kernelModules = [ "kvm-intel" ];
   boot.kernelParams = [ "quiet" "udev.log_level=0" "i915.force_probe=4626" "i915.enable_psr=1"];
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    broadcom_sta
-    rtl88x2bu
-    v4l2loopback
+    #broadcom_sta
+    #rtl88x2bu
+    #rtl8188eus-aircrack
+    #v4l2loopback
   ];
 
   fileSystems."/" = {
