@@ -42,6 +42,8 @@
     #help
     cheat
 
+    entr
+
 
     # GRAPHIC
     imagemagick

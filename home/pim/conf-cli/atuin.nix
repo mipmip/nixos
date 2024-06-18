@@ -10,7 +10,7 @@
     settings = {
       auto_sync = true;
       sync_frequency = "5m";
-      sync_address = "https://atuin.np-tool.technative.cloud";
+      sync_address = "https://atuin.tools.technative.cloud";
       search_mode = "fuzzy";
     };
   };
