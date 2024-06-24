@@ -23,6 +23,9 @@
     #TRANSLATION TOOLS
     poedit
     intltool
+
+
+    super-productivity
   ];
 
 

@@ -8,6 +8,7 @@
     zathura
     pdftk
     pdfarranger
+    ghostscript
     paperwork # could replace papermerge
 
     gimp
