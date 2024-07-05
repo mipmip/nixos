@@ -1,5 +1,14 @@
 final: prev: {
 
+  quarto = prev.quarto.override {
+    extraPythonPackages = ps: with ps; [
+      plotly
+      numpy
+      pandas
+      matplotlib
+    ];
+  };
+
   nnn = (prev.nnn.override {
     withNerdIcons = true;
   }).overrideAttrs

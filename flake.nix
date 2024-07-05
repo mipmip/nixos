@@ -150,11 +150,13 @@
     nixosConfigurations.rodin = nixpkgs.lib.nixosSystem {
 
       system = "x86_64-linux";
+
       modules =
         let
           system = "x86_64-linux";
 
           defaults = { pkgs, ... }: {
+            nixpkgs.overlays = [(import ./overlays)];
             _module.args.unstable = importFromChannelForSystem system unstable;
             _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
             #_module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
@@ -215,6 +217,7 @@
           let
             system = "x86_64-linux";
             defaults = { pkgs, ... }: {
+              nixpkgs.overlays = [(import ./overlays)];
               _module.args.unstable = importFromChannelForSystem system unstable;
               _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
               _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
