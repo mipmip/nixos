@@ -6,6 +6,7 @@ final: prev: {
       numpy
       pandas
       matplotlib
+      tabulate
     ];
   };
 
