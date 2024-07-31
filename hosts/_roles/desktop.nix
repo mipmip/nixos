@@ -26,7 +26,7 @@
     ../../modules/desktop-openai.nix
     ../../modules/desktop-video.nix
     ../../modules/desktop-audio.nix
-    ../../modules/desktop-virtualbox.nix
+#    ../../modules/desktop-virtualbox.nix
     ../../modules/desktop-security.nix
     ../../modules/desktop-minecraft.nix
 
