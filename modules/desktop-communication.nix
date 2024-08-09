@@ -17,6 +17,7 @@
     unstable.whatsapp-for-linux
     unstable.signal-desktop
     tdesktop
+    v4l-utils
 
     zoom-us
     skypeforlinux
