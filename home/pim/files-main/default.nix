@@ -55,6 +55,13 @@
     };
   };
 
+  home.file = {
+    "./.dirtygit.yml" = {
+      source = ./.dirtygit.yml;
+    };
+  };
+
+
 #  home.file = {
 #    "./.config/alacritty.yml" = {
 #      source = ./alacritty.yml;
