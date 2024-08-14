@@ -8,9 +8,16 @@
     vlc
     vhs
 
-   obs-studio
-   obs-studio-plugins.advanced-scene-switcher
-   # obs-studio-plugins.input-overlay
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        advanced-scene-switcher
+        input-overlay
+
+        #obs-backgroundremoval
+        #obs-pipewire-audio-capture
+      ];
+    })
   ];
 }
 

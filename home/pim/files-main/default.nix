@@ -21,6 +21,13 @@
   };
 
   home.file = {
+    ".config/sc-im" = {
+      source = ./sc-im;
+      recursive = true;
+    };
+  };
+
+  home.file = {
     ".tmux" = {
       source = ./tmux;
       recursive = true;

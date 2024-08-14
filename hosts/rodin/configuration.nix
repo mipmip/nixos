@@ -30,6 +30,11 @@
 
   system.stateVersion = "22.11";
 
+  #PACKAGES WHICH NEED A CUDA CARD
+  environment.systemPackages = with pkgs; [
+    upscayl
+  ];
+
   services.pixiecore = {
     enable = true;
     openFirewall = true;

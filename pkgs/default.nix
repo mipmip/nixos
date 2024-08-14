@@ -18,6 +18,7 @@ let
     fred                                  = pkgs.callPackage ./pims-projects/fred                           { };
     skull                                 = pkgs.callPackage ./pims-projects/skull                          { };
     embgit                                = pkgs.callPackage ./pims-projects/embgit                         { };
+    dirtygit                              = pkgs.callPackage ./pims-projects/dirtygit                       { };
     mip-crystal                           = pkgs.callPackage ./pims-projects/mip-crystal                    { };
     mip-rust                              = pkgs.callPackage ./pims-projects/mip-rust                       { };
 
