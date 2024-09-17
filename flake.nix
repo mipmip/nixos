@@ -36,7 +36,8 @@
     nixified-ai = { url = "github:nixified-ai/flake"; };
 
     bmc.url = "github:wearetechnative/bmc";
-
+    dirtygit.url = "github:mipmip/dirtygit";
+    jsonify-aws-dotfiles.url = "github:mipmip/jsonify-aws-dotfiles";
   };
 
   outputs = {
@@ -52,6 +53,8 @@
 #    nixpkgs-share-preview-03,
     agenix,
     nixified-ai,
+    jsonify-aws-dotfiles,
+    dirtygit,
     bmc
   }:
 
@@ -103,6 +106,10 @@
         isDesktop = false;
         tmuxPrefix = "b";
         unstable = unstableForSystem "x86_64-linux";
+        bmc = bmc;
+        dirtygit = dirtygit;
+        jsonify-aws-dotfiles = jsonify-aws-dotfiles;
+
       };
     };
 
