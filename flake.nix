@@ -90,6 +90,23 @@
 
   in {
 
+    homeConfigurations."pim@tn-nixhost" = home-manager.lib.homeManagerConfiguration {
+      modules = [
+        (import ./home/pim/home-machine-tn-nixhost.nix)
+      ];
+
+      pkgs = pkgsForSystem "x86_64-linux";
+      extraSpecialArgs = {
+        username = "pim";
+        homedir = "/home/pim";
+        withLinny = false;
+        isDesktop = false;
+        tmuxPrefix = "b";
+        unstable = unstableForSystem "x86_64-linux";
+      };
+    };
+
+
     homeConfigurations."pim@rodin" = home-manager.lib.homeManagerConfiguration {
       modules = [
         (import ./home/pim/home-machine-rodin.nix)
