@@ -12,7 +12,7 @@
 
   };
 
-  outputs = { self, utils, nixpkgs, nix-on-droid }: 
+  outputs = { self, utils, nixpkgs, nix-on-droid }:
   let
 
     pkgsForSystem = system: import nixpkgs {
@@ -22,13 +22,13 @@
 
   in utils.lib.eachSystem [ "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ] (system: rec {
     legacyPackages = pkgsForSystem system;
-  }) 
-  // 
+  })
+  //
   {
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
       pkgs = import nixpkgs { system = "aarch64-linux"; };
       modules = [ ./nix-on-droid.nix ];
     };
- 
+
   };
 }
