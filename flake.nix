@@ -71,7 +71,9 @@
 
     jsonify-aws-dotfiles, dirtygit, bmc,
 
-    nixpkgs-pine64, mobile-nixos, home-manager-pine64
+    nixpkgs-pine64, mobile-nixos, home-manager-pine64,
+
+    nix-on-droid
     } :
 
     let
