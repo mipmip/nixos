@@ -2,3 +2,4 @@
 
 profile=`smug list | gum filter`
 smug start $profile
+tmux switch -t "$profile"
