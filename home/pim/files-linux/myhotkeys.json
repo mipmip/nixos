@@ -21,6 +21,10 @@
         "name": "Launchers",
         "shortcuts": [
             {
+                "key": "<SUPER>S",
+                "description": "My Hotkeys (your looking at it)"
+            },
+            {
                 "key": "<SUPER>Return",
                 "description": "Terminal"
             },
@@ -253,7 +257,7 @@
         ]
     },
     {
-        "name": "Gimp Shortcuts",
+        "name": "Gimp",
         "shortcuts": [
             {
                 "key": "R",
