@@ -10,6 +10,8 @@
     rclone
     rclone-browser
 
+    #distrobox
+    gnome.gnome-boxes
 
 
   ];
