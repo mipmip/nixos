@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./kernel-and-boot.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -26,7 +25,7 @@
   users.users.pim = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.zsh
+    shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
 
