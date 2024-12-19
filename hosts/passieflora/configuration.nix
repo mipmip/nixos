@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, ... }:
 
 {
@@ -17,9 +13,13 @@
 
   networking.hostName = "passieflora"; # Define your hostname.
   time.timeZone = "Europe/Amsterdam";
- services.xserver.enable = true;
- services.xserver.displayManager.gdm.enable = true;
- services.xserver.desktopManager.gnome.enable = true;
+
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "breeze";
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   users.users.pim = {
     isNormalUser = true;
@@ -42,7 +42,6 @@
   hardware.apple-t2.enableAppleSetOsLoader = true;
   services.openssh.enable = true;
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.11";
 
 }
-
