@@ -371,7 +371,7 @@
         modules = [
         ./hosts/passieflora/configuration.nix
         ./hosts/passieflora/nix/substituter.nix
-        nixos-hardware-2.nixosModules.apple-t2
+        nixos-hardware-t2.nixosModules.apple-t2
 
         home-manager.nixosModules.home-manager
         {
