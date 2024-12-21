@@ -24,7 +24,7 @@
   #  };
 
   # make the laptop use s2idle to prevent closing the lid from cooking it
-  # boot.kernelParams = [ "mem_sleep_default=s2idle" ];
+  boot.kernelParams = [ "mem_sleep_default=s2idle" ];
 
   # Just give up and disable suspend
   # systemd.sleep.extraConfig = ''

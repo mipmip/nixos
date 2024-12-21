@@ -11,8 +11,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
-  boot.plymouth.enable = true;
-  boot.plymouth.theme = "breeze";
 
   networking.useDHCP = lib.mkDefault true;
   networking.hostName = "passieflora"; # Define your hostname.
