@@ -73,7 +73,7 @@
 
     nixpkgs-pine64, mobile-nixos, home-manager-pine64,
 
-   nix-on-droid
+    nix-on-droid
     } :
 
     let
@@ -275,6 +275,33 @@
 
             agenix.nixosModules.default
             extraPkgs
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+            }
+          ];
+      };
+      nixosConfigurations.hurry = nixpkgs.lib.nixosSystem {
+
+        modules =
+          let
+            system = "aarch64-linux";
+            defaults = { pkgs, ... }: {
+#              nixpkgs.overlays = [(import ./overlays)];
+#              _module.args.unstable = importFromChannelForSystem system unstable;
+#              _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
+#              _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
+              #_module.args.pkgs-inkscape13 = importFromChannelForSystem system nixpkgs-inkscape13;
+            };
+
+
+          in [
+            defaults
+#            nixos-hardware.nixosModules.framework-12th-gen-intel
+            ./hosts/hurry/configuration.nix
+
+            agenix.nixosModules.default
+#            extraPkgs
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
