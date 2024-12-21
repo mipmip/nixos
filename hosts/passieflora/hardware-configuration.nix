@@ -11,12 +11,11 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  #boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_11;
 
   hardware.firmware = [
     (pkgs.stdenvNoCC.mkDerivation (final: {
       name = "brcm-firmware";
-      src = ./firmware/brcm;
+      src = ./firmware-montery/brcm;
       installPhase = ''
         mkdir -p $out/lib/firmware/brcm
         cp ${final.src}/* "$out/lib/firmware/brcm"

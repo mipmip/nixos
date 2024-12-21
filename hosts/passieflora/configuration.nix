@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./sleep.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -43,6 +44,7 @@
     gnumake
   ];
   services.openssh.enable = true;
+  services.tailscale.enable = true;
 
   system.stateVersion = "24.11";
 
