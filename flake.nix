@@ -105,6 +105,21 @@
       #for grannyos
       nixpkgs-unstable = unstableForSystem "x86_64-linux";
 
+      makeExtraPkgs = system :
+      {
+        environment.systemPackages = [
+          agenix.packages."${system}".default
+          bmc.packages."${system}".bmc
+          jsonify-aws-dotfiles.packages."${system}".jsonify-aws-dotfiles
+          race.packages."${system}".race
+          dirtygit.packages."${system}".dirtygit
+          myhotkeys.packages."${system}".myhotkeys
+          shellstuff.packages."${system}".shellstuff
+          skull.packages."${system}".skull
+        ];
+
+      };
+
       defaultSystem = "x86_64-linux";
       extraPkgs = {
         environment.systemPackages = [
@@ -177,6 +192,30 @@
       }));
 
       homeConfigurations = {
+        "pim@hurry" =
+          let
+            system = "aarch64-linux";
+          in
+          home-manager.lib.homeManagerConfiguration {
+          modules = [
+            (import ./home/pim)
+            {
+              homeConf.withLinny = false;
+              homeConf.withAws = false;
+              homeConf.isDesktop = false;
+              homeConf.username = "pim";
+              homeConf.homedir = "/home/pim";
+              homeConf.tmuxPrefix = "b";
+            }
+          ];
+          pkgs = pkgsForSystem system;
+          extraSpecialArgs = {
+            inputs = inputs;
+          };
+        };
+
+
+
 
         "pim@lego1" = home-manager.lib.homeManagerConfiguration {
           modules = [ (import ./home/pim/home-machine-lego1.nix) ];
@@ -287,21 +326,13 @@
           let
             system = "aarch64-linux";
             defaults = { pkgs, ... }: {
-#              nixpkgs.overlays = [(import ./overlays)];
-#              _module.args.unstable = importFromChannelForSystem system unstable;
-#              _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
-#              _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
-              #_module.args.pkgs-inkscape13 = importFromChannelForSystem system nixpkgs-inkscape13;
+              _module.args.unstable = importFromChannelForSystem system unstable;
             };
-
 
           in [
             defaults
-#            nixos-hardware.nixosModules.framework-12th-gen-intel
             ./hosts/hurry/configuration.nix
-
             agenix.nixosModules.default
-#            extraPkgs
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

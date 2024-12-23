@@ -1,17 +1,34 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+
+let
+  cfg = config.dotfiles;
+in
 
 {
-  programs.tmux = {
-    enable = true;
-    sensibleOnTop = true;
-    newSession = false;
-    shortcut = "a";
-    historyLimit = 5000;
-    plugins = [
-      pkgs.tmuxPlugins.urlview
-    ];
 
-    extraConfig = ''
+  options.dotfiles.tmuxPrefix = lib.mkOption {
+    type = lib.types.str;
+    description = ''
+      Tmux Prefix key
+    '';
+    example = ''
+      a
+    '';
+  };
+
+  config = {
+
+    programs.tmux = {
+      enable = true;
+      sensibleOnTop = true;
+      newSession = false;
+      shortcut = cfg.tmuxPrefix;
+      historyLimit = 5000;
+      plugins = [
+        pkgs.tmuxPlugins.urlview
+      ];
+
+      extraConfig = ''
       set -s escape-time 10                     # faster command sequences
       set -sg repeat-time 600                   # increase repeat timeout
 
@@ -68,6 +85,7 @@
       if '[ -f ~/.tmux/gpakosz.cf ]' 'source ~/.tmux/gpakosz.cf'
       run 'cat ~/.tmux/gpakosz.sh | sh -s _apply_configuration'
 
-    '';
+      '';
+    };
   };
 }

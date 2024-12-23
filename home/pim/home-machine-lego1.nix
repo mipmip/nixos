@@ -5,8 +5,6 @@ let
   system = "x86_64-linux";
 in
   {
-
-
     imports = [
       ./_hm-modules
       ./_roles/home-base-all.nix
