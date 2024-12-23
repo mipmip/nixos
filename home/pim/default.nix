@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ home, config, lib, ... }:
 let
   cfg = config.homeConf;
 in
@@ -41,6 +41,7 @@ in
       desktopImports = lib.mkIf cfg.isDesktop [./_roles/home-base-nixos-desktop.nix];
     in
 
+
     lib.mkIf cfg.withLinny {
         services.secondbrain.enable = true;
     } //
@@ -50,6 +51,7 @@ in
     } //
 
     {
+      home.stateVersion = "22.05";
       home.username = cfg.username;
       home.homeDirectory = cfg.homeDirectory;
 
