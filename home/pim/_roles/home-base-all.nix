@@ -2,8 +2,8 @@
 
 {
   programs.home-manager.enable = true;
-  home.username = username;
-  home.homeDirectory = homedir;
+  #  home.username = username;
+  #  home.homeDirectory = homedir;
   home.stateVersion = "22.05";
 
   imports = [
