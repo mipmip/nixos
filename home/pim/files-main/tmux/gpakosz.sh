@@ -363,11 +363,11 @@ _username() {
 }
 
 _hostname() {
-  tty=${1:-$(tmux display -p '#{pane_tty}')}
-  ssh_only=$2
+  #tty=${1:-$(tmux display -p '#{pane_tty}')}
+  #ssh_only=$2
 
-  tty_info=$(_tty_info "$tty")
-  command=$(printf '%s' "$tty_info" | cut -d' ' -f3-)
+  #tty_info=$(_tty_info "$tty")
+  #command=$(printf '%s' "$tty_info" | cut -d' ' -f3-)
 
   ssh_or_mosh_args=$(_ssh_or_mosh_args "$command")
   if [ -n "$ssh_or_mosh_args" ]; then
@@ -385,11 +385,13 @@ _hostname() {
     }')
   else
     if ! _is_enabled "$ssh_only"; then
-      hostname=$(command hostname -s)
+      hostname=$( hostname -s)
     fi
   fi
 
+  hostname=$( hostname -s )
   printf '%s' "$hostname"
+  #printf 'xxxx'
 }
 
 _root() {
@@ -937,16 +939,27 @@ EOF
 
   case "$status_left $status_right" in
     *'#{username}'*|*'#{hostname}'*|*'#{username_ssh}'*|*'#{hostname_ssh}'*)
+
       status_left=$(echo "$status_left" | sed \
         -e 's%#{username}%#(cut -c3- ~/.tmux.conf | sh -s _username #{pane_tty} false #D)%g' \
-        -e 's%#{hostname}%#(cut -c3- ~/.tmux.conf | sh -s _hostname #{pane_tty} false #D)%g' \
+        -e 's%#{hostname}%#( hostname -s )%g' \
         -e 's%#{username_ssh}%#(cut -c3- ~/.tmux.conf | sh -s _username #{pane_tty} true #D)%g' \
         -e 's%#{hostname_ssh}%#(cut -c3- ~/.tmux.conf | sh -s _hostname #{pane_tty} true #D)%g')
       status_right=$(echo "$status_right" | sed \
         -e 's%#{username}%#(cut -c3- ~/.tmux.conf | sh -s _username #{pane_tty} false #D)%g' \
-        -e 's%#{hostname}%#(cut -c3- ~/.tmux.conf | sh -s _hostname #{pane_tty} false #D)%g' \
+        -e 's%#{hostname}%#(hostname -s)%g' \
         -e 's%#{username_ssh}%#(cut -c3- ~/.tmux.conf | sh -s _username #{pane_tty} true #D)%g' \
         -e 's%#{hostname_ssh}%#(cut -c3- ~/.tmux.conf | sh -s _hostname #{pane_tty} true #D)%g')
+      ;;
+  esac
+
+  case "$status_left $status_right" in
+    *'#{prefix_key}'*)
+
+      status_left=$(echo "$status_left" | sed \
+        -e 's%#{prefix_key}%#(tmux show-options -g prefix|cut -d" " -f2)%g')
+      status_right=$(echo "$status_right" | sed \
+        -e 's%#{prefix_key}%#(tmux show-options -g prefix|cut -d" " -f2)%g')
       ;;
   esac
 

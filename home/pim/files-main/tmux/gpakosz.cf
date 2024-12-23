@@ -170,6 +170,7 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{loadavg}
 #     - #{pairing}
 #     - #{prefix}
+#     - #{prefix_key}
 #     - #{root}
 #     - #{synchronized}
 #     - #{uptime_y}
@@ -179,8 +180,8 @@ tmux_conf_theme_right_separator_sub='|'
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=' ❐ #S '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} | #{hostname} | #{loadavg}'
+tmux_conf_theme_status_left=' #{hostname} | #S '
+tmux_conf_theme_status_right=' 🤠 | #{prefix} #{prefix_key} '
 
 # status left style
 tmux_conf_theme_status_left_fg='#000000,#e4e4e4,#e4e4e4'  # black, white , white

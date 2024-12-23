@@ -20,6 +20,11 @@ nixoptimise(){
   sudo nix store optimise
 }
 
+make_command "reload_tmux" "Reload TMUX Configuration"
+reload_tmux(){
+  tmux source ~/.config/tmux/tmux.conf
+}
+
 #make_command "macbrew" "Run brew bundle"
 #macbrew(){
 #  cd ~ && brew bundle
