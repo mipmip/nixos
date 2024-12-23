@@ -1,6 +1,7 @@
 return {
   -- Git related plugins
 
+  'vimpostor/vim-lumen',
   'tpope/vim-fugitive',
   'tpope/vim-eunuch',
   'tpope/vim-rhubarb',

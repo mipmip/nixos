@@ -4,6 +4,14 @@ return {
 
   -- telescope mappings are in keymaps.lua
   config = function()
+
+--    require('telescope').setup{
+--      pickers = {
+--        colorscheme = {
+--          enable_preview = true
+--        }
+--      }
+--    }
     require("telescope").load_extension("mapper")
     require("telescope").load_extension("http")
     require("telescope").load_extension("emoji")

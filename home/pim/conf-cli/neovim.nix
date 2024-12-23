@@ -3,7 +3,6 @@
 {
   programs.neovim = {
     enable = true;
-    #package = unstable.neovim;
   };
 
   home.packages = [
