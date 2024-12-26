@@ -1,66 +1,38 @@
-{ home, config, lib, ... }:
-let
-  cfg = config.homeConf;
-in
+{ ... }:
 
 {
 
-  options.homeConf.isDesktop = lib.mkEnableOption "Setup desktop environment";
-  options.homeConf.withLinny = lib.mkEnableOption "Make linny secondbrain available on this computer";
-  options.homeConf.withAws = lib.mkEnableOption "Setup AWS config";
-  options.homeConf.username = lib.mkOption {
-    type = lib.types.str;
-    description = ''
-      posix uername
-    '';
-    example = ''
-      pim
-    '';
-  };
-  options.homeConf.homedir = lib.mkOption {
-    type = lib.types.str;
-    description = ''
-      home directory
-    '';
-    example = ''
-      /home/pim
-    '';
-  };
-  options.homeConf.tmuxPrefix = lib.mkOption {
-    type = lib.types.str;
-    description = ''
-      Tmux Prefix key
-    '';
-    example = ''
-      a
-    '';
-  };
+  imports = [
+    ./_hm-modules
 
-  config =
-    let
-      desktopImports = lib.mkIf cfg.isDesktop [./_roles/home-base-nixos-desktop.nix];
-    in
+    ./files-main
+    ./files-linux
 
+    ./conf-cli/fzf.nix
+    ./conf-cli/nnn.nix
+    ./conf-cli/git.nix
+    ./conf-cli/tmux.nix
+    ./conf-cli/vim.nix
+    ./conf-cli/atuin.nix
+    ./conf-cli/neovim.nix
+    ./conf-cli/zsh.nix
+    #./conf-cli/awscli.nix
+    #./conf-cli/smug_and_skull.nix
 
-    lib.mkIf cfg.withLinny {
-        services.secondbrain.enable = true;
-    } //
+    # ./_roles/home-base-all.nix
+    #  ./_roles/home-base-nixos-desktop.nix
 
-    lib.mkIf cfg.withAws {
-      dotfiles.awsstuff.enable = true;
-    } //
+    #./files-gimp
 
-    {
-      home.stateVersion = "22.05";
-      home.username = cfg.username;
-      home.homeDirectory = cfg.homeDirectory;
+    ./conf-cli/alacritty.nix
+    #./conf-cli/terminals.nix
 
-      imports = [
-        ./_hm-modules
-        ./_roles/home-base-all.nix
-        desktopImports
-        ./conf-cli/smug_and_skull.nix
-      ];
-    };
+    #./conf-desktop-linux/firefox.nix
+    #./conf-desktop-linux/obs.nix
+    #./conf-desktop-linux/xdg.nix
 
-}
+    #./conf-gnome
+
+    ];
+
+  }

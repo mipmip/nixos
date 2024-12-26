@@ -22,7 +22,6 @@ in
       enable = true;
       sensibleOnTop = true;
       newSession = false;
-      shortcut = cfg.tmuxPrefix;
       historyLimit = 5000;
       plugins = [
         pkgs.tmuxPlugins.urlview

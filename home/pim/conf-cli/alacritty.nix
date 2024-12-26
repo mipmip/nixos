@@ -1,24 +1,29 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
+
+let
+  cfg = config.desktopConf.alacritty;
+in
 
 {
-
-  programs.alacritty = {
-    enable = true;
-
-    # COLORS
-#settings.import = [ pkgs.alacritty-theme.monokai_charcoal ];
-    #settings.import = [ pkgs.alacritty-theme.hyper ];
-
-    settings = {
-#live_config_reload = true;
-      window.padding = {
-        x = 10;
-        y = 10;
-      };
-      font.normal = {
-        family = "DejaVu Sans Mono";
-        style = "Regular";
-      };
+    options.desktopConf.alacritty = {
+      enable = lib.mkEnableOption "Configure alacritty";
     };
+
+    config = lib.mkIf cfg.enable {
+   
+      programs.alacritty = {
+        enable = true;
+
+        settings = {
+          window.padding = {
+            x = 10;
+            y = 10;
+          };
+          font.normal = {
+            family = "DejaVu Sans Mono";
+            style = "Regular";
+          };
+        };
+      };
   };
 }

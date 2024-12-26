@@ -1,11 +1,11 @@
 { config, lib, ... }:
 
 let
-  cfg = config.services.secondbrain;
+  cfg = config.roles.secondbrain;
 in
 
   {
-  options.services.secondbrain = {
+  options.roles.secondbrain = {
     enable = lib.mkEnableOption "Make secondbrain available on this computer";
   };
 

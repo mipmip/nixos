@@ -55,26 +55,11 @@
     };
   };
 
-# NOTE archived
-#  home.file = {
-#    ".config/wtf" = {
-#      source = ./wtf;
-#      recursive = true;
-#    };
-#  };
-
   home.file = {
     "./.dirtygit.yml" = {
       source = ./dirtygit.yml;
     };
   };
-
-
-#  home.file = {
-#    "./.config/alacritty.yml" = {
-#      source = ./alacritty.yml;
-#    };
-#  };
 
   home.file = {
     ".config/skulls.yaml" = {

@@ -2,7 +2,7 @@
 
 {
 
-  options.dotfiles.awsstuff = {
+  options.roles.awscontrol = {
      enable = lib.mkEnableOption "enable aws conf stuff";
   };
 
@@ -10,7 +10,7 @@
 
 let
 
-  cfg = config.dotfiles.awsstuff;
+  cfg = config.roles.awscontrol;
   technative_profiles = /home/pim/.aws/managed_service_accounts.json;
   other_profiles = /home/pim/.aws/other_accounts.json;
 

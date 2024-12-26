@@ -7,8 +7,8 @@ let
   SSIDpassword = "ED4A6EDA7B4D";
   interface = "wlan0";
   hostname = "hurry";
-  smtpPasswd = "AH0D9zjhovDr6QoiVxd/0IaQQtikHFiMJjVP8LLU";
-  smtpUser = "AKIARQP4GAZ5A2MTSI7F";
+  smtpPasswd = "";
+  smtpUser = "";
 in {
 
   boot = {
@@ -39,9 +39,13 @@ in {
   };
 
   environment.systemPackages = with pkgs; [ 
+    home-manager
 	vim
 	tmux
 	git
+        htop
+        libraspberrypi
+        raspberrypi-eeprom
   ];
 
   services.openssh.enable = true;
@@ -65,6 +69,17 @@ in {
       "met"
       "radio_browser"
     ];
+    
+    customComponents = with pkgs.home-assistant-custom-components; [
+      prometheus_sensor
+      #"system_health"
+      localtuya
+      #"pushover"
+      #"telegram"
+      #"timer"
+      #"tado"
+      #"systemmonitor"
+    ];
     config = {
       # Includes dependencies for a basic setup
       # https://www.home-assistant.io/integrations/default_config/
@@ -86,6 +101,7 @@ in {
 
   imports = [
     ./hardware-configuration.nix
+    ../../modules/base-core.nix
     #../../modules/nix-agenix.nix
     ../../modules/nix-common.nix
     ../../modules/nix-home-manager-global.nix

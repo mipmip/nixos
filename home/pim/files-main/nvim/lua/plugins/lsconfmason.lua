@@ -1,3 +1,4 @@
+local nilcmd = vim.fn.expand('$HOME/.nix-profile/bin/nil')
 return {
   {
     "williamboman/mason.nvim",
@@ -47,7 +48,7 @@ return {
       })
       lspconfig.nil_ls.setup({
         capabilities = capabilities,
-        cmd = {"/run/current-system/sw/bin/nil"},
+        cmd = {nilcmd},
         flake = {
           -- calls `nix flake archive` to put a flake and its output to store
           autoArchive = true,

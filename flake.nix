@@ -105,6 +105,42 @@
       #for grannyos
       nixpkgs-unstable = unstableForSystem "x86_64-linux";
 
+      makeHomeConf = {
+        username ? "pim",
+        hostname,
+        homedir ? "/home/pim",
+        arch ? "x86_64-linux",
+        secondbrain ? false,
+        awscontrol ? false,
+        desktop ? false,
+        tmuxPrefix ? "b",
+        ...
+      }:
+        home-manager.lib.homeManagerConfiguration {
+        modules = [
+          (import ./home/pim)
+          {
+            home.stateVersion = "24.11";
+            home.username = username;
+            home.homeDirectory = homedir;
+            roles.secondbrain.enable = secondbrain;
+            roles.awscontrol.enable = awscontrol;
+            roles.desktop.enable = desktop;
+            programs.tmux.shortcut = tmuxPrefix;
+          }
+        ];
+        pkgs = pkgsForSystem arch;
+        extraSpecialArgs = {
+          unstable = unstableForSystem arch;
+        };
+      };
+
+
+
+
+
+
+
       makeExtraPkgs = system :
       {
         environment.systemPackages = [
@@ -160,7 +196,6 @@
         };
       };
 
-
       homeConfigurations."pim@tn-nixhost" = home-manager.lib.homeManagerConfiguration {
         modules = [
           (import ./home/pim/home-machine-tn-nixhost.nix)
@@ -191,31 +226,12 @@
         isDesktop = true;
       }));
 
+      homeConfigurations."pim@hurry" = makeHomeConf {
+        hostname = "hurry";
+        arch = "aarch64-linux";
+      };
+
       homeConfigurations = {
-        "pim@hurry" =
-          let
-            system = "aarch64-linux";
-          in
-          home-manager.lib.homeManagerConfiguration {
-          modules = [
-            (import ./home/pim)
-            {
-              homeConf.withLinny = false;
-              homeConf.withAws = false;
-              homeConf.isDesktop = false;
-              homeConf.username = "pim";
-              homeConf.homedir = "/home/pim";
-              homeConf.tmuxPrefix = "b";
-            }
-          ];
-          pkgs = pkgsForSystem system;
-          extraSpecialArgs = {
-            inputs = inputs;
-          };
-        };
-
-
-
 
         "pim@lego1" = home-manager.lib.homeManagerConfiguration {
           modules = [ (import ./home/pim/home-machine-lego1.nix) ];

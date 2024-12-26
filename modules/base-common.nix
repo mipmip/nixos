@@ -68,9 +68,6 @@
     vifm
     wtf
 
-    gcc
-    pkg-config
-
     trash-cli
   ];
 }

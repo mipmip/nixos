@@ -16,6 +16,7 @@ in
     pkgs.gum
     pkgs.granted
     pkgs.smug
+
     pkgs.nil
     pkgs.terraform-ls
     pkgs.silver-searcher
