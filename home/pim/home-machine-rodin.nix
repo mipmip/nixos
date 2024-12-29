@@ -15,23 +15,6 @@ in
   dotfiles.awsstuff.enable = true;
   services.secondbrain.enable = true;
 
-  #  programs.myhotkeys."Gnome Extra".cyclewindow.key = "<ALT>grave";
-  #  programs.myhotkeys."Gnome Extra".cyclewindow.description = "Cycle windows within same Application";
-  #  programs.myhotkeys.enable = true;
-  #  programs.myhotkeys.hotkey_groups = [
-  #    {
-  #      name = "Gnome Extra";
-  #      shortcuts = [
-  #        {
-  #          key = "<ALT>grave";
-  #          description = "Cycle windows within same Application";
-  #        }
-  #      ];
-  #    }
-  #
-  #  ];
-  #
-
 
   nix = {
     extraOptions = ''experimental-features = nix-command flakes'';

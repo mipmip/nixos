@@ -102,14 +102,11 @@
         config.allowUnfree = true;
       };
 
-      #for grannyos
-      nixpkgs-unstable = unstableForSystem "x86_64-linux";
-
       makeHomeConf = {
         username ? "pim",
         hostname,
         homedir ? "/home/pim",
-        arch ? "x86_64-linux",
+        system ? "x86_64-linux",
         secondbrain ? false,
         awscontrol ? false,
         desktop ? false,
@@ -129,17 +126,13 @@
             programs.tmux.shortcut = tmuxPrefix;
           }
         ];
-        pkgs = pkgsForSystem arch;
+        pkgs = pkgsForSystem system;
         extraSpecialArgs = {
-          unstable = unstableForSystem arch;
+          system = system;
+          inputs = inputs;
+          unstable = unstableForSystem system;
         };
       };
-
-
-
-
-
-
 
       makeExtraPkgs = system :
       {
@@ -228,12 +221,21 @@
 
       homeConfigurations."pim@hurry" = makeHomeConf {
         hostname = "hurry";
-        arch = "aarch64-linux";
+        system = "aarch64-linux";
       };
+
+      homeConfigurations."pim@lego1" = makeHomeConf {
+        hostname = "lego1";
+        secondbrain = true;
+        awscontrol = true;
+        desktop = true;
+        tmuxPrefix = "a";
+      };
+
 
       homeConfigurations = {
 
-        "pim@lego1" = home-manager.lib.homeManagerConfiguration {
+        "pim@lego2" = home-manager.lib.homeManagerConfiguration {
           modules = [ (import ./home/pim/home-machine-lego1.nix) ];
           pkgs = pkgsForSystem "x86_64-linux";
           extraSpecialArgs = {

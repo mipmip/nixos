@@ -5,20 +5,20 @@ let
 in
 
 {
-    options.roles.desktop = {
-      enable = lib.mkEnableOption "Configure as desktop computer";
-    };
+  options.roles.desktop = {
+    enable = lib.mkEnableOption "Configure as desktop computer";
+  };
 
-    config = lib.mkIf cfg.enable {
-#      desktopConf.gimp.enable = true;
-      desktopConf.alacritty.enable = true;
-#      desktopConf.terminals.enable = true;
-#      desktopConf.firefox.enable = true;
-#      desktopConf.fonts.enable = true;
-#      desktopConf.obs.enable = true;
-#      desktopConf.xdg.enable = true;
-#      desktopConf.gnome.enable = true;
-      
-
+  config = lib.mkIf cfg.enable {
+    desktopConf.freedesktop.enable = true;
+    desktopConf.myhotkeys.enable = true;
+    desktopConf.gimp.enable = true;
+    desktopConf.smug.enable = true;
+    desktopConf.alacritty.enable = true;
+    desktopConf.kitty.enable = true;
+    desktopConf.firefox.enable = true;
+    desktopConf.fonts.enable = true;
+    desktopConf.obs.enable = true;
+    desktopConf.gnome.enable = true;
   };
 }
