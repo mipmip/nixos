@@ -3,7 +3,7 @@
 let
   cfg = config.desktopConf.gnome;
 
-  #mipmip_pkg = import (./../../../../pkgs){};
+  mipmip_pkg = import (./pkgs){inherit pkgs;};
 
   gnomeExtensionsWithOutConf = [
     #mipmip_pkg.gnomeExtensions.custom-menu-panel
@@ -27,7 +27,7 @@ let
     (import ./shell-ext-dash-to-panel.nix { pkgs = pkgs; })
     (import ./shell-ext-useless-gaps.nix { unstable = unstable; })
     #(import ./shell-ext-highlight-focus.nix { mipmip_pkg = mipmip_pkg; })
-    #(import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; })
+    (import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; })
 
   ];
 

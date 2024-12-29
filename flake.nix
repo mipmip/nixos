@@ -35,6 +35,7 @@
     myhotkeys.url = "github:mipmip/gnome-hotkeys.cr/0.2.7";
     shellstuff.url = "github:mipmip/nix-shellstuff";
     dirtygit.url = "github:mipmip/dirtygit";
+    ghostty.url = "github:ghostty-org/ghostty";
     skull.url = "github:mipmip/skull";
 
     nixpkgs-pine64.url = "nixpkgs/dfd82985c273aac6eced03625f454b334daae2e8";
@@ -74,6 +75,7 @@
     nixified-ai,
 
     jsonify-aws-dotfiles, dirtygit, bmc, race, shellstuff, skull, myhotkeys,
+    ghostty,
 
     nixpkgs-pine64, mobile-nixos, home-manager-pine64,
 
@@ -236,10 +238,17 @@
         ];
       };
 
-      nixosConfigurations.lego1 = makeNixosConf {
+      nixosConfigurations.lego1 = makeNixosConf rec {
         hostname = "lego1";
+        system = "x86_64-linux";
         extraModules = [
           nixos-hardware.nixosModules.framework-12th-gen-intel
+          {
+            environment.systemPackages = [
+              myhotkeys.packages."${system}".myhotkeys
+              ghostty.packages."${system}".ghostty
+            ];
+          }
         ];
       };
 
