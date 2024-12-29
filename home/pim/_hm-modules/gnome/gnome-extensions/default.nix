@@ -3,10 +3,10 @@
 let
   cfg = config.desktopConf.gnome;
 
-  mipmip_pkg = import (../../../../pkgs){};
+  #mipmip_pkg = import (./../../../../pkgs){};
 
   gnomeExtensionsWithOutConf = [
-    mipmip_pkg.gnomeExtensions.custom-menu-panel
+    #mipmip_pkg.gnomeExtensions.custom-menu-panel
     pkgs.gnomeExtensions.emoji-copy
     pkgs.gnomeExtensions.espresso
     pkgs.gnomeExtensions.show-favorite-apps
@@ -26,8 +26,8 @@ let
     (import ./shell-ext-focus-changer.nix { pkgs = pkgs; })
     (import ./shell-ext-dash-to-panel.nix { pkgs = pkgs; })
     (import ./shell-ext-useless-gaps.nix { unstable = unstable; })
-    (import ./shell-ext-highlight-focus.nix { mipmip_pkg = mipmip_pkg; })
-    (import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; })
+    #(import ./shell-ext-highlight-focus.nix { mipmip_pkg = mipmip_pkg; })
+    #(import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; })
 
   ];
 
@@ -69,7 +69,7 @@ let
   };
 
   dconfExtConfs = builtins.listToAttrs (builtins.catAttrs "dconf" gnomeExtensions);
-  recursiveMerge = import ../../../../lib/recursive-merge.nix {lib = lib;};
+  recursiveMerge = import ./recursive-merge.nix {lib = lib;};
 in
   {
 

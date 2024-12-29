@@ -2,7 +2,7 @@
 
 {
   home.packages = [
-    inputs.shellstuff.packages."${system}".dirtygit
+    inputs.dirtygit.packages."${system}".dirtygit
   ];
 
   home.file = {
