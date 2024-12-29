@@ -7,6 +7,7 @@
     #nixpkgs-2305.url = "github:NixOS/nixpkgs/nixos-23.05";# GNOME 44.2?
     nixpkgs-2311.url = "github:NixOS/nixpkgs/nixos-23.11"; # GNOME 45.2
     nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05"; # GNOME 46
+    nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOMe 47
 
@@ -15,7 +16,6 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixos-hardware-t2.url = "github:nixos/nixos-hardware/863e3ca9988f34c370bd660a5efc3e20eb7ad38b";
 
-    #nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
     ## HOME MANAGER
     home-manager.url = "github:nix-community/home-manager/release-24.11";
@@ -53,16 +53,20 @@
   };
 
   outputs = inputs@{
+
     self,
-    home-manager,
+
     nixpkgs,
     nixpkgs-2211,
     nixpkgs-2311,
     nixpkgs-2405,
-    alacritty-theme,
+    nixpkgs-inkscape13,
     unstable,
-    #    nixpkgs-inkscape13,
+
+    home-manager,
     agenix,
+
+    alacritty-theme,
 
     nixos-hardware,
     nixos-hardware-t2,
@@ -78,26 +82,11 @@
 
     let
 
-      pkgsForSystem = system: import nixpkgs {
+      importFromChannelForSystem = system: channel: import channel {
         overlays = [
           (import ./overlays)
           alacritty-theme.overlays.default
         ];
-        inherit system;
-        config.allowUnfree = true;
-      };
-
-      #    nixpkgs-inkscape13ForSystem = system: import nixpkgs-inkscape13 {
-      #      inherit system;
-      #      config.allowUnfree = true;
-      #    };
-
-      unstableForSystem = system: import unstable {
-        inherit system;
-        config.allowUnfree = true;
-      };
-
-      importFromChannelForSystem = system: channel: import channel {
         inherit system;
         config.allowUnfree = true;
       };
@@ -110,118 +99,90 @@
         secondbrain ? false,
         awscontrol ? false,
         desktop ? false,
-        tmuxPrefix ? "b",
         ...
-      }:
+        }:
         home-manager.lib.homeManagerConfiguration {
-        modules = [
-          (import ./home/pim)
-          {
-            home.stateVersion = "24.11";
-            home.username = username;
-            home.homeDirectory = homedir;
-            roles.secondbrain.enable = secondbrain;
-            roles.awscontrol.enable = awscontrol;
-            roles.desktop.enable = desktop;
-            programs.tmux.shortcut = tmuxPrefix;
-          }
-        ];
-        pkgs = pkgsForSystem system;
-        extraSpecialArgs = {
-          system = system;
-          inputs = inputs;
-          unstable = unstableForSystem system;
+          modules = [
+            (import ./home/pim)
+            {
+              home.stateVersion = "24.11";
+              home.username = username;
+              home.homeDirectory = homedir;
+              roles.secondbrain.enable = secondbrain;
+              roles.awscontrol.enable = awscontrol;
+              roles.desktop.enable = desktop;
+            }
+          ];
+          pkgs = importFromChannelForSystem system nixpkgs;
+          extraSpecialArgs = {
+            system = system;
+            inputs = inputs;
+            unstable = importFromChannelForSystem system unstable;
+          };
         };
-      };
 
-      makeExtraPkgs = system :
-      {
-        environment.systemPackages = [
-          agenix.packages."${system}".default
-          bmc.packages."${system}".bmc
-          jsonify-aws-dotfiles.packages."${system}".jsonify-aws-dotfiles
-          race.packages."${system}".race
-          dirtygit.packages."${system}".dirtygit
-          myhotkeys.packages."${system}".myhotkeys
-          shellstuff.packages."${system}".shellstuff
-          skull.packages."${system}".skull
-        ];
+      makeNixosConf = {
+        hostname,
+        system ? "x86_64-linux",
+        extraModules ? [],
+        ...
+        }:
 
-      };
+        nixpkgs.lib.nixosSystem {
+          modules =
+            let
+              defaults = { pkgs, ... }: {
+                nixpkgs.overlays = [(import ./overlays)];
+                _module.args.unstable = importFromChannelForSystem system unstable;
+                _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
+                _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
+              };
 
-      defaultSystem = "x86_64-linux";
-      extraPkgs = {
-        environment.systemPackages = [
-          agenix.packages."${defaultSystem}".default
-          bmc.packages."${defaultSystem}".bmc
-          jsonify-aws-dotfiles.packages."${defaultSystem}".jsonify-aws-dotfiles
-          race.packages."${defaultSystem}".race
-          dirtygit.packages."${defaultSystem}".dirtygit
-          myhotkeys.packages."${defaultSystem}".myhotkeys
-          shellstuff.packages."${defaultSystem}".shellstuff
-          skull.packages."${defaultSystem}".skull
-        ];
-      };
+              extraPkgs = {
+                environment.systemPackages = [
+                  agenix.packages."${system}".default
+                  myhotkeys.packages."${system}".myhotkeys
+                  skull.packages."${system}".skull
+                ];
+              };
+
+            in [
+                defaults
+                #nixos-hardware.nixosModules.framework-12th-gen-intel
+                (./hosts + "/${hostname}/configuration.nix")
+
+                agenix.nixosModules.default
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                }
+
+                extraPkgs
+
+              ] ++
+            extraModules;
+        };
 
     in
       rec {
-       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-classic;
 
-       homeConfigurations."pim@passieflora" = home-manager.lib.homeManagerConfiguration {
-        modules = [
-          (import ./home/pim/home-machine-passieflora.nix)
-        ];
-
-        pkgs = pkgsForSystem "x86_64-linux";
-        extraSpecialArgs = {
-          username = "pim";
-          homedir = "/home/pim";
-          withLinny = false;
-          isDesktop = false;
-          tmuxPrefix = "b";
-          unstable = unstableForSystem "x86_64-linux";
-          bmc = bmc;
-          race = race;
-          dirtygit = dirtygit;
-          inherit shellstuff;
-          jsonify-aws-dotfiles = jsonify-aws-dotfiles;
-
-        };
-      };
-
-      homeConfigurations."pim@tn-nixhost" = home-manager.lib.homeManagerConfiguration {
-        modules = [
-          (import ./home/pim/home-machine-tn-nixhost.nix)
-        ];
-
-        pkgs = pkgsForSystem "x86_64-linux";
-        extraSpecialArgs = {
-          username = "pim";
-          homedir = "/home/pim";
-          withLinny = false;
-          isDesktop = false;
-          tmuxPrefix = "b";
-          unstable = unstableForSystem "x86_64-linux";
-          bmc = bmc;
-          race = race;
-          dirtygit = dirtygit;
-          inherit shellstuff;
-          jsonify-aws-dotfiles = jsonify-aws-dotfiles;
-
-        };
-      };
-
-      homeConfigurations."pim@rodin" = home-manager.lib.homeManagerConfiguration (import ./rodinHomeConf.nix ({
-        pkgsForSystem = pkgsForSystem;
-        inherit unstableForSystem;
-        inherit jsonify-aws-dotfiles;
-        inherit extraPkgs;
-        isDesktop = true;
-      }));
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-classic;
 
       homeConfigurations."pim@hurry" = makeHomeConf {
         hostname = "hurry";
         system = "aarch64-linux";
+      };
+
+      homeConfigurations."pim@tn-nixhost" = makeHomeConf {
+        hostname = "tn-nixhost";
+        awscontrol = true;
+      };
+
+      homeConfigurations."pim@rodin" = makeHomeConf {
+        hostname = "rodin";
+        secondbrain = true;
+        awscontrol = true;
+        desktop = true;
       };
 
       homeConfigurations."pim@lego1" = makeHomeConf {
@@ -229,200 +190,88 @@
         secondbrain = true;
         awscontrol = true;
         desktop = true;
-        tmuxPrefix = "a";
       };
 
-
-      homeConfigurations = {
-
-        "pim@lego2" = home-manager.lib.homeManagerConfiguration {
-          modules = [ (import ./home/pim/home-machine-lego1.nix) ];
-          pkgs = pkgsForSystem "x86_64-linux";
-          extraSpecialArgs = {
-            username = "pim";
-            homedir = "/home/pim";
-            withLinny = true;
-            isDesktop = true;
-            tmuxPrefix = "a";
-            unstable = unstableForSystem "x86_64-linux";
-            jsonify-aws-dotfiles = jsonify-aws-dotfiles;
-          };
-        };
-
-        "pim@ojs" = home-manager.lib.homeManagerConfiguration {
-          modules = [ (import ./home/pim/home-machine-ojs.nix) ];
-
-          pkgs = pkgsForSystem "x86_64-linux";
-          extraSpecialArgs = {
-            username = "pim";
-            homedir = "/home/pim";
-            withLinny = true;
-            isDesktop = true;
-            tmuxPrefix = "a";
-            unstable = unstableForSystem "x86_64-linux";
-          };
-        };
+      homeConfigurations."pim@ojs" = makeHomeConf {
+        hostname = "ojs";
+        desktop = true;
       };
 
-      nixosConfigurations.rodin = nixpkgs.lib.nixosSystem {
-
-        system = "x86_64-linux";
-
-        modules =
-          let
-            system = "x86_64-linux";
-
-            defaults = { pkgs, ... }: {
-              nixpkgs.overlays = [(import ./overlays)];
-              _module.args.unstable = importFromChannelForSystem system unstable;
-              _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
-            };
-
-
-          in [
-            ./hosts/rodin/configuration.nix
-            defaults
-            agenix.nixosModules.default
-            extraPkgs
-
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-            }
-
-            ##          {
-            ##              imports = [
-            ##                nixified-ai.nixosModules.invokeai
-            ##              ];
-            ##
-            ##              environment.systemPackages = [
-            ##                nixified-ai.packages.${system}.invokeai-nvidia
-            ##              ];
-            ##
-            ##  #            services.invokeai = {
-            ##  #              enable = false;
-            ##  #              host = "0.0.0.0";
-            ##  #              nsfwChecker = false;
-            ##  #              package = nixified-ai.packages.${system}.invokeai-nvidia;
-            ##  #            };
-            ##
-            ##            }
-
-
-          ];
+      homeConfigurations."pim@passieflora" = makeHomeConf {
+        hostname = "passieflora";
+        desktop = true;
       };
 
-      nixosConfigurations.lego1 = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.rodin = makeNixosConf {
+        hostname = "rodin";
+        extraModules = [
 
-        modules =
-          let
-            system = "x86_64-linux";
-            defaults = { pkgs, ... }: {
-              nixpkgs.overlays = [(import ./overlays)];
-              _module.args.unstable = importFromChannelForSystem system unstable;
-              _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
-              _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
-              #_module.args.pkgs-inkscape13 = importFromChannelForSystem system nixpkgs-inkscape13;
-            };
+          #          {
+          #              imports = [
+          #                nixified-ai.nixosModules.invokeai
+          #              ];
+          #
+          #              environment.systemPackages = [
+          #                nixified-ai.packages.${system}.invokeai-nvidia
+          #              ];
+          #
+          #  #            services.invokeai = {
+          #  #              enable = false;
+          #  #              host = "0.0.0.0";
+          #  #              nsfwChecker = false;
+          #  #              package = nixified-ai.packages.${system}.invokeai-nvidia;
+          #  #            };
+          #
+          #            }
 
 
-          in [
-            defaults
-            nixos-hardware.nixosModules.framework-12th-gen-intel
-            ./hosts/lego1/configuration.nix
-
-            agenix.nixosModules.default
-            extraPkgs
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-            }
-          ];
-      };
-      nixosConfigurations.hurry = nixpkgs.lib.nixosSystem {
-
-        modules =
-          let
-            system = "aarch64-linux";
-            defaults = { pkgs, ... }: {
-              _module.args.unstable = importFromChannelForSystem system unstable;
-            };
-
-          in [
-            defaults
-            ./hosts/hurry/configuration.nix
-            agenix.nixosModules.default
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-            }
-          ];
+        ];
       };
 
-      nixosConfigurations.ojs = nixpkgs.lib.nixosSystem {
-
-        modules =
-          let
-            system = "x86_64-linux";
-            defaults = { pkgs, ... }: {
-              _module.args.unstable = unstableForSystem "x86_64-linux";
-              #_module.args.nixpkgs-inkscape13 = nixpkgs-inkscape13ForSystem "x86_64-linux";
-            };
-          in [
-            defaults
-            ./hosts/ojs/configuration.nix
-
-            extraPkgs
-            agenix.nixosModules.default
-
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-            }
-          ];
+      nixosConfigurations.passieflora = makeNixosConf {
+        hostname = "passieflora";
+        extraModules = [
+          ./hosts/passieflora/nix/substituter.nix
+          nixos-hardware-t2.nixosModules.apple-t2
+        ];
       };
 
-      nixosConfigurations.gnome45 = nixpkgs-2311.lib.nixosSystem {
-        modules =
-          let
-            system = "x86_64-linux";
-          in
-            [
-            {
-              nixpkgs.config.pkgs = import nixpkgs-2311 { inherit system; };
-            }
-            ./hosts/gnome-45/configuration.nix
-          ];
+      nixosConfigurations.lego1 = makeNixosConf {
+        hostname = "lego1";
+        extraModules = [
+          nixos-hardware.nixosModules.framework-12th-gen-intel
+        ];
       };
 
-      nixosConfigurations.grannyos = nixpkgs-2311.lib.nixosSystem {
-        modules =
-          let
-            system = "x86_64-linux";
-          in
-            [
-            {
-              nixpkgs.config.pkgs = import nixpkgs-2311 { inherit system; };
-            }
-            ./hosts/grannyos/configuration.nix
-          ];
+      nixosConfigurations.hurry = makeNixosConf {
+        hostname = "hurry";
+        system = "aarch64-linux";
       };
 
-      nixosConfigurations.billquick = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.ojs = makeNixosConf {
+        hostname = "ojs";
+      };
 
-        modules =
-          let
-            defaults = { pkgs, ... }: {
-              _module.args.unstable = unstableForSystem "x86_64-linux";
-            };
-          in [
-            defaults
-            ./hosts/billquick/configuration.nix
-            .home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-            }
-          ];
+      nixosConfigurations.gnome-45 = makeNixosConf {
+        hostname = "gnome-45";
+        extraModules = [
+          {
+            nixpkgs.config.pkgs = import nixpkgs-2311 { system = "x86_64-linux"; };
+          }
+        ];
+      };
 
+      nixosConfigurations.grannyos = makeNixosConf {
+        hostname = "grannyos";
+        extraModules = [
+          {
+            nixpkgs.config.pkgs = import nixpkgs-2311 { system = "x86_64-linux"; };
+          }
+        ];
+      };
+
+      nixosConfigurations.billquick = makeNixosConf {
+        hostname = "billquick";
       };
 
       nixosConfigurations.pinephone = (nixpkgs-pine64.lib.nixosSystem {
@@ -441,50 +290,5 @@
         pkgs = import nixpkgs { system = "aarch64-linux"; };
         modules = [ ./hosts/nix-on-droid/configuration.nix ];
       };
-
-      nixosConfigurations.passieflora = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-        ./hosts/passieflora/configuration.nix
-        ./hosts/passieflora/nix/substituter.nix
-        nixos-hardware-t2.nixosModules.apple-t2
-
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-        }
-
-        ];
-      };
-
-      nixosConfigurations.passieflora-no = nixpkgs.lib.nixosSystem {
-
-        modules =
-          let
-            system = "x86_64-linux";
-            defaults = { pkgs, ... }: {
-              nixpkgs.overlays = [(import ./overlays)];
-              _module.args.unstable = importFromChannelForSystem system unstable;
-              _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
-              _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
-            };
-
-
-          in [
-            defaults
-            ./hosts/passieflora/configuration.nix
-
-            agenix.nixosModules.default
-            extraPkgs
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-            }
-          ];
-      };
-
-
-
     };
-
 }

@@ -709,6 +709,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-inkscape13": {
+      "locked": {
+        "lastModified": 1699271810,
+        "narHash": "sha256-ldGgbzhOXdBshpRvZJFnhCF6vagakGot9pFpbws6srk=",
+        "owner": "leiserfg",
+        "repo": "nixpkgs",
+        "rev": "c5b219ec902db9fd069f7f0d6ac7dd864d5d9c47",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leiserfg",
+        "ref": "staging",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "dir": "lib",
@@ -1033,6 +1049,7 @@
         "nixpkgs-2211": "nixpkgs-2211",
         "nixpkgs-2311": "nixpkgs-2311",
         "nixpkgs-2405": "nixpkgs-2405",
+        "nixpkgs-inkscape13": "nixpkgs-inkscape13",
         "nixpkgs-pine64": "nixpkgs-pine64",
         "race": "race",
         "shellstuff": "shellstuff",
