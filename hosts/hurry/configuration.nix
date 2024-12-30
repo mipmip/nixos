@@ -7,8 +7,7 @@ let
   SSIDpassword = "ED4A6EDA7B4D";
   interface = "wlan0";
   hostname = "hurry";
-  smtpPasswd = "";
-  smtpUser = "";
+  smtpUser = "AKIARQP4GAZ5HPRK3ZW2";
 in {
 
   boot = {
@@ -19,6 +18,17 @@ in {
       generic-extlinux-compatible.enable = true;
     };
   };
+
+  age.secrets = {
+
+    wifi = {
+      file = ../secrets/wifi.age;
+      owner = "root";
+      group = "root";
+      path = "/var/run/wifi";
+    };
+  };
+
 
   fileSystems = {
     "/" = {
@@ -55,6 +65,7 @@ in {
 
   services.vaultwarden.enable = true;
   services.vaultwarden.backupDir = "/var/lib/backups/vaultwarden";
+  services.vaultwarden.environmentFile = "/run/secrets/vaultwarden.env"
   services.vaultwarden.config = {
 	  signupsAllowed = false;
 	  invitationsAllowed = false;
@@ -104,7 +115,6 @@ in {
   imports = [
     ./hardware-configuration.nix
     ../../modules/base-core.nix
-    ../../modules/nix-agenix.nix
     ../../modules/nix-common.nix
     ../../modules/nix-home-manager-global.nix
   ];

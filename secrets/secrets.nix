@@ -23,4 +23,5 @@ in
   "hurry-smtp.age".publicKeys = [pim hurry];
 
   "wifi.age".publicKeys = [pim hurry lego1 ojs rodin];
+  "vaultwarden.env.age".publicKeys = [pim hurry rodin];
 }

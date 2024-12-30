@@ -23,12 +23,6 @@
       mode = "600";
     };
 
-    wifi = {
-      file = ../secrets/wifi.age;
-      owner = "root";
-      group = "root";
-      path = "/var/run/wifi";
-    };
   };
 }
 
