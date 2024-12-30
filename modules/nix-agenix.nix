@@ -14,12 +14,20 @@
       group = "users";
       mode = "600";
     };
-    openai-api-key-plan = {
+
+    openai-api-key-plain = {
       file = ../secrets/openai-api-key-plain.age;
       path = "/tmp/openaiapikey-plain";
       owner = "pim";
       group = "users";
       mode = "600";
+    };
+
+    wifi = {
+      file = ../secrets/wifi.age;
+      owner = "root";
+      group = "root";
+      path = "/var/run/wifi";
     };
   };
 }

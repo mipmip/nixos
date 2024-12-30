@@ -15,7 +15,7 @@
     appimage-run
 
     vimHugeX
-    mipmip_pkg.mip-rust
+    #mipmip_pkg.mip-rust
 
     actionlint
 

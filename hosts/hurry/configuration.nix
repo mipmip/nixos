@@ -32,8 +32,10 @@ in {
     firewall.enable = false;
     hostName = hostname;
     wireless = {
+      secretsFile = "/run/secrets/wifi";
       enable = true;
       networks."${SSID}".psk = SSIDpassword;
+      #networks."${SSID}".psk = ext.ZyXEL11767C;
       interfaces = [ interface ];
     };
   };
@@ -102,7 +104,7 @@ in {
   imports = [
     ./hardware-configuration.nix
     ../../modules/base-core.nix
-    #../../modules/nix-agenix.nix
+    ../../modules/nix-agenix.nix
     ../../modules/nix-common.nix
     ../../modules/nix-home-manager-global.nix
   ];

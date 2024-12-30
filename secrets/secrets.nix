@@ -20,5 +20,7 @@ in
 
   "aws-accounts.json.age".publicKeys = [ pim  ojs lego1 rodin];
 
-  "hurry-smtp".publicKeys = [pim hurry];
+  "hurry-smtp.age".publicKeys = [pim hurry];
+
+  "wifi.age".publicKeys = [pim hurry lego1 ojs rodin];
 }

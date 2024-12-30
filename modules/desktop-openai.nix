@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    mipmip_pkg.mods
+    mods
   ];
 }
 

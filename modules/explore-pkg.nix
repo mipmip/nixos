@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     #unstable.zellij
 
+    nh
     #unstable.zed-editor
     #etherape
     #cool-retro-term

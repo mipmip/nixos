@@ -4,7 +4,7 @@
 
   environment.systemPackages = with pkgs; [
 
-    mipmip_pkg.cryptobox
+    #mipmip_pkg.cryptobox
     cryptsetup
 
     keepassxc
