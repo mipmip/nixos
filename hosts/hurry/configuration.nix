@@ -1,14 +1,6 @@
 { config, inputs, system, pkgs, ... }:
 
-let
-  user = "pim";
-  password = "guest";
-  SSID = "ZyXEL11767C";
-  SSIDpassword = "ED4A6EDA7B4D";
-  interface = "wlan0";
-  hostname = "hurry";
-  smtpUser = "AKIARQP4GAZ5HPRK3ZW2";
-in {
+{
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
@@ -45,13 +37,12 @@ in {
 
   networking = {
     firewall.enable = false;
-    hostName = hostname;
+    hostName = "hurry";
     wireless = {
       secretsFile = "/run/secrets/wifi";
       enable = true;
-      networks."${SSID}".psk = SSIDpassword;
-      #networks."${SSID}".psk = ext.ZyXEL11767C;
-      interfaces = [ interface ];
+      networks."ZyXEL11767C".pskRaw = "ext:ZyXEL11767C";
+      interfaces = [ "wlan0" ];
     };
   };
 
@@ -107,9 +98,8 @@ in {
 
   users = {
     mutableUsers = true;
-    users."${user}" = {
+    users.pim = {
       isNormalUser = true;
-      #password = password;
       extraGroups = [ "wheel" ];
     };
   };
