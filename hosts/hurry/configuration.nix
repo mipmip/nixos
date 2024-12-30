@@ -38,14 +38,14 @@ in {
     };
   };
 
-  environment.systemPackages = with pkgs; [ 
+  environment.systemPackages = with pkgs; [
     home-manager
-	vim
-	tmux
-	git
-        htop
-        libraspberrypi
-        raspberrypi-eeprom
+    vim
+    tmux
+    git
+    htop
+    libraspberrypi
+    raspberrypi-eeprom
   ];
 
   services.openssh.enable = true;
@@ -69,7 +69,7 @@ in {
       "met"
       "radio_browser"
     ];
-    
+
     customComponents = with pkgs.home-assistant-custom-components; [
       prometheus_sensor
       #"system_health"
