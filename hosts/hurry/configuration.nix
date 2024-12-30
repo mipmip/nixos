@@ -74,7 +74,7 @@ in {
   services.vaultwarden.config = {
 	  signupsAllowed = true;
 	  invitationsAllowed = false;
-	  #domain = "http://${serverName}";
+	  domain = "https://hurry.koi-ionian.ts.net";
 	  rocketPort = 8000;
 	  websocketEnabled = true;
   };
