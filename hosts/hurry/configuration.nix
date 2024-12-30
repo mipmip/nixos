@@ -20,12 +20,17 @@ in {
   };
 
   age.secrets = {
-
     wifi = {
-      file = ../secrets/wifi.age;
+      file = ../../secrets/wifi.age;
       owner = "root";
       group = "root";
-      path = "/var/run/wifi";
+      path = "/run/secrets/wifi";
+    };
+    vaultwarden = {
+      file = ../../secrets/vaultwarden.env.age;
+      owner = "root";
+      group = "root";
+      path = "/run/secrets/vaultwarden.env";
     };
   };
 
@@ -65,9 +70,9 @@ in {
 
   services.vaultwarden.enable = true;
   services.vaultwarden.backupDir = "/var/lib/backups/vaultwarden";
-  services.vaultwarden.environmentFile = "/run/secrets/vaultwarden.env"
+  services.vaultwarden.environmentFile = "/run/secrets/vaultwarden.env";
   services.vaultwarden.config = {
-	  signupsAllowed = false;
+	  signupsAllowed = true;
 	  invitationsAllowed = false;
 	  #domain = "http://${serverName}";
 	  rocketPort = 8000;
