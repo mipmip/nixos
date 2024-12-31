@@ -10,6 +10,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+
     programs.tmux.shortcut = "a";
 
     desktopConf.freedesktop.enable = true;

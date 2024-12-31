@@ -2,7 +2,7 @@
 
 let
   mkTuple = lib.hm.gvariant.mkTuple;
-  cfg = config.desktopConf.gnome;
+  cfg = config.desktopConf;
 in
 
 {
@@ -11,22 +11,23 @@ in
     #    swapaltwin = lib.mkEnableOption "Swap Win or Mac Key";
     #  };
 
-  config = lib.mkIf cfg.enable
+  config = lib.mkIf cfg.gnome.enable
     {
 
     dconf.settings = {
 
-      # TODO CHECK OVERRIDE STRATEGY ON LEGO1
       "org/gnome/desktop/input-sources" = {
         mru-sources = [ (mkTuple [ "xkb" "us" ]) ];
         per-window = false;
         sources = [ (mkTuple [ "xkb" "us" ]) ];
         xkb-options = [
-          #"altwin:swap_alt_win" #set on rodin
           "grp:alt_shift_toggle"
           "lv3:ralt_switch"
           "compose:ralt"
-          "caps:none"];
+          "caps:none"
+          ];
+          #++ lib.mkIf cfg.gnome.swap_alt_win [ "altwin:swap_alt_win" ];
+
       };
 
     };
