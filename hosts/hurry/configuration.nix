@@ -1,6 +1,15 @@
 { config, inputs, system, pkgs, ... }:
 
 {
+  imports = [
+    ./hardware-configuration.nix
+    ./cloudflared.nix
+    ./vaultwarden.nix
+    ./home-assistant
+    ../../modules/base-core.nix
+    ../../modules/nix-common.nix
+    ../../modules/nix-home-manager-global.nix
+  ];
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
@@ -11,22 +20,6 @@
     };
   };
 
-  age.secrets = {
-    wifi = {
-      file = ../../secrets/wifi.age;
-      owner = "root";
-      group = "root";
-      path = "/run/secrets/wifi";
-    };
-    vaultwarden = {
-      file = ../../secrets/vaultwarden.env.age;
-      owner = "root";
-      group = "root";
-      path = "/run/secrets/vaultwarden.env";
-    };
-  };
-
-
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
@@ -34,6 +27,16 @@
       options = [ "noatime" ];
     };
   };
+
+  age.secrets = {
+    wifi = {
+      file = ../../secrets/wifi.age;
+      owner = "root";
+      group = "root";
+      path = "/run/secrets/wifi";
+    };
+  };
+
 
   networking = {
     firewall.enable = false;
@@ -60,57 +63,6 @@
   services.openssh.enable = true;
   services.tailscale.enable = true;
 
-  services.vaultwarden.enable = true;
-  services.vaultwarden.backupDir = "/var/lib/backups/vaultwarden";
-  services.vaultwarden.environmentFile = "/run/secrets/vaultwarden.env";
-  services.vaultwarden.config = {
-	  signupsAllowed = true;
-	  invitationsAllowed = false;
-	  domain = "https://hurry.koi-ionian.ts.net";
-	  rocketPort = 8000;
-	  websocketEnabled = true;
-  };
-
-  services.cloudflared = {
-    enable = true;
-    tunnels = {
-      "5770d64e-ed29-4ca2-871c-2fb1c7350d37" = {
-        credentialsFile = "/tmp/.cloudflared/5770d64e-ed29-4ca2-871c-2fb1c7350d37.json";
-        ingress = {
-          "test1.notnix.com" = "http://localhost:8001";
-          "test2.notnix.com" = "http://localhost:8000";
-        };
-        default = "http_status:404";
-      };
-    };
-  };
-
-
-  services.home-assistant = {
-    enable = true;
-    extraComponents = [
-      # Components required to complete the onboarding
-      "esphome"
-      "met"
-      "radio_browser"
-    ];
-
-    customComponents = with pkgs.home-assistant-custom-components; [
-      prometheus_sensor
-      #"system_health"
-      localtuya
-      #"pushover"
-      #"telegram"
-      #"timer"
-      #"tado"
-      #"systemmonitor"
-    ];
-    config = {
-      # Includes dependencies for a basic setup
-      # https://www.home-assistant.io/integrations/default_config/
-      default_config = {};
-    };
-  };
 
   users = {
     mutableUsers = true;
@@ -123,12 +75,6 @@
   hardware.enableRedistributableFirmware = true;
   system.stateVersion = "23.11";
 
-  imports = [
-    ./hardware-configuration.nix
-    ../../modules/base-core.nix
-    ../../modules/nix-common.nix
-    ../../modules/nix-home-manager-global.nix
-  ];
 
   nix = {
     package = pkgs.nixVersions.stable;
