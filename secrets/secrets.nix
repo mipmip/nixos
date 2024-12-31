@@ -24,4 +24,7 @@ in
 
   "wifi.age".publicKeys = [pim hurry lego1 ojs rodin];
   "vaultwarden.env.age".publicKeys = [pim hurry rodin];
+
+  "hurry-cloudflared.pem.age".publicKeys = [pim hurry];
+  "hurry-cloudflared-tunnel.json.age".publicKeys = [pim hurry];
 }
