@@ -36,7 +36,6 @@
     };
   };
 
-
   services.xserver.videoDrivers = [ "nvidia" ];
 
   networking.hostName = "rodin";

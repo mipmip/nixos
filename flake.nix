@@ -7,9 +7,9 @@
     #nixpkgs-2305.url = "github:NixOS/nixpkgs/nixos-23.05";# GNOME 44.2?
     nixpkgs-2311.url = "github:NixOS/nixpkgs/nixos-23.11"; # GNOME 45.2
     nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05"; # GNOME 46
-    nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOME 47
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOMe 47
+    nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -185,6 +185,7 @@
         secondbrain = true;
         awscontrol = true;
         desktop = true;
+        desktopConf.swap_alt_win = true;
       };
 
       homeConfigurations."pim@lego1" = makeHomeConf {

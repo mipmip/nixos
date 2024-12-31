@@ -13,7 +13,6 @@
             experimental-features = nix-command flakes
     '';
   };
-  #services.xserver.xkbOptions = "caps:none,terminate:ctrl_alt_bks,altwin:swap_alt_win";
   services.tailscale.enable = true;
 
   networking.hosts = {
