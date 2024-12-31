@@ -59,4 +59,18 @@
 
   system.stateVersion = "24.05"; # Did you read the comment?
 
+  services.cloudflared = {
+    enable = true;
+    tunnels = {
+      "5770d64e-ed29-4ca2-871c-2fb1c7350d37" = {
+        credentialsFile = "/tmp/.cloudflared/5770d64e-ed29-4ca2-871c-2fb1c7350d37.json";
+        ingress = {
+          "test1.notnix.com" = "http://localhost:8001";
+          "test2.notnix.com" = "http://localhost:8000";
+        };
+        default = "http_status:404";
+      };
+    };
+  };
+
 }
