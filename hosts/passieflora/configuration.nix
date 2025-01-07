@@ -3,6 +3,8 @@
 {
   imports =
     [
+      ../../modules/desktop-communication.nix
+      ../../modules/nix-common.nix
       ./hardware-configuration.nix
       ./sleep.nix
     ];
@@ -21,11 +23,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  users.users.pim = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    shell = pkgs.zsh;
-  };
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
@@ -40,6 +37,8 @@
     pkg-config
 
     gnumake
+
+    gnome.gpaste
   ];
   services.openssh.enable = true;
   services.tailscale.enable = true;

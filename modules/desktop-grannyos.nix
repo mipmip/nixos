@@ -57,7 +57,7 @@
 
     libreoffice
 
-    nextcloud-client
+    #nextcloud-client
   ];
 }
 
