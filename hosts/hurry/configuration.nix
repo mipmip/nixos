@@ -7,6 +7,7 @@
     ./vaultwarden.nix
     ./home-assistant
     ../../modules/base-core.nix
+    ../../modules/base-hardware.nix
     ../../modules/nix-common.nix
     ../../modules/nix-home-manager-global.nix
   ];
