@@ -175,6 +175,11 @@
         system = "aarch64-linux";
       };
 
+      homeConfigurations."pim@harry" = makeHomeConf {
+        hostname = "harry";
+        system = "aarch64-linux";
+      };
+
       homeConfigurations."pim@tn-nixhost" = makeHomeConf {
         hostname = "tn-nixhost";
         awscontrol = true;
@@ -255,6 +260,11 @@
 
       nixosConfigurations.hurry = makeNixosConf {
         hostname = "hurry";
+        system = "aarch64-linux";
+      };
+
+      nixosConfigurations.harry = makeNixosConf {
+        hostname = "harry";
         system = "aarch64-linux";
       };
 

@@ -39,7 +39,8 @@
     firewall.enable = false;
     hostName = "harry";
     wireless = {
-      secretsFile = "/run/secrets/wifi";
+      secretsFile = "/etc/wifi";
+      #      secretsFile = "/run/secrets/wifi";
       enable = true;
       networks."ZyXEL11767C".pskRaw = "ext:ZyXEL11767C";
       interfaces = [ "wlan0" ];
