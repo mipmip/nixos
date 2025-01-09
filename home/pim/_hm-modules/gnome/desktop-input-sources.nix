@@ -7,6 +7,7 @@ in
 
 {
 
+
     #  options.desktopConf.gnome = {
     #    swapaltwin = lib.mkEnableOption "Swap Win or Mac Key";
     #  };
