@@ -21,11 +21,12 @@ in
 
   "aws-accounts.json.age".publicKeys = [ pim  ojs lego1 rodin];
 
-  "hurry-smtp.age".publicKeys = [pim hurry];
-
-  "wifi.age".publicKeys = [pim systems];
+  "wifi.age".publicKeys = [pim hurry harry];
   "vaultwarden.env.age".publicKeys = [pim hurry rodin];
 
+  "hurry-smtp.age".publicKeys = [pim hurry];
   "hurry-cloudflared.pem.age".publicKeys = [pim hurry];
   "hurry-cloudflared-tunnel.json.age".publicKeys = [pim hurry];
+
+
 }
