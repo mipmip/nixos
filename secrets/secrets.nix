@@ -24,9 +24,10 @@ in
   "wifi.age".publicKeys = [pim hurry harry];
   "vaultwarden.env.age".publicKeys = [pim hurry rodin];
 
-  "hurry-smtp.age".publicKeys = [pim hurry];
+  #  "hurry-smtp.age".publicKeys = [pim hurry];
   "hurry-cloudflared.pem.age".publicKeys = [pim hurry];
   "hurry-cloudflared-tunnel.json.age".publicKeys = [pim hurry];
 
+  "nextcloud-admin-pw.age".publicKeys = [pim harry];
 
 }
