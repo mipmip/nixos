@@ -28,25 +28,25 @@
     };
   };
 
-  age.secrets = {
-    wifi = {
-      file = ../../secrets/wifi.age;
-      owner = "root";
-      group = "root";
-      path = "/run/secrets/wifi";
-    };
-  };
+  #  age.secrets = {
+  #    wifi = {
+  #      file = ../../secrets/wifi.age;
+  #      owner = "root";
+  #      group = "root";
+  #      path = "/run/secrets/wifi";
+  #    };
+  #  };
 
   networking = {
     firewall.enable = false;
     hostName = "harry";
-    wireless = {
-      secretsFile = "/etc/wifi";
-      #      secretsFile = "/run/secrets/wifi";
-      enable = true;
-      networks."ZyXEL11767C".pskRaw = "ext:ZyXEL11767C";
-      interfaces = [ "wlan0" ];
-    };
+    #    wireless = {
+    #      secretsFile = "/etc/wifi";
+    #      #      secretsFile = "/run/secrets/wifi";
+    #      enable = true;
+    #      networks."ZyXEL11767C".pskRaw = "ext:ZyXEL11767C";
+    #      interfaces = [ "wlan0" ];
+    #    };
   };
 
   environment.systemPackages = with pkgs; [
