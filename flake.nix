@@ -190,7 +190,7 @@
         secondbrain = true;
         awscontrol = true;
         desktop = true;
-        desktopConf.swap_alt_win = true;
+        desktopConf.gnome.swap_alt_win = true;
       };
 
       homeConfigurations."pim@lego1" = makeHomeConf {

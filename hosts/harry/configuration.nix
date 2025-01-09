@@ -7,6 +7,7 @@
     ../../modules/base-core.nix
     ../../modules/base-hardware.nix
     ../../modules/nix-common.nix
+    ../../modules/network-nfs-piet.nix
     ../../modules/nix-home-manager-global.nix
   ];
 
