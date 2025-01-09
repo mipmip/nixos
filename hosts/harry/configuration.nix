@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./nextcloud.nix
     ../../modules/base-core.nix
     ../../modules/base-hardware.nix
     ../../modules/nix-common.nix
