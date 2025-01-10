@@ -29,5 +29,6 @@ in
   "hurry-cloudflared-tunnel.json.age".publicKeys = [pim hurry];
 
   "nextcloud-admin-pw.age".publicKeys = [pim harry];
+  "piethein-samba-secrets.age".publicKeys = [pim harry];
 
 }
