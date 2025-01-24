@@ -26,7 +26,7 @@
 #    intltool
 
 
-#    super-productivity
+    super-productivity
   ];
 
 

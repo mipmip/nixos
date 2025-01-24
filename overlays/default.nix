@@ -1,6 +1,5 @@
 final: prev: {
 
-
   sc-im = prev.sc-im.overrideAttrs (old: {
     hardeningDisable = [ "fortify" ];
     src = prev.fetchFromGitHub {
@@ -13,6 +12,9 @@ final: prev: {
   });
 
   quarto = prev.quarto.override {
+    extraRPackages = [
+      prev.rPackages.reticulate
+    ];
     extraPythonPackages = ps: with ps; [
       plotly
       numpy
