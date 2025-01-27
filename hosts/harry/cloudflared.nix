@@ -17,6 +17,7 @@
         credentialsFile = "/run/secrets/.cloudflared/cloudflared-tunnel.json";
         ingress = {
           "seafile.notnix.com" = "http://localhost:80";
+          "matrix.notnix.com" = "http://localhost:8066";
         };
         default = "http_status:404";
       };

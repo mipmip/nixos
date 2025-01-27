@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     #./nextcloud.nix
     ./seafile.nix
+    ./matrix.nix
     ./cloudflared.nix
     ../../modules/base-core.nix
     ../../modules/base-hardware.nix

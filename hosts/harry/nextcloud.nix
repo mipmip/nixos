@@ -7,24 +7,24 @@
   #    fsType = "nfs";
   #    options = [ "x-systemd.automount" "noauto" ];
   #  };
-  age.secrets = {
-    piethein-samba-secrets = {
-      file = ../../secrets/piethein-samba-secrets.age;
-      path = "/run/secrets/smb-secrets";
-    };
-  };
+  #  age.secrets = {
+  #    piethein-samba-secrets = {
+  #      file = ../../secrets/piethein-samba-secrets.age;
+  #      path = "/run/secrets/smb-secrets";
+  #    };
+  #  };
 
-  # For mount.cifs, required unless domain name resolution is not needed.
-  environment.systemPackages = [ pkgs.cifs-utils ];
-  fileSystems."/mnt/nextcloud" = {
-    device = "//192.168.178.37/nextcloud";
-    fsType = "cifs";
-    options = let
-      # this line prevents hanging on network split
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-
-    in ["${automount_opts},credentials=/run/secrets/smb-secrets,vers=1.0"];
-  };
+  #  # For mount.cifs, required unless domain name resolution is not needed.
+  #  environment.systemPackages = [ pkgs.cifs-utils ];
+  #  fileSystems."/mnt/nextcloud" = {
+  #    device = "//192.168.178.37/nextcloud";
+  #    fsType = "cifs";
+  #    options = let
+  #      # this line prevents hanging on network split
+  #      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+  #
+  #    in ["${automount_opts},credentials=/run/secrets/smb-secrets,vers=1.0"];
+  #  };
 
   #  services.rpcbind.enable = true;
   #  services.nfs.server.enable = true;
