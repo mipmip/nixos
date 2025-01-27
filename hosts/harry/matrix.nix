@@ -4,7 +4,7 @@
   services.matrix-conduit = {
     enable = true;
     settings.global = {
-      allow_registration = true;
+      allow_registration = false;
       # You will need this token when creating your first account.
       registration_token = "A S3CR3T TOKEN";
       server_name = "matrix.notnix.com";
