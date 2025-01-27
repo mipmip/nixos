@@ -1,13 +1,6 @@
 {config, ...}:
 {
   age.secrets = {
-    #    pem = {
-    #      file = ../../secrets/hurry-cloudflared.pem.age;
-    #      owner = "cloudflared";
-    #      group = "cloudflared";
-    #      mode = "600";
-    #      path = "/run/secrets/.cloudflared/cloudflared.pem";
-    #    };
     json = {
       file = ../../secrets/hurry-cloudflared-tunnel.json.age;
       owner = "cloudflared";

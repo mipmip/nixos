@@ -3,7 +3,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./nextcloud.nix
+    #./nextcloud.nix
+    ./seafile.nix
+    ./cloudflared.nix
     ../../modules/base-core.nix
     ../../modules/base-hardware.nix
     ../../modules/nix-common.nix
@@ -19,6 +21,10 @@
       generic-extlinux-compatible.enable = true;
     };
   };
+  boot.initrd = {
+    supportedFilesystems = [ "nfs" ];
+    kernelModules = [ "nfs" ];
+  };
 
   fileSystems = {
     "/" = {
@@ -28,29 +34,14 @@
     };
   };
 
-  #  age.secrets = {
-  #    wifi = {
-  #      file = ../../secrets/wifi.age;
-  #      owner = "root";
-  #      group = "root";
-  #      path = "/run/secrets/wifi";
-  #    };
-  #  };
-
   networking = {
     firewall.enable = false;
     hostName = "harry";
-    #    wireless = {
-    #      secretsFile = "/etc/wifi";
-    #      #      secretsFile = "/run/secrets/wifi";
-    #      enable = true;
-    #      networks."ZyXEL11767C".pskRaw = "ext:ZyXEL11767C";
-    #      interfaces = [ "wlan0" ];
-    #    };
   };
 
   environment.systemPackages = with pkgs; [
     home-manager
+    nfs-utils
     vim
     tmux
     git

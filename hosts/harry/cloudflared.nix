@@ -13,11 +13,10 @@
   services.cloudflared = {
     enable = true;
     tunnels = {
-      "4a8ebfc1-0f75-4971-9917-084220f37c15" = {
+      "bb0a3af1-f10f-4e9b-9637-4e48d2c1b051" = {
         credentialsFile = "/run/secrets/.cloudflared/cloudflared-tunnel.json";
         ingress = {
-          "vaultwarden.notnix.com" = "http://localhost:8000";
-          "home-assistant.notnix.com" = "http://localhost:8123";
+          "seafile.notnix.com" = "http://localhost:80";
         };
         default = "http_status:404";
       };

@@ -25,8 +25,9 @@ in
   "vaultwarden.env.age".publicKeys = [pim hurry rodin];
 
   #  "hurry-smtp.age".publicKeys = [pim hurry];
-  "hurry-cloudflared.pem.age".publicKeys = [pim hurry];
+  "hurry-cloudflared.pem.age".publicKeys = [pim hurry harry];
   "hurry-cloudflared-tunnel.json.age".publicKeys = [pim hurry];
+  "harry-cloudflared-tunnel.json.age".publicKeys = [pim harry];
 
   "nextcloud-admin-pw.age".publicKeys = [pim harry];
   "piethein-samba-secrets.age".publicKeys = [pim harry];

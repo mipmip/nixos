@@ -52,6 +52,7 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
+    cloudflared
     vim
     tmux
     git
