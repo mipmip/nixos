@@ -36,9 +36,11 @@
     gcc
     pkg-config
 
+    libreoffice
     gnumake
 
-    gnome.gpaste
+    gnome-tweaks
+    gpaste
   ];
   services.openssh.enable = true;
   services.tailscale.enable = true;

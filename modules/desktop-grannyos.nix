@@ -47,7 +47,7 @@
 
     # UTILS
     gnome.gnome-tweaks
-    gnome.gpaste
+    gpaste
     gnome-secrets
 
     whitesur-icon-theme

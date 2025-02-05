@@ -7,7 +7,7 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-photos
     gnome-tour
-  ]) ++ (with pkgs.gnome; [
+  ]) ++ (with pkgs; [
     cheese # webcam tool
     gnome-music
     #gedit # text editor
@@ -43,8 +43,8 @@
     # evolution
 
     # UTILS
-    gnome.gnome-tweaks
-    gnome.gpaste
+    gnome-tweaks
+    gpaste
     gnome-secrets
 
     # IMAGE
