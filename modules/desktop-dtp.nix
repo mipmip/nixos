@@ -24,8 +24,9 @@
 
     libreoffice
 
-    nextcloud-client
-    syncthing
+    #nextcloud-client
+    seafile-client
+    #syncthing
 
   ];
 }
