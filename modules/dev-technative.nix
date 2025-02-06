@@ -10,8 +10,8 @@
     graphviz
 
     # OFFICE365
-#    onedrivegui
-#    onedrive
+    #onedrivegui
+    #onedrive
 
     # SHELL
     gum

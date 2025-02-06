@@ -210,10 +210,16 @@
         desktop = true;
       };
 
-      nixosConfigurations.rodin = makeNixosConf {
+      nixosConfigurations.rodin = makeNixosConf rec {
         hostname = "rodin";
+        system = "x86_64-linux";
         extraModules = [
 
+          {
+            environment.systemPackages = [
+              ghostty.packages."${system}".ghostty
+            ];
+          }
           #          {
           #              imports = [
           #                nixified-ai.nixosModules.invokeai
