@@ -175,6 +175,10 @@
         system = "aarch64-linux";
       };
 
+      homeConfigurations."pim@arcana-one" = makeHomeConf {
+        hostname = "arcana-one";
+      };
+
       homeConfigurations."pim@harry" = makeHomeConf {
         hostname = "harry";
         system = "aarch64-linux";
