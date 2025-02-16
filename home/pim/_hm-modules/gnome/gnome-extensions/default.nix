@@ -13,6 +13,7 @@ let
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.spotify-tray
     pkgs.gnomeExtensions.wayland-or-x11
+    pkgs.gnomeExtensions.tailscale-status
   ];
 
   gnomeExtensions = map (ext: { extpkg = ext; } ) gnomeExtensionsWithOutConf ++ [

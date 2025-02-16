@@ -178,6 +178,10 @@
         system = "aarch64-linux";
       };
 
+      homeConfigurations."pim@arcana-one" = makeHomeConf {
+        hostname = "arcana-one";
+      };
+
       homeConfigurations."pim@harry" = makeHomeConf {
         hostname = "harry";
         system = "aarch64-linux";
@@ -220,10 +224,16 @@
         desktop = true;
       };
 
-      nixosConfigurations.rodin = makeNixosConf {
+      nixosConfigurations.rodin = makeNixosConf rec {
         hostname = "rodin";
+        system = "x86_64-linux";
         extraModules = [
 
+          {
+            environment.systemPackages = [
+              ghostty.packages."${system}".ghostty
+            ];
+          }
           #          {
           #              imports = [
           #                nixified-ai.nixosModules.invokeai
