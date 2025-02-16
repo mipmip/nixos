@@ -4,7 +4,6 @@
   imports =
     [
       ../../modules/desktop-communication.nix
-      ../../modules/nix-common.nix
       ./hardware-configuration.nix
       ./sleep.nix
     ];
@@ -13,6 +12,44 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
+  i18n.defaultLocale = "nl_NL.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "nl_NL.UTF-8";
+    LC_IDENTIFICATION = "nl_NL.UTF-8";
+    LC_MEASUREMENT = "nl_NL.UTF-8";
+    LC_MONETARY = "nl_NL.UTF-8";
+    LC_NAME = "nl_NL.UTF-8";
+    LC_NUMERIC = "nl_NL.UTF-8";
+    LC_PAPER = "nl_NL.UTF-8";
+    LC_TELEPHONE = "nl_NL.UTF-8";
+    LC_TIME = "nl_NL.UTF-8";
+  };
+
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
+  services.openssh.enable = true;
+
+  services.cron.enable = true;
+
+  services.journald.extraConfig = "SystemMaxUse=100M";
+
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
+
+  users.users.pim = {
+    shell = pkgs.zsh;
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
+  };
+
+  users.users.annemarie = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
+  };
 
   networking.useDHCP = lib.mkDefault true;
   networking.hostName = "passieflora"; # Define your hostname.
@@ -23,7 +60,6 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  programs.zsh.enable = true;
 
     nixos-boot = {
      enable  = true;
@@ -48,6 +84,7 @@
 
     gcc
     pkg-config
+    telegram-desktop
     gnumake
 
     gimp
@@ -66,7 +103,6 @@
 
     seafile-client
   ];
-  services.openssh.enable = true;
   services.tailscale.enable = true;
 
   system.stateVersion = "24.11";
