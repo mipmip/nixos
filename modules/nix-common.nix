@@ -40,6 +40,12 @@
     extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
   };
 
+  users.users.distrobox = {
+    shell = pkgs.zsh;
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
+  };
+
   users.users.tim = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
