@@ -637,6 +637,21 @@
         "type": "github"
       }
     },
+    "nixos-boot": {
+      "locked": {
+        "lastModified": 1739124605,
+        "narHash": "sha256-Fzbutu6fjd2gbZfRcSiUbXm+Btqn2Ks+upf3MaNdYaY=",
+        "owner": "mipmip",
+        "repo": "nixos-boot-grannyos",
+        "rev": "d29213e8200936607016b6c3ad2ae5d51e1e51b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mipmip",
+        "repo": "nixos-boot-grannyos",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1733481457,
@@ -1131,6 +1146,7 @@
         "myhotkeys": "myhotkeys",
         "nix-on-droid": "nix-on-droid",
         "nixified-ai": "nixified-ai",
+        "nixos-boot": "nixos-boot",
         "nixos-hardware": "nixos-hardware",
         "nixos-hardware-t2": "nixos-hardware-t2",
         "nixpkgs": "nixpkgs_9",

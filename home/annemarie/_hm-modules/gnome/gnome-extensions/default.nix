@@ -11,7 +11,6 @@ let
     pkgs.gnomeExtensions.espresso
     pkgs.gnomeExtensions.show-favorite-apps
     pkgs.gnomeExtensions.appindicator
-    pkgs.gnomeExtensions.spotify-tray
     pkgs.gnomeExtensions.wayland-or-x11
   ];
 
@@ -23,10 +22,6 @@ let
     #(import ./shell-ext-hotkeys-popup.nix { unstable = unstable; })
 
     (import ./shell-ext-color-picker.nix { pkgs = pkgs; })
-    (import ./shell-ext-focus-changer.nix { pkgs = pkgs; })
-    (import ./shell-ext-dash-to-panel.nix { pkgs = pkgs; })
-    (import ./shell-ext-useless-gaps.nix { unstable = unstable; })
-    #(import ./shell-ext-highlight-focus.nix { mipmip_pkg = mipmip_pkg; })
     (import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; })
 
   ];

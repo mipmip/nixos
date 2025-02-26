@@ -12,6 +12,7 @@
     nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-boot.url = "github:mipmip/nixos-boot-grannyos";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixos-hardware-t2.url = "github:nixos/nixos-hardware/863e3ca9988f34c370bd660a5efc3e20eb7ad38b";
@@ -74,6 +75,8 @@
 
     nixified-ai,
 
+    nixos-boot,
+
     jsonify-aws-dotfiles, dirtygit, bmc, race, shellstuff, skull, myhotkeys,
     ghostty,
 
@@ -105,7 +108,7 @@
         }:
         home-manager.lib.homeManagerConfiguration {
           modules = [
-            (import ./home/pim)
+            (import ./home/${username})
             {
               home.stateVersion = "24.11";
               home.username = username;
@@ -150,9 +153,9 @@
 
             in [
                 defaults
-                #nixos-hardware.nixosModules.framework-12th-gen-intel
                 (./hosts + "/${hostname}/configuration.nix")
 
+                nixos-boot.nixosModules.default
                 agenix.nixosModules.default
                 home-manager.nixosModules.home-manager
                 {
@@ -173,6 +176,10 @@
       homeConfigurations."pim@hurry" = makeHomeConf {
         hostname = "hurry";
         system = "aarch64-linux";
+      };
+
+      homeConfigurations."pim@arcana-one" = makeHomeConf {
+        hostname = "arcana-one";
       };
 
       homeConfigurations."pim@harry" = makeHomeConf {
@@ -203,6 +210,13 @@
       homeConfigurations."pim@ojs" = makeHomeConf {
         hostname = "ojs";
         desktop = true;
+      };
+
+      homeConfigurations."annemarie@passieflora" = makeHomeConf {
+        hostname = "passieflora";
+        desktop = true;
+        username = "annemarie";
+        homedir = "/home/annemarie";
       };
 
       homeConfigurations."pim@passieflora" = makeHomeConf {
