@@ -566,6 +566,27 @@
         "type": "github"
       }
     },
+    "nix-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1739553546,
+        "narHash": "sha256-L4ou3xfOr17EAe836djRoQ7auVkYOREMtiQa82wVGqU=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "353846417f985e74fdc060555f17939e4472ea2c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "ref": "nix-darwin-24.11",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
     "nix-formatter-pack": {
       "inputs": {
         "nixpkgs": [
@@ -1144,6 +1165,7 @@
         "jsonify-aws-dotfiles": "jsonify-aws-dotfiles",
         "mobile-nixos": "mobile-nixos",
         "myhotkeys": "myhotkeys",
+        "nix-darwin": "nix-darwin",
         "nix-on-droid": "nix-on-droid",
         "nixified-ai": "nixified-ai",
         "nixos-boot": "nixos-boot",
