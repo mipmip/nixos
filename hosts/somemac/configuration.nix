@@ -3,6 +3,9 @@
   environment.systemPackages = [
    pkgs.git
    pkgs.home-manager
+   pkgs.docker
+   pkgs.lynis
+   pkgs.neofetch
   ];
 
   nix.settings.experimental-features = "nix-command flakes";
