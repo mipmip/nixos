@@ -17,6 +17,9 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
     nixos-hardware-t2.url = "github:nixos/nixos-hardware/863e3ca9988f34c370bd660a5efc3e20eb7ad38b";
 
+    # DARWIN
+    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     ## HOME MANAGER
     home-manager.url = "github:nix-community/home-manager/release-24.11";
@@ -65,6 +68,7 @@
     nixpkgs-inkscape13,
     unstable,
 
+    nix-darwin,
     home-manager,
     agenix,
 
@@ -180,6 +184,12 @@
 
       homeConfigurations."pim@arcana-one" = makeHomeConf {
         hostname = "arcana-one";
+      };
+
+      homeConfigurations."pim@somemac" = makeHomeConf {
+        hostname = "MacBook-Pro-van-pim";
+        system = "x86_64-darwin";
+        homedir = "/Users/pim";
       };
 
       homeConfigurations."pim@harry" = makeHomeConf {
@@ -325,6 +335,12 @@
         ];
       });
       pinephone-img = nixosConfigurations.pinephone.config.mobile.outputs.u-boot.disk-image;
+
+      darwinConfigurations."MacBook-Pro-van-pim" = nix-darwin.lib.darwinSystem {
+	modules = [ 
+	  ./hosts/somemac/configuration.nix 
+        ];
+      };
 
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         pkgs = import nixpkgs { system = "aarch64-linux"; };

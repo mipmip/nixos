@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 #(C)2019-2022 Pim Snel - https://github.com/mipmip/RUNME.sh
-CMDS=();DESC=();NARGS=$#;ARG1=$1;make_command(){ CMDS+=($1);DESC+=("$2");};usage(){ printf "\nUsage: %s [command]\n\nCommands:\n" $0;line="              ";for((i=0;i<=$(( ${#CMDS[*]} -1));i++));do printf "  %s %s ${DESC[$i]}\n" ${CMDS[$i]} "${line:${#CMDS[$i]}}";done;echo;};runme(){ if test $NARGS -eq 1;then eval "$ARG1"||usage;else usage;fi;}
+ALLARGS=("$@");CMDS=();DESC=();NARGS=$#;ARG1=$1;make_command(){ CMDS+=($1);DESC+=("$2");};usage(){ printf "\nUsage: %s [command]\n\nCommands:\n" $0;line="              ";for((i=0;i<=$(( ${#CMDS[*]} -1));i++));do printf "  %s %s ${DESC[$i]}\n" ${CMDS[$i]} "${line:${#CMDS[$i]}}";done;echo;};runme(){ if test $NARGS -gt 0;then eval "$ARG1"||usage;else usage;fi;}
 
 make_command "nixclean" "Run nix garbage collector"
 nixclean(){
@@ -99,6 +99,25 @@ copy_aws_other_accounts(){
 
 }
 
+make_command "copy_privkey_to_remote" "copy personal privkey to remote host I trust"
+copy_privkey_to_remote(){
+  if [[ -z ${ALLARGS[1]} ]] then
+    echo "enter something like pim@...."
+  fi
+  echo
+  echo "making 1st SSH connection"
+  ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password ${ALLARGS[1]} "mkdir -p ~/.ssh && chmod 700 ~/.ssh"
+  echo
+  echo "Decrypt key for sending to remote"
+  KEY="$(age --decrypt -i ~/.ssh/id_ed25519 ./secrets/pimprived.age)"
+  echo
+  echo "Making 2nd SSH connection"
+  echo "$KEY" | ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password ${ALLARGS[1]} "cat > ~/.ssh/id_ed25519"
+
+  echo
+  echo "Making last SSH connection"
+  ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password ${ALLARGS[1]} "chmod 600 ~/.ssh/id_ed25519"
+}
 #make_command "disable_mac_trackpad" "disable trackpad when it acts funny"
 #disable_mac_trackpad(){
 #  xinput set-prop 13 "Device Enabled" 0
