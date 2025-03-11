@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../_roles/desktop.nix
     ../_roles/dev-machine.nix
+    ../../modules/llm-local.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

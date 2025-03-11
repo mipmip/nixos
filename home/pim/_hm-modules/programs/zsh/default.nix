@@ -35,7 +35,7 @@ in
             t = lib.mkDefault "tmux a || smug start lobby && smug start sudo && smug start nixos && smug start tekst";
 
             lin = "vim -c LinnyStart";
-            nlin = "nvim -c LinnyStart /home/pim/secondbrain/wikiContent/doen_werk.md";
+            nlin = "nvim -c LinnyStart $HOME/secondbrain/wikiContent/doen_werk.md";
 
             tn = "tmux new -d -s";
             tmxa = "tmux unbind C-a && tmux set-option -g prefix C-a && tmux bind-key C-a send-prefix";
@@ -46,7 +46,7 @@ in
             smugs_tn = "smug start technative_aws && smug start technative_docs && smug start technative_weare";
 
             crb_status = "mount | grep /mnt/cryptobox";
-            crb_mount = "crb_status || sudo cryptobox --mount /home/pim/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
+            crb_mount = "crb_status || sudo cryptobox --mount $HOME/Nextcloud/Vaults/keys.luks.ext4.img /mnt/cryptobox";
             crb_umount = "sudo umount /mnt/cryptobox";
             crb_diff = "diff -qr ~/.aws /mnt/cryptobox/encrypim/.aws; diff -qr ~/.ssh /mnt/cryptobox/encrypim/.ssh";
 

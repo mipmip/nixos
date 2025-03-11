@@ -15,12 +15,12 @@
     msmtp
 
 #    unstable.whatsapp-for-linux
-#    unstable.signal-desktop
+    unstable.signal-desktop
     tdesktop
     v4l-utils
 
     zoom-us
-    #rustdesk
+    rustdesk
     # teams
 
 #    unstable.srain #IRC
