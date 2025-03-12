@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-
   environment.systemPackages = with pkgs; [
     firefox
+    librewolf
   ];
 
   environment.sessionVariables = {
