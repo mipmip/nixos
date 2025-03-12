@@ -20,6 +20,8 @@
       "splash"
       "boot.shell_on_fail"
       "loglevel=3"
+    #"hid_apple.fnmode=2"
+      "hid_apple.iso_layout=0"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"

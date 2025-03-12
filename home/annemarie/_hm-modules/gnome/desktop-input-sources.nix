@@ -25,7 +25,7 @@ in
           "grp:alt_shift_toggle"
           "lv3:ralt_switch"
           "compose:ralt"
-          "caps:none"
+            #          "caps:none"
           ];
           #++ lib.mkIf cfg.gnome.swap_alt_win [ "altwin:swap_alt_win" ];
 

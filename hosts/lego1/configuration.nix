@@ -60,6 +60,7 @@
 
   system.stateVersion = "24.05"; # Did you read the comment?
 
+  virtualisation.waydroid.enable = true;
   services.cloudflared = {
     enable = true;
     tunnels = {
