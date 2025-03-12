@@ -8,9 +8,11 @@
   environment.systemPackages = with pkgs; [
 
     # Enable slack screensharing in Wayland
-    (unstable.slack.overrideAttrs (oldAttrs: rec {
-      installPhase = builtins.replaceStrings ["UseOzonePlatform" "--ozone-platform=wayland"] ["UseOzonePlatform,WebRTCPipeWireCapturer" ""] oldAttrs.installPhase;
-    }))
+    #(unstable.slack.overrideAttrs (oldAttrs: rec {
+    #  installPhase = builtins.replaceStrings ["UseOzonePlatform" "--ozone-platform=wayland"] ["UseOzonePlatform,WebRTCPipeWireCapturer" ""] oldAttrs.installPhase;
+    #}))
+
+    unstable.slack
 
     msmtp
 

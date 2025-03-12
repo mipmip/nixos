@@ -3,7 +3,8 @@
 {
 
   #fonts.enableDefaultFonts = mkDefault true;
-  hardware.opengl.enable = true;
+  #hardware.opengl.enable = true;
+  hardware.graphics.enable
 
   programs = {
     dconf.enable = true;

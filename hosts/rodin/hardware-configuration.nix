@@ -37,7 +37,12 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.opengl.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  hardware.nvidia.open = false;
+
+  hardware.graphics.enable = true;
+  hardware.nvidia.open = true;
+  hardware.nvidia.nvidiaSettings = true;
+
+  #hardware.opengl.enable = true;
+  #hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  #hardware.nvidia.open = false;
 }
