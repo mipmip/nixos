@@ -4,7 +4,7 @@
 
   #fonts.enableDefaultFonts = mkDefault true;
   #hardware.opengl.enable = true;
-  hardware.graphics.enable
+  #hardware.graphics.enable
 
   programs = {
     dconf.enable = true;
