@@ -28,6 +28,7 @@ in
     desktopConf.alacritty.enable = true;
     desktopConf.kitty.enable = true;
     desktopConf.firefox.enable = true;
+    desktopConf.librewolf.enable = true;
     desktopConf.fonts.enable = true;
     desktopConf.obs.enable = true;
     desktopConf.gnome.enable = true;
