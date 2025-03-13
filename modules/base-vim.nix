@@ -17,7 +17,6 @@
     #language servers
     sqls
     gopls
-    #rnix-lsp
     unstable.nixd
     marksman
     terraform-ls
@@ -38,7 +37,7 @@
     sox
 
     # Language Server Dependencies
-#nodePackages.pyright
+    #nodePackages.pyright
     nodePackages.tailwindcss
 
     # Formatters

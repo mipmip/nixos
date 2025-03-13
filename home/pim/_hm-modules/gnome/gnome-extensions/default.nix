@@ -8,7 +8,8 @@ let
   gnomeExtensionsWithOutConf = [
     #mipmip_pkg.gnomeExtensions.custom-menu-panel
     pkgs.gnomeExtensions.emoji-copy
-    pkgs.gnomeExtensions.espresso
+    pkgs.gnomeExtensions.caffeine
+    #pkgs.gnomeExtensions.espresso
     pkgs.gnomeExtensions.show-favorite-apps
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.spotify-tray
@@ -27,8 +28,8 @@ let
     (import ./shell-ext-focus-changer.nix { pkgs = pkgs; })
     (import ./shell-ext-dash-to-panel.nix { pkgs = pkgs; })
     (import ./shell-ext-useless-gaps.nix { unstable = unstable; })
-    #(import ./shell-ext-highlight-focus.nix { mipmip_pkg = mipmip_pkg; })
-    (import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; })
+    (import ./shell-ext-highlight-focus.nix { inherit unstable; })
+    (import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; inherit unstable; })
 
   ];
 
@@ -40,6 +41,7 @@ let
       favorite-apps = [
         "firefox.desktop"
         "Alacritty.desktop"
+        "ghostty.desktop"
         "org.gnome.Nautilus.desktop"
         "org.inkscape.Inkscape.desktop"
       ];

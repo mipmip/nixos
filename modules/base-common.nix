@@ -27,11 +27,6 @@
     psmisc
     file
 
-    # cli searchers
-    silver-searcher
-    fzf
-    ripgrep
-
     # Security
     openssl
     apg
@@ -41,9 +36,7 @@
 
     #help
     cheat
-
     entr
-
 
     # GRAPHIC
     imagemagick
@@ -56,7 +49,6 @@
     python3Packages.pip
     python3Packages.setuptools
     python3Packages.requests
-
 
     direnv
 

@@ -1,9 +1,9 @@
 { config, lib, pkgs, unstable, ... }:
 
 {
-  environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
+  #  environment.sessionVariables = {
+  #    NIXOS_OZONE_WL = "1";
+  #  };
 
   environment.systemPackages = with pkgs; [
 
@@ -14,7 +14,7 @@
 
     unstable.slack
 
-    msmtp
+    #msmtp
 
 #    unstable.whatsapp-for-linux
     unstable.signal-desktop
@@ -32,6 +32,6 @@
 
 
 
-#    unstable.himalaya
+    unstable.himalaya
   ];
 }

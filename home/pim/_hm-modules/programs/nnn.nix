@@ -3,7 +3,7 @@
 {
   programs.nnn = {
     package = unstable.nnn;
-    enable = true;
+    enable = false;
     bookmarks = {
       D = "~/Downloads";
       n = "~/nixos";

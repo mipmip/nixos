@@ -1,11 +1,11 @@
-{ lib, mipmip_pkg, ... }:
+{ lib, mipmip_pkg, unstable, ... }:
 
 let
   mkTuple = lib.hm.gvariant.mkTuple;
 in
 
 {
-  extpkg = mipmip_pkg.gnomeExtensions.search-light;
+  extpkg = unstable.gnomeExtensions.search-light;
   dconf = {
     name = "org/gnome/shell/extensions/search-light";
     value = {

@@ -6,8 +6,8 @@
     librewolf
   ];
 
-  environment.sessionVariables = {
-    MOZ_ENABLE_WAYLAND = "1";
-  };
+  #  environment.sessionVariables = {
+  #    MOZ_ENABLE_WAYLAND = "1";
+  #  };
 
 }

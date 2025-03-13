@@ -44,7 +44,7 @@ in
         #shell_integration = "enabled";
         #shell = "fish";
       };
-      theme = "1984 Orwellian";
+      themeFile = "1984_orwellian";
     };
 
   };

@@ -1,3 +1,8 @@
+" Learn VIM hard way
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
 
 function! ChatGPTTranslateSelect(mode)
     " call with visualmode() as the argument

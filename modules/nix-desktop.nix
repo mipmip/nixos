@@ -2,11 +2,6 @@
 
 {
 
-  # FIX GNOME EPIPHANY
-  environment.variables = {
-    WEBKIT_FORCE_SANDBOX = "0";
-  };
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -26,11 +21,6 @@
   services.printing.drivers = [
     (pkgs.callPackage ../pkgs/drivers/hl4150cdn/default.nix {})
   ];
-
-
-  # Enable sound.
-#sound.enable = true;
-#hardware.pulseaudio.enable = true;
 
   programs = {
     gpaste.enable = true;

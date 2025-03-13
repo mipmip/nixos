@@ -21,6 +21,7 @@ in
     programs.tmux.shortcut = "a";
 
     desktopConf.freedesktop.enable = true;
+    desktopConf.ghostty.enable = true;
     desktopConf.myhotkeys.enable = true;
     desktopConf.gimp.enable = true;
     desktopConf.smug.enable = true;
