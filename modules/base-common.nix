@@ -26,6 +26,7 @@
     gettext
     psmisc
     file
+    gptfdisk
 
     # Security
     openssl
@@ -45,6 +46,7 @@
     pngquant
 
     # PYthon
+    uv
     python3Full
     python3Packages.pip
     python3Packages.setuptools

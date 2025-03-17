@@ -33,6 +33,7 @@
   environment.systemPackages = with pkgs; [
     unstable.waybar
     unstable.hyprland
+    unstable.wofi
     unstable.swww # for wallpapers
     #xdg-desktop-portal-gtk
     unstable.xdg-desktop-portal-hyprland
