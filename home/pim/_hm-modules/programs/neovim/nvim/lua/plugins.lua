@@ -1,6 +1,7 @@
 return {
   -- Git related plugins
 
+  'theRealCarneiro/hyprland-vim-syntax',
   'vimpostor/vim-lumen',
   'tpope/vim-fugitive',
   'tpope/vim-eunuch',

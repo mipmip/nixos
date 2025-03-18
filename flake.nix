@@ -11,6 +11,20 @@
 
     nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
+    
+    # aquamarine = {
+    #   url = "github:hyprwm/aquamarine";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # hyprland = {
+    #   type = "git";
+    #   url = "https://github.com/hyprwm/hyprland";
+    #   submodules = true;
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.aquamarine.follows = "aquamarine";
+    # };
+
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-boot.url = "github:mipmip/nixos-boot-grannyos";
 

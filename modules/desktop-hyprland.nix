@@ -13,13 +13,13 @@
 
   security.polkit.enable = true;
 
-  services.displayManager.sessionPackages = [ unstable.hyprland ];
+  services.displayManager.sessionPackages = [ pkgs.hyprland ];
 
   xdg.portal = {
     enable = true;
     wlr.enable = true;
     extraPortals = [
-      unstable.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-hyprland
       #pkgs.xdg-desktop-portal-gtk
     ];
   };
@@ -31,12 +31,12 @@
   #  };
 
   environment.systemPackages = with pkgs; [
-    unstable.waybar
-    unstable.hyprland
-    unstable.wofi
-    unstable.swww # for wallpapers
+    waybar
+    hyprland
+    wofi
+    swww # for wallpapers
     #xdg-desktop-portal-gtk
-    unstable.xdg-desktop-portal-hyprland
+    xdg-desktop-portal-hyprland
     xwayland
 
 
