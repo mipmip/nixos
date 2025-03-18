@@ -1187,11 +1187,11 @@
         "nixpkgs": "nixpkgs_11"
       },
       "locked": {
-        "lastModified": 1727085734,
-        "narHash": "sha256-jhn9pt0NiwTUB2HqL9oJgaWguckVPehR7J0N5pQFMmM=",
+        "lastModified": 1742226185,
+        "narHash": "sha256-zeCT06KjIhTXz31bXk2ckjU9SRnDY/TnhyHIIqESRkQ=",
         "owner": "mipmip",
         "repo": "nix-shellstuff",
-        "rev": "e3a45aa51da6ec73758455cdd8276ec6be47d247",
+        "rev": "894693ff9ec5beff9b9c2441ec29c45ab162f262",
         "type": "github"
       },
       "original": {
