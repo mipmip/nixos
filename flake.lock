@@ -415,6 +415,26 @@
         "type": "github"
       }
     },
+    "hm-ricing-mode": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742500639,
+        "narHash": "sha256-w9vlmlGvTA1Npx2hOBuN0s0ZO+v8xq7t05te6BEE+NA=",
+        "owner": "mipmip",
+        "repo": "hm-ricing-mode",
+        "rev": "b5d680fd022898460f25c00d6ccccbde8621de3c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mipmip",
+        "repo": "hm-ricing-mode",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -1143,6 +1163,7 @@
         "bmc": "bmc",
         "dirtygit": "dirtygit",
         "ghostty": "ghostty",
+        "hm-ricing-mode": "hm-ricing-mode",
         "home-manager": "home-manager_2",
         "home-manager-pine64": "home-manager-pine64",
         "jsonify-aws-dotfiles": "jsonify-aws-dotfiles",

@@ -11,20 +11,6 @@
 
     nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
-    
-    # aquamarine = {
-    #   url = "github:hyprwm/aquamarine";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # hyprland = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/hyprland";
-    #   submodules = true;
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.aquamarine.follows = "aquamarine";
-    # };
-
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-boot.url = "github:mipmip/nixos-boot-grannyos";
 
@@ -38,6 +24,9 @@
     ## HOME MANAGER
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    hm-ricing-mode.url = "github:mipmip/hm-ricing-mode";
+    hm-ricing-mode.inputs.nixpkgs.follows = "nixpkgs";
 
     ## OTHER
     agenix.url = "github:ryantm/agenix";
@@ -84,6 +73,7 @@
 
     nix-darwin,
     home-manager,
+    hm-ricing-mode,
     agenix,
 
     alacritty-theme,
@@ -126,6 +116,9 @@
         }:
         home-manager.lib.homeManagerConfiguration {
           modules = [
+
+            hm-ricing-mode.homeManagerModules.hm-ricing-mode
+
             (import ./home/${username})
             {
               home.stateVersion = "24.11";
@@ -351,8 +344,8 @@
       pinephone-img = nixosConfigurations.pinephone.config.mobile.outputs.u-boot.disk-image;
 
       darwinConfigurations."MacBook-Pro-van-pim" = nix-darwin.lib.darwinSystem {
-	modules = [ 
-	  ./hosts/somemac/configuration.nix 
+	modules = [
+	  ./hosts/somemac/configuration.nix
         ];
       };
 

@@ -3,13 +3,17 @@
 let
   cfg = config.desktopConf.ghostty;
 in
-  {
+{
 
   options.desktopConf.ghostty = {
     enable = lib.mkEnableOption "Enable ghostty";
   };
 
   config = lib.mkIf cfg.enable {
+
+    programs.hm-ricing-mode.apps.ghostty = {
+      dest_dir = ".config/ghostty";
+    };
 
     programs.ghostty = {
       enable = true;
