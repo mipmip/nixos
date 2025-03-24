@@ -22,6 +22,7 @@ require("functions")
 require("keymaps")
 
 vim.cmd('source ' .. vim.fn.stdpath("config") .. '/vimscript/hotkeys.vim')
+vim.cmd('source ' .. vim.fn.stdpath("config") .. '/vimscript/environment.vim')
 
 
 local wip_path = vim.fn.stdpath("config") .. '/vimscript/wip.vim'
