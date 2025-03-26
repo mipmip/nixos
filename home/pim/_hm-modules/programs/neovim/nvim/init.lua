@@ -20,6 +20,7 @@ require("lazy").setup("plugins")
 
 require("functions")
 require("keymaps")
+require("keymaps_avante")
 
 vim.cmd('source ' .. vim.fn.stdpath("config") .. '/vimscript/hotkeys.vim')
 vim.cmd('source ' .. vim.fn.stdpath("config") .. '/vimscript/environment.vim')

@@ -29,6 +29,7 @@ return {
   'mipmip/vim-hotpop',
   'mipmip/vim-nomisa',
   'mipmip/vim-show-in-filemanager',
+  'linden-project/linny-wikitag-github',
 
   'srcery-colors/srcery-vim',
 }

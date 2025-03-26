@@ -13,7 +13,11 @@
     };
   };
 
-
+  programs.hm-ricing-mode.apps.neovim = {
+    dest_dir = ".config/nvim";
+    source_dir = "$HOME/nixos/home/pim/_hm-modules/programs/neovim/nvim";
+    type = "symlink";
+  };
 
   home.packages = [
     pkgs.gnumake
