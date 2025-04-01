@@ -24,7 +24,7 @@ commander.add({
     cmd = function()
       require('avante.api').ask { question = avante_translate_en }
     end,
-    keys = { "n", "<leader>at" },
+    keys = { {"n","v"}, "<leader>ate" },
     cat = "avante",
   },
 
@@ -33,7 +33,25 @@ commander.add({
     cmd = function()
       prefill_edit_window(avante_translate_en)
     end,
-    keys = { "n", "<leader>aT" },
+    keys = { {"n","v"}, "<leader>aTe" },
+    cat = "avante",
+  },
+
+  {
+    desc = "Translate text to Dutch(ask)",
+    cmd = function()
+      require('avante.api').ask { question = avante_translate_en }
+    end,
+    keys = { {"n","v"}, "<leader>atn" },
+    cat = "avante",
+  },
+
+  {
+    desc = "Translate text to Dutch(edit)",
+    cmd = function()
+      prefill_edit_window(avante_translate_en)
+    end,
+    keys = { {"n","v"}, "<leader>aTn" },
     cat = "avante",
   },
 

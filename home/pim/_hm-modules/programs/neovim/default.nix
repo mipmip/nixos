@@ -3,6 +3,7 @@
 {
   programs.neovim = {
     enable = true;
+    package = unstable.neovim-unwrapped;
     defaultEditor = true;
   };
 
@@ -20,6 +21,9 @@
   };
 
   home.packages = [
+    #    pkgs.lua51Packages.lua
+    #    pkgs.luajitPackages.magick
+    #    pkgs.lua51Packages.luarocks
     pkgs.gnumake
     pkgs.gcc
     pkgs.pkg-config

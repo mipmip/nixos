@@ -16,6 +16,8 @@ in {
   "kagi-api-key-plain.age".publicKeys = [ pim  ojs lego1 rodin];
   "tavily-api-key-plain.age".publicKeys = [ pim  ojs lego1 rodin];
 
+  "bedrockpim_api_keys_env.age".publicKeys = [ pim  ojs lego1 rodin];
+
   "aws-credentials-copy.age".publicKeys = [ pim  ojs lego1 rodin];
   "aws-config-copy-first-time-only.age".publicKeys = [ pim];
   "aws-accounts.json.age".publicKeys = [ pim  ojs lego1 rodin];
