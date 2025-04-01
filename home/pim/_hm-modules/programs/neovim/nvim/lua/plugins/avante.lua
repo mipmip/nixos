@@ -5,31 +5,42 @@ return {
   opts = {
     -- add any opts here
     -- for example
-    provider = "openai",
+    provider = "bedrock",
+    cursor_applying_provider = 'bedrock', -- In this example, use Groq for applying, but you can also use any provider you want.
     openai = {
       endpoint = "https://api.openai.com/v1",
       model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
       timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
       temperature = 0,
-      max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+      --max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
       --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+    },
+    bedrock = {
+      model = "eu.anthropic.claude-3-7-sonnet-20250219-v1:0",
+      -- model = "anthropic.claude-3-5-sonnet-20240620-v1:0",
+      timeout = 30000, -- Timeout in milliseconds
+      temperature = 0,
+      max_tokens = 8000,
     },
     web_search_engine = {
       provider = "kagi", -- tavily, serpapi, searchapi, google or kagi
     },
+    behaviour = {
+      enable_cursor_planning_mode = true, -- enable cursor planning mode!
+    },
 
     -- other config
     -- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
-    system_prompt = function()
-        local hub = require("mcphub").get_hub_instance()
-        return hub:get_active_servers_prompt()
-    end,
-    -- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
-    custom_tools = function()
-        return {
-            require("mcphub.extensions.avante").mcp_tool(),
-        }
-    end,
+--    system_prompt = function()
+--        local hub = require("mcphub").get_hub_instance()
+--        return hub:get_active_servers_prompt()
+--    end,
+--    -- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
+--    custom_tools = function()
+--        return {
+--            require("mcphub.extensions.avante").mcp_tool(),
+--        }
+--    end,
 
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

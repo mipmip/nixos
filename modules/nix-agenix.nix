@@ -20,5 +20,6 @@
       kagi-api-key-plain = keyconf "kagi-api-key-plain";
       tavily-api-key-plain = keyconf "tavily-api-key-plain";
       bedrockpim-api-keys-env = keyconf "bedrockpim-api-keys-env";
+      bedrock-keys-for-avante-env = keyconf "bedrock-keys-for-avante-env";
   };
 }

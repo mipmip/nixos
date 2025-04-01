@@ -16,15 +16,16 @@ local prefill_edit_window = function(request)
 end
 
 local avante_translate_en = 'Translate this into English, but keep any formatting and code blocks inside intact'
+local avante_translate_nl = 'Translate this into Dutch, but keep any formatting and code blocks inside intact'
 
 commander.add({
 
   {
-    desc = "Translate text to English(ask)",
+    desc = "Translate text to English(chat)",
     cmd = function()
-      require('avante.api').ask { question = avante_translate_en }
+      require('avante.api').ask { question = avante_translate_en, ask = false }
     end,
-    keys = { {"n","v"}, "<leader>ate" },
+    keys = { {"n"}, "<leader>te" },
     cat = "avante",
   },
 
@@ -33,25 +34,25 @@ commander.add({
     cmd = function()
       prefill_edit_window(avante_translate_en)
     end,
-    keys = { {"n","v"}, "<leader>aTe" },
+    keys = { {"n","v"}, "<leader>tte" },
     cat = "avante",
   },
 
   {
     desc = "Translate text to Dutch(ask)",
     cmd = function()
-      require('avante.api').ask { question = avante_translate_en }
+      require('avante.api').ask { question = avante_translate_nl, ask = false  }
     end,
-    keys = { {"n","v"}, "<leader>atn" },
+    keys = { {"n"}, "<leader>tn" },
     cat = "avante",
   },
 
   {
     desc = "Translate text to Dutch(edit)",
     cmd = function()
-      prefill_edit_window(avante_translate_en)
+      prefill_edit_window(avante_translate_nl)
     end,
-    keys = { {"n","v"}, "<leader>aTn" },
+    keys = { {"n","v"}, "<leader>ttn" },
     cat = "avante",
   },
 
