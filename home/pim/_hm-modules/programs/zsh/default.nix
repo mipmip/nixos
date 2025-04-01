@@ -88,8 +88,8 @@ in
               unset label
             fi
 
-            ${pkgs.tmux}/bin/tmux set -p allow-passthrough on &> /dev/null;
-            #${pkgs.tmux}/bin/tmux set -p allow-passthrough all
+            set -o allexport; source /tmp/openaiapikey set +o allexport
+
           '';
         };
       }
@@ -99,8 +99,9 @@ in
         programs.zsh.shellAliases = {
           t = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos && smug start tekst";
           smugs = "smug start doen && smug start sudo && smug start nixos && smug start lobby";
-          nlin = "tmux set -p allow-passthrough on && nvim -c LinnyStart $HOME/secondbrain/wikiContent/doen_werk.md";
-          nvim = "tmux set -p allow-passthrough on && nvim";
+          #nlin = "tmux set -p allow-passthrough on && nvim -c LinnyStart $HOME/secondbrain/wikiContent/doen_werk.md";
+          nlin = "nvim -c LinnyStart $HOME/secondbrain/content/doen_werk.md";
+          nvim = "nvim";
         };
 
       })
