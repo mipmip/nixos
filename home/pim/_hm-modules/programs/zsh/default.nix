@@ -90,7 +90,10 @@ in
               unset label
             fi
 
-            set -o allexport; source /tmp/openaiapikey set +o allexport
+            set -o allexport
+            source /tmp/openai-api-key
+            source /tmp/bedrockpim-api-keys-env
+            set +o allexport
 
           '';
         };
