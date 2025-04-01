@@ -20,7 +20,7 @@ local avante_translate_en = 'Translate this into English, but keep any formattin
 commander.add({
 
   {
-    desc = "Translate text to Eglish(ask)",
+    desc = "Translate text to English(ask)",
     cmd = function()
       require('avante.api').ask { question = avante_translate_en }
     end,
@@ -29,7 +29,7 @@ commander.add({
   },
 
   {
-    desc = "Translate text to Eglish(edit)",
+    desc = "Translate text to English(edit)",
     cmd = function()
       prefill_edit_window(avante_translate_en)
     end,

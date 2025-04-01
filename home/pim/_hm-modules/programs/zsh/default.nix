@@ -26,6 +26,8 @@ in
             BROWSER = "firefox";
             EDITOR = "vim";
             COLORTERM = "truecolor";
+            PATH= "''$HOME/.npm-packages/bin:''$PATH";
+            NODE_PATH="''$HOME/.npm-packages/lib/node_modules";
           };
 
           shellAliases = {

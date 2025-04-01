@@ -1,2 +1,2 @@
-let $OPENAI_API_KEY = trim(system("cat '/tmp/openaiapikey-plain'"))
+let $OPENAI_API_KEY = trim(system("cat '/tmp/openai-api-key-plain'"))
 

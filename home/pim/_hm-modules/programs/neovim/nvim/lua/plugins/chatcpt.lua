@@ -5,7 +5,7 @@ return {
 
   config = function()
     require("chatgpt").setup({
-      api_key_cmd = 'cat /tmp/openaiapikey-plain'
+      api_key_cmd = 'cat /tmp/openai-api-key-plain'
     })
   end,
 

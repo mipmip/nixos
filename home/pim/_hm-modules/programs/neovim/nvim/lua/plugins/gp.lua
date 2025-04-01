@@ -2,7 +2,9 @@ return {
   "robitx/gp.nvim",
   config = function()
     require("gp").setup({
-      openai_api_key = {'cat', '/tmp/openaiapikey-plain'},
+
+      openai_api_key = {'cat', '/tmp/openai-api-key-plain'},
+
       -- example hook functions (see Extend functionality section in the README)
       hooks = {
         InspectPlugin = function(plugin, params)
