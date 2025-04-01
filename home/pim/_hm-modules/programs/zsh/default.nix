@@ -24,7 +24,6 @@ in
 
           sessionVariables = {
             BROWSER = "firefox";
-            EDITOR = "vim";
             COLORTERM = "truecolor";
           };
 
@@ -35,7 +34,6 @@ in
             t = lib.mkDefault "tmux a || smug start lobby && smug start sudo && smug start nixos && smug start tekst";
 
             lin = "vim -c LinnyStart";
-            nlin = "nvim -c LinnyStart $HOME/secondbrain/wikiContent/doen_werk.md";
 
             tn = "tmux new -d -s";
             tmxa = "tmux unbind C-a && tmux set-option -g prefix C-a && tmux bind-key C-a send-prefix";
@@ -81,14 +79,17 @@ in
           };
 
           initExtra = ''
-      if [[ -n "$IN_NIX_SHELL" ]]; then
-        label="nix-shell"
-        if [[ "$name" != "$label" ]]; then
-          label="$label:$name"
-        fi
-        export PS1=$'%{$fg[green]%}'"$label$PS1"
-        unset label
-      fi
+            if [[ -n "$IN_NIX_SHELL" ]]; then
+              label="nix-shell"
+              if [[ "$name" != "$label" ]]; then
+                label="$label:$name"
+              fi
+              export PS1=$'%{$fg[green]%}'"$label$PS1"
+              unset label
+            fi
+
+            ${pkgs.tmux}/bin/tmux set -p allow-passthrough on &> /dev/null;
+            #${pkgs.tmux}/bin/tmux set -p allow-passthrough all
           '';
         };
       }
@@ -98,6 +99,8 @@ in
         programs.zsh.shellAliases = {
           t = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos && smug start tekst";
           smugs = "smug start doen && smug start sudo && smug start nixos && smug start lobby";
+          nlin = "tmux set -p allow-passthrough on && nvim -c LinnyStart $HOME/secondbrain/wikiContent/doen_werk.md";
+          nvim = "tmux set -p allow-passthrough on && nvim";
         };
 
       })
