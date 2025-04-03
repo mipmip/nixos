@@ -113,6 +113,7 @@
         secondbrain ? false,
         awscontrol ? false,
         desktop ? false,
+        swapAltWin ? false,
         ...
         }:
         home-manager.lib.homeManagerConfiguration {
@@ -128,12 +129,14 @@
               roles.secondbrain.enable = secondbrain;
               roles.awscontrol.enable = awscontrol;
               roles.desktop.enable = desktop;
+              desktopConf.gnome.swapAltWin = swapAltWin;
             }
           ];
           pkgs = importFromChannelForSystem system nixpkgs;
           extraSpecialArgs = {
             inputs = inputs;
             unstable = importFromChannelForSystem system unstable;
+            #swapAltWin = swapAltWin;
           };
         };
 
@@ -215,7 +218,7 @@
         secondbrain = true;
         awscontrol = true;
         desktop = true;
-        desktopConf.gnome.swap_alt_win = true;
+        swapAltWin = true;
       };
 
       homeConfigurations."pim@lego1" = makeHomeConf {
