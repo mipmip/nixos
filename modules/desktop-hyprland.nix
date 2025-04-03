@@ -35,7 +35,7 @@
     hyprland
     wofi
     swww # for wallpapers
-    #xdg-desktop-portal-gtk
+    xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     xwayland
 
