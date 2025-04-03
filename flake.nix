@@ -44,6 +44,7 @@
     dirtygit.url = "github:mipmip/dirtygit";
     ghostty.url = "github:ghostty-org/ghostty";
     skull.url = "github:mipmip/skull";
+    mip.url = "github:mipmip/mip.rs";
 
     nixpkgs-pine64.url = "nixpkgs/dfd82985c273aac6eced03625f454b334daae2e8";
     mobile-nixos = {
@@ -85,7 +86,7 @@
 
     nixos-boot,
 
-    jsonify-aws-dotfiles, dirtygit, bmc, race, shellstuff, skull, myhotkeys,
+    jsonify-aws-dotfiles, dirtygit, bmc, race, shellstuff, skull, myhotkeys, mip,
     ghostty,
 
     nixpkgs-pine64, mobile-nixos, home-manager-pine64,
@@ -131,7 +132,6 @@
           ];
           pkgs = importFromChannelForSystem system nixpkgs;
           extraSpecialArgs = {
-            system = system;
             inputs = inputs;
             unstable = importFromChannelForSystem system unstable;
           };
@@ -149,6 +149,7 @@
             let
               defaults = { pkgs, ... }: {
                 nixpkgs.overlays = [(import ./overlays)];
+                _module.args.inputs = inputs;
                 _module.args.unstable = importFromChannelForSystem system unstable;
                 _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
                 _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
@@ -344,8 +345,8 @@
       pinephone-img = nixosConfigurations.pinephone.config.mobile.outputs.u-boot.disk-image;
 
       darwinConfigurations."MacBook-Pro-van-pim" = nix-darwin.lib.darwinSystem {
-	modules = [
-	  ./hosts/somemac/configuration.nix
+      	modules = [
+      	  ./hosts/somemac/configuration.nix
         ];
       };
 

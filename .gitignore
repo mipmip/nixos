@@ -8,3 +8,5 @@ result
 *.backup
 *.backup.*
 home/pim/_hm-modules/programs/neovim/nvim/lazy-lock.json
+.temp.html
+.temp.seed

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, unstable, inputs, system, ... }:
+{ config, lib, pkgs, unstable, inputs, ... }:
 
 {
 
@@ -107,9 +107,9 @@ in
    lib.mkIf cfg.enable {
 
      home.packages = [
-        inputs.jsonify-aws-dotfiles.packages."${system}".jsonify-aws-dotfiles
-        inputs.bmc.packages."${system}".bmc
-        inputs.race.packages."${system}".race
+        inputs.jsonify-aws-dotfiles.packages."${pkgs.system}".jsonify-aws-dotfiles
+        inputs.bmc.packages."${pkgs.system}".bmc
+        inputs.race.packages."${pkgs.system}".race
         pkgs.granted
         pkgs.gum
      ];

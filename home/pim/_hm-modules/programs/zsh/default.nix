@@ -39,6 +39,7 @@ in
             tn = "tmux new -d -s";
             tmxa = "tmux unbind C-a && tmux set-option -g prefix C-a && tmux bind-key C-a send-prefix";
             tmxb = "tmux unbind C-b && tmux set-option -g prefix C-b && tmux bind-key C-b send-prefix";
+            mip = "WEBKIT_DISABLE_DMABUF_RENDERER=1 mip";
 
             smugs = lib.mkDefault "smug && smug start sudo && smug start nixos && smug start lobby";
             smugs_q = "smug start quiqr_dev_run && smug start quiqr_data";
