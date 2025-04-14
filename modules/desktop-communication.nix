@@ -15,9 +15,10 @@
     unstable.slack
 
     #msmtp
-
 #    unstable.whatsapp-for-linux
     unstable.signal-desktop
+    unstable.flare-signal
+
     tdesktop
     v4l-utils
 
