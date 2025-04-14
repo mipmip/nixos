@@ -16,7 +16,6 @@ in
           };
         };
 
-
         programs.zsh = {
           enable = true;
           autocd = true;
@@ -24,8 +23,9 @@ in
 
           sessionVariables = {
             BROWSER = "firefox";
-            EDITOR = "vim";
             COLORTERM = "truecolor";
+            PATH= "''$HOME/.npm-packages/bin:''$PATH";
+            NODE_PATH="''$HOME/.npm-packages/lib/node_modules";
           };
 
           shellAliases = {
@@ -35,11 +35,11 @@ in
             t = lib.mkDefault "tmux a || smug start lobby && smug start sudo && smug start nixos && smug start tekst";
 
             lin = "vim -c LinnyStart";
-            nlin = "nvim -c LinnyStart $HOME/secondbrain/wikiContent/doen_werk.md";
 
             tn = "tmux new -d -s";
             tmxa = "tmux unbind C-a && tmux set-option -g prefix C-a && tmux bind-key C-a send-prefix";
             tmxb = "tmux unbind C-b && tmux set-option -g prefix C-b && tmux bind-key C-b send-prefix";
+            mip = "WEBKIT_DISABLE_DMABUF_RENDERER=1 mip";
 
             smugs = lib.mkDefault "smug && smug start sudo && smug start nixos && smug start lobby";
             smugs_q = "smug start quiqr_dev_run && smug start quiqr_data";
@@ -81,14 +81,23 @@ in
           };
 
           initExtra = ''
-      if [[ -n "$IN_NIX_SHELL" ]]; then
-        label="nix-shell"
-        if [[ "$name" != "$label" ]]; then
-          label="$label:$name"
-        fi
-        export PS1=$'%{$fg[green]%}'"$label$PS1"
-        unset label
-      fi
+            if [[ -n "$IN_NIX_SHELL" ]]; then
+              label="nix-shell"
+              if [[ "$name" != "$label" ]]; then
+                label="$label:$name"
+              fi
+              export PS1=$'%{$fg[green]%}'"$label$PS1"
+              unset label
+            fi
+
+            set -o allexport
+            source /tmp/openai-api-key
+            source /tmp/bedrockpim-api-keys-env
+            source /tmp/bedrock-keys-for-avante-env
+            set +o allexport
+
+            export PATH=~/.npm-packages/bin:$PATH
+
           '';
         };
       }
@@ -98,6 +107,9 @@ in
         programs.zsh.shellAliases = {
           t = "tmux a || smug start lobby && smug start doen && smug start sudo && smug start nixos && smug start tekst";
           smugs = "smug start doen && smug start sudo && smug start nixos && smug start lobby";
+          #nlin = "tmux set -p allow-passthrough on && nvim -c LinnyStart $HOME/secondbrain/wikiContent/doen_werk.md";
+          nlin = "nvim -c LinnyStart $HOME/secondbrain/content/doen_werk.md";
+          nvim = "nvim";
         };
 
       })

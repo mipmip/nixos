@@ -1,6 +1,6 @@
-{ mipmip_pkg, ... }:
+{ unstable, ... }:
 {
-  extpkg = mipmip_pkg.gnomeExtensions.highlight-focus;
+  extpkg = unstable.gnomeExtensions.highlight-focus;
   dconf = {
     name = "org/gnome/shell/extensions/highlight-focus";
     value = {

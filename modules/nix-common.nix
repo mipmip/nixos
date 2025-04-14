@@ -24,17 +24,20 @@
   services.openssh.enable = true;
 
   services.cron.enable = true;
-  #services.atd.enable = true;
 
-  #services.lorri.enable = true;
   services.journald.extraConfig = "SystemMaxUse=100M";
 
-  #programs.fish.enable = true;
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
 
   users.users.pim = {
+    shell = pkgs.zsh;
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" "networkmanager" "disk"];
+  };
+
+  users.users.distrobox = {
     shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "networkmanager" "disk"];

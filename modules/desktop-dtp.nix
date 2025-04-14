@@ -5,20 +5,21 @@
   environment.systemPackages = with pkgs; [
 
     # PDF
-    zathura
+    #zathura
     pdftk
     pdfarranger
     ghostscript
-    paperwork # could replace papermerge
+    #paperwork # could replace papermerge
 
     gimp
     unstable.inkscape-with-extensions
+    krita
 
     #nixpkgs-inkscape13.inkscape
     feh
-    swappy
+    #swappy
 
-    emulsion-palette
+    #emulsion-palette
 
     blender
 

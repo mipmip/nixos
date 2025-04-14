@@ -1,5 +1,4 @@
 { pkgs }:
-#{ pkgs }:
 
 let
   callPackage = pkgs.newScope self;

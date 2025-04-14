@@ -26,11 +26,7 @@
     gettext
     psmisc
     file
-
-    # cli searchers
-    silver-searcher
-    fzf
-    ripgrep
+    gptfdisk
 
     # Security
     openssl
@@ -41,9 +37,7 @@
 
     #help
     cheat
-
     entr
-
 
     # GRAPHIC
     imagemagick
@@ -52,11 +46,11 @@
     pngquant
 
     # PYthon
+    uv
     python3Full
     python3Packages.pip
     python3Packages.setuptools
     python3Packages.requests
-
 
     direnv
 

@@ -7,10 +7,6 @@ in
 {
   options.desktopConf.gnome = {
     enable = lib.mkEnableOption "Configure gnome";
-    swap_alt_win = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
   };
 
   config = lib.mkIf cfg.enable {

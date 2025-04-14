@@ -30,14 +30,14 @@
     dconf2nix
 
     # NEMO-DESKTOP
-    cinnamon.nemo
+    nemo
 
     # GrandPerspective
     baobab
 
     # SCREENCAST
-    peek
-    kooha
+    #peek
+    #kooha
 
     # MAIL
     # evolution
@@ -45,7 +45,7 @@
     # UTILS
     gnome-tweaks
     gpaste
-    gnome-secrets
+    #gnome-secrets
 
     # IMAGE
     #gnome.gnome-screenshot
@@ -56,7 +56,7 @@
     #DEV
     glib.dev
     #glade
-    cambalache
+    #cambalache
     #gnome-builder
 
     #RSS

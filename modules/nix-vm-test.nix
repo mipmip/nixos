@@ -1,14 +1,9 @@
 { config, pkgs, ... }:
 
 {
-
-
-
   environment.systemPackages = with pkgs; [
     neovim
   ];
-
-
 
   programs.zsh.enable = true;
   users.users.pim = {

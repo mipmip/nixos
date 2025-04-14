@@ -5,3 +5,8 @@ shells/pandocomatic/pandotemp.html
 *.qcow2
 result
 .nix-gems-pandocomatic
+*.backup
+*.backup.*
+home/pim/_hm-modules/programs/neovim/nvim/lazy-lock.json
+.temp.html
+.temp.seed
