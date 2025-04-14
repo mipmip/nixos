@@ -41,10 +41,8 @@ up_home(){
   if [ $RICING -gt 0 ]; then
     echo "Unrise first (hmrice unrice), then run again"
   else
-    #echo $RICING
     home-manager switch --impure --flake .\#$USER@$(hostname)
   fi
-  #git add ./home && home-manager switch --impure --flake .\#$USER@$(hostname)
 }
 
 make_command "missing_modules" "List missing modules in configuration"

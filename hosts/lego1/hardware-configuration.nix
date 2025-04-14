@@ -40,7 +40,7 @@
   services.fprintd.enable = true;
 
   services.pipewire.audio.enable = true;
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.extraPackages = with pkgs; [
 # mesa_drivers
     vaapiIntel
     vaapiVdpau
