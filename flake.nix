@@ -7,7 +7,9 @@
     #nixpkgs-2305.url = "github:NixOS/nixpkgs/nixos-23.05";# GNOME 44.2?
     nixpkgs-2311.url = "github:NixOS/nixpkgs/nixos-23.11"; # GNOME 45.2
     nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05"; # GNOME 46
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOME 47
+    nixpkgs-mama.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOME 47
 
     nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
@@ -54,7 +56,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
   };
 
   outputs = inputs@{
@@ -62,6 +63,7 @@
     self,
 
     nixpkgs,
+    nixpkgs-mama,
     nixpkgs-2211,
     nixpkgs-2311,
     nixpkgs-2405,
@@ -101,6 +103,7 @@
       };
 
       makeHomeConf = {
+        nixpkgs-channel ? nixpkgs,
         username ? "pim",
         hostname,
         homedir ? "/home/pim",
@@ -122,7 +125,7 @@
               roles.desktop.enable = desktop;
             }
           ];
-          pkgs = importFromChannelForSystem system nixpkgs;
+          pkgs = importFromChannelForSystem system nixpkgs-channel;
           extraSpecialArgs = {
             system = system;
             inputs = inputs;
@@ -131,20 +134,21 @@
         };
 
       makeNixosConf = {
+        nixpkgs-channel ? nixpkgs,
         hostname,
         system ? "x86_64-linux",
         extraModules ? [],
         ...
         }:
 
-        nixpkgs.lib.nixosSystem {
+        nixpkgs-channel.lib.nixosSystem {
           modules =
             let
               defaults = { pkgs, ... }: {
                 nixpkgs.overlays = [(import ./overlays)];
                 _module.args.unstable = importFromChannelForSystem system unstable;
                 _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
-                _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
+                #_module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
               };
 
               extraPkgs = {

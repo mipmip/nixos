@@ -80,6 +80,7 @@
     git
     firefox
 
+    zoom-us
     home-manager
 
     gcc
