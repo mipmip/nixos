@@ -34,7 +34,7 @@ commander.add({
     cmd = function()
       prefill_edit_window(avante_translate_en)
     end,
-    keys = { {"n","v"}, "<leader>tte" },
+    keys = { {"v"}, "<leader>te" },
     cat = "avante",
   },
 
@@ -52,7 +52,7 @@ commander.add({
     cmd = function()
       prefill_edit_window(avante_translate_nl)
     end,
-    keys = { {"n","v"}, "<leader>ttn" },
+    keys = { {"v"}, "<leader>tn" },
     cat = "avante",
   },
 
