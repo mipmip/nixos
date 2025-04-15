@@ -8,6 +8,7 @@ let
     pkgs.gnomeExtensions.caffeine
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.wayland-or-x11
+    pkgs.gnomeExtensions.dash-to-dock
   ];
 
   gnomeExtensions = map (ext: { extpkg = ext; } ) gnomeExtensionsWithOutConf ++ [
