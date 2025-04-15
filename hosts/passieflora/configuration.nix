@@ -41,8 +41,8 @@
 
   services.journald.extraConfig = "SystemMaxUse=100M";
 
-  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+
   environment.shells = with pkgs; [ zsh ];
 
   users.users.pim = {
@@ -65,8 +65,11 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.printing.enable = true;
+
+  programs.zsh.enable = true;
   programs = {
     gpaste.enable = true;
+    zsh.ohMyZsh.enable = true;
   };
 
   nixos-boot = {

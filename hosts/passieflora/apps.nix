@@ -11,6 +11,7 @@
 
     unstable.zoom-us
     unstable.signal-desktop
+    unstable.flare-signal
 
     rustdesk
 

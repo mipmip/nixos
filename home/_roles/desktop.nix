@@ -2,13 +2,9 @@
 
 let
   cfg = config.roles.desktop;
-
-
-
 in
 
 {
-  options.desktopConf.gnome;
   options.roles.desktop = {
     enable = lib.mkEnableOption "Configure as desktop computer";
   };
