@@ -23,7 +23,7 @@
     v4l-utils
 
     zoom-us
-    rustdesk
+    unstable.rustdesk
     # teams
 
 #    unstable.srain #IRC

@@ -8,6 +8,11 @@
       ./sleep.nix
     ];
 
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
@@ -60,6 +65,9 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.printing.enable = true;
+  programs = {
+    gpaste.enable = true;
+  };
 
   nixos-boot = {
     enable  = true;
