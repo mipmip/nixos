@@ -2,9 +2,13 @@
 
 let
   cfg = config.roles.desktop;
+
+
+
 in
 
 {
+  options.desktopConf.gnome;
   options.roles.desktop = {
     enable = lib.mkEnableOption "Configure as desktop computer";
   };
@@ -24,6 +28,8 @@ in
     desktopConf.librewolf.enable = true;
     desktopConf.fonts.enable = true;
     desktopConf.obs.enable = true;
+
+
     desktopConf.gnome.enable = true;
     #desktopConf.gnome.swapAltWin = if swapAltWin then true else false;
   };

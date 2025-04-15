@@ -3,7 +3,7 @@
 {
   imports = []
   ++
-    map (n: "${./_generic-for-contribution}/${n}") (builtins.attrNames (builtins.readDir ./_generic-for-contribution))
+    map (n: "${../../_generic-for-contribution}/${n}") (builtins.attrNames (builtins.readDir ./../../_generic-for-contribution))
    ++
     map (n: "${./fonts}/${n}") (builtins.attrNames (builtins.readDir ./fonts))
   ++
@@ -11,5 +11,5 @@
   ++
     map (n: "${./programs}/${n}") (builtins.attrNames (builtins.readDir ./programs))
   ++
-    map (n: "${./roles}/${n}") (builtins.attrNames (builtins.readDir ./roles));
+    map (n: "${../../_roles}/${n}") (builtins.attrNames (builtins.readDir ./../../_roles));
 }

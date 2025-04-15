@@ -5,6 +5,10 @@ let
 in
 
 {
+  options.desktopConf.gnome = {
+    enable = lib.mkEnableOption "Configure gnome";
+  };
+
   config = lib.mkIf cfg.enable {
 
     dconf.settings = {
