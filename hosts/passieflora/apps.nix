@@ -12,7 +12,7 @@
     unstable.zoom-us
     unstable.signal-desktop
 
-    unstable.rustdesk
+    rustdesk
 
     home-manager
 
