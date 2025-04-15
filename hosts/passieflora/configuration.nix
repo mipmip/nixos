@@ -3,9 +3,9 @@
 {
   imports =
     [
-      ../../modules/desktop-communication.nix
       ./hardware-configuration.nix
       ./sleep.nix
+      ./apps.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -73,38 +73,6 @@
     # duration = 3; # in seconds
   };
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    tmux
-    git
-    firefox
-
-    zoom-us
-    home-manager
-
-    gcc
-    pkg-config
-    telegram-desktop
-    gnumake
-
-    gimp
-    inkscape
-
-    libreoffice
-    hunspellDicts.nl_nl
-    signal-desktop
-
-
-    kitty
-    alacritty
-
-    gnome-tweaks
-    gdm-settings
-    gpaste
-
-    seafile-client
-  ];
   services.tailscale.enable = true;
 
   system.stateVersion = "24.11";

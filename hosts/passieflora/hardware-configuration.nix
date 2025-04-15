@@ -27,18 +27,6 @@
       "udev.log_priority=3"
   ];
 
-  #  boot.plymouth = {
-  #      enable = true;
-  #      theme = "proxzima";
-  #      themePackages = with pkgs; [
-  #        # By default we would install all themes
-  #        plymouth-proxzima-theme
-  #        (adi1090x-plymouth-themes.override {
-  #          selected_themes = [ "rings" ];
-  #        })
-  #      ];
-  #    };
-  #
   hardware.firmware = [
     (pkgs.stdenvNoCC.mkDerivation (final: {
       name = "brcm-firmware";
