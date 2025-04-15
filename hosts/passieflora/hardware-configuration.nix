@@ -39,8 +39,9 @@
   ];
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.apple-t2.enableAppleSetOsLoader = true;
-  #hardware.apple-t2.kernelChannel = "stable"; # "latest|stable"
+
+  #hardware.apple-t2.enableAppleSetOsLoader = true;
+  hardware.apple-t2.kernelChannel = "stable"; # "latest|stable"
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f65ac208-dad3-4cb9-a20c-0153a287e254";

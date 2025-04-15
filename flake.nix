@@ -17,7 +17,8 @@
     nixos-boot.url = "github:mipmip/nixos-boot-grannyos";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    nixos-hardware-t2.url = "github:nixos/nixos-hardware/863e3ca9988f34c370bd660a5efc3e20eb7ad38b";
+    #nixos-hardware-t2.url = "github:nixos/nixos-hardware/863e3ca9988f34c370bd660a5efc3e20eb7ad38b";
+    nixos-hardware-t2.url = "github:nixos/nixos-hardware";
 
     # DARWIN
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
