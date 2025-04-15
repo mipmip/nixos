@@ -28,12 +28,14 @@ let
     "org/gnome/shell" = {
       disable-user-extensions = false;
 
-      #favorite-apps = [
-      #  "firefox.desktop"
-      #  "Alacritty.desktop"
-      #  "org.gnome.Nautilus.desktop"
-      #  "org.inkscape.Inkscape.desktop"
-      #];
+      favorite-apps = [
+        "firefox.desktop"
+        "org.gnome.Nautilus.desktop"
+        "writer.desktop"
+        "org.gnome.Geary.desktop"
+        "rustdesk.desktop"
+        "signal-desktop.desktop"
+      ];
     };
 
     "org/gnome/shell/keybindings" = {
