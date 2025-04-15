@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, swapAltWin, ... }:
 
 let
   cfg = config.roles.desktop;
@@ -9,7 +9,6 @@ in
     enable = lib.mkEnableOption "Configure as desktop computer";
   };
   config = lib.mkIf cfg.enable {
-
     desktopConf.gnome.enable = true;
   };
 }

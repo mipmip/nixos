@@ -60,20 +60,20 @@ in
         num-workspaces               = 1;
         resize-with-right-button     = false;
         theme                        = "Default";
-        #workspace-names              = [ "1" "2" "3" "4" ];
+        workspace-names              = [ "1" "2" "3" "4" ];
       };
 
       "org/gnome/settings-daemon/plugins/xsettings" = {
         overrides = "{'Gtk/EnablePrimaryPaste': <0>, 'Gtk/DecorationLayout': <'close,minimize,maximize:menu'>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DialogsUseHeader': <0>}";
       };
 
-      #      "org/gnome/mutter" = {
-      #        center-new-windows = true;
-      #        dynamic-workspaces = false;
-      #        overlay-key = "Super_R";
-      #        workspaces-only-on-primary = true;
-      #        experimental-features = ["scale-monitor-framebuffer"];
-      #      };
+      "org/gnome/mutter" = {
+        center-new-windows = true;
+        dynamic-workspaces = false;
+        overlay-key = "Super_R";
+        workspaces-only-on-primary = true;
+        experimental-features = ["scale-monitor-framebuffer"];
+      };
     };
   };
 }
