@@ -30,7 +30,7 @@
     };
 
   swapDevices =
-    [ 
+    [
       { device = "/dev/disk/by-uuid/363e6d4d-759b-4da9-acb6-0d58bbd4cc29"; }
     ];
 
@@ -44,7 +44,6 @@
   # networking.interfaces.tailscale0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20u6.useDHCP = lib.mkDefault true;
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
 }
