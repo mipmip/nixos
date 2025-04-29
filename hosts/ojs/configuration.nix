@@ -6,6 +6,7 @@
     ./hardware-configuration.nix
     ../_roles/desktop.nix
     ../_roles/dev-machine.nix
+    ../../modules/nix-remote-builds-server.nix
     #    ../../modules/nix-samba.nix
   ];
 
@@ -21,6 +22,8 @@
   networking.networkmanager.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  services.tailscale.enable = true;
 
   #Just give up and disable suspend
   systemd.sleep.extraConfig = ''

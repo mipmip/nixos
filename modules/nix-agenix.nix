@@ -13,6 +13,14 @@
       group = "users";
       mode = "600";
     };
+
+    keyconf_root = keyname: {
+      file = ../secrets/${keyname}.age;
+      path = "/tmp/${keyname}";
+      owner = "root";
+      group = "root";
+      mode = "600";
+    };
   in
     {
       open-api-key = keyconf "openai-api-key";
@@ -21,5 +29,7 @@
       tavily-api-key-plain = keyconf "tavily-api-key-plain";
       bedrockpim-api-keys-env = keyconf "bedrockpim-api-keys-env";
       bedrock-keys-for-avante-env = keyconf "bedrock-keys-for-avante-env";
+
+      id_ed25519_remotebuild = keyconf_root "id_ed25519_remotebuild";
   };
 }

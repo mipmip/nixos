@@ -8,6 +8,9 @@ let
   hurry = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPyh9gDCDN2rzAExllvavzVVr4XkKea63Wa+B7JO8+Qz";
   harry = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOmY6Jv/y1CSyVe0t1L+65NQjocDoDUShhriPp5yg6eh";
 
+  users = [ pim ];
+  systems = [ ojs lego1 rodin hurry harry ];
+
 in {
 
   "openai-api-key.age".publicKeys = [ pim  ojs lego1 rodin];
@@ -34,5 +37,7 @@ in {
   "piethein-samba-secrets.age".publicKeys = [pim harry];
 
   "pimprived.age".publicKeys = [pim];
+
+  "id_ed25519_remotebuild.age".publicKeys = [ pim ] ++ systems;
 
 }
