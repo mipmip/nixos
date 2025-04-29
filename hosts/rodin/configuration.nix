@@ -65,21 +65,4 @@
     kernel = "https://boot.netboot.xyz";
   };
 
-
-
-  #services.onedrive.enable = true;
-
-  networking.hosts = {
-    "127.0.0.1" = [
-      "ojs"
-      "localhost"
-    ];
-    "3.122.241.107" = [
-      "rrs-dev.healtcheck.internal"
-      "rrs-acc.healtcheck.internal"
-      "rrs-test.healtcheck.internal"
-    ];
-  };
-
 }
-

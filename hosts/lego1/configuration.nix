@@ -16,16 +16,6 @@
   };
   services.tailscale.enable = true;
 
-  networking.hosts = {
-    "127.0.0.1" = [
-      "ojs"
-      "localhost"
-    ];
-    "161.97.169.230" = [
-      "invokeai.amy.node.snel.city"
-    ];
-  };
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
