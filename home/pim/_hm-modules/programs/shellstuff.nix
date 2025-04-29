@@ -1,7 +1,7 @@
-{ inputs, system, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = [
-    inputs.shellstuff.packages."${system}".shellstuff
+    inputs.shellstuff.packages."${pkgs.system}".shellstuff
   ];
 }

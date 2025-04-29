@@ -7,10 +7,6 @@ in
 {
   options.desktopConf.gnome = {
     enable = lib.mkEnableOption "Configure gnome";
-    swap_alt_win = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -65,23 +61,23 @@ in
         auto-raise                   = true;
         button-layout                = "close:appmenu";
         focus-mode                   = "click";
-        num-workspaces               = 3;
+        num-workspaces               = 1;
         resize-with-right-button     = false;
         theme                        = "Default";
-        workspace-names              = [ "1" "2" "3" "4" ];
+        #workspace-names              = [ "1" "2" "3" "4" ];
       };
 
       "org/gnome/settings-daemon/plugins/xsettings" = {
         overrides = "{'Gtk/EnablePrimaryPaste': <0>, 'Gtk/DecorationLayout': <'close,minimize,maximize:menu'>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DialogsUseHeader': <0>}";
       };
 
-      "org/gnome/mutter" = {
-        center-new-windows = true;
-        dynamic-workspaces = false;
-        overlay-key = "Super_R";
-        workspaces-only-on-primary = true;
-        experimental-features = ["scale-monitor-framebuffer"];
-      };
+      #      "org/gnome/mutter" = {
+      #        center-new-windows = true;
+      #        dynamic-workspaces = false;
+      #        overlay-key = "Super_R";
+      #        workspaces-only-on-primary = true;
+      #        experimental-features = ["scale-monitor-framebuffer"];
+      #      };
     };
   };
 }

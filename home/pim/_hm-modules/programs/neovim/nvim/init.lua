@@ -20,8 +20,21 @@ require("lazy").setup("plugins")
 
 require("functions")
 require("keymaps")
+require("keymaps_avante")
 
 vim.cmd('source ' .. vim.fn.stdpath("config") .. '/vimscript/hotkeys.vim')
+vim.cmd('source ' .. vim.fn.stdpath("config") .. '/vimscript/environment.vim')
+
+
+local wip_path = vim.fn.stdpath("config") .. '/vimscript/wip.vim'
+
+if not vim.loop.fs_stat(wip_path) then
+  vim.fn.system {
+    'touch',
+    wip_path,
+  }
+end
+
 vim.cmd('source ' .. vim.fn.stdpath("config") .. '/vimscript/wip.vim')
 
 vim.api.nvim_create_augroup("neotree", {})

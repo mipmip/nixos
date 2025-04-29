@@ -65,69 +65,7 @@ in
         search = [ "<Super>/" ];
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        binding = "<Super>Return";
-        command = "env alacritty";
-        name = "alacritty";
-      };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        binding = "<Shift><Super>F";
-        command = "nautilus";
-        name = "filemanager";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-        binding = "<Shift><Super>exclam";
-        command = "appimage-run /home/pim/cPassingTrain/trajno/dist_electron/Trajno-latest.AppImage";
-        name = "Tempo";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-        binding = "<Shift><Super>dollar";
-        command = "gnome-screenshot -a";
-        name = "screenshot";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-        binding = "<Shift><Super>B";
-        command = "firefox";
-        name = "firefox";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
-        binding = "<Shift><Super>at";
-        command = "keepassxc";
-        name = "keepassxc";
-      };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
-        binding = "<Shift><Super>percent";
-        command = "gnome-screenshot -i";
-        name = "screenshot-interactive";
-      };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
-        binding = "<Super>s";
-        command = "myhotkeys -x -g";
-        name = "myhotkeys";
-      };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8" = {
-        binding = "F11";
-        command = "bash -c 'pkill nemo-desktop || nemo-desktop'";
-        name = "toggle-nemo-desktop";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9" = {
-        binding = "<Shift><Super>asciicircum";
-        command = "slack";
-        name = "slack";
-      };
-
-      ## TODO add to hotkeys
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10" = {
-        binding = "<Shift><Super>ampersand";
-        command = "st -e smg";
-        name = "smg (choose tmux project)";
-      };
     };
   };
 }

@@ -2,11 +2,14 @@ local commander = require("commander")
 local telescope_builtin = require('telescope.builtin')
 
 
+
+
 commander.add({
+
   {
     desc = "Open commander",
     cmd = require("commander").show,
-    keys = { "n", "<leader>?" },
+    keys = { "n", "<leader>c" },
     cat = "command",
   },
   {
@@ -73,6 +76,8 @@ commander.add({
     keys = { "x", "<leader>X" },
     cat = "mychatgpt",
   },
+
+
 })
 
 
@@ -94,3 +99,4 @@ vim.keymap.set("", ",c", ReloadHomeManagerNeoVimConf(), { expr = true, })
 
 
 vim.keymap.set("", ",z", ":ZenMode<cr>")
+vim.keymap.set('n', 'gy', require('open').open_cword)

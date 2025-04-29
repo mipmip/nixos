@@ -16,6 +16,7 @@
     config.boot.kernelPackages.rtl88x2bu
   ];
 
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/6dc0a5d4-c053-4814-bde6-501dafcd0ad8";

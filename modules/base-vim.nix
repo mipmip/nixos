@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-2211, unstable, ... }:
+{ config, lib, pkgs, unstable, ... }:
 
 {
   environment.sessionVariables = {

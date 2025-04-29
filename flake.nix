@@ -7,7 +7,9 @@
     #nixpkgs-2305.url = "github:NixOS/nixpkgs/nixos-23.05";# GNOME 44.2?
     nixpkgs-2311.url = "github:NixOS/nixpkgs/nixos-23.11"; # GNOME 45.2
     nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05"; # GNOME 46
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOME 47
+    nixpkgs-mama.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOME 47
 
     nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
@@ -15,7 +17,8 @@
     nixos-boot.url = "github:mipmip/nixos-boot-grannyos";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
-    nixos-hardware-t2.url = "github:nixos/nixos-hardware/863e3ca9988f34c370bd660a5efc3e20eb7ad38b";
+    #nixos-hardware-t2.url = "github:nixos/nixos-hardware/863e3ca9988f34c370bd660a5efc3e20eb7ad38b";
+    nixos-hardware-t2.url = "github:nixos/nixos-hardware";
 
     # DARWIN
     nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
@@ -24,6 +27,9 @@
     ## HOME MANAGER
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    hm-ricing-mode.url = "github:mipmip/hm-ricing-mode";
+    hm-ricing-mode.inputs.nixpkgs.follows = "nixpkgs";
 
     ## OTHER
     agenix.url = "github:ryantm/agenix";
@@ -41,6 +47,7 @@
     dirtygit.url = "github:mipmip/dirtygit";
     ghostty.url = "github:ghostty-org/ghostty";
     skull.url = "github:mipmip/skull";
+    mip.url = "github:mipmip/mip.rs";
 
     nixpkgs-pine64.url = "nixpkgs/dfd82985c273aac6eced03625f454b334daae2e8";
     mobile-nixos = {
@@ -54,7 +61,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
   };
 
   outputs = inputs@{
@@ -62,6 +68,7 @@
     self,
 
     nixpkgs,
+    nixpkgs-mama,
     nixpkgs-2211,
     nixpkgs-2311,
     nixpkgs-2405,
@@ -70,6 +77,7 @@
 
     nix-darwin,
     home-manager,
+    hm-ricing-mode,
     agenix,
 
     alacritty-theme,
@@ -81,7 +89,7 @@
 
     nixos-boot,
 
-    jsonify-aws-dotfiles, dirtygit, bmc, race, shellstuff, skull, myhotkeys,
+    jsonify-aws-dotfiles, dirtygit, bmc, race, shellstuff, skull, myhotkeys, mip,
     ghostty,
 
     nixpkgs-pine64, mobile-nixos, home-manager-pine64,
@@ -101,6 +109,7 @@
       };
 
       makeHomeConf = {
+        nixpkgs-channel ? nixpkgs,
         username ? "pim",
         hostname,
         homedir ? "/home/pim",
@@ -108,10 +117,14 @@
         secondbrain ? false,
         awscontrol ? false,
         desktop ? false,
+        swapAltWin ? false,
         ...
         }:
         home-manager.lib.homeManagerConfiguration {
           modules = [
+
+            hm-ricing-mode.homeManagerModules.hm-ricing-mode
+
             (import ./home/${username})
             {
               home.stateVersion = "24.11";
@@ -120,31 +133,34 @@
               roles.secondbrain.enable = secondbrain;
               roles.awscontrol.enable = awscontrol;
               roles.desktop.enable = desktop;
+              desktopConf.gnome.swapAltWin = swapAltWin;
             }
           ];
-          pkgs = importFromChannelForSystem system nixpkgs;
+          pkgs = importFromChannelForSystem system nixpkgs-channel;
           extraSpecialArgs = {
-            system = system;
             inputs = inputs;
             unstable = importFromChannelForSystem system unstable;
+            #swapAltWin = swapAltWin;
           };
         };
 
       makeNixosConf = {
+        nixpkgs-channel ? nixpkgs,
         hostname,
         system ? "x86_64-linux",
         extraModules ? [],
         ...
         }:
 
-        nixpkgs.lib.nixosSystem {
+        nixpkgs-channel.lib.nixosSystem {
           modules =
             let
               defaults = { pkgs, ... }: {
                 nixpkgs.overlays = [(import ./overlays)];
+                _module.args.inputs = inputs;
                 _module.args.unstable = importFromChannelForSystem system unstable;
                 _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
-                _module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
+                #_module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
               };
 
               extraPkgs = {
@@ -207,7 +223,7 @@
         secondbrain = true;
         awscontrol = true;
         desktop = true;
-        desktopConf.gnome.swap_alt_win = true;
+        swapAltWin = true;
       };
 
       homeConfigurations."pim@lego1" = makeHomeConf {
@@ -337,8 +353,8 @@
       pinephone-img = nixosConfigurations.pinephone.config.mobile.outputs.u-boot.disk-image;
 
       darwinConfigurations."MacBook-Pro-van-pim" = nix-darwin.lib.darwinSystem {
-	modules = [ 
-	  ./hosts/somemac/configuration.nix 
+      	modules = [
+      	  ./hosts/somemac/configuration.nix
         ];
       };
 

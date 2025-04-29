@@ -29,7 +29,7 @@ function! ChatGPTTranslateSelect(mode)
     endif
 
     call writefile(lines, "/tmp/modstext.txt")
-    let trans = execute(':! export $(cat /tmp/openaiapikey | xargs) && cat /tmp/modstext.txt | mods "translate to english" > /tmp/trans.txt')
+    let trans = execute(':! export $(cat /tmp/openai-api-key-plain | xargs) && cat /tmp/modstext.txt | mods "translate to english" > /tmp/trans.txt')
     call cursor(line_end, 1)
     call execute(":r /tmp/trans.txt")
     call execute(":redraw!")

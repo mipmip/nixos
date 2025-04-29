@@ -1,17 +1,14 @@
-{ config, lib, pkgs, unstable, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   cfg = config.desktopConf.gnome;
 
-  mipmip_pkg = import (./pkgs){inherit pkgs;};
-
   gnomeExtensionsWithOutConf = [
-    #mipmip_pkg.gnomeExtensions.custom-menu-panel
     pkgs.gnomeExtensions.emoji-copy
-    pkgs.gnomeExtensions.espresso
-    pkgs.gnomeExtensions.show-favorite-apps
+    pkgs.gnomeExtensions.caffeine
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.wayland-or-x11
+    pkgs.gnomeExtensions.dash-to-dock
   ];
 
   gnomeExtensions = map (ext: { extpkg = ext; } ) gnomeExtensionsWithOutConf ++ [
@@ -21,8 +18,8 @@ let
     #(import ./shell-ext-gs-git.nix { mipmip_pkg = mipmip_pkg; })
     #(import ./shell-ext-hotkeys-popup.nix { unstable = unstable; })
 
-    (import ./shell-ext-color-picker.nix { pkgs = pkgs; })
-    (import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; })
+    #(import ./shell-ext-color-picker.nix { pkgs = pkgs; })
+    #(import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; })
 
   ];
 
@@ -33,9 +30,11 @@ let
 
       favorite-apps = [
         "firefox.desktop"
-        "Alacritty.desktop"
         "org.gnome.Nautilus.desktop"
-        "org.inkscape.Inkscape.desktop"
+        "writer.desktop"
+        "org.gnome.Geary.desktop"
+        "rustdesk.desktop"
+        "signal-desktop.desktop"
       ];
     };
 
@@ -57,8 +56,6 @@ let
     "org/gnome/shell" = {
       enabled-extensions = map (ext: ext.extpkg.extensionUuid) gnomeExtensions ++ [
         "GPaste@gnome-shell-extensions.gnome.org"
-        "places-menu@gnome-shell-extensions.gcampax.github.com"
-        "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
       ];
     };
   };
@@ -66,12 +63,10 @@ let
   dconfExtConfs = builtins.listToAttrs (builtins.catAttrs "dconf" gnomeExtensions);
   recursiveMerge = import ./recursive-merge.nix {lib = lib;};
 in
-  {
+{
 
   config = lib.mkIf cfg.enable {
     home.packages = map (ext: ext.extpkg) gnomeExtensions;
     dconf.settings = recursiveMerge [dconfEnabledExtensions dconfExtConfs];
-
-
   };
 }

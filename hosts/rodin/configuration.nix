@@ -1,3 +1,4 @@
+
 { config, inputs, system, pkgs, ... }:
 
 {
@@ -27,15 +28,18 @@
 
   services.flatpak.enable = true;
   services.tailscale.enable = true;
-  services.guacamole-server.enable = true;
-  services.guacamole-client = {
-    enable = true;
-    enableWebserver = true;
-    settings = {
-      guacd-port = 4822;
-      guacd-hostname = "localhost";
-    };
-  };
+  #  services.guacamole-server.enable = true;
+  #  services.guacamole-client = {
+  #    enable = true;
+  #    enableWebserver = true;
+  #    settings = {
+  #      guacd-port = 4822;
+  #      guacd-hostname = "localhost";
+  #    };
+  #  };
+
+  #services.neo4j.enable = true;
+
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
@@ -50,6 +54,7 @@
   #PACKAGES WHICH NEED A CUDA CARD
   environment.systemPackages = with pkgs; [
     upscayl
+    neo4j
   ];
 
   services.pixiecore = {
@@ -58,6 +63,8 @@
     dhcpNoBind = true;
     kernel = "https://boot.netboot.xyz";
   };
+
+
 
   #services.onedrive.enable = true;
 

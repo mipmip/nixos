@@ -1,8 +1,8 @@
-{ inputs, system, ... }:
+{ inputs, pkgs, system, ... }:
 
 {
   home.packages = [
-    inputs.dirtygit.packages."${system}".dirtygit
+    inputs.dirtygit.packages."${pkgs.system}".dirtygit
   ];
 
   home.file = {

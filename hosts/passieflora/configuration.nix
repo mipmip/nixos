@@ -3,10 +3,15 @@
 {
   imports =
     [
-      ../../modules/desktop-communication.nix
       ./hardware-configuration.nix
       ./sleep.nix
+      ./apps.nix
     ];
+
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -36,8 +41,8 @@
 
   services.journald.extraConfig = "SystemMaxUse=100M";
 
-  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+
   environment.shells = with pkgs; [ zsh ];
 
   users.users.pim = {
@@ -61,6 +66,12 @@
   services.xserver.desktopManager.gnome.enable = true;
   services.printing.enable = true;
 
+  programs.zsh.enable = true;
+  programs = {
+    gpaste.enable = true;
+    zsh.ohMyZsh.enable = true;
+  };
+
   nixos-boot = {
     enable  = true;
     theme = "grannyos";
@@ -73,37 +84,6 @@
     # duration = 3; # in seconds
   };
 
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    tmux
-    git
-    firefox
-
-    home-manager
-
-    gcc
-    pkg-config
-    telegram-desktop
-    gnumake
-
-    gimp
-    inkscape
-
-    libreoffice
-    hunspellDicts.nl_nl
-    signal-desktop
-
-
-    kitty
-    alacritty
-
-    gnome-tweaks
-    gdm-settings
-    gpaste
-
-    seafile-client
-  ];
   services.tailscale.enable = true;
 
   system.stateVersion = "24.11";

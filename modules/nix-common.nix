@@ -31,6 +31,11 @@
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
 
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
+
   users.users.pim = {
     shell = pkgs.zsh;
     isNormalUser = true;

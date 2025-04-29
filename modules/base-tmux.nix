@@ -3,9 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
 
-    smug
     tmux
-    #urlview
     urlscan
 
   ];

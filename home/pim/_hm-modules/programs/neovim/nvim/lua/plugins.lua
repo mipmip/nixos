@@ -1,6 +1,7 @@
 return {
   -- Git related plugins
 
+  'theRealCarneiro/hyprland-vim-syntax',
   'vimpostor/vim-lumen',
   'tpope/vim-fugitive',
   'tpope/vim-eunuch',
@@ -28,6 +29,7 @@ return {
   'mipmip/vim-hotpop',
   'mipmip/vim-nomisa',
   'mipmip/vim-show-in-filemanager',
+  'linden-project/linny-wikitag-github',
 
   'srcery-colors/srcery-vim',
 }

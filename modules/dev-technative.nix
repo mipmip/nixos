@@ -48,7 +48,7 @@
     #git-remote-codecommit
 
     #azure-cli
-    #unstable.bruno # UI for testing API's
+    bruno # UI for testing API's
 
     # TERRAFORM
     terraform-docs
