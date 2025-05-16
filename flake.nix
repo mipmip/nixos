@@ -61,6 +61,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    import-tree.url = "github:vic/import-tree";
+
   };
 
   outputs = inputs@{
@@ -74,6 +76,8 @@
     nixpkgs-2405,
     nixpkgs-inkscape13,
     unstable,
+
+    import-tree,
 
     nix-darwin,
     home-manager,
@@ -148,6 +152,7 @@
         nixpkgs-channel ? nixpkgs,
         hostname,
         system ? "x86_64-linux",
+        config ? {},
         extraModules ? [],
         ...
         }:
@@ -174,6 +179,9 @@
             in [
                 defaults
                 (./hosts + "/${hostname}/configuration.nix")
+
+                (inputs.import-tree ./modulesAuto)
+                config
 
                 nixos-boot.nixosModules.default
                 agenix.nixosModules.default
@@ -253,33 +261,22 @@
       nixosConfigurations.rodin = makeNixosConf rec {
         hostname = "rodin";
         system = "x86_64-linux";
+        config = {
+          imports = [];
+          nixos.ai.enable = true;
+          nixos.aiLocal.enable = true;
+          nixos.dev.enable = true;
+          nixos.desktop.enable = true;
+          nixos.desktopHyprland.enable = true;
+          nixos.nixUtils.enable = true;
+          nixos.nixRemoteBuilds.enable = true;
+          nixos.tex.enable = true;
+          nixos.hardware.keychron.enable = true;
+        };
+
         extraModules = [
-
-          {
-            environment.systemPackages = [
-              ghostty.packages."${system}".ghostty
-            ];
-          }
-          #          {
-          #              imports = [
-          #                nixified-ai.nixosModules.invokeai
-          #              ];
-          #
-          #              environment.systemPackages = [
-          #                nixified-ai.packages.${system}.invokeai-nvidia
-          #              ];
-          #
-          #  #            services.invokeai = {
-          #  #              enable = false;
-          #  #              host = "0.0.0.0";
-          #  #              nsfwChecker = false;
-          #  #              package = nixified-ai.packages.${system}.invokeai-nvidia;
-          #  #            };
-          #
-          #            }
-
-
         ];
+
       };
 
       nixosConfigurations.passieflora = makeNixosConf {

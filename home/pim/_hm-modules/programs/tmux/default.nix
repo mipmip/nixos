@@ -7,6 +7,10 @@
     };
   };
 
+  home.packages = with pkgs; [
+    urlscan
+  ];
+
   programs.tmux = {
     enable = true;
     sensibleOnTop = true;
