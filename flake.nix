@@ -262,7 +262,6 @@
         hostname = "rodin";
         system = "x86_64-linux";
         config = {
-          imports = [];
           nixos.ai.enable = true;
           nixos.aiLocal.enable = true;
           nixos.dev.enable = true;
@@ -273,10 +272,6 @@
           nixos.tex.enable = true;
           nixos.hardware.keychron.enable = true;
         };
-
-        extraModules = [
-        ];
-
       };
 
       nixosConfigurations.passieflora = makeNixosConf {

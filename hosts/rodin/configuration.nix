@@ -4,10 +4,10 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../_roles/desktop.nix
-    ../_roles/dev-machine.nix
-    ../../modules/llm-local.nix
-    ../../modules/nix-remote-builds-client.nix
+    #../_roles/desktop.nix
+    #../_roles/dev-machine.nix
+    #../../modules/llm-local.nix
+    #../../modules/nix-remote-builds-client.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
