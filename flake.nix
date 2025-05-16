@@ -181,6 +181,7 @@
                 (./hosts + "/${hostname}/configuration.nix")
 
                 (inputs.import-tree ./modulesAuto)
+                #(inputs.import-tree.matching ".*/[a-zA-Z_\-]\.nix" ./modulesAuto)
                 config
 
                 nixos-boot.nixosModules.default
@@ -260,7 +261,6 @@
 
       nixosConfigurations.rodin = makeNixosConf rec {
         hostname = "rodin";
-        system = "x86_64-linux";
         config = {
           nixos.ai.enable = true;
           nixos.aiLocal.enable = true;

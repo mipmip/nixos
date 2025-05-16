@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:{
+{ config, lib, pkgs, unstable, pkgs-2211,  ... }:{
 
   config = lib.mkIf config.nixos.dev.enable {
     environment.systemPackages = with pkgs; [

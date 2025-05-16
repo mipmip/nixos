@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:{
+{ config, lib, pkgs, unstable,  ... }:{
 
   config = lib.mkIf config.nixos.desktop.enable {
     environment.systemPackages = with pkgs; [
@@ -11,6 +11,7 @@
       #paperwork # could replace papermerge
 
       gimp
+      unstable.gimp3-with-plugins
       unstable.inkscape-with-extensions
       krita
 

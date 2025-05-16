@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:{
+{ config, lib, pkgs, inputs, ... }:{
 
   config = lib.mkIf config.nixos.desktop.enable {
     environment.systemPackages = with pkgs; [
