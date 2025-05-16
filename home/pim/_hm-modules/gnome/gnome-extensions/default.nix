@@ -40,8 +40,7 @@ let
 
       favorite-apps = [
         "firefox.desktop"
-        "Alacritty.desktop"
-        "ghostty.desktop"
+        "com.mitchellh.ghostty.desktop"
         "org.gnome.Nautilus.desktop"
         "org.inkscape.Inkscape.desktop"
       ];
