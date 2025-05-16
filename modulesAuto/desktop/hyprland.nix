@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:{
 
-  config = lib.mkIf config.nixos.hyprland.enable {
+  config = lib.mkIf config.nixos.desktopHyprland.enable {
 
     programs = {
       dconf.enable = true;
