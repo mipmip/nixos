@@ -165,7 +165,6 @@
                 _module.args.inputs = inputs;
                 _module.args.unstable = importFromChannelForSystem system unstable;
                 _module.args.pkgs-2211 = importFromChannelForSystem system nixpkgs-2211;
-                #_module.args.pkgs-2311 = importFromChannelForSystem system nixpkgs-2311;
               };
 
               extraPkgs = {
@@ -181,7 +180,6 @@
                 (./hosts + "/${hostname}/configuration.nix")
 
                 (inputs.import-tree ./modulesAuto)
-                #(inputs.import-tree.matching ".*/[a-zA-Z_\-]\.nix" ./modulesAuto)
                 config
 
                 nixos-boot.nixosModules.default

@@ -1,18 +1,12 @@
-
 { config, inputs, system, pkgs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
-    #../_roles/desktop.nix
-    #../_roles/dev-machine.nix
-    #../../modules/llm-local.nix
-    #../../modules/nix-remote-builds-client.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-#  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   nix = {
     package = pkgs.nixVersions.stable;
@@ -29,18 +23,8 @@
 
   services.flatpak.enable = true;
   services.tailscale.enable = true;
-  #  services.guacamole-server.enable = true;
-  #  services.guacamole-client = {
-  #    enable = true;
-  #    enableWebserver = true;
-  #    settings = {
-  #      guacd-port = 4822;
-  #      guacd-hostname = "localhost";
-  #    };
-  #  };
 
   #services.neo4j.enable = true;
-
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
