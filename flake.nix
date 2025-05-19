@@ -283,15 +283,22 @@
       nixosConfigurations.lego1 = makeNixosConf rec {
         hostname = "lego1";
         system = "x86_64-linux";
-        extraModules = [
-          nixos-hardware.nixosModules.framework-12th-gen-intel
-          {
-            environment.systemPackages = [
-              myhotkeys.packages."${system}".myhotkeys
-              ghostty.packages."${system}".ghostty
-            ];
-          }
-        ];
+        config = {
+          imports = [
+            nixos-hardware.nixosModules.framework-12th-gen-intel
+          ];
+          environment.systemPackages = [
+            myhotkeys.packages."${system}".myhotkeys
+          ];
+          nixos.ai.enable = true;
+          nixos.dev.enable = true;
+          nixos.desktop.enable = true;
+          nixos.desktopHyprland.enable = true;
+          nixos.nixUtils.enable = true;
+          nixos.nixRemoteBuilds.enable = true;
+          nixos.tex.enable = true;
+          nixos.hardware.keychron.enable = true;
+        };
       };
 
       nixosConfigurations.hurry = makeNixosConf {

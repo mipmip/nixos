@@ -3,9 +3,9 @@
 {
   imports = [
       ./hardware-configuration.nix
-      ../_roles/desktop.nix
-      ../_roles/dev-machine.nix
-      ../../modules/llm-local.nix
+    #      ../_roles/desktop.nix
+    #  ../_roles/dev-machine.nix
+    #  ../../modules/llm-local.nix
   ];
 
   nix = {
