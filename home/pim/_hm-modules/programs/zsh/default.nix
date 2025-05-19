@@ -58,6 +58,10 @@ in
             sshpw = "ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password";
 
             hm_reset_envs = "unset __HM_SESS_VARS_SOURCED __HM_ZSH_SESS_VARS_SOURCED && source ~/.zshenv";
+            aiderbrclaude37 = ''AWS_REGION_NAME=eu-central-1 \
+              AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_BEDROCK_PIM \
+              AWS_SECRET_ACCESS_KEY=$AWS_ACCESS_KEY_BEDROCK_PIM_SECRET \
+              aider --model bedrock/eu.anthropic.claude-3-7-sonnet-20250219-v1:0'';
           };
 
           plugins = [
