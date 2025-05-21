@@ -267,6 +267,7 @@
           nixos.desktopHyprland.enable = true;
           nixos.nixUtils.enable = true;
           nixos.nixRemoteBuilds.enable = true;
+          nixos.trusted.enable = true;
           nixos.tex.enable = true;
           nixos.hardware.keychron.enable = true;
         };
@@ -297,6 +298,7 @@
           nixos.nixUtils.enable = true;
           nixos.nixRemoteBuilds.enable = true;
           nixos.tex.enable = true;
+          nixos.trusted.enable = true;
           nixos.hardware.keychron.enable = true;
         };
       };
