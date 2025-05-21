@@ -14,15 +14,10 @@ let
     pkgs.gnomeExtensions.appindicator
     pkgs.gnomeExtensions.spotify-tray
     pkgs.gnomeExtensions.wayland-or-x11
-    pkgs.gnomeExtensions.tailscale-status
+    #pkgs.gnomeExtensions.tailscale-status
   ];
 
   gnomeExtensions = map (ext: { extpkg = ext; } ) gnomeExtensionsWithOutConf ++ [
-
-    #(import ./shell-ext-tray-icons-reloaded.nix { pkgs = pkgs; })
-    #(import ./shell-ext-favorites-menu.nix { unstable = unstable; })
-    #(import ./shell-ext-gs-git.nix { mipmip_pkg = mipmip_pkg; })
-    #(import ./shell-ext-hotkeys-popup.nix { unstable = unstable; })
 
     (import ./shell-ext-color-picker.nix { pkgs = pkgs; })
     (import ./shell-ext-focus-changer.nix { pkgs = pkgs; })

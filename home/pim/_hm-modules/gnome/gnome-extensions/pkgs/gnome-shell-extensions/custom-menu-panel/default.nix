@@ -4,10 +4,6 @@
 , glib
 , gettext
 , sassc
-, gitUpdater
-, jq
-, gnome
-, unzip
 }:
 
 let
