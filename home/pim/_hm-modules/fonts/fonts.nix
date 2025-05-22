@@ -12,9 +12,9 @@ in
   config = lib.mkIf cfg.enable {
 
     fonts.fontconfig.enable = true;
-    home.packages = [
-      (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    ];
+    #    home.packages = [
+    #      (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    #    ];
 
   };
 }

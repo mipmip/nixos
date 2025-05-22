@@ -11,10 +11,10 @@ let
     lato
     noto-fonts
     noto-fonts-color-emoji
-    fira-code-nerdfont
+    #fira-code-nerdfont
     liberation_ttf
-    nerdfonts
-    inconsolata-nerdfont
+    #nerdfonts
+    #inconsolata-nerdfont
     ubuntu_font_family
   ];
 in
@@ -23,7 +23,7 @@ in
     fonts = {
       enableDefaultPackages = true;
       fontconfig.enable = true;
-      packages = fontsList;
+      packages = fontsList ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
       fontconfig = {
         defaultFonts = {

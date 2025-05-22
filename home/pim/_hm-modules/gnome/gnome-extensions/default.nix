@@ -24,7 +24,7 @@ let
     (import ./shell-ext-dash-to-panel.nix { pkgs = pkgs; })
     (import ./shell-ext-useless-gaps.nix { unstable = unstable; })
     (import ./shell-ext-highlight-focus.nix { inherit unstable; })
-    (import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; inherit unstable; })
+    #    (import ./shell-ext-search-light.nix { lib = lib; mipmip_pkg = mipmip_pkg; inherit unstable; })
 
   ];
 
