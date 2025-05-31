@@ -4,17 +4,19 @@
 
     ## MAIN NIXPKGS
     nixpkgs-2211.url = "github:NixOS/nixpkgs/nixos-22.11"; # GNOME 43.2
-    #nixpkgs-2305.url = "github:NixOS/nixpkgs/nixos-23.05";# GNOME 44.2?
+    #nixpkgs-2305.url = "github:NixOS/nixpkgs/nixos-23.05"; # GNOME 44.2?
     nixpkgs-2311.url = "github:NixOS/nixpkgs/nixos-23.11"; # GNOME 45.2
     nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05"; # GNOME 46
+    nixpkgs-2411.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOME 47
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOME 47
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05"; # GNOME 48
     nixpkgs-mama.url = "github:NixOS/nixpkgs/nixos-24.11"; # GNOME 47
 
-    nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-boot.url = "github:mipmip/nixos-boot-grannyos";
+
+    nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
     #nixos-hardware-t2.url = "github:nixos/nixos-hardware/863e3ca9988f34c370bd660a5efc3e20eb7ad38b";
@@ -25,7 +27,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     ## HOME MANAGER
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     hm-ricing-mode.url = "github:mipmip/hm-ricing-mode";
@@ -74,6 +76,7 @@
     nixpkgs-2211,
     nixpkgs-2311,
     nixpkgs-2405,
+    nixpkgs-2411,
     nixpkgs-inkscape13,
     unstable,
 

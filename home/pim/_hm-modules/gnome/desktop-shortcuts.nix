@@ -118,16 +118,17 @@ in
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9" = {
         binding = "<Shift><Super>asciicircum";
-        command = "slack";
+        #command = "slack";
+        command = "wofi --show=drun -show-icons --allow-images --no-actions --gtk-dark --lines 6";
         name = "slack";
       };
 
-      ## TODO add to hotkeys
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10" = {
-        binding = "<Shift><Super>ampersand";
-        command = "st -e smg";
-        name = "smg (choose tmux project)";
+        binding = "<Super>space";
+        command = "wofi --show=drun -show-icons --allow-images --no-actions --gtk-dark --lines 6";
+        name = "wofi";
       };
+
     };
   };
 }
