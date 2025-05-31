@@ -17,7 +17,6 @@ in
   config = lib.mkIf cfg.gnome.enable (
     let
 
-
        xkb-options = lib.lists.optional config.desktopConf.gnome.swapAltWin "altwin:swap_alt_win" ++ [
             "grp:alt_shift_toggle"
             "lv3:ralt_switch"

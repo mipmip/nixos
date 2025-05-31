@@ -12,7 +12,12 @@
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
       # Monitor config is done by nwg-displays
-      source = "/home/${username}/.config/hypr/monitors.conf";
+      #source = "/home/${username}/.config/hypr/monitors.conf";
+
+      # See https://wiki.hyprland.org/Configuring/Monitors/
+      # framework mon: 0.66667, 1.166667, 1.175, 1.26667,1.333333,1.566667
+      #set if lego1
+      #monitor= ",preferred,auto,1.566667";
 
       ###################
       ### MY PROGRAMS ###
@@ -38,6 +43,7 @@
         "swayosd-server"
         "swayosd-libinput-backend"
         "swaync"
+        "clipse -listen"
       ];
 
       #############################
@@ -178,23 +184,37 @@
       ### KEYBINDINGS ###
       ###################
 
-      "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
+      ##### COMPUTER DEP ######
+      "$mainMod" = "ALT"; # Sets "Windows" key as main modifier
+      "$mainAlt" = "SUPER"; # Sets "Windows" key as main modifier
 
       bind = [
         # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-        "$mainMod, T, exec, $terminal"
+
+        "$mainMod, P, pseudo, # dwindle"
+        "$mainMod, E, togglesplit, # dwindle"
+
+        "$mainMod, return, exec, $terminal"
         "$mainMod, B, exec, $browser"
-        "$mainMod, E, exec, $fileManager"
-        "$mainMod, L, exec, hyprlock"
+        "$mainMod SHIFT, F, exec, $fileManager"
+        "$mainMod SHIFT, L, exec, hyprlock"
+
+        "$mainAlt, space, exec, $terminal --class clipse -e clipse"
         "$mainMod, space, exec, $menu"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, V, togglefloating,"
         "$mainMod, P, pseudo,"
-        "$mainMod, J, togglesplit,"
         "$mainMod, F, fullscreen"
 
-        "$mainMod ALT, S, exec, hyprshot -m window"
+        # Move focus with mainMod + arrow keys
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
+
+
+        "$mainMod $mainAlt, S, exec, hyprshot -m window"
         "$mainMod SHIFT, S, exec, hyprshot -m region"
 
         # power-profiles-daemon
@@ -270,6 +290,9 @@
         "float, class:ddcui"
         "float, class:blueberry.py"
         "size 50% 50%, class:nwg-displays, title:nwg-displays"
+        "float, class:(clipse)"
+        "size 622 652, class:(clipse)"
+        "stayfocused, class:(clipse)"
       ];
     };
   };

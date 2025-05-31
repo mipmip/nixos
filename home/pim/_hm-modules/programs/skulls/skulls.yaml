@@ -36,7 +36,13 @@ gnome:
     - source: mipmip/gnome-shell-extensions-useless-gaps
     #    - source: mipmip/gnome-shell-extensions-dirty-git-indicator
     #    - source: mipmip/hotkeys
-    #    - source: mipmip/gnome-plugin.custom-menu-panel
+    - source: mipmip/gnome-plugin.custom-menu-panel
+
+inkscape:
+  base_dir: ~/cInkscape
+  repos:
+    - source: wearetechnative/cloudia
+    - source: mipmip/inkscape-cloud-architect
 
 linden:
   base_dir: ~/cLinden
