@@ -74,6 +74,8 @@
       set -q -g status-utf8 on                  # expect UTF-8 (tmux < 2.2)
       setw -q -g utf8 on
 
+      bind \; last-pane -Z
+
       if '[ -f ~/.tmux/gpakosz.cf ]' 'source ~/.tmux/gpakosz.cf'
       run 'cat ~/.tmux/gpakosz.sh | sh -s _apply_configuration'
 
