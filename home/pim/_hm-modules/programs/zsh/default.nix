@@ -81,7 +81,7 @@ in
             enable = true;
             theme = "pim";
             custom = "$HOME/.ohmyzsh-pim";
-            plugins=["git kubectl terraform aws"];
+            plugins=["git terraform aws mix"];
           };
 
           initExtra = ''
