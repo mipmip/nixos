@@ -43,4 +43,4 @@ gitignore:
 # will traverse directories pointed to be symlinks
 followsymlinks: false
 
-edit_command: st -d %WORKING_DIRECTORY
+edit_command: ghostty --working-directory=%WORKING_DIRECTORY
