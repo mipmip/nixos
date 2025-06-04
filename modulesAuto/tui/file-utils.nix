@@ -16,7 +16,7 @@
 
     # Filemanager
     vifm
-    wtf
+    wtfutil
 
     trash-cli
 
