@@ -243,6 +243,13 @@
         desktop = true;
       };
 
+      homeConfigurations."pim@lego2" = makeHomeConf {
+        hostname = "lego1";
+        secondbrain = true;
+        awscontrol = true;
+        desktop = true;
+      };
+
       homeConfigurations."pim@ojs" = makeHomeConf {
         hostname = "ojs";
         desktop = true;
@@ -286,6 +293,28 @@
 
       nixosConfigurations.lego1 = makeNixosConf rec {
         hostname = "lego1";
+        system = "x86_64-linux";
+        config = {
+          imports = [
+            nixos-hardware.nixosModules.framework-12th-gen-intel
+          ];
+          environment.systemPackages = [
+            myhotkeys.packages."${system}".myhotkeys
+          ];
+          nixos.ai.enable = true;
+          nixos.dev.enable = true;
+          nixos.desktop.enable = true;
+          nixos.desktopHyprland.enable = true;
+          nixos.nixUtils.enable = true;
+          nixos.nixRemoteBuilds.enable = true;
+          nixos.tex.enable = true;
+          nixos.trusted.enable = true;
+          nixos.hardware.keychron.enable = true;
+        };
+      };
+
+      nixosConfigurations.lego2 = makeNixosConf rec {
+        hostname = "lego2";
         system = "x86_64-linux";
         config = {
           imports = [
