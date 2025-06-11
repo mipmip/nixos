@@ -6,6 +6,8 @@ call plug#begin('~/.vim/plugged')
 if filereadable($HOME."/.i-am-second-brain")
 
   " MY PLUGINS
+  Plug 'mipmip/vim-awesome-list-mgr',           { 'branch': 'main' }
+
   Plug 'mipmip/vim-fluid'
   Plug 'mipmip/vim-run-in-blender'
   Plug 'mipmip/vim-whitewriter',                { 'branch': 'main' }
@@ -44,7 +46,7 @@ Plug 'airblade/vim-rooter'
 Plug 'vim-scripts/delview'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'mcchrish/nnn.vim'
+"Plug 'mcchrish/nnn.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'

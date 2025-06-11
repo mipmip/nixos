@@ -17,9 +17,9 @@
       # teams
 
       #    unstable.srain #IRC
-      #    unstable.tuba # Mastodon
+      unstable.tuba # Mastodon
 
-      #    discord
+      discord
 
 
 
