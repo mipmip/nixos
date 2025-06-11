@@ -3,27 +3,28 @@ let
 
   ojs   = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNnavv0c8Htl2OSN9sFM/aFm6FbxvHwTLZDjgb5g1zh";
   lego1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH/5cm8VDfCN5y05tcX16tZl3rR+kEgznsrEw1FAaoez";
+  lego2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINEk9rmZ6i/iCukbQBKf28MVz994Ed3GtdK6K37r8QOH";
   rodin = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIITKQnVAoVLw3gGL4c2pWW4uA6CySG6Rd/r4NIEAk6KU";
 
   hurry = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPyh9gDCDN2rzAExllvavzVVr4XkKea63Wa+B7JO8+Qz";
   harry = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOmY6Jv/y1CSyVe0t1L+65NQjocDoDUShhriPp5yg6eh";
 
   users = [ pim ];
-  systems = [ ojs lego1 rodin hurry harry ];
+  systems = [ ojs lego1 rodin hurry harry lego2];
 
 in {
 
-  "openai-api-key.age".publicKeys = [ pim  ojs lego1 rodin];
-  "openai-api-key-plain.age".publicKeys = [ pim  ojs lego1 rodin];
-  "kagi-api-key-plain.age".publicKeys = [ pim  ojs lego1 rodin];
-  "tavily-api-key-plain.age".publicKeys = [ pim  ojs lego1 rodin];
+  "openai-api-key.age".publicKeys = [ pim  ojs lego1 rodin lego2];
+  "openai-api-key-plain.age".publicKeys = [ pim  ojs lego1 rodin lego2];
+  "kagi-api-key-plain.age".publicKeys = [ pim  ojs lego1 rodin lego2];
+  "tavily-api-key-plain.age".publicKeys = [ pim  ojs lego1 rodin lego2];
 
-  "bedrockpim-api-keys-env.age".publicKeys = [ pim  ojs lego1 rodin];
-  "bedrock-keys-for-avante-env.age".publicKeys = [ pim  ojs lego1 rodin];
+  "bedrockpim-api-keys-env.age".publicKeys = [ pim  ojs lego1 rodin lego2];
+  "bedrock-keys-for-avante-env.age".publicKeys = [ pim  ojs lego1 rodin lego2];
 
-  "aws-credentials-copy.age".publicKeys = [ pim  ojs lego1 rodin];
+  "aws-credentials-copy.age".publicKeys = [ pim  ojs lego1 rodin lego2];
   "aws-config-copy-first-time-only.age".publicKeys = [ pim];
-  "aws-accounts.json.age".publicKeys = [ pim  ojs lego1 rodin];
+  "aws-accounts.json.age".publicKeys = [ pim  ojs lego1 rodin lego2];
 
   "wifi.age".publicKeys = [pim hurry harry];
   "vaultwarden.env.age".publicKeys = [pim hurry rodin];
