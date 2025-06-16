@@ -34,7 +34,7 @@
   #boot.plymouth.enable = true;
   #boot.plymouth.theme = "breeze";
 
-  #services.fwupd.enable = true;
+  services.fwupd.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
