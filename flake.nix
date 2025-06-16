@@ -318,7 +318,7 @@
         system = "x86_64-linux";
         config = {
           imports = [
-            nixos-hardware.nixosModules.framework-12th-gen-intel
+            nixos-hardware.nixosModules.framework-13-7040-amd
           ];
           environment.systemPackages = [
             myhotkeys.packages."${system}".myhotkeys

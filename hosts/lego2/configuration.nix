@@ -25,6 +25,8 @@
   #boot.initrd.systemd.enable = true;
   #boot.initrd.verbose = false;
 
+  services.power-profiles-daemon.enable = true;
+
   #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
