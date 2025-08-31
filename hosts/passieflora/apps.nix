@@ -7,11 +7,15 @@
     tmux
     git
 
-    firefox
+    unstable.firefox
+    unstable.bitwarden
+    unstable.google-chrome
 
+#    unstable.cups-brother-hl1210w
     unstable.zoom-us
     unstable.signal-desktop
     unstable.flare-signal
+
 
     rustdesk
 
@@ -36,6 +40,24 @@
     gdm-settings
     gpaste
 
+    jdk
     seafile-client
   ];
+  
+
+  services = {
+    avahi = {
+      enable = true;
+      nssmdns = true;
+    };
+
+    printing = {
+      enable = true;
+      drivers = with pkgs; [
+        cups-brother-hl1210w
+      ];
+    };
+  };
+
 }
+
