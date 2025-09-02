@@ -30,9 +30,10 @@ let
 
       favorite-apps = [
         "firefox.desktop"
+        "thunderbird.desktop"
         "org.gnome.Nautilus.desktop"
         "writer.desktop"
-        "org.gnome.Geary.desktop"
+        #"org.gnome.Geary.desktop"
         "rustdesk.desktop"
         "signal-desktop.desktop"
       ];

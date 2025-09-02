@@ -16,6 +16,7 @@
     unstable.signal-desktop
     unstable.flare-signal
 
+    thunderbird
 
     rustdesk
 
