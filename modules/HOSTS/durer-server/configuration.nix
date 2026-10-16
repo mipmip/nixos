@@ -120,6 +120,31 @@ in
       root = inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".pimsnel-website;
     };
 
+    # --- Studio MINT static sites ---
+    # The apex and v2 are plain HTML served from the store. The shop lives on
+    # v1.studio-mint.shop, claimed by its own module further down, so these
+    # three names and the shop's never collide in virtualHosts.
+    services.nginx.virtualHosts."studio-mint.shop" = {
+      enableACME = true;
+      forceSSL = true;
+      root = inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".studio-mint-apex;
+    };
+
+    services.nginx.virtualHosts."v2.studio-mint.shop" = {
+      enableACME = true;
+      forceSSL = true;
+      root = inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".studio-mint-v2;
+    };
+
+    # Had a DNS record but no vhost before this, so it answered on the default
+    # server with a certificate that does not match. ACME and TLS are needed
+    # even for a redirect: the certificate is for the name redirected from.
+    services.nginx.virtualHosts."www.studio-mint.shop" = {
+      enableACME = true;
+      forceSSL = true;
+      globalRedirect = "studio-mint.shop";
+    };
+
     # --- Tuwunel Matrix ---
     services.matrix-tuwunel = {
       enable = true;
@@ -145,7 +170,9 @@ in
 
     services.voorzetramenshop = {
       enable = true;
-      domain = "studio-mint.shop";
+      # The module builds its vhost from this option, so the shop answers here
+      # and nowhere else. The apex is served by the static site below.
+      domain = "v1.studio-mint.shop";
       port = 3001;
       maintenanceMode = true;
       environmentFile = config.age.secrets."voorzetramenshop-env".path;
@@ -240,7 +267,7 @@ in
       # the second rendezvous service on the machine.
       networking-nivis-tunnel-relay
     ]) ++ [
-      inputs.voorzetramenshop.nixosModules.default
+      inputs.studio-mint-v1.nixosModules.default
     ];
   };
 }
