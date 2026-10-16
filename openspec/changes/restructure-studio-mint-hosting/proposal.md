@@ -15,10 +15,11 @@ code lives.
 
 Two private repositories were added, `v2.studio-mint.shop` and
 `studio-mint.shop`. Both hold static HTML today and both will stop being static
-later. v2 is a four-byte placeholder. The apex grew during this change: it
-started as a "binnenkort" holding page and is now the real site, 59 files
-across `ds/` and `img/` with a collection, a configurator, FAQ and the legal
-pages, and no `noindex` any more.
+later. Their contents moved around while this change was being applied and
+settled as: the apex is a "binnenkort" holding page (9 files, favicons and a
+`site.webmanifest` it loads from an absolute path), and v2 is the real site in
+progress (59 files across `ds/` and `img/`, with a collection, a configurator,
+an FAQ and the legal pages).
 
 DNS is already in place for all four names, all pointing at durer. nginx is
 not. Only the apex has a vhost, so the other three answer on the default server
@@ -108,9 +109,11 @@ Constraints:
   until the HTTP-01 challenge completes. What is unavailable in that window is
   an archived shop in maintenance mode, so the window costs little; the names
   this change exists for, the apex and `www`, are new and have nothing to lose.
-- The apex is indexable. The holding page carried
-  `<meta name="robots" content="noindex">` and the real site does not, so the
-  first deploy of it is also the moment search engines may start crawling.
+- The apex holding page sets `<meta name="robots" content="noindex">` and the
+  v2 site does not, while both are publicly reachable. So the site that is not
+  meant to be found yet is the one search engines may crawl, and it carries the
+  same copy the apex will eventually serve. Not this change's call to make, but
+  worth deciding before v2 gets linked anywhere.
 - Both static inputs are private repositories over SSH. The machine that runs
   the deploy needs the key, durer does not, because deploy-rs builds locally and
   pushes the closure. Already true for the shop.

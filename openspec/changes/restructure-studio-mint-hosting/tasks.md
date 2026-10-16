@@ -30,19 +30,19 @@
 ## 5. Deploy
 
 - [x] 5.1 Re-check that all four names still resolve to durer, since a failed HTTP-01 challenge is the one thing that takes the shop down
-- [ ] 5.2 Deploy with `rme deploy_remote durer` at a moment when a few minutes of shop downtime is acceptable
-- [ ] 5.3 Verify certificates were issued for `v1`, `v2` and `www`, and that the apex certificate was reused rather than reissued
-- [ ] 5.4 Verify `https://v1.studio-mint.shop/` serves the shop, in maintenance mode as configured
-- [ ] 5.5 Verify `https://studio-mint.shop/` serves the real site, including `/site.webmanifest`, the favicons, and at least one page under `ds/` and `img/` so the subdirectories are confirmed served
-- [ ] 5.6 Verify `https://v2.studio-mint.shop/` serves the v2 placeholder
-- [ ] 5.7 Verify `https://www.studio-mint.shop/` answers 301 to `https://studio-mint.shop/` with a valid certificate
-- [ ] 5.8 Verify `https://studio-mint.shop/README.md` is 404, so the `flake = false` store path is not leaking repository files
+- [x] 5.2 Deploy with `rme deploy_remote durer` at a moment when a few minutes of shop downtime is acceptable
+- [x] 5.3 Verify certificates were issued for `v1`, `v2` and `www`, and that the apex certificate was reused rather than reissued
+- [x] 5.4 Verify `https://v1.studio-mint.shop/` serves the shop, in maintenance mode as configured
+- [x] 5.5 Verify `https://studio-mint.shop/` serves the holding page, including `/site.webmanifest` and the favicons
+- [x] 5.6 Verify `https://v2.studio-mint.shop/` serves the v2 site, including at least one asset under `ds/` and one under `img/` so the subdirectories are confirmed served
+- [x] 5.7 Verify `https://www.studio-mint.shop/` answers 301 to `https://studio-mint.shop/` with a valid certificate
+- [x] 5.8 Verify `https://studio-mint.shop/README.md` is 404, so the `flake = false` store path is not leaking repository files
 
 ## 6. What it must not affect
 
-- [ ] 6.1 Verify `https://pimsnel.com/`, `https://nuremberg.pimsnel.com/`, `https://taste.pimsnel.com/` and `https://umami.pimsnel.com/` still answer as before
-- [ ] 6.2 Verify a shop login still redirects to `v1.studio-mint.shop`, confirming `AUTH_TRUST_HOST` covers the `AUTH_URL` in the secret
-- [ ] 6.3 Verify the `durer-voorzetramenshop` restic dataset still dumps and backs up after the deploy
+- [x] 6.1 Verify `https://pimsnel.com/`, `https://nuremberg.pimsnel.com/`, `https://taste.pimsnel.com/` and `https://umami.pimsnel.com/` still answer as before
+- [x] 6.2 Verify a shop login still redirects to `v1.studio-mint.shop`, confirming `AUTH_TRUST_HOST` covers the `AUTH_URL` in the secret
+- [x] 6.3 Verify the `durer-voorzetramenshop` restic dataset still dumps and backs up after the deploy
 
 ## 7. Specs and follow-ups
 

@@ -1,11 +1,11 @@
 ---
 # mipnix-69e6
 title: remove the binnenkort page and noindex from the studio-mint.shop apex
-status: completed
+status: todo
 type: task
 priority: normal
 created_at: 2026-10-16T15:40:06Z
-updated_at: 2026-10-16T19:26:46Z
+updated_at: 2026-10-16T19:34:02Z
 ---
 
 The apex repo `mintglasinlood/studio-mint.shop` currently holds a landing page

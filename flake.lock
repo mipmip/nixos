@@ -1914,11 +1914,11 @@
     "studio-mint-apex": {
       "flake": false,
       "locked": {
-        "lastModified": 1792178674,
-        "narHash": "sha256-RDIa/lP9kAuPKBJN/JMB4uIK61k/ErUxp0eVsbFZgVg=",
+        "lastModified": 1792179007,
+        "narHash": "sha256-VRPI1NKTq1lZf5pjzfsSzgRTWTHXjcDB3H/4CQS3SiU=",
         "ref": "refs/heads/main",
-        "rev": "ceda038f7b4e22815f739c8656f704575b357e15",
-        "revCount": 5,
+        "rev": "301c52aff375ff1de282e2b4378f55579ae6e8fd",
+        "revCount": 6,
         "type": "git",
         "url": "ssh://git@github.com/mintglasinlood/studio-mint.shop.git"
       },
@@ -1951,11 +1951,11 @@
     "studio-mint-v2": {
       "flake": false,
       "locked": {
-        "lastModified": 1792162536,
-        "narHash": "sha256-zFjWtdLhLL005+IV2kEQ79KF2snp2xrcbfgvZzi+AsM=",
+        "lastModified": 1792179018,
+        "narHash": "sha256-RDIa/lP9kAuPKBJN/JMB4uIK61k/ErUxp0eVsbFZgVg=",
         "ref": "refs/heads/main",
-        "rev": "6501a39b930990494ce52484bfda3eadb77a4cd2",
-        "revCount": 2,
+        "rev": "4f9fad0a902c268130465b4b164ff3d6b4ff0311",
+        "revCount": 3,
         "type": "git",
         "url": "ssh://git@github.com/mintglasinlood/v2.studio-mint.shop.git"
       },
