@@ -93,6 +93,16 @@
     dutch-style-guide.url = "github:lboshuizen/dutch-style-guide";
     dutch-style-guide.flake = false;
 
+    # opencode 2 is not in nixpkgs: nixos-unstable carries 1.19.0 and the
+    # project moved from sst/opencode to anomalyco/opencode. Pinned to a tag of
+    # the upstream repository, which ships its own flake.
+    #
+    # Deliberately no `inputs.nixpkgs.follows`, against the usual rule in this
+    # repository: upstream pins nixpkgs-unstable for the bun version its build
+    # is tested against, and nothing caches this package either way, so
+    # following buys nothing and risks the build.
+    opencode.url = "github:anomalyco/opencode/v2.0.29";
+
     # REMOVE
     aoe.url = "github:njbrake/agent-of-empires";
 

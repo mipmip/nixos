@@ -1,3 +1,10 @@
+# The slash commands, shared by Claude Code and opencode. Both derive the slash
+# name from the filename, so an attribute named `mip:ship` answers to /mip:ship
+# in each, and both implement $ARGUMENTS, $1, shell injection and @file.
+#
+# Frontmatter added here has to work for both. A key only one of them knows is
+# ignored rather than rejected, so a Claude-only key does not break opencode, it
+# just silently does nothing there.
 {
   "mip:prosegate" = ''
           ---
