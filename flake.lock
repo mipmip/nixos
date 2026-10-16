@@ -883,11 +883,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1791500347,
-        "narHash": "sha256-L5wWDWb+zyLkO1nCRDOXlK77ZwNHqBd+51Bu2PYl5rQ=",
+        "lastModified": 1792147114,
+        "narHash": "sha256-FFIFG6FNaDnLJIfW2E46k+cwBf7+Yv8fmPO69wPdR9M=",
         "owner": "nivis-project",
         "repo": "nivis",
-        "rev": "058963e9e8190dd19c60ece3daa5f69f67bb1401",
+        "rev": "ff422a0f82fb66990617276927ad70172df11ee1",
         "type": "github"
       },
       "original": {
