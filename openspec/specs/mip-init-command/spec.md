@@ -5,7 +5,7 @@ The `/mip:init` Claude Code slash command bootstraps a fresh project so it is
 immediately workable with this setup's conventions: OpenSpec and Beans both
 initialized, the beans issue prefix derived from the repository name, the
 Beans-as-epics convention written into `AGENTS.md` (with `CLAUDE.md` symlinked to
-it), and everything `/mip:ship` depends on scaffolded — `scripts/ship-change.sh`,
+it), and everything `/mip:ship` depends on scaffolded: `scripts/ship-change.sh`,
 `CHANGELOG.md`, and the `nix flake check` coverage gate. It interviews the user
 rather than assuming: what the project is, whether to register with a central
 OpenSpec store, whether a `flake.nix` is wanted, and `jj` vs `git`.
@@ -14,10 +14,11 @@ OpenSpec store, whether a `flake.nix` is wanted, and `jj` vs `git`.
 
 ### Requirement: mip-init-command-provisioned
 
-The `mip:init` Claude Code slash command SHALL be defined as an attribute of
-`modules/programs/dev/vibecoding/_cc-commands.nix` and therefore deployed to
+The `mip:init` slash command SHALL be defined as an attribute of
+`modules/programs/dev/vibecoding/_agent-commands.nix` and therefore deployed to
 `~/.claude/commands/mip:init.md` by the `vibecoding-claude-code-config`
-home-manager module, alongside the existing `mip:` commands.
+home-manager module and to `~/.config/opencode/commands/mip:init.md` by the
+`vibecoding-opencode` module, alongside the existing `mip:` commands.
 
 #### Scenario: command deployed by home-manager
 
@@ -25,11 +26,19 @@ home-manager module, alongside the existing `mip:` commands.
 - **THEN** `~/.claude/commands/mip:init.md` SHALL exist as a Nix-store symlink and
   `/mip:init` SHALL be invocable in Claude Code
 
+#### Scenario: command deployed for opencode
+
+- **WHEN** the `vibecoding-opencode` home-manager module is activated
+- **THEN** `~/.config/opencode/commands/mip:init.md` SHALL exist as a Nix-store
+  symlink and `/mip:init` SHALL be invocable in opencode
+
 #### Scenario: command carries a description
 
 - **WHEN** the command file is read
 - **THEN** its frontmatter SHALL carry a `description` so the command appears in the
   slash-command listing, consistent with the other `mip:` commands
+- **AND** any frontmatter key only one agent recognises SHALL be ignored by the
+  other rather than preventing the command from loading
 
 ### Requirement: interactive-project-interview
 
@@ -120,8 +129,8 @@ reads one source of truth.
 #### Scenario: allowed statuses enumerated
 
 - **WHEN** the `## Beans` section is written
-- **THEN** it SHALL list the statuses the agent may set — `in-progress`, `todo`,
-  `draft`, `completed`, `scrapped` — and SHALL state that `updated_at` may be
+- **THEN** it SHALL list the statuses the agent may set (`in-progress`, `todo`,
+  `draft`, `completed`, `scrapped`) and SHALL state that `updated_at` may be
   updated, and that no other part of a task file may be modified
 
 #### Scenario: CLAUDE.md is a symlink

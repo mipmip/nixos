@@ -8,13 +8,6 @@
       # executable bit, and naming `python3` in the command would make the hook
       # die silently in any shell that lacks it.
       proseLint = inputs.self.packages."${pkgs.stdenv.hostPlatform.system}".prose-lint;
-
-      # One source of truth for the word list: the same JSON the linter reads is
-      # rendered into the rule file, so the two can never drift apart.
-      fillerWords = builtins.fromJSON (
-        builtins.readFile ../../../../packages/prose-lint/filler-words.json
-      );
-      renderWords = words: lib.concatMapStringsSep "\n" (w: "- ${w}") words;
     in
     {
 
@@ -25,11 +18,16 @@
     programs.claude-code = {
       enable = true;
       package = unstable.claude-code;
-      commands = import ./_cc-commands.nix;
+      # Shared with opencode. Both agents derive the slash name from the
+      # filename, so `mip:ship.md` answers to /mip:ship in each, and both
+      # implement $ARGUMENTS, $1, shell injection and @file. Frontmatter added
+      # here has to work for both: a key only one of them knows is ignored by
+      # the other, silently.
+      commands = import ./_agent-commands.nix;
 
-      # Writing rules, one file per concern. Every markdown file in
-      # ~/.claude/rules/ is loaded as memory automatically, which is why these
-      # do not live in the `context` blob below.
+      # Declared here only. opencode scans ~/.claude/skills/<name>/SKILL.md
+      # itself, so these serve both agents and `programs.opencode.skills` stays
+      # unset rather than writing a second copy.
       # humanizer keeps its SKILL.md at the repository root, so one file is
       # enough. The Dutch guide's SKILL.md refers to the 25 KB reference beside
       # it by name, so that one needs the whole directory.
@@ -39,96 +37,15 @@
           "${inputs.dutch-style-guide}/skills/writing-clearly-and-concisely-dutch";
       };
 
-      rules = {
-        prose-review-amendments = ''
-          # Where the imported writing guides do not apply
+      # Separate documents, one per concern: Claude Code loads every markdown
+      # file in ~/.claude/rules/ as memory, so a rule can be added or removed
+      # on its own. opencode has no such directory and receives the same text
+      # concatenated into AGENTS.md, which is why the text lives in Nix rather
+      # than here.
+      rules = import ./_agent-rules.nix { inherit lib; };
 
-          Two guides are installed as skills: `humanizer` for any language, and
-          `writing-clearly-and-concisely-dutch` for Dutch. Read them through the
-          amendments below. A guide adopted without stating its exceptions makes
-          the text worse in the places where its advice is wrong for this
-          material.
-
-          ## A technical term keeps its accepted name
-
-          The Dutch guide treats an English word as a red flag whenever a Dutch
-          alternative exists, and rejects "it is a technical term" as an excuse.
-          That does not apply here. When a term is the accepted name for the
-          thing in its field, it stays: flake, input, lock, closure, derivation,
-          store path, commit, merge, pull request.
-
-          Translate a word that is merely borrowed, not one that names the
-          thing. "Performance" becomes "prestaties" in ordinary prose; a
-          `nix flake update` does not become "nix vlok bijwerken".
-
-          ## The vocabulary list is English only
-
-          humanizer's rule 12 lists overused English words, and says itself that
-          it is the skill's only vocabulary list. Do not look for Dutch
-          equivalents of it. Every other rule in humanizer applies to both
-          languages, as its rule 1 states.
-
-          ## A local rule wins
-
-          Where a guide conflicts with the rules in `prose-typography.md` or
-          `prose-filler-words.md`, the local rule wins. The Dutch guide is itself
-          an example: it uses the em dash nineteen times, including in its own
-          rule headings. Follow what it says about sentence construction, not
-          what its punctuation does.
-
-          ## Prose meant to be copied goes to a file
-
-          When the user asks for prose to send to someone else, write it to a
-          file and say where it is, rather than showing it only in a reply. A
-          reply cannot be checked before it appears; a file can. Then run the
-          gate on it.
-        '';
-
-        prose-typography = ''
-          # Prose typography
-
-          These marks are never wanted. Not in a blog post, not in a spec, not in
-          a commit message, and in neither Dutch nor English. There is no context
-          that calls for them, so there is no exception to weigh.
-
-          - The em dash `—` (U+2014). Name the relation instead ("because",
-            "but", "for example"), use a comma, a colon or parentheses, or write
-            two sentences.
-          - The en dash `–` (U+2013). In a range a plain hyphen does the job.
-            Anywhere else, rewrite.
-          - A spaced double hyphen used as a dash. Same rule as the em dash.
-          - Curly quotation marks. Use straight quotes.
-
-          Dashes and hyphens inside code blocks, inline code, commands, paths and
-          URLs are not prose and are left alone.
-
-          A hook checks this after every write to a prose file and fails the
-          write when it finds a hit, so treat it as settled rather than as
-          advice.
-        '';
-
-        prose-filler-words = ''
-          # Filler words
-
-          Use a word from this list only when it carries meaning. Drop it when it
-          is a verbal tic. The same word can be either:
-
-          - "dat is eigenlijk niet waar" corrects a claim, so it stays.
-          - "dat is eigenlijk best goed" says nothing, so it goes.
-
-          A hook reports these with the sentence they sit in. It does not fail
-          the write, because only a reader can tell the two cases apart.
-
-          ## Dutch
-
-          ${renderWords fillerWords.nl}
-
-          ## English
-
-          ${renderWords fillerWords.en}
-        '';
-      };
-      context = import ./_cc-CLAUDEmd.nix;
+      # Shared with opencode, which receives it as the head of AGENTS.md.
+      context = import ./_agent-context.nix;
       settings =  {
         includeCoAuthoredBy = false;
         feedbackSurveyRate = 0;

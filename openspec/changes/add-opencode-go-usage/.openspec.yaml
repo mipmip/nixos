@@ -1,0 +1,4 @@
+schema: spec-driven
+created: 2026-10-16
+goal: Add the Go-usage sidebar plugin, fed from the OAuth access token in
+  opencode.db via a runtime-dir file rather than an API key in the store
