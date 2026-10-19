@@ -1,5 +1,5 @@
 _: {
-  plugins.teamtype = {
-    enable = true;
-  };
+  #  plugins.teamtype = {
+  #    enable = true;
+  #  };
 }
