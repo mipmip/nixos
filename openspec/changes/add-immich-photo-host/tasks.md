@@ -22,7 +22,7 @@
 
 ## 2. Commit the applied work
 
-- [ ] 2.1 Commit the three modified/new files in `modules/HOSTS/stinkie-desktop/`
+- [x] 2.1 Commit the three modified/new files in `modules/HOSTS/stinkie-desktop/`
 - [ ] 2.2 Verify `rme deploy_remote stinkie` now succeeds from peterspav, which
       confirms the trusted-users fix end to end
 - [ ] 2.3 Remove the rsync'd working copy at `/home/pim/mipnix` on stinkie once
