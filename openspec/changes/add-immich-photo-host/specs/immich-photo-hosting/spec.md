@@ -21,19 +21,34 @@ cannot reach it.
 - **THEN** it SHALL resolve to a path under `/mnt/immich-data`
 - **AND** no NFS or CIFS mount SHALL appear in the path's resolution
 
-### Requirement: The machine-learning worker uses the GPU
-immich's machine-learning service SHALL be enabled and SHALL be given access to
-the NVIDIA device nodes, so the initial CLIP and face-detection pass over 31865
-files completes in hours rather than days.
+### Requirement: The machine-learning worker runs on CPU
+immich's machine-learning service SHALL be enabled and SHALL run on the CPU.
 
-#### Scenario: The GPU is passed through
+GPU acceleration is not available: this nixpkgs builds `onnxruntime` without
+CUDA (`pkgs.config.cudaSupport` and `pkgs.onnxruntime.cudaSupport` are both
+`false`), so the packaged worker has no CUDA execution provider. Passing the
+NVIDIA device nodes through would not change that. Turning `cudaSupport` on
+would rebuild the machine-learning stack from source, because CUDA variants are
+absent from the binary cache.
+
+On four cores at 3.0 GHz the one-time CLIP and face-detection pass over 31865
+files is expected to take on the order of a day. That is accepted.
+
+#### Scenario: The worker is enabled without CUDA
+- **WHEN** `services.immich.machine-learning.enable` is inspected
+- **THEN** it SHALL be `true`
+- **AND** no CUDA execution provider SHALL be expected of it
+
+#### Scenario: The GPU is still passed through for transcoding
 - **WHEN** `services.immich.accelerationDevices` is inspected
-- **THEN** it SHALL list the NVIDIA device nodes rather than being `null`
+- **THEN** it SHALL list the NVIDIA device nodes
+- **AND** this SHALL be understood as serving NVENC video transcoding, which is
+  a separate path from machine learning
 
-#### Scenario: Falling back is acceptable
-- **WHEN** the 2 GB of VRAM is insufficient for a model
-- **THEN** the worker SHALL fall back to CPU
-- **AND** this SHALL be treated as slower, not as a failure
+#### Scenario: A future GPU
+- **WHEN** an RTX 3060 replaces the GTX 1050
+- **THEN** enabling CUDA SHALL be reconsidered as its own change
+- **AND** this requirement SHALL be the thing that change supersedes
 
 ### Requirement: A first batch is seeded before the full import
 The year `2000` of `aperture-originals` SHALL be copied from piethein to stinkie

@@ -23,26 +23,26 @@
 ## 2. Commit the applied work
 
 - [x] 2.1 Commit the three modified/new files in `modules/HOSTS/stinkie-desktop/`
-- [ ] 2.2 Verify `rme deploy_remote stinkie` now succeeds from peterspav, which
+- [x] 2.2 Verify `rme deploy_remote stinkie` now succeeds from peterspav, which
       confirms the trusted-users fix end to end
-- [ ] 2.3 Remove the rsync'd working copy at `/home/pim/mipnix` on stinkie once
+- [x] 2.3 Remove the rsync'd working copy at `/home/pim/mipnix` on stinkie once
       2.2 passes
-- [ ] 2.4 `shred -u /tmp/p.txt` on peterspav
+- [x] 2.4 `shred -u /tmp/p.txt` on peterspav
 
 ## 3. immich
 
 - [ ] 3.1 Create `/mnt/immich-data/immich` and
       `/mnt/immich-data/aperture-originals`, readable by the immich user
-- [ ] 3.2 Add `secrets/immich-db-password.age`, with stinkie as a recipient in
-      `secrets/secrets.nix`
-- [ ] 3.3 Create `modules/HOSTS/stinkie-desktop/immich.nix` enabling
-      `services.immich` with `mediaLocation` under `/mnt/immich-data`
-- [ ] 3.4 Enable `services.immich.machine-learning` and set
-      `accelerationDevices` to the NVIDIA device nodes
-- [ ] 3.5 Bind the service so it is reachable from the LAN and the mesh only
-- [ ] 3.6 Deploy and confirm the service starts, including that VectorChord
+- [ ] 3.2 Create `modules/HOSTS/stinkie-desktop/immich.nix` enabling
+      `services.immich` with `mediaLocation` under `/mnt/immich-data`.
+      No age secret: postgres is reached over a unix socket with peer auth
+- [ ] 3.3 Enable `services.immich.machine-learning`, running on CPU. Set
+      `accelerationDevices` to the NVIDIA device nodes for NVENC transcoding
+      only, not for ML
+- [ ] 3.4 Bind the service so it is reachable from the LAN and the mesh only
+- [ ] 3.5 Deploy and confirm the service starts, including that VectorChord
       loads on this CPU
-- [ ] 3.7 Register `stinkie = "192.168.100.17"` in `flake.nebulaNodes` if name
+- [ ] 3.6 Register `stinkie = "192.168.100.17"` in `flake.nebulaNodes` if name
       resolution from other hosts is wanted
 
 ## 4. Seed the first batch (year 2000)

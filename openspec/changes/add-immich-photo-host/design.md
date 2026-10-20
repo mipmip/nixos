@@ -127,11 +127,23 @@ GB free on the SSD and 916 GiB on the data disk, the gain does not justify it.
 Everything goes to the encrypted disk; postgres stays on the SSD under
 `/var/lib`, which is where it must be in any case.
 
-### The database password is an age secret
+### There is no database password
 
-`services.immich` provisions its own postgres locally, but the dump task below
-needs a credential and the repo's convention is that credentials are paths into
-agenix, never literals in a Nix option.
+An earlier draft of this design called for an age secret holding the immich
+database password. That was wrong, and implementing it would have added a secret
+nothing reads.
+
+`services.immich` provisions postgres locally and reaches it over a unix socket
+with peer authentication:
+
+```
+database.host   "/run/postgresql"
+DB_URL          postgresql:///immich?host=/run/postgresql
+```
+
+No password exists to store. The `pg_dump` in the backup's `prepareCommand`
+runs as root on the same socket and needs no credential either. Nothing is added
+to `secrets/` by this change.
 
 ## Risks / Trade-offs
 
@@ -140,9 +152,19 @@ agenix, never literals in a Nix option.
   errors, but the family's record is poor. Mitigated by piethein keeping the
   originals and by backing the library up; not mitigated by the SMART result,
   which says nothing about tomorrow.
-- **GPU memory.** 2 GB of VRAM is enough for CLIP ViT-B/32 and the face
-  detection model, but it is tight. If the ML worker runs out, it falls back to
-  CPU and the import gets slower rather than failing.
+- **Machine learning runs on CPU, not the GPU.** An earlier draft of this design
+  claimed CUDA would turn the import from days into hours. That was wrong. This
+  nixpkgs builds `onnxruntime` without CUDA (`pkgs.config.cudaSupport` and
+  `pkgs.onnxruntime.cudaSupport` are both `false`), so the packaged worker has
+  no CUDA execution provider and passing device nodes through changes nothing.
+  Enabling `cudaSupport` would rebuild the stack from source, since CUDA
+  variants are not in the binary cache, which on four cores and 62 GB of free
+  space is a poor trade for a one-time pass. The pass is expected to take on the
+  order of a day and that is accepted. A planned RTX 3060 makes this worth
+  revisiting as its own change; the GTX 1050's 2 GB would have been tight even
+  with CUDA available.
+- **The GPU still earns its place** for NVENC video transcoding, which is a
+  separate path from machine learning and does use `accelerationDevices`.
 - **The LUKS keyfile is not declarative.** It cannot go in the store, because
   anything under `environment.etc.<name>.text` is world-readable there, and it
   cannot come from agenix, because `/run/agenix` is populated during system
