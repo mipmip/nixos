@@ -10,14 +10,14 @@ in
 
   flake.homeConfigurations = {
 
+    # CLI only: stinkie is a server now, so role-pim-desktop (firefox,
+    # thunderbird, hyprland, gimp, obs, mipbar, wallpaper) is gone along with
+    # the NixOS desktop role.
     "pim@stinkie" = self.lib.makeHomeConf {
       inherit hostname;
-      imports = (with inputs.self.modules.homeManager; [
+      imports = with inputs.self.modules.homeManager; [
         role-pim-cli-full
         role-pim-cli-minimal
-        role-pim-desktop
-      ]) ++ [
-        { mip.hostWallpaper.enable = true; }
       ];
     };
   };
@@ -33,13 +33,18 @@ in
   flake.modules.nixos.stinkie = { config, pkgs, lib, ... } : {
     system.stateVersion = "26.05";
 
+    # Allow pim to push unsigned store paths (deploy-rs). Matches
+    # dapperehaan/durer/hurry/harry. Without it `rme deploy_remote stinkie`
+    # fails at the copy step with "lacks a signature by a trusted key".
+    nix.settings.trusted-users = [ "root" "pim" ];
+
     imports = with inputs.self.modules.nixos; [
 
       system-default
       channel-default
 
       role-devbox
-      role-desktop-pim
+      role-server
       role-nebula-node
 
       system-trusted-pim
@@ -54,17 +59,17 @@ in
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    services.xserver.enable = true;
-    services.displayManager.gdm.enable = true;
-    services.desktopManager.gnome.enable = true;
-
+    # The GTX 1050 driver survives the desktop removal because immich's
+    # machine-learning worker wants CUDA. videoDrivers is what gates the whole
+    # nvidia module in nixpkgs, not services.xserver.enable, so listing it here
+    # with X switched off is the supported headless form.
     hardware.graphics.enable = true;
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia = {
       modesetting.enable = true;
       open = false;
       package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
-      powerManagement.enable = true;
+      powerManagement.enable = false;
     };
 
     console.keyMap = "nl";
@@ -72,24 +77,11 @@ in
     boot.initrd.systemd.contents."/etc/vconsole.conf".source =
       lib.mkForce (pkgs.writeText "vconsole.conf" "KEYMAP=us\n");
 
-    services.printing.enable = true;
-
-    services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-
     users.users."pim" = {
       isNormalUser = true;
       description = "pim";
       extraGroups = [ "networkmanager" "wheel" ];
     };
-
-    programs.firefox.enable = true;
 
     nixpkgs.config.allowUnfree = true;
 
