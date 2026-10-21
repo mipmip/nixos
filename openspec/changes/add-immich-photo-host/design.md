@@ -184,16 +184,32 @@ delete a file, and the copy on stinkie stays byte-comparable with the source on
 piethein. Phone uploads go to immich's own managed area, which is a separate
 tree under the same media location.
 
-### The first batch is the year 2000
+### The first batch is the year 2002
 
-Roughly 2000 files. Chosen for the fastest possible round trip to a working
-screen.
+5029 files, 3.7 GB. The most files of any single year, at the smallest average
+size in the library (roughly 750 KB each).
 
-The trade-off is recorded deliberately: 2000 is scans and early compact-camera
-JPEGs, so it is the least representative year in the library. Any extrapolation
-from its import time to the full 31865 files SHALL be reported as optimistic
-rather than as a straight multiple, because later years carry larger files and
-more faces per frame.
+An earlier draft picked the year 2000, on the assumption that the library held
+roughly 2000 files per year. That was the 31865 total divided by 16 years, and
+the real distribution is nothing like uniform:
+
+```
+2000        3 files     1.8M        2008     2301 files     6.7G
+2001      188 files      87M        2009     1416 files     4.7G
+2002     5029 files     3.7G        2010     2342 files     7.0G
+2003      209 files     154M        2011     3747 files      15G
+2004      412 files     478M        2012     4438 files      17G
+2005      535 files     331M        2013     3264 files      11G
+2006     1029 files     2.1G        2014     2609 files     7.5G
+2007     4022 files      18G        2015      320 files     222M
+```
+
+The year 2000 holds three files. It would have exercised nothing.
+
+2002 was chosen to stress per-file overhead and the job queue rather than
+per-megapixel work. Extrapolating its import time to 31865 files SHALL therefore
+be reported as optimistic on the processing side, because the heavy middle years
+carry four to six times the bytes per file.
 
 ### Reached over the LAN and the mesh, plain HTTP
 

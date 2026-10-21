@@ -31,33 +31,43 @@
 
 ## 3. immich
 
-- [ ] 3.1 Create `/mnt/immich-data/immich` and
+- [x] 3.1 Create `/mnt/immich-data/immich` and
       `/mnt/immich-data/aperture-originals`, readable by the immich user
-- [ ] 3.2 Create `modules/HOSTS/stinkie-desktop/immich.nix` enabling
+- [x] 3.2 Create `modules/HOSTS/stinkie-desktop/immich.nix` enabling
       `services.immich` with `mediaLocation` under `/mnt/immich-data`.
       No age secret: postgres is reached over a unix socket with peer auth
-- [ ] 3.3 Enable `services.immich.machine-learning`, running on CPU. Set
+- [x] 3.3 Enable `services.immich.machine-learning`, running on CPU. Set
       `accelerationDevices` to the NVIDIA device nodes for NVENC transcoding
       only, not for ML
-- [ ] 3.4 Bind the service so it is reachable from the LAN and the mesh only
-- [ ] 3.5 Deploy and confirm the service starts, including that VectorChord
-      loads on this CPU
+- [x] 3.4 Bind the service so it is reachable from the LAN and the mesh only
+- [x] 3.5 Deploy and confirm the service starts, including that VectorChord
+      loads on this CPU (vchord 1.1.1 loaded, /api/server/ping returns 200)
 - [ ] 3.6 Register `stinkie = "192.168.100.17"` in `flake.nebulaNodes` if name
       resolution from other hosts is wanted
 
-## 4. Seed the first batch (year 2000)
+## 4. Seed the first batch (year 2002)
 
-- [ ] 4.1 rsync `aperture originals/2000` from piethein over SSH into
-      `/mnt/immich-data/aperture-originals`, without `--delete`
-- [ ] 4.2 Report file count and byte size actually transferred
-- [ ] 4.3 Register the path in immich as a read-only external library
-- [ ] 4.4 Confirm thumbnails, search and face detection produce results
+- [x] 4.1 Copy `aperture originals/2002` from piethein over SSH into
+      `/mnt/immich-data/aperture-originals`. Used `tar` over SSH, not rsync:
+      DSM's rsync service is disabled, so Synology's rsync refuses server mode
+- [x] 4.2 Report file count and byte size actually transferred
+      (5029 files, 3881503163 bytes, 240 s, exact match with the source).
+      Of those only 4347 are photographs: 682 were Synology `@eaDir`
+      thumbnails, since removed and excluded both in rsync and in immich
+- [x] 4.3 Register the path in immich as a read-only external library
+      (library 369d8e52, importPath /mnt/immich-data/aperture-originals,
+      exclusionPatterns for @eaDir, .DS_Store, @SynoResource)
+- [x] 4.4 Confirm thumbnails, search and face detection produce results
+      (154 people detected, CLIP smart search returns hits, zero failed jobs)
 - [ ] 4.5 Time the batch. Report the extrapolation to 31865 files as optimistic,
-      since 2000 is scans and early compact-camera files
+      since 2002 holds the library's smallest files
 
 ## 5. Full import
 
-- [ ] 5.1 rsync the remaining years `2001`..`2015` from piethein
+- [ ] 5.0 Enable "rsync service" in DSM (Control Panel, File Services, rsync)
+      so the 91 GB transfer is resumable. Without it the fallback is `tar`,
+      which restarts from zero if the stream dies
+- [ ] 5.1 rsync the remaining years (all but `2002`) from piethein
 - [ ] 5.2 Verify the transferred tree matches the source by file count and size
 - [ ] 5.3 Confirm the year folders are unchanged after indexing, and that no
       storage template has renamed anything

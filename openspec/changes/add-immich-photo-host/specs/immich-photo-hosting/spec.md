@@ -51,28 +51,37 @@ files is expected to take on the order of a day. That is accepted.
 - **AND** this requirement SHALL be the thing that change supersedes
 
 ### Requirement: A first batch is seeded before the full import
-The year `2000` of `aperture-originals` SHALL be copied from piethein to stinkie
+The year `2002` of `aperture-originals` SHALL be copied from piethein to stinkie
 before the remaining 91 GB, so immich can be exercised within minutes of coming
-up.
+up. It holds 5029 files at roughly 750 KB each, the most files of any single
+year and the smallest average size.
 
-The copy SHALL use rsync over SSH rather than a mount, because the NAS
-negotiates SMB1 only and its NFS exports are scoped to a subnet that no longer
-exists.
+The copy SHALL cross SSH rather than a mount, because the NAS negotiates SMB1
+only and its NFS exports are scoped to a subnet that no longer exists.
+
+rsync is preferred, for resumability over a 91 GB transfer on wifi. It requires
+"Enable rsync service" in DSM (Control Panel, File Services, rsync): without it
+Synology's rsync refuses server mode with `rsync error: rsync service is no
+running (code 43)`, which surfaces misleadingly to the client as "Permission
+denied, please try again" after a successful authentication. Where that service
+is off, `tar` over SSH is the fallback, at the cost of restarting from zero if
+the stream dies.
 
 #### Scenario: The batch arrives
 - **WHEN** the seed step completes
-- **THEN** `2000` SHALL exist under the external library path
+- **THEN** `2002` SHALL exist under the external library path
 - **AND** its file count and byte size SHALL be reported
 
 #### Scenario: Extrapolation is qualified
 - **WHEN** the batch import time is used to estimate the full import
-- **THEN** the estimate SHALL be reported as optimistic rather than as a
-  straight multiple, because `2000` holds scans and early compact-camera files
-  and is the least representative year in the library
+- **THEN** the estimate SHALL be reported as optimistic on the processing side,
+  because `2002` holds the library's smallest files and the heavy middle years
+  carry four to six times the bytes per file
 
 #### Scenario: The source is untouched
 - **WHEN** the copy runs
-- **THEN** rsync SHALL be invoked without `--delete`
+- **THEN** it SHALL be read-only on the NAS: rsync without `--delete`, or
+  `tar cf -` which only reads
 - **AND** `/volume1/Archief/fotos/aperture-originals` on piethein SHALL be
   byte-identical afterwards
 
@@ -91,6 +100,15 @@ stays byte-comparable with the source on piethein.
 #### Scenario: Deleting in immich
 - **WHEN** an asset from the external library is deleted in the immich UI
 - **THEN** the underlying file SHALL remain on disk
+
+#### Scenario: Synology metadata is not treated as photographs
+- **WHEN** a tree copied from piethein is indexed
+- **THEN** `@eaDir`, `.DS_Store` and `@SynoResource` SHALL be excluded, both at
+  copy time and as immich exclusion patterns
+- **AND** this SHALL be understood as load-bearing: the `2002` batch held 5029
+  files of which only 4347 were photographs, the other 682 being Synology's own
+  `SYNOFILE_THUMB_*.jpg` thumbnails, which were indexed as assets and surfaced
+  in CLIP search results until excluded
 
 #### Scenario: Phone uploads are separate
 - **WHEN** a photo is uploaded from a phone
