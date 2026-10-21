@@ -13,7 +13,6 @@
 
     nixpkgs-2511.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-2505.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-inkscape13.url = "github:leiserfg/nixpkgs?ref=staging";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     unstable-hyprland.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -21,7 +20,6 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-boot-grannyos.url = "github:mipmip/nixos-boot-grannyos";
-
 
     darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -80,6 +78,15 @@
     startaste.inputs.nixpkgs.follows = "nixpkgs";
     huphop.url = "github:mipmip/huphop";
     beandex.url = "github:mipmip/beandex";
+
+    # The two halves of the prefix + M monitoring popup. Both were invoked as
+    # `nix run github:mipmip/...` from the smug monitoring session; a popup
+    # bound to a key cannot pay for a flake resolution, and a monitor that
+    # needs the network up is no use for reporting that the network is down.
+    nping.url = "github:mipmip/nping";
+    nping.inputs.nixpkgs.follows = "nixpkgs";
+    updo.url = "github:mipmip/updo";
+    updo.inputs.nixpkgs.follows = "nixpkgs";
 
     nivis.url = "github:nivis-project/nivis";
     nivis.inputs.nixpkgs.follows = "nixpkgs";

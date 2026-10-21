@@ -104,6 +104,19 @@ inputs,
       tmux-float = pkgs.writeShellScriptBin "tmux-float"
         (builtins.readFile ./float.sh);
 
+      # Launcher for the `prefix + M` monitoring popup. Same shape as
+      # tmux-float: the shell lives in a file, and the four things it needs
+      # from Nix are prepended as plain variables rather than interpolated
+      # through it. The store paths are what make the popup open without a
+      # `nix run`, and the host list is the same flake.nebulaNodes registry the
+      # `prefix + H` picker reads, so the two cannot disagree.
+      nebula-monitor = pkgs.writeShellScriptBin "nebula-monitor" (''
+        NBPING=${inputs.nping.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/nbping
+        UPDO=${inputs.updo.packages.${pkgs.stdenv.hostPlatform.system}.updo}/bin/updo
+        HOSTS="${lib.concatStringsSep " " inputs.self.lib.nebulaHostNames}"
+        UPDO_CONFIG="''$HOME/.config/updo/config.toml"
+      '' + builtins.readFile ./monitor.sh);
+
       # Custom bindings come from the flake-wide hotkey registry, filtered to
       # the tmux target; they are declared in binds.nix beside this file. The
       # same declaration emits the `bind` lines, the `prefix + ?` menu and the
@@ -131,6 +144,7 @@ inputs,
       nebula-ssh
       drs-switch
       tmux-float
+      nebula-monitor
     ];
 
     programs.tmux = {

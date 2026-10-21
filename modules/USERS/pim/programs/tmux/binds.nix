@@ -35,6 +35,15 @@
       group = "tools"; key = "H"; desc = "nebula host ssh";
       action = "popup -E -w 60% -h 60% 'nebula-ssh'"; }
 
+    # A toggle, but not the float's kind: the session behind this popup
+    # outlives the popup, so "does the session exist" cannot tell open from
+    # close. What can is the session the pressing client is attached to, which
+    # is the same test the float's width keys use. Inside the popup the key
+    # arrives from the popup's own client, so it detaches and the popup closes.
+    { kind = "prefixed"; app = "tmux"; target = "tmux"; scopes = [ "terminal" ];
+      group = "tools"; key = "M"; desc = "nebula monitor, nbping and updo";
+      action = ''if -F '#{==:#{session_name},_nbmon}' detach-client "run-shell -b 'nebula-monitor open'"''; }
+
     { kind = "prefixed"; app = "tmux"; target = "tmux"; scopes = [ "terminal" ];
       group = "tools"; key = "R"; desc = "dirty repo scanner";
       action = "popup -E -w 80% -h 80% 'drs --multiplex'"; }

@@ -2,22 +2,15 @@
   flake.modules.nixos.desktop-apps-dtp = { config, pkgs, ... }: {
     environment.systemPackages = with pkgs; [
 
+      # TODO which gimp shall we choose here?
       gimp
       gimp3-with-plugins
+
       inkscape-with-extensions
-      #krita
-
-      #nixpkgs-inkscape13.inkscape
       feh
-      #swappy
-
       emulsion-palette
-
       blender
-
       libreoffice
-
-
     ];
 
   };

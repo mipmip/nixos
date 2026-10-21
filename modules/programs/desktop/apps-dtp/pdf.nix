@@ -5,20 +5,10 @@
 
       # Viewers
       zathura
-      sioyek # keyboard driven pdf viewer
 
-      zotero # document organizer
-
-      # Tools
       pdftk
       pdfarranger
       ghostscript
-
-      #paperwork # could replace papermerge
-
-
-
-
     ];
 
   };

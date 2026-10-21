@@ -1064,22 +1064,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-inkscape13": {
-      "locked": {
-        "lastModified": 1699271810,
-        "narHash": "sha256-ldGgbzhOXdBshpRvZJFnhCF6vagakGot9pFpbws6srk=",
-        "owner": "leiserfg",
-        "repo": "nixpkgs",
-        "rev": "c5b219ec902db9fd069f7f0d6ac7dd864d5d9c47",
-        "type": "github"
-      },
-      "original": {
-        "owner": "leiserfg",
-        "ref": "staging",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1769909678,
@@ -1239,11 +1223,11 @@
     },
     "nixpkgs_14": {
       "locked": {
-        "lastModified": 1786313170,
-        "narHash": "sha256-9BG7OgUWdu0ONDO5X2q6+K4bsuBITkX/3W4nNJu1Ito=",
+        "lastModified": 1792503283,
+        "narHash": "sha256-vhe2jyvRCgufWPqDuDq1S3t3ypE+ka46IFutV02xKso=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "fcb8fcd6bf2d0adecae5bd491afaaaf8311b758d",
+        "rev": "cd4ea8d57de16f4810bc5f14207bac45fbf19f67",
         "type": "github"
       },
       "original": {
@@ -1596,6 +1580,26 @@
         "type": "gitlab"
       }
     },
+    "nping": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771932907,
+        "narHash": "sha256-I5kmuS1LBa09qzQxgsx6ayEdOHOqI7XA9Gh6tPz/kIg=",
+        "owner": "mipmip",
+        "repo": "nping",
+        "rev": "21f9d0a285f6c28c524e3753d87ddbdc3606521a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mipmip",
+        "repo": "nping",
+        "type": "github"
+      }
+    },
     "opencode": {
       "inputs": {
         "nixpkgs": "nixpkgs_15"
@@ -1752,12 +1756,12 @@
         "nixpkgs": "nixpkgs_14",
         "nixpkgs-2505": "nixpkgs-2505",
         "nixpkgs-2511": "nixpkgs-2511",
-        "nixpkgs-inkscape13": "nixpkgs-inkscape13",
         "nixpkgs-mama": "nixpkgs-mama",
         "nixpkgs-mama-moving": "nixpkgs-mama-moving",
         "nixpkgs-pine64": "nixpkgs-pine64",
         "nixpkgs-zonnehoed": "nixpkgs-zonnehoed",
         "nixvim": "nixvim",
+        "nping": "nping",
         "opencode": "opencode",
         "pre-commit-hooks": "pre-commit-hooks",
         "race": "race",
@@ -1772,6 +1776,7 @@
         "teejay": "teejay",
         "unstable": "unstable",
         "unstable-hyprland": "unstable-hyprland",
+        "updo": "updo",
         "verynix": "verynix"
       }
     },
@@ -2025,6 +2030,26 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "updo": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771857310,
+        "narHash": "sha256-N6yrzVDt9rAZxOSh/kjAfJmw2DJMVby9fQ8ukT/CRQQ=",
+        "owner": "mipmip",
+        "repo": "updo",
+        "rev": "dedb0100a3ec940317f2e08bdfc7dd2121f622fd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mipmip",
+        "repo": "updo",
         "type": "github"
       }
     },

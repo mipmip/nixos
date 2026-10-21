@@ -1,4 +1,16 @@
-{makeBanner, pkgs, ...}:
+{makeBanner, pkgs, inputs, ...}:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+
+  # The same two store paths and the same host list the `prefix + M` popup
+  # uses, so the window and the popup cannot report on different hosts. Both
+  # were `nix run github:mipmip/...` here, which cost a flake resolution every
+  # time the session opened and made the monitor depend on the network being
+  # up to say whether the network was up.
+  nbping = "${inputs.nping.packages.${system}.default}/bin/nbping";
+  updo = "${inputs.updo.packages.${system}.updo}/bin/updo";
+  nebulaHosts = builtins.concatStringsSep " " inputs.self.lib.nebulaHostNames;
+in
 {
 
   sudo = {
@@ -50,11 +62,11 @@
           }
           {
             type = "horizontal";
-            commands = [ "nix run github:mipmip/nping -- -v table -i 3 harry hurry lavendel dapperehaan durer" ];
+            commands = [ "${nbping} -v table -i 3 ${nebulaHosts}" ];
           }
           {
             type = "horizontal";
-            commands = [ "nix run github:mipmip/updo --  -C ~/.config/updo/config.toml" ];
+            commands = [ "${updo} -C ~/.config/updo/config.toml" ];
           }
         ];
       }

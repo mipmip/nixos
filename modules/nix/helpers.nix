@@ -13,6 +13,11 @@
     # literal strings, so no nixosConfigurations eval / inputs.self recursion.
     nebulaHosts = lib.mapAttrsToList (name: ip: "${name} ${ip}") self.nebulaNodes;
 
+    # The same registry as bare names, for the monitoring popup: nbping takes
+    # host names and would otherwise have to strip the IP back off the lines
+    # above. Same constraint, literal strings only.
+    nebulaHostNames = lib.attrNames self.nebulaNodes;
+
     makeHomeConf = {
       nixpkgs-channel ? inputs.nixpkgs,
       username ? "pim",
