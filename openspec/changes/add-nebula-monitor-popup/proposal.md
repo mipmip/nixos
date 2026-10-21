@@ -16,6 +16,8 @@ side.
 
 - Add a `prefix + M` popup that shows `nping` and `updo` side by side in one
   window.
+- Bind `Escape` to close the popup, without the prefix, leaving both tools
+  running. Outside the popup the key keeps its ordinary meaning.
 - Back the popup with a hidden tmux session that survives the popup closing, so
   the ping history and the uptime samples keep accumulating between glances
   rather than restarting on every open.
@@ -38,16 +40,25 @@ side.
 
 ### Modified Capabilities
 
-None. The binding is declared in the existing hotkey registry and the existing
-`tmux-bind-registry` requirements cover how it is bound and listed; neither
-registry changes shape.
+- `hotkey-registry`: a tmux entry's kind now decides which key table binds it.
+  A `prefixed` entry binds after the prefix, as every tmux entry does today; a
+  `chord` binds in the root table, so its key acts on its own. No field is
+  added, because the kinds already carry that distinction. A tmux chord
+  carrying a modifier fails the build, since the registry holds no tmux
+  spelling for one.
+- `tmux-bind-registry`: the emitter writes `bind -n` for a chord and `bind` for
+  a prefixed entry. Every existing entry is prefixed and is emitted exactly as
+  before.
 
 ## Impact
 
 - `flake.nix`: two inputs, `nping` and `updo`
 - `modules/USERS/pim/programs/tmux/default.nix`: one `writeShellScriptBin`
   launcher beside `nebula-ssh` and `tmux-float`
-- `modules/USERS/pim/programs/tmux/binds.nix`: one entry in the `tools` group
+- `modules/USERS/pim/programs/tmux/binds.nix`: one entry in the `tools` group,
+  one chord in the `tmux` group for the close key
+- `lib/hotkeys.nix`: the tmux bind emitter, and the check on a tmux chord's
+  modifiers
 - `modules/nix/helpers.nix`: a `nebulaHostNames` helper beside `nebulaHosts`
 - `modules/USERS/pim/programs/smug_n_skull/_advanced_smugs.nix`: the two
   monitoring commands lose their `nix run` prefix and their hardcoded host list

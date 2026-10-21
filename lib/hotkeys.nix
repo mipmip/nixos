@@ -379,7 +379,15 @@ let
   # it. Measured on tmux 3.6a.
   tmuxEscKey = key: if key == ";" then "\\;" else key;
 
-  tmuxBindLine = e: "bind ${tmuxEscKey e.key} ${e.action}";
+  # The kind decides the key table. A `prefixed` entry is what tmux binds after
+  # the prefix; a `chord` is an absolute key, which in tmux is the root table,
+  # so it reaches `bind -n`. Nothing else distinguishes the two here, and the
+  # registry's duplicate check already keeps their key spaces apart: `Escape`
+  # in the root table and `prefix + Escape` are different bindings.
+  tmuxBindLine = e:
+    if e.kind == "chord"
+    then "bind -n ${tmuxEscKey e.key} ${e.action}"
+    else "bind ${tmuxEscKey e.key} ${e.action}";
 
   # Keys are padded so the descriptions line up in the menu.
   tmuxPadKey = key:
@@ -457,7 +465,11 @@ let
   # fine everywhere else.
   targetRules = {
     tmux = entry:
-      lib.optional (entry.menu && entry.key != null && lib.hasPrefix "-" entry.key)
+      lib.optional (entry.kind == "chord" && entry.mods != [ ])
+        ("${entryLabel entry}: a tmux chord binds in the root table, and this "
+         + "file has no tmux spelling for a modifier. Write it as a prefixed "
+         + "entry, or give tmux a vocab entry first.")
+      ++ lib.optional (entry.menu && entry.key != null && lib.hasPrefix "-" entry.key)
         ("${entryLabel entry}: a menu row's name begins with its key, and tmux "
          + "renders a name beginning with '-' as dim and unselectable. Set "
          + "menu = false for this binding.")

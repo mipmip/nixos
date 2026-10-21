@@ -35,6 +35,47 @@ cheatsheets from one declaration.
 - **THEN** a row for `M` SHALL be present in the tools group with its
   description
 
+### Requirement: Escape closes the popup
+
+`Escape` SHALL close the popup while it is in front, without the prefix. It
+SHALL leave the session and both tools running, exactly as the toggle does.
+
+Outside the popup `Escape` SHALL reach the program in the pane unchanged, so
+the key keeps its ordinary meaning everywhere else.
+
+The key is taken from `nbping`, whose own `Escape` quits it. That is deliberate:
+quitting a tool throws away the history this popup exists to accumulate and
+leaves a dead pane in its place, so inside the popup `Escape` SHALL close the
+popup rather than quit the tool.
+
+`prefix + M` and tmux's own `prefix + d` SHALL continue to close the popup as
+well.
+
+#### Scenario: Closing with Escape
+
+- **WHEN** the popup is in front and the user presses `Escape`
+- **THEN** the popup SHALL close
+- **AND** the monitoring session SHALL still exist with both tools running
+
+#### Scenario: Escape outside the popup
+
+- **WHEN** the popup is not in front and the user presses `Escape`
+- **THEN** the key SHALL reach the program in the current pane
+- **AND** no client SHALL be detached
+
+#### Scenario: Escape does not quit nbping
+
+- **WHEN** the `nbping` pane has focus inside the popup and the user presses
+  `Escape`
+- **THEN** `nbping` SHALL still be running after the popup closes
+- **AND** its collected history SHALL be intact on the next open
+
+#### Scenario: The other two ways still work
+
+- **WHEN** the user presses `prefix + M` or `prefix + d` with the popup in front
+- **THEN** the popup SHALL close
+- **AND** both tools SHALL keep running
+
 ### Requirement: Two tools in one popup, side by side
 
 The popup SHALL show one window split into two panes along a vertical divider:

@@ -81,6 +81,22 @@
       group = "tmux"; key = "-"; desc = "float narrower"; menu = false;
       action = ''if -F '#{==:#{session_name},_float}' "run-shell -b 'tmux-float resize -10'" delete-buffer''; }
 
+    # Closes the monitor popup, and does nothing anywhere else. A chord rather
+    # than a prefixed entry, which is what puts it in tmux's root table: inside
+    # the popup Escape should close the thing in front, the way it does in
+    # every other popup here.
+    #
+    # It takes the key away from nbping, whose own Escape quits it. That is the
+    # point: quitting the tool loses the history the popup exists to keep, and
+    # leaves a dead pane behind.
+    #
+    # Out of the menu for the same reason the float's width keys are: it means
+    # nothing outside the popup.
+    { kind = "chord"; app = "tmux"; target = "tmux"; scopes = [ "terminal" ];
+      group = "tmux"; key = "Escape"; desc = "close the nebula monitor popup";
+      menu = false;
+      action = ''if -F '#{==:#{session_name},_nbmon}' detach-client 'send-keys Escape' ''; }
+
     { kind = "prefixed"; app = "tmux"; target = "tmux"; scopes = [ "terminal" ];
       group = "tmux"; key = "s"; desc = "session and window tree";
       action = "choose-tree -sZ -O name"; }

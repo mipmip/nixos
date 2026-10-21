@@ -59,6 +59,21 @@
 - [x] 5.3 Verify no literal nebula host name is left in
       `_advanced_smugs.nix` with `grep -nE 'harry|hurry|lavendel|dapperehaan|durer'`
 
+## 7. The close key
+
+- [x] 7.1 Emit `bind -n` for a registered `chord` on the tmux target in
+      `lib/hotkeys.nix`, leaving `prefixed` entries emitting `bind` as before;
+      verify by evaluating `toTmuxBinds` that the chord gains `-n` and that no
+      existing line changed
+- [x] 7.2 Reject a tmux chord carrying a modifier, since no tmux spelling for
+      one exists; verify the build fails with a message naming the entry
+- [x] 7.3 Add the `Escape` chord to `binds.nix` in the `tmux` group with
+      `menu = false`, guarded on `#{==:#{session_name},_nbmon}` and falling
+      through to `send-keys Escape`; verify the cheatsheet row reads `Esc` with
+      no prefix label
+- [x] 7.4 Verify Escape closes the popup from a real client and both tool pids
+      survive, and that Escape outside the popup detaches nothing
+
 ## 6. Verification against the spec
 
 - [x] 6.1 Verify persistence: open the popup, wait through several `nping`
