@@ -21,7 +21,6 @@ inputs,
       pim-atuin
       pim-yazi
       pim-nix
-      pim-npm
       pim-wtf
       pim-zsh
       pim-bmc
