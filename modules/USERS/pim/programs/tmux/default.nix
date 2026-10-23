@@ -61,9 +61,9 @@ inputs,
         sess="nebula-prive"
         tmux="${pkgs.tmux}/bin/tmux"
         if ! "''$tmux" has-session -t "=''$sess" 2>/dev/null; then
-          "''$tmux" new-session -d -s "''$sess" -n "''$name" "ssh pim@''$ip"
+          "''$tmux" new-session -d -s "''$sess" -n "''$name" "ssh -t pim@''$ip 'env NEBULA_TMUX=1 \"\$SHELL\" -l'"
         elif ! "''$tmux" list-windows -t "=''$sess" -F '#W' | grep -qx "''$name"; then
-          "''$tmux" new-window -d -t "=''$sess" -n "''$name" "ssh pim@''$ip"
+          "''$tmux" new-window -d -t "=''$sess" -n "''$name" "ssh -t pim@''$ip 'env NEBULA_TMUX=1 \"\$SHELL\" -l'"
         fi
         "''$tmux" switch-client -t "=''$sess:''$name"
       '';
@@ -200,6 +200,8 @@ inputs,
         bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel '${pkgs.wl-clipboard}/bin/wl-copy'
 
         unbind C-a
+
+        if-shell '[ -n "$NEBULA_TMUX" ]' 'set -g prefix2 C-s'
 
         # Every custom binding below comes from the hotkey registry (binds.nix),
         # which also generates the `prefix + ?` menu listing them.
