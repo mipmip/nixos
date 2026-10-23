@@ -176,7 +176,13 @@ in
       port = 3001;
       maintenanceMode = true;
       environmentFile = config.age.secrets."voorzetramenshop-env".path;
-      # package: left at default (the flake's voorzetramenshop package)
+      # The shop pins pnpm_10 because its lockfile is v10, and current nixpkgs
+      # marks pnpm-10.34.0 insecure. Its own flake builds with a bare pkgs
+      # instance where that marker throws, so instantiate its package here
+      # instead: this host's pkgs carries the permittedInsecurePackages entry.
+      package = pkgs.callPackage "${inputs.studio-mint-v1}/nix/package.nix" {
+        pnpm = pkgs.pnpm_10;
+      };
     };
 
     # Let Auth.js derive its base URL from the (nginx-forwarded) Host header
